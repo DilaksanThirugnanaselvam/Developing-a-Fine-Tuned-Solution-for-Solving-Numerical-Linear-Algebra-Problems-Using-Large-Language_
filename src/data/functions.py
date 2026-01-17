@@ -112,6 +112,3 @@ def auto_save_csv(data, output_path):
         print(f"Auto-saved progress to {output_path}")
     except Exception as e:
         print(f"Error auto-saving to CSV: {e}")
-
-
-ff
