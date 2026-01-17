@@ -6,7 +6,7 @@ from logger_answer import log_request
 
 # File Paths
 questions_path = f"{BASE_PATH}/data/questions/questions.csv"
-output_path = f"{BASE_PATH}/data/answers/deepseek/ gemini-2.5-pro4.csv"  # gemini-2.5-pro.csv"  # grok-3-mini-beta1.csv" #o4-mini.csv
+output_path = f"{BASE_PATH}/data/answers/deepseek/deepseek-rl-0528-1.csv"  # gemini-2.5-pro.csv"  # grok-3-mini-beta1.csv" #o4-mini.csv
 
 # Load Data
 csv_data = load_csv_data(questions_path)
