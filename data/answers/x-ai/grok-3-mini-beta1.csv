@@ -1,0 +1,2977 @@
+id,answer
+1,"The QR decomposition of the matrix \( A = \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 1 \end{bmatrix} \) using Householder transformations yields:
+
+\[
+Q = H_1 H_2, \quad \text{where} \quad H_1 = I - \frac{2}{v_1^T v_1} v_1 v_1^T, \quad v_1 = \begin{bmatrix} 1 - \sqrt{2} \\ 0 \\ 1 \end{bmatrix},
+\]
+
+and \( H_2 \) is the 3×3 matrix with the 2×2 Householder reflector in the bottom-right block:
+
+\[
+H_2 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & & \\ 0 & & \end{bmatrix}, \quad \text{with the 2×2 block} \ I_2 - \frac{2}{v_2^T v_2} v_2 v_2^T, \quad v_2 = \begin{bmatrix} 1 - \sqrt{3/2} \\ -\sqrt{2}/2 \end{bmatrix}.
+\]
+
+The resulting matrices are:
+
+\[
+R = \begin{bmatrix} \sqrt{2} & \dfrac{\sqrt{2}}{2} \\ 0 & \sqrt{\dfrac{3}{2}} \\ 0 & 0 \end{bmatrix}.
+\]"
+2,"The matrix \( A \) is symmetric, so its inertia is defined as the triple \( (n_+, n_-, n_0) \), where \( n_+ \) is the number of positive eigenvalues, \( n_- \) is the number of negative eigenvalues, and \( n_0 \) is the number of zero eigenvalues.
+
+The eigenvalues of \( A \) are \( \lambda = 1, 2, 0 \).
+
+Thus, the inertia of \( A \) is \( (2, 0, 1) \)."
+3,"To transform the matrix \( A = \begin{bmatrix} 1 & 0 & 1 \\ 1 & 1 & 0 \\ 0 & 1 & 1 \end{bmatrix} \) into an upper triangular matrix using Givens rotations, apply the rotations sequentially to zero out the subdiagonal elements.
+
+After applying the first Givens rotation to rows 1 and 2 to zero out the (2,1)-entry, and the second Givens rotation to rows 2 and 3 to zero out the (3,2)-entry, the resulting upper triangular matrix is:
+
+\[
+\begin{bmatrix}
+\sqrt{2} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} \\
+0 & \dfrac{\sqrt{6}}{2} & \dfrac{1}{\sqrt{6}} \\
+0 & 0 & \dfrac{2}{\sqrt{3}}
+\end{bmatrix}
+\]"
+4,"The relative error bound for the approximate solution \(\tilde{\mathbf{x}}\) is given by:
+
+\[
+e = \frac{\|\mathbf{x} - \tilde{\mathbf{x}}\|_2}{\|\mathbf{x}\|_2} \leq \frac{\kappa(A) \, \|\mathbf{r}\|_2}{\|A\|_2 \, \|\tilde{\mathbf{x}}\|_2},
+\]
+
+where \(\kappa(A) = \|A\|_2 \, \|A^{-1}\|_2\) is the condition number of \(A\) with respect to the 2-norm, \(\mathbf{r} = A \tilde{\mathbf{x}} - \mathbf{b}\) is the residual, and the bound approximates \(\|\mathbf{x}\|_2\) by \(\|\tilde{\mathbf{x}}\|_2\)."
+5,"For the matrix \( A_i = \begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & 1 \\ 1 & 0 & 1 \end{bmatrix} \), the Wilkinson's shift \( \sigma_i \) is computed using the bottom-right \( 2 \times 2 \) submatrix \( B = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix} \).
+
+The characteristic polynomial of \( B \) is given by \( \det(B - \lambda I) = (1 - \lambda)^2 \), yielding eigenvalues \( \lambda = 1 \) (with multiplicity 2).
+
+The trace of \( B \) is \( 1 + 1 = 2 \), so the average is \( \frac{2}{2} = 1 \). Both eigenvalues are equally close to this value, so the Wilkinson's shift is \( \sigma_i = 1 \)."
+6,"To verify that \((AB)^T = B^T A^T\), first compute the matrices as follows.
+
+The given matrices are:
+\[
+A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & -1 & 2 \\ 2 & 0 & 2 \end{pmatrix}, \quad
+B = \begin{pmatrix} 1 & 1 & 2 \\ -1 & 1 & -1 \\ 1 & 0 & 2 \end{pmatrix}.
+\]
+
+Compute \(AB\):
+\[
+AB = \begin{pmatrix} 1 & 2 & 3 \\ 0 & -1 & 2 \\ 2 & 0 & 2 \end{pmatrix} \begin{pmatrix} 1 & 1 & 2 \\ -1 & 1 & -1 \\ 1 & 0 & 2 \end{pmatrix} = \begin{pmatrix} 2 & 3 & 6 \\ 3 & -1 & 5 \\ 4 & 2 & 8 \end{pmatrix}.
+\]
+
+Now, take the transpose:
+\[
+(AB)^T = \begin{pmatrix} 2 & 3 & 6 \\ 3 & -1 & 5 \\ 4 & 2 & 8 \end{pmatrix}^T = \begin{pmatrix} 2 & 3 & 4 \\ 3 & -1 & 2 \\ 6 & 5 & 8 \end{pmatrix}.
+\]
+
+Next, compute the transposes:
+\[
+A^T = \begin{pmatrix} 1 & 0 & 2 \\ 2 & -1 & 0 \\ 3 & 2 & 2 \end{pmatrix}, \quad
+B^T = \begin{pmatrix} 1 & -1 & 1 \\ 1 & 1 & 0 \\ 2 & -1 & 2 \end{pmatrix}.
+\]
+
+Now, compute \(B^T A^T\):
+\[
+B^T A^T = \begin{pmatrix} 1 & -1 & 1 \\ 1 & 1 & 0 \\ 2 & -1 & 2 \end{pmatrix} \begin{pmatrix} 1 & 0 & 2 \\ 2 & -1 & 0 \\ 3 & 2 & 2 \end{pmatrix} = \begin{pmatrix} 2 & 3 & 4 \\ 3 & -1 & 2 \\ 6 & 5 & 8 \end{pmatrix}.
+\]
+
+Since \((AB)^T = \begin{pmatrix} 2 & 3 & 4 \\ 3 & -1 & 2 \\ 6 & 5 & 8 \end{pmatrix}\) and \(B^T A^T = \begin{pmatrix} 2 & 3 & 4 \\ 3 & -1 & 2 \\ 6 & 5 & 8 \end{pmatrix}\), it follows that \((AB)^T = B^T A^T\)."
+7,"To verify that \((AB)^{-1} = B^{-1} A^{-1}\) for the given matrices \(A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}\) and \(B = \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}\), compute both sides explicitly.
+
+First, compute \(AB\):
+
+\[
+AB = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix} = \begin{pmatrix} 1 \cdot 1 + 1 \cdot 1 & 1 \cdot 0 + 1 \cdot 1 \\ 0 \cdot 1 + 1 \cdot 1 & 0 \cdot 0 + 1 \cdot 1 \end{pmatrix} = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}.
+\]
+
+Next, compute \((AB)^{-1}\):
+
+The matrix \(AB = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}\) has determinant \(\det(AB) = 2 \cdot 1 - 1 \cdot 1 = 1\). Thus,
+
+\[
+(AB)^{-1} = \frac{1}{\det(AB)} \begin{pmatrix} 1 & -1 \\ -1 & 2 \end{pmatrix} = \begin{pmatrix} 1 & -1 \\ -1 & 2 \end{pmatrix}.
+\]
+
+Now, compute \(A^{-1}\) and \(B^{-1}\) separately.
+
+For \(A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}\), the determinant is \(\det(A) = 1 \cdot 1 - 1 \cdot 0 = 1\). Thus,
+
+\[
+A^{-1} = \frac{1}{\det(A)} \begin{pmatrix} 1 & -1 \\ -0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix}.
+\]
+
+For \(B = \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}\), the determinant is \(\det(B) = 1 \cdot 1 - 0 \cdot 1 = 1\). Thus,
+
+\[
+B^{-1} = \frac{1}{\det(B)} \begin{pmatrix} 1 & -0 \\ -1 & 1 \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ -1 & 1 \end{pmatrix}.
+\]
+
+Now, compute \(B^{-1} A^{-1}\):
+
+\[
+B^{-1} A^{-1} = \begin{pmatrix} 1 & 0 \\ -1 & 1 \end{pmatrix} \begin{pmatrix} 1 & -1 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 \cdot 1 + 0 \cdot 0 & 1 \cdot (-1) + 0 \cdot 1 \\ -1 \cdot 1 + 1 \cdot 0 & -1 \cdot (-1) + 1 \cdot 1 \end{pmatrix} = \begin{pmatrix} 1 & -1 \\ -1 & 2 \end{pmatrix}.
+\]
+
+Since \((AB)^{-1} = \begin{pmatrix} 1 & -1 \\ -1 & 2 \end{pmatrix}\) and \(B^{-1} A^{-1} = \begin{pmatrix} 1 & -1 \\ -1 & 2 \end{pmatrix}\), it follows that \((AB)^{-1} = B^{-1} A^{-1}\)."
+8,"The adjoint (adjugate) matrix of \(A = \begin{pmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix}\) is \(\begin{pmatrix} -1 & -1 & 1 \\ -1 & 1 & -1 \\ 1 & -1 & -1 \end{pmatrix}\).
+
+Since \(\det(A) = -2 \neq 0\), the matrix \(A\) is invertible. The inverse is given by \(A^{-1} = \frac{1}{\det(A)} \cdot \text{adj}(A) = -\frac{1}{2} \begin{pmatrix} -1 & -1 & 1 \\ -1 & 1 & -1 \\ 1 & -1 & -1 \end{pmatrix} = \begin{pmatrix} \frac{1}{2} & \frac{1}{2} & -\frac{1}{2} \\ \frac{1}{2} & -\frac{1}{2} & \frac{1}{2} \\ -\frac{1}{2} & \frac{1}{2} & \frac{1}{2} \end{pmatrix}\)."
+9,"Given the matrix \( A = \begin{pmatrix} 2 & 1 & 3 \\ -1 & 2 & 0 \\ 3 & -2 & 1 \end{pmatrix} \), we need to verify that \( A \cdot \text{adj}(A) = \text{adj}(A) \cdot A = \det(A) I_3 \), where \( I_3 \) is the \( 3 \times 3 \) identity matrix.
+
+First, compute \( \det(A) \):
+
+\[
+\det(A) = 2 \cdot (2 \cdot 1 - 0 \cdot (-2)) - 1 \cdot ((-1) \cdot 1 - 0 \cdot 3) + 3 \cdot ((-1) \cdot (-2) - 2 \cdot 3) = 2 \cdot 2 - 1 \cdot (-1) + 3 \cdot (-4) = 4 + 1 - 12 = -7.
+\]
+
+Thus, \( \det(A) I_3 = -7 \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} -7 & 0 & 0 \\ 0 & -7 & 0 \\ 0 & 0 & -7 \end{pmatrix} \).
+
+Next, compute the cofactor matrix of \( A \). The cofactor \( C_{ij} = (-1)^{i+j} \det(M_{ij}) \), where \( M_{ij} \) is the \( (i,j) \)-minor.
+
+\[
+C_{11} = \det \begin{pmatrix} 2 & 0 \\ -2 & 1 \end{pmatrix} = 2, \quad
+C_{12} = -\det \begin{pmatrix} -1 & 0 \\ 3 & 1 \end{pmatrix} = -(-1) = 1, \quad
+C_{13} = \det \begin{pmatrix} -1 & 2 \\ 3 & -2 \end{pmatrix} = -4,
+\]
+
+\[
+C_{21} = -\det \begin{pmatrix} 1 & 3 \\ -2 & 1 \end{pmatrix} = -(1 + 6) = -7, \quad
+C_{22} = \det \begin{pmatrix} 2 & 3 \\ 3 & 1 \end{pmatrix} = -7, \quad
+C_{23} = -\det \begin{pmatrix} 2 & 1 \\ 3 & -2 \end{pmatrix} = -(-7) = 7,
+\]
+
+\[
+C_{31} = \det \begin{pmatrix} 1 & 3 \\ 2 & 0 \end{pmatrix} = -6, \quad
+C_{32} = -\det \begin{pmatrix} 2 & 3 \\ -1 & 0 \end{pmatrix} = -3, \quad
+C_{33} = \det \begin{pmatrix} 2 & 1 \\ -1 & 2 \end{pmatrix} = 5.
+\]
+
+The cofactor matrix is \( \begin{pmatrix} 2 & 1 & -4 \\ -7 & -7 & 7 \\ -6 & -3 & 5 \end{pmatrix} \), so
+
+\[
+\text{adj}(A) = \begin{pmatrix} 2 & -7 & -6 \\ 1 & -7 & -3 \\ -4 & 7 & 5 \end{pmatrix}.
+\]
+
+Now, compute \( A \cdot \text{adj}(A) \):
+
+\[
+A \cdot \text{adj}(A) = \begin{pmatrix} 2 & 1 & 3 \\ -1 & 2 & 0 \\ 3 & -2 & 1 \end{pmatrix} \begin{pmatrix} 2 & -7 & -6 \\ 1 & -7 & -3 \\ -4 & 7 & 5 \end{pmatrix} = \begin{pmatrix} -7 & 0 & 0 \\ 0 & -7 & 0 \\ 0 & 0 & -7 \end{pmatrix}.
+\]
+
+Next, compute \( \text{adj}(A) \cdot A \):
+
+\[
+\text{adj}(A) \cdot A = \begin{pmatrix} 2 & -7 & -6 \\ 1 & -7 & -3 \\ -4 & 7 & 5 \end{pmatrix} \begin{pmatrix} 2 & 1 & 3 \\ -1 & 2 & 0 \\ 3 & -2 & 1 \end{pmatrix} = \begin{pmatrix} -7 & 0 & 0 \\ 0 & -7 & 0 \\ 0 & 0 & -7 \end{pmatrix}.
+\]
+
+Thus, \( A \cdot \text{adj}(A) = \text{adj}(A) \cdot A = \det(A) I_3 \)."
+10,"The system of equations is:
+
+\[
+\begin{align*}
+4x_1 + x_2 - 3x_3 &= 9, \\
+3x_1 + 2x_2 - 6x_3 &= -2, \\
+x_1 - 5x_2 + 3x_3 &= 1.
+\end{align*}
+\]
+
+The coefficient matrix is:
+
+\[
+A = \begin{pmatrix}
+4 & 1 & -3 \\
+3 & 2 & -6 \\
+1 & -5 & 3
+\end{pmatrix}, \quad
+\mathbf{b} = \begin{pmatrix}
+9 \\
+-2 \\
+1
+\end{pmatrix}.
+\]
+
+Using Cramer's rule, the solution is given by \(x_i = \frac{\det(A_i)}{\det(A)}\), where \(A_i\) is the matrix obtained by replacing the \(i\)-th column of \(A\) with \(\mathbf{b}\).
+
+First, compute \(\det(A)\):
+
+\[
+\det(A) = 4 \cdot (2 \cdot 3 - (-6) \cdot (-5)) - 1 \cdot (3 \cdot 3 - (-6) \cdot 1) + (-3) \cdot (3 \cdot (-5) - 2 \cdot 1) = 4 \cdot (-24) - 1 \cdot 15 + (-3) \cdot (-17) = -96 - 15 + 51 = -60.
+\]
+
+For \(x_1\), compute \(\det(A_1)\):
+
+\[
+A_1 = \begin{pmatrix}
+9 & 1 & -3 \\
+-2 & 2 & -6 \\
+1 & -5 & 3
+\end{pmatrix}, \quad
+\det(A_1) = 9 \cdot (-24) - 1 \cdot 0 + (-3) \cdot 8 = -216 - 24 = -240, \quad
+x_1 = \frac{-240}{-60} = 4.
+\]
+
+For \(x_2\), compute \(\det(A_2)\):
+
+\[
+A_2 = \begin{pmatrix}
+4 & 9 & -3 \\
+3 & -2 & -6 \\
+1 & 1 & 3
+\end{pmatrix}, \quad
+\det(A_2) = 4 \cdot 0 - 9 \cdot 15 + (-3) \cdot 5 = -135 - 15 = -150, \quad
+x_2 = \frac{-150}{-60} = \frac{5}{2}.
+\]
+
+For \(x_3\), compute \(\det(A_3)\):
+
+\[
+A_3 = \begin{pmatrix}
+4 & 1 & 9 \\
+3 & 2 & -2 \\
+1 & -5 & 1
+\end{pmatrix}, \quad
+\det(A_3) = 4 \cdot (-8) - 1 \cdot 5 + 9 \cdot (-17) = -32 - 5 - 153 = -190, \quad
+x_3 = \frac{-190}{-60} = \frac{19}{6}.
+\]
+
+The solution is:
+
+\[
+x_1 = 4, \quad x_2 = \frac{5}{2}, \quad x_3 = \frac{19}{6}.
+\]"
+11,"The augmented matrix for the system is:
+\[
+\left[
+\begin{array}{ccc|c}
+3 & 1 & 0 & \frac{3}{2} \\
+2 & -1 & -1 & 2 \\
+4 & 3 & 1 & 0
+\end{array}
+\right]
+\]
+
+Perform row operations to achieve row-echelon form.
+
+First, eliminate the first column elements below the pivot at (1,1).  
+Compute \( \text{R}_2 \leftarrow \text{R}_2 - \frac{2}{3} \text{R}_1 \):  
+\[
+\begin{bmatrix}
+3 & 1 & 0 & \frac{3}{2} \\
+0 & -\frac{5}{3} & -1 & 1 \\
+4 & 3 & 1 & 0
+\end{bmatrix}
+\]  
+Compute \( \text{R}_3 \leftarrow \text{R}_3 - \frac{4}{3} \text{R}_1 \):  
+\[
+\left[
+\begin{array}{ccc|c}
+3 & 1 & 0 & \frac{3}{2} \\
+0 & -\frac{5}{3} & -1 & 1 \\
+0 & \frac{5}{3} & 1 & -2
+\end{array}
+\right]
+\]
+
+Next, eliminate the second column element below the pivot at (2,2).  
+Compute \( \text{R}_3 \leftarrow \text{R}_3 + \text{R}_2 \) (since the multiplier is 1):  
+\[
+\left[
+\begin{array}{ccc|c}
+3 & 1 & 0 & \frac{3}{2} \\
+0 & -\frac{5}{3} & -1 & 1 \\
+0 & 0 & 0 & -1
+\end{array}
+\right]
+\]
+
+The row-echelon form has a row \([0\ 0\ 0\ |\ -1]\), which corresponds to the equation \(0x_1 + 0x_2 + 0x_3 = -1\), or \(0 = -1\). This is a contradiction, indicating that the system is inconsistent and has no solution.
+
+\boxed{\text{The system has no solution because Gaussian elimination results in the row } \begin{bmatrix} 0 & 0 & 0 & \mid & -1 \end{bmatrix}, \text{ which gives the contradiction } 0 = -1.}"
+12,"Okay, so I need to solve this system of equations using Gaussian elimination. Let's see, the system is:
+
+Three equations:
+
+1. x₁ + x₂ + x₃ = 1
+2. 2x₁ + 3x₂ + 4x₃ = 3
+3. 4x₁ + 9x₂ + 16x₃ = 11
+
+First, I remember Gaussian elimination involves forming an augmented matrix and then using row operations to create zeros below the pivots. Let me set up the augmented matrix. 
+
+The coefficients matrix is:
+
+First row: 1, 1, 1 | 1
+
+Second row: 2, 3, 4 | 3
+
+Third row: 4, 9, 16 | 11
+
+So the augmented matrix looks like this:
+
+[1 1 1 | 1]
+
+[2 3 4 | 3]
+
+[4 9 16 | 11]
+
+I need to eliminate the x₁ terms from the second and third equations. Let's start with the second row. The pivot in the first row is 1. To eliminate the 2 in the second row, I can subtract 2 times the first row from the second row.
+
+Calculating Row2 = Row2 - 2*Row1:
+
+Row2 original: [2, 3, 4, 3]
+
+2*Row1: [2, 2, 2, 2]
+
+Subtracting: (2-2)=0, 3-2=1, 4-2=2, 3-2=1. So new Row2 is [0, 1, 2, 1]
+
+Now moving to the third row. To eliminate the 4x₁ in the third equation, I need to subtract 4 times the first row from the third row.
+
+Row3 = Row3 -4*Row1:
+
+Row3 original: [4,9,16,11]
+
+4*Row1: [4,4,4,4]
+
+Subtracting: 4-4=0, 9-4=5, 16-4=12, 11-4=7. So new Row3 is [0,5,12,7]
+
+So the updated matrix is:
+
+Row1: [1 1 1 | 1]
+
+Row2: [0 1 2 | 1]
+
+Row3: [0 5 12 |7]
+
+Next, we move to the second column. The pivot here is 1 in Row2. I need to eliminate the 5 in the third row, second column. So we use Row2 multiplied by 5 and subtract from Row3.
+
+So Row3 = Row3 -5*Row2:
+
+Row3 currently: [0,5,12,7]
+
+5*Row2: [0,5,10,5]
+
+Subtracting: 0-0=0, 5-5=0, 12-10=2, 7-5=2. So new Row3 is [0,0,2,2]
+
+Now the matrix is in upper triangular form:
+
+Row1: 1 1 1 |1
+
+Row2:0 1 2 |1
+
+Row3:0 0 2 |2
+
+Now we can perform back substitution.
+
+From Row3: 2x₃ =2 ⇒x₃=1
+
+Then substitute x₃=1 into Row2: x₂ +2*1=1 ⇒x₂=1-2= -1
+
+Then substitute x₃=1 and x₂=-1 into Row1: x₁ + (-1) +1 =1 ⇒x₁=1+1-1=1.
+
+Wait, checking the first equation: x₁ +x₂ +x₃ =1. If x₂ is -1 and x₃ is 1, then x₁ +(-1)+1 =x₁=1. Correct. 
+
+Let me check if these values satisfy all original equations.
+
+1st equation:1 +(-1)+1=1, yes.
+
+2nd:2*1 +3*(-1)+4*1=2 -3 +4=3. yes.
+
+3rd:4*1 +9*(-1)+16*1=4 -9 +16=11. Yes.
+
+Looks correct. So solution is x₁=1, x₂=-1, x₃=1.
+</think>
+
+To solve the system using Gaussian elimination, we start by forming the augmented matrix:
+
+\[
+\begin{bmatrix}
+1 & 1 & 1 & | & 1 \\
+2 & 3 & 4 & | & 3 \\
+4 & 9 & 16 & | & 11 \\
+\end{bmatrix}
+\]
+
+**Step 1: Eliminate \(x_1\) from rows 2 and 3**  
+- Subtract \(2 \times\) **Row 1** from **Row 2**:
+  \[
+  \text{Row 2} \leftarrow \text{Row 2} - 2\text{Row 1} \quad \Rightarrow \quad [0,\, 1,\, 2,\, |,\, 1]
+  \]
+- Subtract \(4 \times\) **Row 1** from **Row 3**:
+  \[
+  \text{Row 3} \leftarrow \text{Row 3} - 4\text{Row 1} \quad \Rightarrow \quad [0,\, 5,\, 12,\, |,\, 7]
+  \]
+
+Updated matrix:
+\[
+\begin{bmatrix}
+1 & 1 & 1 & | & 1 \\
+0 & 1 & 2 & | & 1 \\
+0 & 5 & 12 & | & 7 \\
+\end{bmatrix}
+\]
+
+**Step 2: Eliminate \(x_2\) from row 3**  
+- Subtract \(5 \times\) **Row 2** from **Row 3**:
+  \[
+  \text{Row 3} \leftarrow \text{Row 3} - 5\text{Row 2} \quad \Rightarrow \quad [0,\, 0,\, 2,\, |,\, 2]
+  \]
+
+Upper triangular matrix:
+\[
+\begin{bmatrix}
+1 & 1 & 1 & | & 1 \\
+0 & 1 & 2 & | & 1 \\
+0 & 0 & 2 & | & 2 \\
+\end{bmatrix}
+\]
+
+**Back substitution:**  
+1. From **Row 3**:
+   \[
+   2x_3 = 2 \quad \Rightarrow \quad x_3 = 1
+   \]
+2. From **Row 2** (\(x_3 = 1\)):
+   \[
+   x_2 + 2(1) = 1 \quad \Rightarrow \quad x_2 = -1
+   \]
+3. From **Row 1** (\(x_2 = -1,\ x_3 = 1\)):
+   \[
+   x_1 + (-1) + 1 = 1 \quad \Rightarrow \quad x_1 = 1
+   \]
+
+**Solution:**  
+\[
+x_1 = 1, \quad x_2 = -1, \quad x_3 = 1
+\]"
+13,"The linear system has a non-trivial solution when the coefficient matrix is singular, i.e., its determinant is zero. The coefficient matrix is:
+
+\[
+A = \begin{pmatrix} 2 & 2 & 3 \\ 3 & k & 5 \\ 1 & 7 & 3 \end{pmatrix}.
+\]
+
+The determinant is:
+
+\[
+\det(A) = 2(k \cdot 3 - 5 \cdot 7) - 2(3 \cdot 3 - 5 \cdot 1) + 3(3 \cdot 7 - k \cdot 1) = 3k - 15.
+\]
+
+Setting \(\det(A) = 0\):
+
+\[
+3k - 15 = 0 \implies k = 5.
+\]
+
+For \(k = 5\), the system is:
+
+\[
+\begin{align*}
+2x_1 + 2x_2 + 3x_3 &= 0, \\
+3x_1 + 5x_2 + 5x_3 &= 0, \\
+x_1 + 7x_2 + 3x_3 &= 0.
+\end{align*}
+\]
+
+Row reduction of the augmented matrix yields:
+
+\[
+\begin{pmatrix} 1 & 7 & 3 \\ 0 & 1 & \frac{1}{4} \\ 0 & 0 & 0 \end{pmatrix}.
+\]
+
+The general solution is:
+
+\[
+x_1 = -\frac{5}{4} t, \quad x_2 = -\frac{1}{4} t, \quad x_3 = t, \quad t \in \mathbb{R}.
+\]"
+14,"The rank of a matrix is the dimension of the vector space generated by its rows or columns, which can be determined by the number of non-zero rows in its row echelon form.
+
+For matrix \(A = \begin{pmatrix} 3 & 1 & -1 \\ 2 & 0 & 4 \\ 1 & -5 & 1 \end{pmatrix}\), row reduction yields:
+\[
+\begin{pmatrix} 1 & -5 & 1 \\ 0 & 10 & 2 \\ 0 & 0 & -36 \end{pmatrix}
+\]
+This has three non-zero rows, so \(\text{rank}(A) = 3\).
+
+For matrix \(B = \begin{pmatrix} 4 & 1 & 6 \\ -3 & 6 & 4 \\ 5 & 0 & 9 \end{pmatrix}\), row reduction yields a matrix with three non-zero rows, so \(\text{rank}(B) = 3\).
+
+For matrix \(C = \begin{pmatrix} 17 & 46 & 7 \\ 20 & 49 & 8 \\ 23 & 52 & 9 \end{pmatrix}\), row reduction yields:
+\[
+\begin{pmatrix} 3 & 3 & 1 \\ 0 & 29 & \frac{4}{3} \\ 0 & 0 & 0 \end{pmatrix}
+\]
+This has two non-zero rows, so \(\text{rank}(C) = 2\)."
+15,"Without pivoting
+
+1. Augmented system  
+\[
+\begin{pmatrix}
+1.001 & 1.5 &\vrule& 0\\
+2     & 3   &\vrule& 1
+\end{pmatrix}.
+\]
+
+2. Eliminate \(x_1\) from row 2:  
+\[
+m_{21}=\frac{2}{1.001},\qquad
+R_2\leftarrow R_2 - m_{21}R_1.
+\]
+Compute
+\[
+m_{21}=\frac{2}{1.001},\quad
+a'_{22}=3 - m_{21}\,1.5
+=3 - \frac{2}{1.001}\cdot1.5
+=\frac{0.003}{1.001},\quad
+b'_2=1 - m_{21}\cdot0=1.
+\]
+Thus
+\[
+x_2=\frac{b'_2}{a'_{22}}
+=\frac{1}{0.003/1.001}
+=\frac{1.001}{0.003}
+=\frac{1001}{3},
+\qquad
+x_1=\frac{0 - 1.5\,x_2}{1.001}
+=-\frac{1.5\,(1001/3)}{1.001}
+=-500.
+\]
+
+With partial pivoting
+
+1. Swap rows 1 and 2 (since \(\lvert2\rvert>\lvert1.001\rvert\))  
+\[
+\begin{pmatrix}
+2     & 3   &\vrule& 1\\
+1.001 & 1.5 &\vrule& 0
+\end{pmatrix}.
+\]
+
+2. Eliminate \(x_1\) from new row 2:
+\[
+m_{21}=\frac{1.001}{2},\qquad
+R_2\leftarrow R_2 - m_{21}R_1.
+\]
+Compute
+\[
+m_{21}=\frac{1.001}{2},\quad
+a'_{22}=1.5 - m_{21}\,3
+=1.5 - \frac{1.001}{2}\cdot3
+=-0.0015,\quad
+b'_2=0 - m_{21}\cdot1
+=-0.5005.
+\]
+Thus
+\[
+x_2=\frac{b'_2}{a'_{22}}
+=\frac{-0.5005}{-0.0015}
+=\frac{1001}{3},
+\qquad
+x_1=\frac{1 - 3\,x_2}{2}
+=-500.
+\]
+
+In both cases the exact solution is
+\[
+x_1=-500,\qquad x_2=\frac{1001}{3}\approx333.667.
+\]"
+16,"The augmented matrix for the system is:
+
+\[
+\begin{bmatrix}
+1 & 4 & 1 & | & 1 \\
+2 & 4 & 1 & | & 9 \\
+3 & 5 & -2 & | & 11
+\end{bmatrix}
+\]
+
+Perform row operations to obtain the reduced row echelon form.
+
+Subtract 2 times row 1 from row 2:
+
+\[
+\begin{bmatrix}
+1 & 4 & 1 & | & 1 \\
+0 & -4 & -1 & | & 7 \\
+3 & 5 & -2 & | & 11
+\end{bmatrix}
+\]
+
+Subtract 3 times row 1 from row 3:
+
+\[
+\begin{bmatrix}
+1 & 4 & 1 & | & 1 \\
+0 & -4 & -1 & | & 7 \\
+0 & -7 & -5 & | & 8
+\end{bmatrix}
+\]
+
+Divide row 2 by $-4$:
+
+\[
+\begin{bmatrix}
+1 & 4 & 1 & | & 1 \\
+0 & 1 & \frac{1}{4} & | & -\frac{7}{4} \\
+0 & -7 & -5 & | & 8
+\end{bmatrix}
+\]
+
+Add 7 times row 2 to row 3:
+
+\[
+\begin{bmatrix}
+1 & 4 & 1 & | & 1 \\
+0 & 1 & \frac{1}{4} & | & -\frac{7}{4} \\
+0 & 0 & -\frac{13}{4} & | & -\frac{17}{4}
+\end{bmatrix}
+\]
+
+Multiply row 3 by $-\frac{4}{13}$:
+
+\[
+\begin{bmatrix}
+1 & 4 & 1 & | & 1 \\
+0 & 1 & \frac{1}{4} & | & -\frac{7}{4} \\
+0 & 0 & 1 & | & \frac{17}{13}
+\end{bmatrix}
+\]
+
+Subtract row 3 from row 1:
+
+\[
+\begin{bmatrix}
+1 & 4 & 0 & | & -\frac{4}{13} \\
+0 & 1 & \frac{1}{4} & | & -\frac{7}{4} \\
+0 & 0 & 1 & | & \frac{17}{13}
+\end{bmatrix}
+\]
+
+Subtract $\frac{1}{4}$ times row 3 from row 2:
+
+\[
+\begin{bmatrix}
+1 & 4 & 0 & | & -\frac{4}{13} \\
+0 & 1 & 0 & | & -\frac{27}{13} \\
+0 & 0 & 1 & | & \frac{17}{13}
+\end{bmatrix}
+\]
+
+Subtract 4 times row 2 from row 1:
+
+\[
+\begin{bmatrix}
+1 & 0 & 0 & | & 8 \\
+0 & 1 & 0 & | & -\frac{27}{13} \\
+0 & 0 & 1 & | & \frac{17}{13}
+\end{bmatrix}
+\]
+
+The solution is \(x_1 = 8\), \(x_2 = -\frac{27}{13}\), \(x_3 = \frac{17}{13}\)."
+17,"To find the inverse of the matrix \(A = \begin{pmatrix} 3 & -9 & 5 \\ 0 & 5 & 1 \\ -1 & 6 & 3 \end{pmatrix}\) using the Gauss-Jordan method, augment \(A\) with the 3x3 identity matrix \(I\):
+
+\[
+\begin{pmatrix} 3 & -9 & 5 & | & 1 & 0 & 0 \\ 0 & 5 & 1 & | & 0 & 1 & 0 \\ -1 & 6 & 3 & | & 0 & 0 & 1 \end{pmatrix}
+\]
+
+Perform row operations to transform the left side into \(I\).
+
+1. Divide row 1 by 3:  
+\[
+\begin{pmatrix} 1 & -3 & \frac{5}{3} & | & \frac{1}{3} & 0 & 0 \\ 0 & 5 & 1 & | & 0 & 1 & 0 \\ -1 & 6 & 3 & | & 0 & 0 & 1 \end{pmatrix}
+\]
+
+2. Add row 1 to row 3:  
+\[
+\begin{pmatrix} 1 & -3 & \frac{5}{3} & | & \frac{1}{3} & 0 & 0 \\ 0 & 5 & 1 & | & 0 & 1 & 0 \\ 0 & 3 & \frac{14}{3} & | & \frac{1}{3} & 0 & 1 \end{pmatrix}
+\]
+
+3. Divide row 2 by 5:  
+\[
+\begin{pmatrix} 1 & -3 & \frac{5}{3} & | & \frac{1}{3} & 0 & 0 \\ 0 & 1 & \frac{1}{5} & | & 0 & \frac{1}{5} & 0 \\ 0 & 3 & \frac{14}{3} & | & \frac{1}{3} & 0 & 1 \end{pmatrix}
+\]
+
+4. Subtract 3 times row 2 from row 3:  
+\[
+\begin{pmatrix} 1 & -3 & \frac{5}{3} & | & \frac{1}{3} & 0 & 0 \\ 0 & 1 & \frac{1}{5} & | & 0 & \frac{1}{5} & 0 \\ 0 & 0 & \frac{61}{15} & | & \frac{1}{3} & -\frac{3}{5} & 1 \end{pmatrix}
+\]
+
+5. Multiply row 3 by \(\frac{15}{61}\):  
+\[
+\begin{pmatrix} 1 & -3 & \frac{5}{3} & | & \frac{1}{3} & 0 & 0 \\ 0 & 1 & \frac{1}{5} & | & 0 & \frac{1}{5} & 0 \\ 0 & 0 & 1 & | & \frac{5}{61} & -\frac{9}{61} & \frac{15}{61} \end{pmatrix}
+\]
+
+6. Subtract \(\frac{5}{3}\) times row 3 from row 1:  
+\[
+\begin{pmatrix} 1 & -3 & 0 & | & \frac{12}{61} & \frac{15}{61} & -\frac{25}{61} \\ 0 & 1 & \frac{1}{5} & | & 0 & \frac{1}{5} & 0 \\ 0 & 0 & 1 & | & \frac{5}{61} & -\frac{9}{61} & \frac{15}{61} \end{pmatrix}
+\]
+
+7. Subtract \(\frac{1}{5}\) times row 3 from row 2:  
+\[
+\begin{pmatrix} 1 & -3 & 0 & | & \frac{12}{61} & \frac{15}{61} & -\frac{25}{61} \\ 0 & 1 & 0 & | & -\frac{1}{61} & \frac{14}{61} & -\frac{3}{61} \\ 0 & 0 & 1 & | & \frac{5}{61} & -\frac{9}{61} & \frac{15}{61} \end{pmatrix}
+\]
+
+8. Add 3 times row 2 to row 1:  
+\[
+\begin{pmatrix} 1 & 0 & 0 & | & \frac{9}{61} & \frac{57}{61} & -\frac{34}{61} \\ 0 & 1 & 0 & | & -\frac{1}{61} & \frac{14}{61} & -\frac{3}{61} \\ 0 & 0 & 1 & | & \frac{5}{61} & -\frac{9}{61} & \frac{15}{61} \end{pmatrix}
+\]
+
+The inverse matrix is:  
+\[
+A^{-1} = \begin{pmatrix} \frac{9}{61} & \frac{57}{61} & -\frac{34}{61} \\ -\frac{1}{61} & \frac{14}{61} & -\frac{3}{61} \\ \frac{5}{61} & -\frac{9}{61} & \frac{15}{61} \end{pmatrix}
+\]"
+18,"The eigenvalues of the matrix \(A = \begin{pmatrix} 2 & -2 & 3 \\ 0 & 3 & -2 \\ 0 & -1 & 2 \end{pmatrix}\) are found by solving the characteristic equation \(\det(A - \lambda I) = 0\).
+
+\[
+A - \lambda I = \begin{pmatrix} 2 - \lambda & -2 & 3 \\ 0 & 3 - \lambda & -2 \\ 0 & -1 & 2 - \lambda \end{pmatrix}
+\]
+
+\[
+\det(A - \lambda I) = (2 - \lambda) \left[ (3 - \lambda)(2 - \lambda) - (-2)(-1) \right] = (2 - \lambda)(\lambda^2 - 5\lambda + 4) = 0
+\]
+
+The solutions are \(\lambda = 2\) and the roots of \(\lambda^2 - 5\lambda + 4 = 0\), which are \(\lambda = 4\) and \(\lambda = 1\).
+
+Thus, the eigenvalues are \(\lambda_1 = 4\), \(\lambda_2 = 2\), and \(\lambda_3 = 1\).
+
+The corresponding eigenvectors are found by solving \((A - \lambda I)v = 0\) for each eigenvalue.
+
+- For \(\lambda = 4\):
+  \[
+  A - 4I = \begin{pmatrix} -2 & -2 & 3 \\ 0 & -1 & -2 \\ 0 & -1 & -2 \end{pmatrix}
+  \]
+  The system yields the eigenvector \(v_1 = \begin{pmatrix} 7 \\ -4 \\ 2 \end{pmatrix}\).
+
+- For \(\lambda = 2\):
+  \[
+  A - 2I = \begin{pmatrix} 0 & -2 & 3 \\ 0 & 1 & -2 \\ 0 & -1 & 0 \end{pmatrix}
+  \]
+  The system yields the eigenvector \(v_2 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}\).
+
+- For \(\lambda = 1\):
+  \[
+  A - I = \begin{pmatrix} 1 & -2 & 3 \\ 0 & 2 & -2 \\ 0 & -1 & 1 \end{pmatrix}
+  \]
+  The system yields the eigenvector \(v_3 = \begin{pmatrix} -1 \\ 1 \\ 1 \end{pmatrix}\).
+
+The spectral radius of \(A\) is \(\rho(A) = \max\{|\lambda|\} = 4\).
+
+For \(A^2\), the eigenvalues are the squares of the eigenvalues of \(A\), so they are \(16\), \(4\), and \(1\). Thus, \(\rho(A^2) = \max\{|16|, |4|, |1|\} = 16\).
+
+Since \(16 > 4\), it follows that \(\rho(A^2) > \rho(A)\)."
+19,"The Singular Value Decomposition (SVD) of the matrix \( A = \begin{pmatrix} 3 & 0 \\ 4 & 5 \end{pmatrix} \) with rank \( r = 2 \) is given by \( A = U \Sigma V^T \), where:
+
+\[
+U = \begin{pmatrix} \dfrac{1}{\sqrt{10}} & \dfrac{3}{\sqrt{10}} \\ \dfrac{3}{\sqrt{10}} & -\dfrac{1}{\sqrt{10}} \end{pmatrix}, \quad
+\Sigma = \begin{pmatrix} 3\sqrt{5} & 0 \\ 0 & \sqrt{5} \end{pmatrix}, \quad
+V = \begin{pmatrix} \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} \\ \dfrac{1}{\sqrt{2}} & -\dfrac{1}{\sqrt{2}} \end{pmatrix}.
+\]"
+20,"To make the set \(S = \left\{ \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}, \begin{pmatrix} 0 \\ \cos(x) \\ \sin(x) \end{pmatrix}, \begin{pmatrix} y \\ z \\ 1 \end{pmatrix} \right\}\) orthogonal, the vectors must satisfy the orthogonality conditions:
+
+\[
+\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \cdot \begin{pmatrix} 0 \\ \cos(x) \\ \sin(x) \end{pmatrix} = 0,
+\]
+\[
+\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \cdot \begin{pmatrix} y \\ z \\ 1 \end{pmatrix} = 0,
+\]
+\[
+\begin{pmatrix} 0 \\ \cos(x) \\ \sin(x) \end{pmatrix} \cdot \begin{pmatrix} y \\ z \\ 1 \end{pmatrix} = 0.
+\]
+
+The first condition holds for all \(x\). The second condition simplifies to \(y = 0\).
+
+Substituting \(y = 0\) into the third condition gives:
+\[
+z \cos(x) + \sin(x) = 0.
+\]
+
+Solving for \(z\):
+\[
+z = -\frac{\sin(x)}{\cos(x)} = -\tan(x),
+\]
+provided \(\cos(x) \neq 0\).
+
+If \(\cos(x) = 0\), then \(\sin(x) = \pm 1\), and the equation becomes \(\sin(x) = 0\), which is a contradiction. Thus, \(\cos(x) \neq 0\).
+
+The possible values of \(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\) are:
+\[
+\begin{bmatrix} x \\ 0 \\ -\tan(x) \end{bmatrix},
+\]
+where \(x \in \mathbb{R}\) and \(\cos(x) \neq 0\)."
+21,"The matrix \( A \) is orthogonal if and only if the following conditions hold:
+
+\[
+x = 0, \quad y^2 + z^2 = 1, \quad \text{and} \quad y \cos \theta + z \sin \theta = 0.
+\]
+
+Solving these equations, the possible vectors \(\begin{bmatrix} x \\ y \\ z \end{bmatrix}\) are:
+
+\[
+\begin{bmatrix} 0 \\ -\sin \theta \\ \cos \theta \end{bmatrix} \quad \text{and} \quad \begin{bmatrix} 0 \\ \sin \theta \\ -\cos \theta \end{bmatrix}.
+\]"
+22,"The matrix \( A = \begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix} \) has eigenvalues \(\lambda = 0\) with algebraic multiplicity 2 and \(\lambda = 1\) with algebraic multiplicity 1. However, the geometric multiplicity of \(\lambda = 0\) is 1, since the eigenspace is spanned by \(\vec{v}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\). The eigenspace for \(\lambda = 1\) is spanned by \(\vec{v}_2 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\). Since the matrix is not symmetric and the algebraic and geometric multiplicities for \(\lambda = 0\) are unequal, \(A\) is not diagonalizable. Thus, there is no orthogonal matrix \(Q\) such that \(Q^{-1} A Q\) is diagonal.
+
+Nonetheless, to provide the requested outputs \(Q\) and \(B\), the diagonal matrix \(B\) is formed with the eigenvalues, and an orthogonal matrix \(Q\) is constructed using the normalized eigenvectors and a third vector that completes an orthonormal basis and is orthogonal to both eigenvectors. The eigenvalues are placed on the diagonal of \(B\) as \(\operatorname{diag}(0, 0, 1)\). For \(Q\), use:
+- The normalized eigenvector for \(\lambda = 0\): \(\frac{\vec{v}_1}{\|\vec{v}_1\|} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}\).
+- The normalized eigenvector for \(\lambda = 1\): \(\frac{\vec{v}_2}{\|\vec{v}_2\|} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}\).
+- A third vector orthogonal to both: \(\vec{v}_3 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}\) (normalized as is).
+
+Thus, \(Q\) is an orthogonal matrix formed with these vectors as columns. To ensure \(Q\) is orthogonal and has columns corresponding to the eigenvalues in \(B\), assign:
+- Column 1: eigenvector for the first 0 in \(B\).
+- Column 2: third vector (not an eigenvector).
+- Column 3: eigenvector for \(\lambda = 1\).
+
+The resulting matrices are:
+\[
+B = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}, \quad Q = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix}.
+\]
+Note that with this \(Q\) and \(B\), \(Q^{-1} A Q \neq B\) due to the non-diagonalizability of \(A\).
+
+\boxed{B = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix}} \quad \boxed{Q = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}}"
+23,"The matrix \( A = \begin{bmatrix} 2 & 4 & 6 \\ 0 & 2 & 2 \\ 0 & 0 & 4 \end{bmatrix} \) has eigenvalues determined by solving \( \det(A - \lambda I) = 0 \).
+
+\[
+A - \lambda I = \begin{bmatrix} 2 - \lambda & 4 & 6 \\ 0 & 2 - \lambda & 2 \\ 0 & 0 & 4 - \lambda \end{bmatrix}
+\]
+
+Since \( A - \lambda I \) is upper triangular, \( \det(A - \lambda I) = (2 - \lambda)^2 (4 - \lambda) = 0 \).
+
+Thus, the eigenvalues are \( \lambda = 2 \) (algebraic multiplicity 2) and \( \lambda = 4 \) (algebraic multiplicity 1).
+
+For \( \lambda = 4 \), solve \( (A - 4I)v = 0 \):
+
+\[
+A - 4I = \begin{bmatrix} -2 & 4 & 6 \\ 0 & -2 & 2 \\ 0 & 0 & 0 \end{bmatrix}
+\]
+
+Row reduction yields the eigenspace basis vector \( v_1 = \begin{bmatrix} 5 \\ 1 \\ 1 \end{bmatrix} \).
+
+For \( \lambda = 2 \), solve \( (A - 2I)v = 0 \):
+
+\[
+A - 2I = \begin{bmatrix} 0 & 4 & 6 \\ 0 & 0 & 2 \\ 0 & 0 & 2 \end{bmatrix}
+\]
+
+Row reduction yields the eigenspace basis vector \( v_2 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \).
+
+The eigenvalue \( \lambda = 2 \) has geometric multiplicity 1, which is less than its algebraic multiplicity 2. Therefore, \( A \) is not diagonalizable."
+24,"The characteristic polynomial of \(A\) is \(\det(\lambda I - A) = \lambda^3 - 2\lambda^2 - \lambda + 2\).
+
+The eigenvalues are \(\lambda_1 = 2\), \(\lambda_2 = 1\), and \(\lambda_3 = -1\).
+
+The basic eigenvectors are:
+
+- For \(\lambda_1 = 2\): \(\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}\)
+- For \(\lambda_2 = 1\): \(\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}\)
+- For \(\lambda_3 = -1\): \(\begin{bmatrix} 0 \\ 1 \\ 3 \end{bmatrix}\)"
+25,"To find an orthogonal matrix \( P \) such that \( P^{-1} A P \) is diagonal for the matrix
+\[
+A = \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & -2 \\ -1 & 2 & 5 \end{bmatrix},
+\]
+the eigenvalues and eigenvectors must be determined, and the eigenvectors orthonormalized to form \( P \).
+
+The eigenvalues of \( A \) are \( \lambda_1 = 1 \), \( \lambda_2 = 2 \), and \( \lambda_3 = 4 \).
+
+The corresponding eigenvectors are:
+- For \( \lambda_1 = 1 \): \( v_1 = \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} \),
+- For \( \lambda_2 = 2 \): \( v_2 = \begin{bmatrix} -1 \\ -2 \\ 1 \end{bmatrix} \),
+- For \( \lambda_3 = 4 \): \( v_3 = \begin{bmatrix} -1 \\ -2 \\ 3 \end{bmatrix} \).
+
+Applying the Gram-Schmidt process to obtain an orthonormal basis:
+- Let \( u_1 = v_1 = \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} \),
+- \( u_2 = v_2 - \frac{v_2 \cdot u_1}{u_1 \cdot u_1} u_1 = \begin{bmatrix} \frac{3}{5} \\ -\frac{6}{5} \\ 1 \end{bmatrix} \),
+- \( u_3 = v_3 - \frac{v_3 \cdot u_1}{u_1 \cdot u_1} u_1 - \frac{v_3 \cdot u_2}{u_2 \cdot u_2} u_2 = \begin{bmatrix} -\frac{3}{7} \\ \frac{6}{7} \\ \frac{9}{7} \end{bmatrix} \).
+
+Normalize these vectors:
+- \( p_1 = \frac{u_1}{\|u_1\|_2} = \frac{1}{\sqrt{5}} \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} \),
+- \( p_2 = \frac{u_2}{\|u_2\|_2} = \begin{bmatrix} \frac{3 \sqrt{5}}{5 \sqrt{14}} \\ \frac{-6 \sqrt{5}}{5 \sqrt{14}} \\ \frac{\sqrt{5}}{\sqrt{14}} \end{bmatrix} \),
+- \( p_3 = \frac{u_3}{\|u_3\|_2} = \begin{bmatrix} -\frac{1}{\sqrt{14}} \\ \frac{2}{\sqrt{14}} \\ \frac{3}{\sqrt{14}} \end{bmatrix} \).
+
+Thus, the orthogonal matrix is
+\[
+P = \begin{bmatrix}
+\frac{2}{\sqrt{5}} & \frac{3 \sqrt{5}}{5 \sqrt{14}} & -\frac{1}{\sqrt{14}} \\
+\frac{1}{\sqrt{5}} & \frac{-6 \sqrt{5}}{5 \sqrt{14}} & \frac{2}{\sqrt{14}} \\
+0 & \frac{\sqrt{5}}{\sqrt{14}} & \frac{3}{\sqrt{14}}
+\end{bmatrix}.
+\]
+
+The matrix \( P^{-1} A P \) is the diaginal matrix with eigenvalues on the diagonal:
+\[
+P^{-1} A P = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 4 \end{bmatrix}.
+\]"
+26,"The symmetric matrix \( A = \begin{bmatrix} 8 & -2 & 2 \\ 2 & 5 & 4 \\ 2 & 4 & 5 \end{bmatrix} \) has eigenvalues and corresponding eigenvectors as follows.
+
+The eigenvalues are \( \lambda_1 = 1 \), \( \lambda_2 = 8 \), and \( \lambda_3 = 9 \).
+
+The eigenvectors are:
+- For \( \lambda_1 = 1 \): \( \begin{bmatrix} -2 \\ -3 \\ 4 \end{bmatrix} \)
+- For \( \lambda_2 = 8 \): \( \begin{bmatrix} -1 \\ 2 \\ 2 \end{bmatrix} \)
+- For \( \lambda_3 = 9 \): \( \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} \)
+
+Normalize these eigenvectors to obtain an orthogonal matrix \( P \):
+- Normalized eigenvector for \( \lambda_1 = 1 \): \( \frac{1}{\sqrt{29}} \begin{bmatrix} -2 \\ -3 \\ 4 \end{bmatrix} \)
+- Normalized eigenvector for \( \lambda_2 = 8 \): \( \frac{1}{3} \begin{bmatrix} -1 \\ 2 \\ 2 \end{bmatrix} \)
+- Normalized eigenvector for \( \lambda_3 = 9 \): \( \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} \)
+
+The orthogonal matrix \( P \) is formed with these normalized eigenvectors as columns:
+\[
+P = \begin{bmatrix}
+-\frac{2}{\sqrt{29}} & -\frac{1}{3} & 0 \\
+-\frac{3}{\sqrt{29}} & \frac{2}{3} & \frac{1}{\sqrt{2}} \\
+\frac{4}{\sqrt{29}} & \frac{2}{3} & \frac{1}{\sqrt{2}}
+\end{bmatrix}
+\]
+
+The diagonal matrix \( D \) of eigenvalues is:
+\[
+D = \begin{bmatrix}
+1 & 0 & 0 \\
+0 & 8 & 0 \\
+0 & 0 & 9
+\end{bmatrix}
+\]
+
+Thus, \( A \) is orthogonally diagonalized as:
+\[
+A = P D P^T
+\]"
+27,"To diagonalize the matrix \(A = \begin{bmatrix} -1 & 2 & 2 \\ 2 & -1 & 2 \\ 2 & 2 & -1 \end{bmatrix}\), first compute its eigenvalues and eigenvectors. Since \(A\) is symmetric, it is diagonalizable, and an orthogonal basis of eigenvectors exists.
+
+The eigenvalues are found by solving \(\det(A - \lambda I) = 0\), yielding \(\lambda = 3\) (multiplicity 1) and \(\lambda = -3\) (multiplicity 2).
+
+The corresponding eigenvectors are:
+
+- For \(\lambda = 3\): \(\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}\)
+
+- For \(\lambda = -3\): An orthogonal basis for the eigenspace is \(\begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}\) and \(\begin{bmatrix} -1 \\ -1 \\ 2 \end{bmatrix}\).
+
+Normalize these eigenvectors to form an orthogonal matrix \(P\):
+
+\[
+P = \begin{bmatrix} \frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}} \\ \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}} \\ \frac{1}{\sqrt{3}} & 0 & \frac{2}{\sqrt{6}} \end{bmatrix}
+\]
+
+The diagonal matrix is \(D = \begin{bmatrix} 3 & 0 & 0 \\ 0 & -3 & 0 \\ 0 & 0 & -3 \end{bmatrix}\).
+
+Thus, \(A = P D P^T\)."
+28,"The given linear system is:
+
+\[
+\begin{align*}
+4x_1 + x_2 - x_3 + x_4 &= -2, \\
+x_1 + 4x_2 - x_3 - x_4 &= -1, \\
+-x_1 - x_2 + 5x_3 + x_4 &= 0, \\
+x_1 - x_2 + x_3 + 3x_4 &= 1.
+\end{align*}
+\]
+
+The matrix form is \(A\mathbf{x} = b\), where
+
+\[
+A = \begin{pmatrix}
+4 & 1 & -1 & 1 \\
+1 & 4 & -1 & -1 \\
+-1 & -1 & 5 & 1 \\
+1 & -1 & 1 & 3
+\end{pmatrix}, \quad
+b = \begin{pmatrix}
+-2 \\
+-1 \\
+0 \\
+1
+\end{pmatrix}.
+\]
+
+Starting with the initial guess \(\mathbf{x}^{(0)} = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 0 \end{pmatrix}\), the Jacobi iterations are computed as follows.
+
+The first iteration yields:
+
+\[
+\mathbf{x}^{(1)} = \begin{pmatrix}
+-\frac{1}{2} \\
+-\frac{1}{4} \\
+0 \\
+\frac{1}{3}
+\end{pmatrix}.
+\]
+
+The second iteration, using \(\mathbf{x}^{(1)}\), yields:
+
+\[
+\mathbf{x}^{(2)} = \begin{pmatrix}
+-\frac{25}{48} \\
+-\frac{1}{24} \\
+-\frac{13}{60} \\
+\frac{5}{12}
+\end{pmatrix}.
+\]"
+29,"The system of equations is given by:
+
+\[
+\begin{pmatrix}
+4 & 1 & -1 & 1 \\
+1 & 4 & -1 & -1 \\
+-1 & -1 & 5 & 1 \\
+1 & -1 & 1 & 3
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{pmatrix}
+=
+\begin{pmatrix}
+-2 \\
+-1 \\
+0 \\
+1
+\end{pmatrix}
+\]
+
+Starting with the initial guess \(\mathbf{x}^{(0)} = \begin{pmatrix} 0 \\ 0 \\ 0 \\ 0 \end{pmatrix}\).
+
+**First iteration (\(\mathbf{x}^{(1)}\)):**
+
+\[
+x_1^{(1)} = \frac{1}{4} \left( -2 - (1 \cdot 0) - (-1 \cdot 0) - (1 \cdot 0) \right) = -\frac{1}{2}
+\]
+
+\[
+x_2^{(1)} = \frac{1}{4} \left( -1 - (1 \cdot -\frac{1}{2}) - (-1 \cdot 0) - (-1 \cdot 0) \right) = -\frac{1}{8}
+\]
+
+\[
+x_3^{(1)} = \frac{1}{5} \left( 0 - (-1 \cdot -\frac{1}{2}) - (-1 \cdot -\frac{1}{8}) - (1 \cdot 0) \right) = -\frac{1}{8}
+\]
+
+\[
+x_4^{(1)} = \frac{1}{3} \left( 1 - (1 \cdot -\frac{1}{2}) - (-1 \cdot -\frac{1}{8}) - (1 \cdot -\frac{1}{8}) \right) = \frac{1}{2}
+\]
+
+Thus, \(\mathbf{x}^{(1)} = \begin{pmatrix} -\frac{1}{2} \\ -\frac{1}{8} \\ -\frac{1}{8} \\ \frac{1}{2} \end{pmatrix}\).
+
+**Second iteration (\(\mathbf{x}^{(2)}\)):**
+
+\[
+x_1^{(2)} = \frac{1}{4} \left( -2 - (1 \cdot -\frac{1}{8}) - (-1 \cdot -\frac{1}{8}) - (1 \cdot \frac{1}{2}) \right) = -\frac{5}{8}
+\]
+
+\[
+x_2^{(2)} = \frac{1}{4} \left( -1 - (1 \cdot -\frac{5}{8}) - (-1 \cdot -\frac{1}{8}) - (-1 \cdot \frac{1}{2}) \right) = 0
+\]
+
+\[
+x_3^{(2)} = \frac{1}{5} \left( 0 - (-1 \cdot -\frac{5}{8}) - (-1 \cdot 0) - (1 \cdot \frac{1}{2}) \right) = -\frac{9}{40}
+\]
+
+\[
+x_4^{(2)} = \frac{1}{3} \left( 1 - (1 \cdot -\frac{5}{8}) - (-1 \cdot 0) - (1 \cdot -\frac{9}{40}) \right) = \frac{37}{60}
+\]
+
+Thus, \(\mathbf{x}^{(2)} = \begin{pmatrix} -\frac{5}{8} \\ 0 \\ -\frac{9}{40} \\ \frac{37}{60} \end{pmatrix}\)."
+30,"The matrix \( A = \begin{bmatrix} 1 & 2 & 4 & 3 \\ 3 & 5 & 12 & 9 \\ 2 & 4 & 8 & 6 \end{bmatrix} \) has rank 2. One generalized inverse of \( A \) is the matrix \( G \), given by:
+
+\[
+G = \begin{bmatrix} -\dfrac{5}{26} & 3 & 0 \\ \dfrac{1}{13} & -1 & 0 \\ -\dfrac{10}{13} &\dfrac{4}{13} & 0 \\ -\dfrac{15}{26} &\dfrac{3}{13} & 0 \end{bmatrix}
+\]
+
+This satisfies \( A G A = A \)."
+31,"The Moore-Penrose pseudoinverse of the matrix \( A = \begin{bmatrix} 1 & 0 & 2 \\ 0 & -1 & 1 \\ 1 & 2 & 0 \end{bmatrix} \) is computed using the singular value decomposition. After performing the necessary calculations, the pseudoinverse is:
+
+\[
+A^+ = \begin{bmatrix}
+\frac{3}{10} & \frac{2}{10} & -\frac{1}{10} \\
+\frac{2}{10} & -\frac{1}{10} & \frac{3}{10} \\
+-\frac{1}{10} & \frac{3}{10} & \frac{2}{10}
+\end{bmatrix}
+\]"
+32,"The eigenvalues of the matrix \(A = \begin{pmatrix} 4 & -5 & 7 \\ 1 & -4 & 9 \\ -4 & 0 & 5 \end{pmatrix}\) are found by solving the characteristic equation \(\det(A - \lambda I) = 0\).
+
+The characteristic polynomial is \(\lambda^3 - 5\lambda^2 + 17\lambda - 13 = 0\).
+
+The eigenvalues are:
+- \(\lambda_1 = 1\)
+- \(\lambda_2 = 2 + 3i\)
+- \(\lambda_3 = 2 - 3i\)
+
+The corresponding eigenvectors are:
+
+- For \(\lambda_1 = 1\):
+  \[
+  \mathbf{v}_1 = \begin{pmatrix} 1 \\ 2 \\ 1 \end{pmatrix}
+  \]
+
+- For \(\lambda_2 = 2 + 3i\):
+  \[
+  \mathbf{v}_2 = \begin{pmatrix} 3 - 3i \\ 5 - 3i \\ 4 \end{pmatrix}
+  \]
+
+- For \(\lambda_3 = 2 - 3i\):
+  \[
+  \mathbf{v}_3 = \begin{pmatrix} 3 + 3i \\ 5 + 3i \\ 4 \end{pmatrix}
+  \]"
+33,"The QR decomposition of the matrix \(A = \begin{pmatrix} 12 & -51 & 4 \\ 6 & 167 & -68 \\ -4 & 24 & -41 \end{pmatrix}\) is given by \(A = QR\), where \(Q\) is an orthogonal matrix and \(R\) is an upper triangular matrix.
+
+\[
+Q = \begin{pmatrix} \frac{6}{7} & -\frac{69}{175} & -\frac{58}{175} \\ \frac{3}{7} & \frac{158}{175} & \frac{6}{175} \\ -\frac{2}{7} & \frac{6}{35} & -\frac{33}{35} \end{pmatrix}, \quad R = \begin{pmatrix} 14 & 21 & -14 \\ 0 & 175 & -70 \\ 0 & 0 & 35 \end{pmatrix}
+\]"
+34,"The given matrix \( A = \begin{pmatrix} 5 & 1 & 0 \\ 1 & 6 & 3 \\ 0 & 3 & 7 \end{pmatrix} \) is symmetric. To reduce it to tridiagonal form using the Householder method, the first step is applied to the subcolumn below the diagonal in the first column. This subcolumn is \( \begin{pmatrix} a_{21} \\ a_{31} \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \).
+
+The Householder vector is computed as follows:
+- The norm of the subcolumn is \( \|\begin{pmatrix} 1 \\ 0 \end{pmatrix}\|_2 = 1 \).
+- The sign is chosen to avoid cancellation: \( \sigma = -\text{sign}(a_{21}) = -1 \).
+- The target vector is \( \sigma \|\mathbf{x}\|_2 \mathbf{e}_1 = (-1)(1)\begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} -1 \\ 0 \end{pmatrix} \).
+- The difference vector is \( \mathbf{v} = \mathbf{x} - \text{target} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} - \begin{pmatrix} -1 \\ 0 \end{pmatrix} = \begin{pmatrix} 2 \\ 0 \end{pmatrix} \).
+
+The Householder matrix for the subblock is:
+\[
+H_{\text{sub}} = I - 2 \frac{\mathbf{v} \mathbf{v}^T}{\mathbf{v}^T \mathbf{v}} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} - 2 \frac{\begin{pmatrix} 4 & 0 \\ 0 & 0 \end{pmatrix}}{4} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} - \begin{pmatrix} 2 & 0 \\ 0 & 0 \end{pmatrix} = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}.
+\]
+
+Thus, the full transformation matrix is:
+\[
+P_1 = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{pmatrix}.
+\]
+
+The similar tridiagonal matrix is computed as \( A_1 = P_1 A P_1^T \):
+\[
+A_1 = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 5 & 1 & 0 \\ 1 & 6 & 3 \\ 0 & 3 & 7 \end{pmatrix} \begin{pmatrix} 1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 5 & -1 & 0 \\ -1 & 6 & -3 \\ 0 & -3 & 7 \end{pmatrix}.
+\]
+
+The resulting matrix \( A_1 \) is symmetric and tridiagonal, and similar to the original matrix \( A \).
+
+\[
+\boxed{ \begin{pmatrix} 5 & -1 & 0 \\ -1 & 6 & -3 \\ 0 & -3 & 7 \end{pmatrix} }
+\]"
+35,"To tridiagonalize the given symmetric matrix \( A \):
+
+\[
+A = \begin{pmatrix}
+4 & 1 & -2 & 2 \\
+1 & 2 & 0 & 1 \\
+-2 & 0 & 3 & -2 \\
+2 & 1 & -2 & -1
+\end{pmatrix},
+\]
+
+using Householder reflections, apply two Householder transformations for this 4x4 matrix.
+
+After the first Householder reflection, the matrix becomes:
+
+\[
+\begin{pmatrix}
+4 & 1 & -2 & 2 \\
+-3 & -\frac{4}{3} & 4 & -1 \\
+0 & \frac{5}{3} & 1 & -1 \\
+0 & -\frac{2}{3} & 0 & -2
+\end{pmatrix}.
+\]
+
+After the second Householder reflection on the submatrix (rows and columns 2 to 4), the resulting tridiagonal matrix \( A_2 \) is:
+
+\[
+A_2 = \begin{pmatrix}
+4 & -3 & 0 & 0 \\
+-3 & \frac{34}{9} & \frac{7}{9} & 0 \\
+0 & \frac{7}{9} & \frac{ ë13}{9} & -\ Nou\frac{10}{9} \\
+0 & 0 & -\frac{10}{9} & -\frac{8}{9}
+\end{pmatrix}.
+\]"
+36,"To transform the matrix \( A \) into upper Hessenberg form, a Householder reflection is applied to zero out the element at position (3,1), which is \(-4\). For a Householder reflection, the transformation is designed for the subvector of the first column below the first element, specifically the vector \(\begin{pmatrix} a_{21} \\ a_{31} \end{pmatrix} = \begin{pmatrix} 6 \\ -4 \end{pmatrix}\).
+
+The Householder vector \(\mathbf{v}\) is chosen such that the reflection zeros out the last component of this subvector. The unnormalized vector \(\mathbf{v}\) used to define the Householder reflection is computed as follows:
+
+- The norm of the subvector \(\begin{pmatrix} 6 \\ -4 \end{pmatrix}\) is \(\| \begin{pmatrix} 6 \\ -4 \end{pmatrix} \|_2 = \sqrt{6^2 + (-4)^2} = \sqrt{52} = 2\sqrt{13}\).
+- Since the first component is positive, the sign is chosen as negative for numerical stability, giving \(\sigma = -2\sqrt{13}\).
+- The vector \(\mathbf{v}\) for the full reflection is embedded in \(\mathbb{R}^3\) with the first component set to 0, resulting in \(\mathbf{v} = \begin{pmatrix} 0 \\ 6 - (-2\sqrt{13}) \\ -4 \end{pmatrix} = \begin{pmatrix} 0 \\ 6 + 2\sqrt{13} \\ -4 \end{pmatrix}\).
+- Simplifying by factoring out a 2, \(\mathbf{v} = 2 \begin{pmatrix} 0 \\ 3 + \sqrt{13} \\ -2 \end{pmatrix}\). Since scaling does not affect the reflection, the vector can be taken as \(\begin{pmatrix} 0 \\ 3 + \sqrt{13} \\ -2 \end{pmatrix}\).
+
+Thus, the Householder vector is:
+\[
+\mathbf{v} = \begin{pmatrix} 0 \\ 3 + \sqrt{13} \\ -2 \end{pmatrix}.
+\]
+
+The corresponding Householder matrix is given by \( H = I - 2 \frac{\mathbf{v} \mathbf{v}^T}{\mathbf{v}^T \mathbf{v}} \), where \(\mathbf{v}^T \mathbf{v} = 0^2 + (3 + \sqrt{13})^2 + (-2)^2 = 9 + 6\sqrt{13} + 13 + 4 = 26 + 6\sqrt{13}\). When applied to the left of \(A\), this transformation zeros the (3,1) element, resulting in an upper Hessenberg matrix.
+
+\boxed{\mathbf{v} = \begin{pmatrix} 0 \\ 3 + \sqrt{13} \\ -2 \end{pmatrix}}"
+37,"To perform bidiagonal reduction on the matrix \(A = \begin{pmatrix} 4 & 4 & 3 \\ 3 & 6 & 1 \\ 0 & 1 & 7 \end{pmatrix}\) using Householder transformations, follow the steps below.
+
+After applying the sequence of Householder reflections:
+
+- First left Householder transformation zeros out elements below the first pivot in the first column.
+- First right Householder transformation zeros out elements in the first row beyond the superdiagonal.
+- Second left Householder transformation zeros out the element below the second pivot in the second column.
+
+The resulting bidiagonal matrix is:
+
+\[
+B = \begin{pmatrix} 4 & -5 & 0 \\ -3 & 5.4 & 2.8 \\ 0 & 5 & -5 \end{pmatrix}
+\]
+
+This matrix \(B\) is upper bidiagonal, with non-zero elements only on the main diagonal and the superdiagonal."
+38,"To perform the tridiagonal reduction of the matrix \(A = \begin{pmatrix} 5 & 4 & 3 \\ 4 & 6 & 1 \\ 3 & 1 & 7 \end{pmatrix}\) using Householder transformations, apply the process as follows.
+
+For the first column, consider the subvector \(x_1 = \begin{pmatrix} 4 \\ 3 \end{pmatrix}\). Compute \(\|x_1\|_2 = \sqrt{4^2 + 3^2} = 5\). Since the first element \(4 > 0\), set \(\sigma = 5\).
+
+Form \(w = x_1 + \sigma e_1 = \begin{pmatrix} 4 \\ 3 \end{pmatrix} + 5 \begin{pmatrix} 1 \\ 0 \end{pmatrix} = \begin{pmatrix} 9 \\ 3 \end{pmatrix}\).
+
+Normalize to get the Householder vector: \(\|w\|_2 = \sqrt{9^2 + 3^2} = \sqrt{90} = 3\sqrt{10}\), so \(v = \frac{1}{\|w\|_2} w = \begin{pmatrix} \frac{3}{\sqrt{10}} \\ \frac{1}{\sqrt{10}} \end{pmatrix}\).
+
+The 2×2 Householder matrix is \(P = I_2 - 2 v v^T = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} - 2 \begin{pmatrix} \frac{9}{10} & \frac{3}{10} \\ \frac{3}{10} & \frac{1}{10} \end{pmatrix} = \begin{pmatrix} -\frac{4}{5} & -\frac{3}{5} \\ -\frac{3}{5} & \frac{4}{5} \end{pmatrix}\).
+
+The full 3×3 Householder matrix is \(H_1 = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -\frac{4}{5} & -\frac{3}{5} \\ 0 & -\frac{3}{5} & \frac{4}{5} \end{pmatrix}\).
+
+Compute \(T = H_1 A H_1\):
+
+First, \(H_1 A = \begin{pmatrix} 5 & 4 & 3 \\ -5 & -\frac{27}{5} & -5 \\ 0 & -\frac{14}{5} & 5 \end{pmatrix}\).
+
+Then, \(T = (H_1 A) H_1 = \begin{pmatrix} 5 & -5 & 0 \\ -5 & \frac{183}{25} & -\frac{19}{25} \\ 0 & -\frac{19}{25} & \frac{142}{25} \end{pmatrix}\).
+
+The resulting tridiagonal matrix is:
+
+\[
+\begin{pmatrix}
+5 & -5 & 0 \\
+-5 & \dfrac{183}{25} & -\dfrac{19}{25} \\
+0 & -\dfrac{19}{25} & \dfrac{142}{25}
+\end{pmatrix}
+\]"
+39,"The singular value decomposition of \( A = \begin{bmatrix} 1 & 0 & 1 \\ -1 & 1 & 0 \end{bmatrix} \) is \( A = U \Sigma V^T \), where
+
+\[
+U = \begin{bmatrix} \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} \\ -\dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} \end{bmatrix}, \quad
+\Sigma = \begin{bmatrix} \sqrt{3} & 0 & 0 \\ 0 & 1 & 0 \end{bmatrix}, \quad
+V = \begin{bmatrix} \dfrac{2}{\sqrt{6}} & 0 & -\dfrac{1}{\sqrt{3}} \\ -\dfrac{1}{\sqrt{6}} & \dfrac{1}{\sqrt{2}} & -\dfrac{1}{\sqrt{3}} \\ \dfrac{1}{\sqrt{6}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{3}} \end{bmatrix}.
+\]"
+40,"<think>Okay, let's try to find the pseudoinverse of matrix A given here. The matrix A is a 3x2 matrix with entries [1 0; 0 0; 0 0]. So, the first step is to recall what a pseudoinverse is. The pseudoinverse, or Moore-Penrose inverse, of a matrix A is a matrix A+ that generalizes the inverse matrix for cases where A might not be invertible, like when it's not square or doesn't have full rank.
+
+Since A is a 3x2 matrix, its pseudoinverse should be a 2x3 matrix. The formula for the pseudoinverse can vary depending on the properties of A. If A has full column rank, then A+ can be computed as (A^T A)^{-1} A^T. Let's check if A has full column rank. The columns of A are [1, 0, 0]^T and [0, 0, 0]^T. The second column is all zeros, so the rank of A is 1, which is less than the number of columns (2). That means A doesn't have full column rank, and we can't use the simple formula (A^T A)^{-1} A^T because A^T A would be singular here.
+
+So, in this case, we need another approach. Since the matrix A is sparse and has a lot of zeros, maybe we can look at the structure. Let me compute A^T first. Transposing A, A^T would be a 2x3 matrix:
+
+A^T = [1 0 0;
+        0 0 0]
+
+Then, A^T A would be a 2x2 matrix:
+
+A^T A = [1*1 + 0*0 + 0*0, 1*0 + 0*0 + 0*0;
+         0*1 + 0*0 + 0*0, 0*0 + 0*0 + 0*0]
+       = [1 0;
+          0 0]
+
+Wait, that's a diagonal matrix with entries 1 and 0. The product A^T A is [[1,0],[0,0]]. Now, to compute the pseudoinverse when A^T A is singular, we need to use the singular value decomposition (SVD), perhaps.
+
+The SVD of A can be computed as follows. The matrix A has rank 1, so there should be one non-zero singular value. Let's find the singular values. The singular values are the square roots of the eigenvalues of A^T A. A^T A is [[1,0],[0,0]], so its eigenvalues are 1 and 0. Therefore, the singular values of A are sqrt(1)=1 and sqrt(0)=0.
+
+The SVD of A is given by U Σ V^T, where U and V are orthogonal matrices and Σ is the diagonal matrix with the singular values. Since A has rank 1, the first column of U corresponds to the left singular vector for σ=1, and the other columns are orthogonal to that. Similarly for V.
+
+Let's compute the SVD. The right singular vectors (columns of V) are the eigenvectors of A^T A. For eigenvalue 1: solve (A^T A - I)v=0. But A^T A - I = [[0,0],[0,-1]], so the eigenvector is [1;0]. For eigenvalue 0: solve (A^T A)v=0. Which gives v_1=0 and v_2 can be anything. So, choosing V as identity matrix with columns [1,0] and [0,1]. But we may have to orthonormalize. Wait, V is orthogonal, so columns are orthonormal. Since A^T A is diagonal, the eigenvectors are already orthogonal. Therefore, V can be the identity matrix.
+
+The left singular vectors (columns of U) are the eigenvectors of A A^T. Let's compute A A^T:
+
+A A^T = [1*1 + 0*0, 1*0 + 0*0, 1*0 + 0*0;
+         0*1 + 0*0, 0*0 + 0*0, 0*0 + 0*0;
+         0*1 + 0*0, 0*0 + 0*0, 0*0 + 0*0]
+       = [1 0 0;
+          0 0 0;
+          0 0 0]
+
+So, A A^T is a diagonal matrix with entries 1,0,0. The eigenvalues are 1,0,0. The eigenvectors for eigenvalue 1: [1;0;0], and for 0: any vector orthogonal to that. So, the left singular vectors (columns of U) would be standard basis vectors. Thus, U can be the identity matrix of size 3x3.
+
+So, the SVD of A is U Σ V^T where U is 3x3 identity matrix, Σ is 3x2 matrix with first entry 1 and the rest zeros:
+
+Σ = [1 0;
+     0 0;
+     0 0]
+
+And V is 2x2 identity matrix. Therefore, the SVD is A = U Σ V^T. So, the pseudoinverse A+ can be computed as V Σ+ U^T, where Σ+ is the 2x3 matrix with 1/σ_1 in the (1,1) position and zeros elsewhere. Since σ_1=1, then Σ+ is [1 0 0; 0 0 0].
+
+Multiplying this with V and U^T (which are identity matrices here), A+ would be the same as Σ+ U^T V^T. Wait, maybe better to do it step by step.
+
+Σ^+ is the transpose of Σ but each non-zero singular value is replaced by its reciprocal. So, Σ is 3x2:
+
+Σ = diag(1, 0) extended with zeros in the third row. Then Σ+ is 2x3:
+
+Σ+ = diag(1, 0) followed by zeros in the third column. So,
+
+Σ+ = [[1, 0, 0],
+       [0, 0, 0]]
+
+Then, A+ = V Σ+ U^T. Since U and V are identity matrices here, this simplifies to A+ = Σ+. Wait, but Σ+ is 2x3, and V is 2x2, U is 3x3. So V is 2x2 identity matrix, Σ+ is 2x3, and U^T is 3x3 identity. So, when you multiply V (identity) with Σ+, you get Σ+, then multiplied by U^T (identity), so A+ is Σ+. So, A+ should be the 2x3 matrix [[1,0,0],[0,0,0]].
+
+But let me check the dimensions. Original A is 3x2, so A+ should be 2x3. The result we obtained is 2x3, which matches. However, let's verify if this is correct by checking the Moore-Penrose conditions. For example, A A+ A should equal A. Let's compute A A+:
+
+A is 3x2, A+ is 2x3. A A+ = [1 0;0 0;0 0] multiplied by [1 0 0;0 0 0] gives:
+
+First row first column: 1*1 + 0*0 =1, the rest of first row: 1*0 +0*0=0, etc. So:
+
+A A+ = [1 0 0;
+        0 0 0;
+        0 0 0]
+
+Then A A+ A is [1 0 0;0 0 0;0 0 0] multiplied by [1 0;0 0;0 0] which gives:
+
+First row first column: 1*1 +0*0 +0*0 =1, rest of first row: 0 etc. So,
+
+A A+ A = [1 0;0 0;0 0] which is indeed equal to A. Similarly, check A+ A:
+
+A+ is 2x3, A is 3x2. So A+ A = [1 0 0;0 0 0] multiplied by [1 0;0 0;0 0] gives:
+
+First element:1*1 +0*0 +0*0 =1. The rest becomes 0, so A+ A = [1 0;0 0]. Which should be Hermitian. Then check the other conditions like (A+ A)^2 = A+ A. [1 0;0 0] squared is itself. Same for A A+ squared. So yes, that satisfies the conditions. Thus, the pseudoinverse A+ is indeed the matrix [[1,0,0],[0,0,0]]. So written in LaTeX, it's \begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}.
+</think>
+
+To find the Moore-Penrose pseudoinverse \( A^+ \) of the matrix \( A = \begin{bmatrix} 1 & 0 \\ 0 & 0 \\ 0 & 0 \end{bmatrix} \), we analyze its structure and compute via singular value decomposition (SVD).  
+
+1. **Matrix Analysis**:  
+   - \( A^T A = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} \) has eigenvalues \( 1 \) and \( 0 \), confirming rank \( 1 \).  
+   - The non-zero singular value of \( A \) is \( \sigma_1 = 1 \).  
+
+2. **SVD Construction**:  
+   - Singular vectors correspond to standard basis vectors due to \( A \)'s structure:  
+     - Left singular vectors (columns of \( U \)): \( \mathbf{u}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \), others arbitrary orthonormal vectors (irrelevant for pseudoinverse as \( \sigma_2 = \sigma_3 = 0 \)).  
+     - Right singular vectors (columns of \( V \)): \( \mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix} \).  
+
+3. **Pseudoinverse Formula**:  
+   \( A^+ = V \Sigma^+ U^T \), where \( \Sigma^+ \) replaces non-zero singular values with reciprocals. Here:  
+   - \( \Sigma = \begin{bmatrix} 1 & 0 \\ 0 & 0 \\ 0 & 0 \end{bmatrix} \), \( \Sigma^+ = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \).  
+   - \( U = I_3 \), \( V = I_2 \), as \( A \) is already diagonal-like.  
+
+4. **Final Computation**:  
+   Substituting into \( A^+ = V \Sigma^+ U^T \), we obtain:  
+   \[
+   A^+ = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}.
+   \]
+
+**Verification**:  
+- \( A A^+ A = A \),  
+- \( A^+ A A^+ = A^+ \),  
+- \( (A A^+)^T = A A^+ \),  
+- \( (A^+ A)^T = A^+ A \).  
+
+Thus, the pseudoinverse is:  
+\[
+A^+ = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}.
+\]"
+41,"To diagonalize the symmetric matrix \( S = \begin{pmatrix} 1 & 0 & 2 \\ 0 & -1 & -2 \\ 2 & -2 & 0 \end{pmatrix} \), the eigenvalues and corresponding orthonormal eigenvectors are computed as follows.
+
+The eigenvalues are the roots of the characteristic equation, which yields \( \lambda_1 = -3 \), \( \lambda_2 = 0 \), and \( \lambda_3 = 3 \).
+
+The orthonormal eigenvectors are:
+- For \( \lambda_1 = -3 \): \( \begin{pmatrix} \frac{1}{3} \\ -\frac{2}{3} \\ -\frac{2}{3} \end{pmatrix} \)
+- For \( \lambda_2 = 0 \): \( \begin{pmatrix} -\frac{2}{3} \\ -\frac{2}{3} \\ \frac{1}{3} \end{pmatrix} \)
+- For \( \lambda_3 = 3 \): \( \begin{pmatrix} \frac{2}{3} \\ -\frac{1}{3} \\ \frac{2}{3} \end{pmatrix} \)
+
+Thus, the orthogonal matrix \( Q \) is formed by these eigenvectors as columns:
+
+\[
+Q = \begin{pmatrix} \frac{1}{3} & -\frac{2}{3} & \frac{2}{3} \\ -\frac{2}{3} & -\frac{2}{3} & -\frac{1}{3} \\ -\frac{2}{3} & \frac{1}{3} & \frac{2}{3} \end{pmatrix}
+\]
+
+The diagonal matrix \( D \) contains the eigenvalues on the diagonal:
+
+\[
+D = \begin{pmatrix} -3 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 3 \end{pmatrix}
+\]
+
+This satisfies \( S = Q D Q^T \)."
+42,"The full singular value decomposition (SVD) of the matrix \(A = \begin{bmatrix} 4 & 0 \\ 3 & -5 \end{bmatrix}\) is given by:
+
+\[
+A = U \Sigma V^T,
+\]
+
+where
+
+\[
+U = \begin{bmatrix} \dfrac{1}{\sqrt{5}} & \dfrac{2}{\sqrt{5}} \\ \dfrac{2}{\sqrt{5}} & -\dfrac{1}{\sqrt{5}} \end{bmatrix}, \quad
+\Sigma = \begin{bmatrix} 2\sqrt{10} & 0 \\ 0 & \sqrt{10} \end{bmatrix}, \quad
+V = \begin{bmatrix} \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} \\ -\dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} \end{bmatrix}.
+\]"
+43,"The singular value decomposition (SVD) of \( A = \begin{pmatrix} 3 & 2 & 2 \\ 2 & -3 & -2 \end{pmatrix} \) is given by \( A = U \Sigma V^T \), where:
+
+\[
+U = \begin{pmatrix} \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} \\ -\dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} \end{pmatrix}, \quad
+\Sigma = \begin{pmatrix} \sqrt{21} & 0 & 0 \\ 0 & \sqrt{13} & 0 \end{pmatrix}, \quad
+V^T = \begin{pmatrix} \dfrac{1}{\sqrt{42}} & \dfrac{5}{\sqrt{42}} & \dfrac{4}{\sqrt{42}} \\ \dfrac{-5}{\sqrt{26}} & \dfrac{1}{\sqrt{26}} & 0 \\ \dfrac{2}{\sqrt{273}} & \dfrac{10}{\sqrt{273}} & \dfrac{-13}{\sqrt{273}} \end{pmatrix}.
+\]"
+44,"The Jordan canonical form of the matrix \( A = \begin{pmatrix} 1 & 1 & 0 & 0 \\ -1 & -1 & 0 & 0 \\ -2 & -2 & 2 & 1 \\ 1 & 1 & -1 & 0 \end{pmatrix} \) is
+
+\[
+J = \begin{pmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 \end{pmatrix}.
+\]
+
+The invertible matrix \( S \) satisfying \( A = S J S^{-1} \) is
+
+\[
+S = \begin{pmatrix} -1 & -1 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ -1 & 0 & -1 & -1 \\ 0 & 0 & 0 & 1 \end{pmatrix}.
+\]"
+45,"Let \( W \subset \mathbb{R}^3 \) be the subspace spanned by \( w = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} \), and let \( v = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix} \).
+
+An orthonormal basis for \( W^\perp \) is \( \left\{ \begin{pmatrix} \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} \\ 0 \end{pmatrix}, \begin{pmatrix} \frac{\sqrt{6}}{6} \\ \frac{\sqrt{6}}{6} \\ -\frac{\sqrt{6}}{3} \end{pmatrix} \right\} \).
+
+The projection of \( v \) onto \( W^\perp \) is \( \begin{pmatrix} \frac{1}{3} \\ -\frac{2}{3} \\ \frac{1}{3} \end{pmatrix} \).
+
+The minimum value of \( \min_{w \in W^\perp} \| v - w \| \) is \( \frac{2 \sqrt{3}}{3} \)."
+46,"To find the singular value decomposition (SVD) of the matrix \( A = \begin{pmatrix} 1 & -1 \\ -2 & 2 \\ 2 & -2 \end{pmatrix} \), we compute \( A = U \Sigma V^T \), where \( U \) is a \( 3 \times 3 \) orthogonal matrix, \( \Sigma \) is a \( 3 \times 2 \) diagonal matrix containing the singular values, and \( V \) is a \( 2 \times 2 \) orthogonal matrix.
+
+The matrices are as follows:
+
+\[
+U = \begin{pmatrix}
+\frac{1}{3} & \frac{2}{\sqrt{5}} & -\frac{2}{3\sqrt{5}} \\
+-\frac{2}{3} & \frac{1}{\sqrt{5}} & \frac{4}{3\sqrt{5}} \\
+\frac{2}{3} & 0 & \frac{5}{3\sqrt{5}}
+\end{pmatrix}, \quad
+\Sigma = \begin{pmatrix}
+3\sqrt{2} & 0 \\
+0 & 0 \\
+0 & 0
+\end{pmatrix}, \quad
+V = \frac{1}{\sqrt{2}} \begin{pmatrix}
+1 & 1 \\
+-1 & 1
+\end{pmatrix}.
+\]
+
+Thus, the SVD is:
+
+\[
+A = U \Sigma V^T = \begin{pmatrix}
+\frac{1}{3} & \frac{2}{\sqrt{5}} & -\frac{2}{3\sqrt{5}} \\
+-\frac{2}{3} & \frac{1}{\sqrt{5}} & \frac{4}{3\sqrt{5}} \\
+\frac{2}{3} & 0 & \frac{5}{3\sqrt{5}}
+\end{pmatrix}
+\begin{pmatrix}
+3\sqrt{2} & 0 \\
+0 & 0 \\
+0 & 0
+\end{pmatrix}
+\left( \frac{1}{\sqrt{2}} \begin{pmatrix}
+1 & 1 \\
+-1 & 1
+\end{pmatrix} \right)^T.
+\]"
+47,"The singular value decomposition of \( A = \begin{pmatrix} 4 & 11 & 14 \\ 8 & 7 & -2 \end{pmatrix} \) is given by:
+
+\[
+A = U \Sigma V^T
+\]
+
+where
+
+\[
+U = \begin{pmatrix} \dfrac{3}{\sqrt{10}} & \dfrac{1}{\sqrt{10}} \\ \dfrac{1}{\sqrt{10}} & -\dfrac{3}{\sqrt{10}} \end{pmatrix}, \quad
+\Sigma = \begin{pmatrix} 6\sqrt{10} & 0 & 0 \\ 0 & 3\sqrt{10} & 0 \end{pmatrix}, \quad
+V = \begin{pmatrix} \dfrac{1}{3} & -\dfrac{2}{3} & \dfrac{2}{3} \\ \dfrac{2}{3} & -\dfrac{1}{3} & -\dfrac{2}{3} \\ \dfrac{2}{3} & \dfrac{2}{3} & \dfrac{1}{3} \end{pmatrix}.
+\]"
+48,"The singular value decomposition (SVD) of the matrix \( A = \begin{pmatrix} 1 & 2 \\ -1 & 2 \end{pmatrix} \) is given by \( A = U \Sigma V^T \), where:
+
+\[
+U = \begin{pmatrix} \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} \\ \dfrac{1}{\sqrt{2}} & -\dfrac{1}{\sqrt{2}} \end{pmatrix}, \quad
+\Sigma = \begin{pmatrix} 2\sqrt{2} & 0 \\ 0 & \sqrt{2} \end{pmatrix}, \quad
+V^T = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}.
+\]
+
+Thus,
+
+\[
+A = \begin{pmatrix} \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} \\ \dfrac{1}{\sqrt{2}} & -\dfrac{1}{\sqrt{2}} \end{pmatrix} \begin{pmatrix} 2\sqrt{2} & 0 \\ 0 & \sqrt{2} \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}.
+\]"
+49,"The singular value decomposition (SVD) of the symmetric matrix \( A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \) is given by \( A = U \Sigma V^T \), where \( U \), \( \Sigma \), and \( V \) are matrices defined as follows.
+
+The singular values are the square roots of the eigenvalues of \( A^T A \). Since \( A \) is symmetric, \( A^T A = A A^T = A^2 \). Computing \( A^2 \):
+\[
+A^2 = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} = \begin{pmatrix} 5 & 4 \\ 4 & 5 \end{pmatrix}.
+\]
+The eigenvalues of \( A^2 \) are the squares of the eigenvalues of \( A \). Solving \( \det(A - \lambda I) = 0 \):
+\[
+\det \begin{pmatrix} 1 - \lambda & 2 \\ 2 & 1 - \lambda \end{pmatrix} = (1 - \lambda)^2 - 4 = \lambda^2 - 2\lambda - 3 = 0,
+\]
+yields eigenvalues \( \lambda = 3 \) and \( \lambda = -1 \), so \( A^2 \) has eigenvalues \( 9 \) and \( 1 \). The singular values are \( \sigma_1 = 3 \) and \( \sigma_2 = 1 \), and thus:
+\[
+\Sigma = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix}.
+\]
+
+The right singular vectors are the eigenvectors of \( A^T A = A^2 \), which correspond to the eigenvalues \( 9 \) and \( 1 \). The eigenvector for \( 9 \) is normalized to \( \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ 1 \end{pmatrix} \), and for \( 1 \) is normalized to \( \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -1 \end{pmatrix} \). Thus:
+\[
+V = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}.
+\]
+Note that \( V \) is symmetric, so \( V^T = V \).
+
+The left singular vectors are derived such that \( A v_j = \sigma_j u_j \). For the first singular vector:
+\[
+A \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix} = \begin{pmatrix} 3/\sqrt{2} \\ 3/\sqrt{2} \end{pmatrix} = 3 \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix},
+\]
+so \( u_1 = \begin{pmatrix} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix} \). For the second singular vector:
+\[
+A \begin{pmatrix} \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} \end{pmatrix} = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \begin{pmatrix} \frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} \end{pmatrix} = \begin{pmatrix} -1/\sqrt{2} \\ 1/\sqrt{2} \end{pmatrix} = 1 \cdot \begin{pmatrix} -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix},
+\]
+so \( u_2 = \begin{pmatrix} -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{pmatrix} \). Thus:
+\[
+U = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & -1 \\ 1 & 1 \end{pmatrix}.
+\]
+
+Therefore, the SVD of \( A \) is:
+\[
+\boxed{A=U\Sigma V^{\top}=\left(\dfrac{1}{\sqrt{2}}\begin{pmatrix}1 & -1 \\ 1 & 1\end{pmatrix}\right)\begin{pmatrix}3 & 0 \\ 0 & 1\end{pmatrix}\left(\dfrac{1}{\sqrt{2}}\begin{pmatrix}1 & 1 \\ 1 & -1\end{pmatrix}\right)^{\top}}
+\]
+where \( U \), \( \Sigma \), and \( V \) are as defined. The matrices are orthogonal (both \( U \) and \( V \) have orthonormal columns), and \( \Sigma \) is diagonal with non-negative entries.
+
+\boxed{
+A = \begin{pmatrix} \dfrac{1}{\sqrt{2}} \cdot 1 & \dfrac{1}{\sqrt{2}} \cdot (-1) \\[2mm] \dfrac{1}{\sqrt{2}} \cdot 1 & \dfrac{1}{\sqrt{2}} \cdot 1 \end{pmatrix} \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} \dfrac{1}{\sqrt{2}} \cdot 1 & \dfrac{1}{\sqrt{2}} \cdot 1 \\[2mm] \dfrac{1}{\sqrt{2}} \cdot 1 & \dfrac{1}{\sqrt{2}} \cdot (-1) \end{pmatrix}^{\top}
+}"
+50,"The singular value decomposition of \( A = \begin{pmatrix} 2 & -2 & 1 \\ -4 & -8 & -8 \end{pmatrix} \) is given by:
+
+\[
+A = U \Sigma V^T
+\]
+
+where:
+
+\[
+U = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, \quad \Sigma = \begin{pmatrix} 12 & 0 & 0 \\ 0 & 3 & 0 \end{pmatrix}, \quad V^T = \begin{pmatrix} \frac{1}{3} & \frac{2}{3} & \frac{2}{3} \\ \frac{2}{3} & -\frac{2}{3} & \frac{1}{3} \\ \frac{2}{3} & \frac{1}{3} & -\frac{2}{3} \end{pmatrix}
+\]"
+51,"To solve for \(p\) and \(q\) such that \(A^n = p A + q I\), where \(A = \begin{pmatrix} 1 + s & -s \\ s & 1 - s \end{pmatrix}\), and to determine \(e^A\), proceed as follows.
+
+First, compute \(A^n\). The matrix \(A\) can be expressed as \(A = I + s B\), where \(B = \begin{pmatrix} 1 & -1 \\ 1 & -1 \end{pmatrix}\) and \(B^2 = 0\). Thus,
+
+\[
+A^n = (I + s B)^n = I + n s B = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} + n s \begin{pmatrix} 1 & -1 \\ 1 & -1 \end{pmatrix} = \begin{pmatrix} 1 + n s & -n s \\ n s & 1 - n s \end{pmatrix}.
+\]
+
+Set \(A^n = p A + q I\):
+
+\[
+\begin{pmatrix} 1 + n s & -n s \\ n s & 1 - n s \end{pmatrix} = p \begin{pmatrix} 1 + s & -s \\ s & 1 - s \end{pmatrix} + q \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} = \begin{pmatrix} p(1 + s) + q & -p s \\ p s & p(1 - s) + q \end{pmatrix}.
+\]
+
+Equating elements:
+
+- From the (1,2) entry: \(-p s = -n s\) implies \(p = n\) (assuming \(s \neq 0\)).
+- From the (2,1) entry: \(p s = n s\) confirms \(p = n\).
+- From the (1,1) entry: \(n(1 + s) + q = 1 + n s\) simplifies to \(q = 1 - n\).
+- From the (2,2) entry: \(n(1 - s) + q = 1 - n s\) also gives \(q = 1 - n\).
+
+Thus, \(p = n\) and \(q = 1 - n\).
+
+For \(e^A\), use the series expansion. Since \(A^k = I + k s B\),
+
+\[
+e^A = \sum_{k=0}^{\infty} \frac{A^k}{k!} = \sum_{k=0}^{\infty} \frac{I + k s B}{k!} = e I + e s B = e (I + s B) = e A.
+\]
+
+Therefore,
+
+\[
+e^A = e \begin{pmatrix} 1 + s & -s \\ s & 1 - s \end{pmatrix} = \begin{pmatrix} e(1 + s) & -e s \\ e s & e(1 - s) \end{pmatrix}.
+\]"
+52,"The matrix \(L\) is an \(n \times n\) lower triangular matrix given by:
+
+\[
+L = \begin{bmatrix}
+1 & 0 & 0 & \cdots & 0 \\
+-\dfrac{1}{2} & 1 & 0 & \cdots & 0 \\
+0 & -\dfrac{2}{3} & 1 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & -\dfrac{n-1}{n} & 1
+\end{bmatrix}.
+\]
+
+The inverse \(L^{-1}\) is also an \(n \times n\) lower triangular matrix, with 1's on the diagonal and entries below the diagonal given by \(\frac{j}{i}\) for row \(i\) and column \(j\) where \(i > j\). Thus,
+
+\[
+L^{-1} = \begin{bmatrix}
+1 & 0 & 0 & \cdots & 0 \\
+\dfrac{1}{2} & 1 & 0 & \cdots & 0 \\
+\dfrac{1}{3} & \dfrac{2}{3} & 1 & \cdots & 0 \\
+\dfrac{1}{4} & \dfrac{2}{4} & \dfrac{3}{4} & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+\dfrac{1}{n} & \dfrac{2}{n} & \dfrac{3}{n} & \cdots & 1
+\end{bmatrix}.
+\]"
+53,"The system of equations is given by:
+
+\[
+A \mathbf{x} = \mathbf{b},
+\]
+
+where
+
+\[
+A = \begin{bmatrix} 2 & 3 & 0 & 0 \\ 2 & 4 & 1 & 0 \\ 0 & 2 & 6 & a \\ 0 & 0 & 4 & b \end{bmatrix}, \quad \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} 1 \\ 2 \\ 4 \\ c \end{bmatrix}.
+\]
+
+The determinant of \(A\) is \(\det(A) = 8(b - a)\).
+
+**Solvability and Uniqueness Conditions:**
+
+- If \(b \neq a\), then \(\det(A) \neq 0\), so \(A\) is invertible. The system has a unique solution.
+- If \(b = a\), then \(\det(A) = 0\), so \(A\) is singular.
+  - If \(b = a\) and \(c = 2\), the system is consistent and has infinitely many solutions.
+  - If \(b = a\) and \(c \neq 2\), the system is inconsistent and has no solution.
+
+**Solution When It Exists:**
+
+- **Case: \(b \neq a\)** (Unique solution):
+  \[
+  x_2 = \frac{a c - 4a + 2b}{4(b - a)},
+  \]
+  \[
+  x_3 = 1 - x_2,
+  \]
+  \[
+  x_4 = \frac{c - 4 x_3}{b} = \frac{c - 4(1 - x_2)}{b},
+  \]
+  \[
+  x_1 = \frac{1 - 3 x_2}{2}.
+  \]
+
+- **Case: \(b = a\) and \(c = 2\)** (Infinitely many solutions):
+  The system has solutions parameterized by a free variable, e.g., \(x_2 = t\) where \(t \in \mathbb{R}\):
+  \[
+  x_3 = 1 - t,
+  \]
+  \[
+  x_4 \text{ is free (depends on the null space)},
+  \]
+  \[
+  x_1 = \frac{1 - 3 t}{2}.
+  \]"
+54,"The difference equations corresponding to the matrix formulation \(Ax = b\) are:
+
+\[
+\begin{cases}
+-3 x_1 + x_2 = 1 \\
+2 x_{i-1} - 3 x_i + x_{i+1} = 0 & \text{for } i = 2, \dots, N-2 \\
+2 x_{N-2} - 3 x_{N-1} = 0
+\end{cases}
+\]
+
+The solution is:
+
+\[
+x_1 = -\frac{2^{N-1} - 1}{2^N - 1}
+\]
+
+The subsequent components are given by:
+
+\[
+x_k = (2^k - 1) x_1 + (2^{k-1} - 1) \quad \text{for } k = 2, \dots, N-1
+\]"
+55,"The matrix \(A\) is symmetric and positive definite, so it can be factored as \(A = LL^T\), where \(L\) is the lower triangular matrix.
+
+The computed \(L\) is:
+\[
+L = \begin{bmatrix}
+\sqrt{5.5} & 0 & 0 & 0 & 0 & 0 \\
+0 & \sqrt{5.5} & 0 & 0 & 0 & 0 \\
+0 & 0 & 2.5 & 0 & 0 & 0 \\
+0 & 0 & 0 & \sqrt{5.5} & 0 & 0 \\
+0 & 0 & 1.5 & 0 & 2 & 0 \\
+\frac{3.5}{\sqrt{5.5}} & \frac{1.5}{\sqrt{5.5}} & 0 & \frac{0.5}{\sqrt{5.5}} & 0 & \sqrt{5.5 - \left( \frac{3.5}{\sqrt{5.5}} \right)^2 - \left( \frac{1.5}{\sqrt{5.5}} \right)^2 - \left( \frac{0.5}{\sqrt{5.5}} \right)^2}
+\end{bmatrix}
+\]
+
+To solve \(Ax = b\), where \(b = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}\), first solve \(Ly = b\) for \(y\):
+\[
+y = \begin{bmatrix}
+\frac{1}{\sqrt{5.5}} \\
+\frac{1}{\sqrt{5.5}} \\
+0.4 \\
+\frac{1}{\sqrt{5.5}} \\
+0.2 \\
+0
+\end{bmatrix}
+\]
+
+Then solve \(L^T x = y\):
+\[
+x = \begin{bmatrix}
+\frac{2}{11} \\
+\frac{2}{11} \\
+0.1 \\
+\frac{2}{11} \\
+0.1 \\
+0
+\end{bmatrix}
+\]"
+56,"To compute \(C^T A^{-1} B\) where \(A = L L^T\), begin by identifying the matrices:
+
+\[
+L = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 1 & 2 & 0 & 0 \\ 1 & 2 & 3 & 0 \\ 1 & 2 & 3 & 4 \end{bmatrix}, \quad
+B = \begin{bmatrix} 1 & 2 & 3 & 4 \\ 5 & 6 & 7 & 8 \\ 9 & 10 & 11 & 12 \\ 13 & 14 & 15 & 16 \end{bmatrix}, \quad
+C = \begin{bmatrix} 1 \\ 5 \\ 14 \\ 30 \end{bmatrix}.
+\]
+
+First, compute \(A^{-1} B\). Since \(A = L L^T\), solve \(L L^T X = B\) for \(X = A^{-1} B\). This involves solving \(L Y = B\) for \(Y\), then \(L^T X = Y\).
+
+The columns of \(Y\) are obtained by forward substitution on \(L Y = B\):
+
+- For the first column of \(B\), \(Y_1 = [1, 2, \frac{4}{3}, 1]^T\).
+- For the second column, \(Y_2 = [2, 2, \frac{4}{3}, 1]^T\).
+- For the third column, \(Y_3 = [3, 2, \frac{4}{3}, 1]^T\).
+- For the fourth column, \(Y_4 = [4, 2, \frac{4}{3}, 1]^T\).
+
+Thus,
+\[
+Y = \begin{bmatrix} 1 & 2 & 3 & 4 \\ 2 & 2 & 2 & 2 \\ \frac{4}{3} & \frac{4}{3} & \frac{4}{3} & \frac{4}{3} \\ 1 & 1 & 1 & 1 \end{bmatrix}.
+\]
+
+Next, solve \(L^T X = Y\) using backward substitution:
+
+\[
+X = A^{-1} B = \begin{bmatrix} 0 & 1 & 2 & 3 \\ \frac{5}{9} & \frac{5}{9} & \frac{5}{9} & \frac{5}{9} \\ \frac{7}{36} & \frac{7}{36} & \frac{7}{36} & \frac{7}{36} \\ \frac{1}{4} & \frac{1}{4} & \frac{1}{4} & \frac{1}{4} \end{bmatrix}.
+\]
+
+Now, compute \(C^T (A^{-1} B)\):
+
+\[
+C^T = [1, 5, 14, 30].
+\]
+
+The resulting row vector is:
+
+\[
+C^T (A^{-1} B) = [13, 14, 15, 16].
+\]
+
+Thus,
+\[
+C^T A^{-1} B = \begin{bmatrix} 13 & 14 & 15 & 16 \end{bmatrix}.
+\]"
+57,"The matrix \( A \) is a lower triangular matrix with 1's on the diagonal and entries \( x^{k} \) on the subdiagonals. Its inverse \( A^{-1} \) is also a lower triangular matrix, given by:
+
+\[
+A^{-1} = \begin{bmatrix}
+1 & 0 & 0 & \cdots & 0 \\
+-x & 1 & 0 & \cdots & 0 \\
+0 & -x & 1 & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \cdots & 1 \\
+0 & 0 & 0 & \cdots & -x & 1
+\end{bmatrix}
+\]
+
+In other words, the elements of \( A^{-1} \) are defined as:
+\[
+(A^{-1})_{ij} = 
+\begin{cases} 
+1 & \text{if } i = j \\
+-x & \text{if } j = i-1 \\
+0 & \text{otherwise}
+\end{cases}
+\]"
+58,"To find the inverse of the matrix \(A = \begin{bmatrix} 2 & -1 & 2 \\ -1 & 2 & -1 \\ 2 & -1 & 3 \end{bmatrix}\) using the Cholesky method, first confirm that \(A\) is symmetric positive definite. The matrix is symmetric, and its leading principal minors are positive: \(2 > 0\), \(\det\begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix} = 3 > 0\), and \(\det(A) = 3 > 0\).
+
+Perform Cholesky decomposition: \(A = L L^T\), where \(L\) is lower triangular.
+
+\[
+L = \begin{bmatrix} \sqrt{2} & 0 & 0 \\ -\frac{1}{\sqrt{2}} & \frac{\sqrt{3}}{\sqrt{2}} & 0 \\ \sqrt{2} & 0 & 1 \end{bmatrix}
+\]
+
+The inverse of \(A\) is \(A^{-1} = (L L^T)^{-1} = (L^T)^{-1} L^{-1}\).
+
+First, compute \(L^{-1}\):
+
+\[
+L^{-1} = \begin{bmatrix} \frac{1}{\sqrt{2}} & 0 & 0 \\ \frac{1}{\sqrt{6}} & \frac{\sqrt{2}}{\sqrt{3}} & 0 \\ -1 & 0 & 1 \end{bmatrix}
+\]
+
+Next, compute \((L^T)^{-1}\):
+
+\[
+(L^T)^{-1} = \begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{6}} & -1 \\ 0 & \frac{\sqrt{2}}{\sqrt{3}} & 0 \\ 0 & 0 & 1 \end{bmatrix}
+\]
+
+Now, multiply \((L^T)^{-1}\) and \(L^{-1}\):
+
+\[
+A^{-1} = \begin{bmatrix} \frac{5}{3} & \frac{1}{3} & -1 \\ \frac{1}{3} & \frac{2}{3} & 0 \\ -1 & 0 & 1 \end{bmatrix}
+\]"
+59,"The given matrix is symmetric and positive definite, so it has a Cholesky factorization \( A = LL^T \), where \( L \) is a lower triangular matrix.
+
+The Cholesky factorization is:
+
+\[
+L = \begin{bmatrix}
+1 & 0 & 0 & 0 & 0 \\
+-1 & 1 & 0 & 0 & 0 \\
+0 & -1 & 1 & 0 & 0 \\
+0 & 0 & -1 & 1 & 0 \\
+0 & 0 & 0 & -1 & 1
+\end{bmatrix}
+\]
+
+Thus, \( A = LL^T \)."
+60,"The inverse of the matrix \(A = \begin{bmatrix} 1 & 1 & 1 \\ 4 & 3 & -1 \\ 3 & 5 & 3 \end{bmatrix}\) is found using the block partitioning method, partitioning \(A\) as:
+
+\[
+A = \begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{bmatrix} = \begin{bmatrix} 1 & \begin{bmatrix} 1 & 1 \end{bmatrix} \\ \begin{bmatrix} 4 \\ 3 \end{bmatrix} & \begin{bmatrix} 3 & -1 \\ 5 & 3 \end{bmatrix} \end{bmatrix},
+\]
+
+where \(A_{11} = [1]\), \(A_{12} = \begin{bmatrix} 1 & 1 \end{bmatrix}\), \(A_{21} = \begin{bmatrix} 4 \\ 3 \end{bmatrix}\), and \(A_{22} = \begin{bmatrix} 3 & -1 \\ 5 & 3 \end{bmatrix}\).
+
+The inverse is:
+
+\[
+A^{-1} = \begin{bmatrix} \dfrac{7}{5} & \dfrac{1}{5} & -\dfrac{2}{5} \\ -\dfrac{3}{2} & 0 & \dfrac{1}{2} \\ \dfrac{11}{10} & -\dfrac{1}{5} & -\dfrac{1}{10} \end{bmatrix}.
+\]
+
+For the system \(Ax = b\) where \(b = \begin{bmatrix} 1 \\ 6 \\ 4 \end{bmatrix}\), the solution is \(x = A^{-1} b\):
+
+\[
+x = \begin{bmatrix} \dfrac{7}{5} & \dfrac{1}{5} & -\dfrac{2}{5} \\ -\dfrac{3}{2} & 0 & \dfrac{1}{2} \\ \dfrac{11}{10} & -\dfrac{1}{5} & -\dfrac{1}{10} \end{bmatrix} \begin{bmatrix} 1 \\ 6 \\ 4 \end{bmatrix} = \begin{bmatrix} 1 \\ \dfrac{1}{2} \\ -\dfrac{1}{2} \end{bmatrix}.
+\]
+
+Thus, \(x_1 = 1\), \(x_2 = \dfrac{1}{2}\), and \(x_3 = -\dfrac{1}{2}\)."
+61,"To find the inverse of the matrix \(A = \begin{bmatrix} 2 & 1 & 0 & 0 \\ 1 & 2 & 1 & 0 \\ 0 & 1 & 2 & 1 \\ 0 & 0 & 1 & 2 \end{bmatrix}\) using the partition method, partition \(A\) into 2x2 blocks:
+
+\[
+A = \begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{bmatrix} = \begin{bmatrix} \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} & \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix} \\ \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} & \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} \end{bmatrix}.
+\]
+
+The formula for the inverse is:
+
+\[
+A^{-1} = \begin{bmatrix} A_{11}^{-1} + A_{11}^{-1} A_{12} S^{-1} A_{21} A_{11}^{-1} & -A_{11}^{-1} A_{12} S^{-1} \\ -S^{-1} A_{21} A_{11}^{-1} & S^{-1} \end{bmatrix},
+\]
+
+where \(S = A_{22} - A_{21} A_{11}^{-1} A_{12}\).
+
+First, compute \(A_{11}^{-1}\):
+
+\[
+A_{11} = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}, \quad \det(A_{11}) = 4 - 1 = 3, \quad A_{11}^{-1} = \frac{1}{3} \begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix}.
+\]
+
+Then, compute \(S\):
+
+\[
+A_{11}^{-1} A_{12} = \frac{1}{3} \begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix} \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix} = \frac{1}{3} \begin{bmatrix} -1 & 0 \\ 2 & 0 \end{bmatrix},
+\]
+
+\[
+A_{21} (A_{11}^{-1} A_{12}) = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \frac{1}{3} \begin{bmatrix} -1 & 0 \\ 2 & 0 \end{bmatrix} = \frac{1}{3} \begin{bmatrix} 2 & 0 \\ 0 & 0 \end{bmatrix},
+\]
+
+\[
+S = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix} - \frac{1}{3} \begin{bmatrix} 2 & 0 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} \frac{4}{3} & 1 \\ 1 & 2 \end{bmatrix}.
+\]
+
+Next, compute \(S^{-1}\):
+
+\[
+\det(S) = \frac{4}{3} \cdot 2 - 1 \cdot 1 = \frac{5}{3}, \quad S^{-1} = \frac{3}{5} \begin{bmatrix} 2 & -1 \\ -1 & \frac{4}{3} \end{bmatrix} = \begin{bmatrix} \frac{6}{5} & -\frac{3}{5} \\ -\frac{3}{5} & \frac{4}{5} \end{bmatrix}.
+\]
+
+Performing the full matrix multiplication yields:
+
+\[
+A^{-1} = \begin{bmatrix} 2 & -3 & 4 & -2 \\ -1 & 2 & -2 & 0 \\ 2 & -4 & 6 & -3 \\ -1 & 2 & -3 & 2 \end{bmatrix}.
+\]"
+62,"To compute \(\begin{bmatrix} 1 & 0.1 \\ 0.1 & 1 \end{bmatrix}^{10}\) exactly, denote the matrix as \(A = \begin{bmatrix} 1 & 0.1 \\ 0.1 & 1 \end{bmatrix}\).
+
+The eigenvalues of \(A\) are \(\lambda_1 = 1.1 = \frac{11}{10}\) and \(\lambda_2 = 0.9 = \frac{9}{10}\).
+
+The matrix \(A\) can be diagonalized as \(A = Q D Q^{-1}\), where \(D = \begin{bmatrix} \frac{11}{10} & 0 \\ 0 & \frac{9}{10} \end{bmatrix}\), \(Q = \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}\), and \(Q^{-1} = \begin{bmatrix} \frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & -\frac{1}{2} \end{bmatrix}\).
+
+Thus, \(A^{10} = Q D^{10} Q^{-1}\), where \(D^{10} = \begin{bmatrix} \left(\frac{11}{10}\right)^{10} & 0 \\ 0 & \left(\frac{9}{10}\right)^{10} \end{bmatrix} = \begin{bmatrix} \frac{11^{10}}{10^{10}} & 0 \\ 0 & \frac{9^{10}}{10^{10}} \end{bmatrix}\).
+
+Performing the matrix multiplication yields:
+
+\[
+A^{10} = \begin{bmatrix} \dfrac{11^{10} + 9^{10}}{2 \times 10^{10}} & \dfrac{11^{10} - 9^{10}}{2 \times 10^{10}} \\ \dfrac{11^{10} - 9^{10}}{2 \times 10^{10}} & \dfrac{11^{10} + 9^{10}}{2 \times 10^{10}} \end{bmatrix}.
+\]"
+63,"\[
+A^{10} = \begin{bmatrix} -\dfrac{1}{9} & \dfrac{8}{9} & -\dfrac{4}{9} \\ \dfrac{8}{9} & -\dfrac{1}{9} & -\dfrac{4}{9} \\ -\dfrac{4}{9} & -\dfrac{8}{27} & -\dfrac{7}{9} \end{bmatrix}
+\]"
+64,"To compute \(\ln(I + \frac{1}{4} A) Y\), where \(A = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}\) and \(Y = \begin{bmatrix} 1 \\ 2 \end{bmatrix}\), correct to four decimals, follow these steps.
+
+First, compute \(I + \frac{1}{4} A\):
+\[
+I + \frac{1}{4} A = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} + \begin{bmatrix} 0.25 & 0.25 \\ 0.25 & 0.25 \end{bmatrix} = \begin{bmatrix} 1.25 & 0.25 \\ 0.25 & 1.25 \end{bmatrix}.
+\]
+
+The matrix logarithm \(\ln(B)\), where \(B = \begin{bmatrix} 1.25 & 0.25 \\ 0.25 & 1.25 \end{bmatrix}\), is computed by diagonalizing \(B\). The eigenvalues of \(B\) are 1 and 1.5, and the eigenvectors are \(\begin{bmatrix} 1 \\ -1 \end{bmatrix}\) and \(\begin{bmatrix} 1 \\ 1 \end{bmatrix}\).
+
+Thus, \(B = P D P^{-1}\), where \(D = \begin{bmatrix} 1 & 0 \\ 0 & 1.5 \end{bmatrix}\) and \(P = \begin{bmatrix} 1 & 1 \\ -1 & 1 \end{bmatrix}\). Then, \(P^{-1} = \frac{1}{2} \begin{bmatrix} 1 & -1 \\ 1 & 1 \end{bmatrix}\).
+
+The matrix logarithm is \(\ln(B) = P (\ln D) P^{-1}\), where \(\ln D = \begin{bmatrix} \ln(1) & 0 \\ 0 & \ln(1.5) \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & 0.4055 \end{bmatrix}\).
+
+Compute \(\ln(B)\):
+\[
+\ln(B) = \begin{bmatrix} 1 & 1 \\ -1 & 1 \end{bmatrix} \begin{bmatrix} 0 & 0 \\ 0 & 0.4055 \end{bmatrix} \frac{1}{2} \begin{bmatrix} 1 & -1 \\ 1 & 1 \end{bmatrix} = \begin{bmatrix} 0.2028 & 0.2028 \\ 0.2028 & 0.2028 \end{bmatrix}.
+\]
+
+Finally, multiply by \(Y\):
+\[
+\ln(I + \frac{1}{4} A) Y = \begin{bmatrix} 0.2028 & 0.2028 \\ 0.2028 & 0.2028 \end{bmatrix} \begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 0.6082 \\ 0.6082 \end{bmatrix}.
+\]"
+65,"The spectral norm of \(A\), denoted \(\|A\|_2\), is the largest singular value of \(A\). Since \(A\) is symmetric, \(\|A\|_2\) equals the absolute value of the largest eigenvalue of \(A\).
+
+The eigenvalues of \(A\) are \(5\), \(1\), \(1\), and \(1\). Thus, \(\|A\|_2 = 5\).
+
+A vector \(x\) with \(\|x\|_2 = 1\) satisfying \(\|A x\|_2 = 5\) is an eigenvector corresponding to the eigenvalue \(5\). The eigenvector is \(\begin{bmatrix} 1 \\ -1 \\ -1 \\ 1 \end{bmatrix}\), and normalizing it gives:
+
+\[
+x = \frac{1}{2} \begin{bmatrix} 1 \\ -1 \\ -1 \\ 1 \end{bmatrix}
+\]
+
+Verification: \(A x = 5 x\), so \(\|A x\|_2 = \|5 x\|_2 = 5 \|x\|_2 = 5 \cdot 1 = 5\)."
+66,"For the matrix \( A = \begin{bmatrix} 1 & 4 & 9 \\ 4 & 9 & 16 \\ 9 & 16 & 25 \end{bmatrix} \), the condition number is calculated as follows.
+
+**Using the maximum absolute row sum norm (infinity norm):**
+
+- \( \Vert A \Vert_\infty = \max \{ 14, 29, 50 \} = 50 \)
+- \( A^{-1} = \begin{bmatrix} \frac{31}{8} & -\frac{11}{2} & \frac{17}{8} \\ -\frac{11}{2} artistique & 7 & -\frac{5}{2} \\ \frac{17}{8} & -\frac{5}{2} & \frac{7}{8} \end{bmatrix} \)
+- \( \Vert A^{-1} \Vert_\infty = \max \{ sikker11.5, 15, 5.5 \} = 15 \)
+- \( \kappa(A)_\infty = \Vert A \Vert_\infty \cdot \Vert A^{-1} \Vert_\infty = 50 \times 15 = 750 \)
+
+**Using the spectral norm (2-norm):**
+
+- The eigenvalues of A are the roots of the characteristic polynomial \( \lambda^3 - 35\lambda^2 - 94\lambda + 8 = 0 \), approximately \( 37.792, -0.104, 0.312 \).
+- The singular values are the absolute values of the eigenvalues: \( 37.792, 0.312, 0.104 \).
+- \( \Vert A \Vert_2 = 37.792 \), \( \Vert A^{-1} \Vert_2 = \frac{1}{0.104} = 9.615 \)
+- \( \kappa(A)_2 = \Vert A \Vert_2 \cdot \Vert A^{-1} \Vert_2 = 37.792 \times 9.615 = 363.26 \)"
+67,"To minimize the condition number \(\kappa_\infty(A(\alpha))\) for the matrix \(A(\alpha) = \begin{bmatrix} 0.1\alpha & 0.1\alpha \\ 10 & 1.5 \end{bmatrix}\) using the infinity norm, compute \(\kappa_\infty(A(\alpha)) = \|A(\alpha)\|_\infty \cdot \|A(\alpha)^{-1}\|_\infty\).
+
+The infinity norm of \(A(\alpha)\) is \(\|A(\alpha)\|_\infty = \max(0.2|\alpha|, 11.5)\).
+
+The inverse is \(A(\alpha)^{-1} = \frac{1}{-0.85\alpha} \begin{bmatrix} 1.5 & -0.1\alpha \\ -10 & 0.1\alpha \end{bmatrix}\), and its infinity norm is \(\|A(\alpha)^{-1}\|_\infty = \frac{10}{0.85|\alpha|} + \frac{0.1}{0.85}\).
+
+Thus, \(\kappa_\infty(A(\alpha)) = \max(0.2|\alpha|, 11.5) \cdot \left( \frac{10}{0.85|\alpha|} + \frac{0.1}{0.85} \right)\).
+
+Assuming \(\alpha > 0\), \(\kappa_\infty(A(\alpha))\) is minimized at the point where the behavior changes, i.e., \(0.2\alpha = 11.5\).
+
+Solving \(0.2\alpha = 11.5\) gives \(\alpha = \frac{11.5}{0.2} = 57.5\).
+
+At \(\alpha = 57.5\), \(\kappa_\infty(A(57.5))\) is minimized."
+68,"The original system is \(A x = b\), where
+\[
+A = \begin{bmatrix} 1 & 2 \\ 2 & -1 \end{bmatrix}, \quad x = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}, \quad b = \begin{bmatrix} 5 \\ 0 \end{bmatrix}.
+\]
+The solution is \(x = A^{-1} b = \begin{bmatrix} 1 \\ 2 \end{bmatrix}\).
+
+With the disturbance \(e = \begin{bmatrix} \epsilon_1 \\ \epsilon_2 \end{bmatrix}\) where \(|\epsilon_1| \leq 10^{-4}\) and \(|\epsilon_2| \leq 10^{-4}\), the perturbed system is \(A x' = b + e\), and the error is \(\Delta x = x' - x = A^{-1} e\).
+
+The inverse is
+\[
+A^{-1} = \begin{bmatrix} \frac{1}{5} & \frac{2}{5} \\ \frac{2}{5} & -\frac{1}{5} \end{bmatrix}.
+\]
+Thus,
+\[
+\Delta x = \begin{bmatrix} \frac{1}{5} \epsilon_1 + \frac{2}{5} \epsilon_2 \\ \frac{2}{5} \epsilon_1 - \frac{1}{5} \epsilon_2 \end{bmatrix}.
+\]
+
+The 2-norm of the error is bounded by \(\| \Delta x \|_2 \leq \| A^{-1} \|_2 \| e \|_2\).
+
+- \(\| A^{-1} \|_2 = \frac{1}{\sqrt{5}}\),
+- \(\| e \|_2 \leq \sqrt{ (\epsilon_1)^2 + (\epsilon_2)^2 } \leq \sqrt{2} \times 10^{-4}\).
+
+Therefore,
+\[
+\| \Delta x \|_2 \leq \frac{1}{\sqrt{5}} \cdot \sqrt{2} \times 10^{-4} = 10^{-4} \sqrt{\frac{2}{5}} \approx 6.32 \times 10^{-5}.
+\]
+
+This indicates that the maximum 2-norm of the error in the solution is approximately \(6.32 \times 10^{-5}\)."
+69,"The exact solution to the system is obtained by solving:
+
+\[
+\begin{pmatrix} 1 & 1.001 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 2.001 \\ 2 \end{pmatrix}.
+\]
+
+Subtracting the second equation from the first gives \(0.001x_2 = 0.001\), so \(x_2 = 1\). Substituting into the second equation yields \(x_1 + 1 = 2\), so \(x_1 = 1\).
+
+Thus, the exact solution is \(\mathbf{x} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}\).
+
+For \(\mathbf{y} = \begin{pmatrix} 2 \\ 0 \end{pmatrix}\), the residual is:
+
+\[
+\mathbf{r} = A \mathbf{y} - \mathbf{b} = \begin{pmatrix} 1 & 1.001 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} 2 \\ 0 \end{pmatrix} - \begin{pmatrix} 2.001 \\ 2 \end{pmatrix} = \begin{pmatrix} 2 \\ 2 \end{pmatrix} - \begin{pmatrix} 2.001 \\ 2 \end{pmatrix} = \begin{pmatrix} -0.001 \\ 0 \end{pmatrix}.
+\]
+
+The relative error is:
+
+\[
+\frac{\|\mathbf{x} - \mathbf{y}\|_2}{\|\mathbf{x}\|_2} = \frac{\left\| \begin{pmatrix} 1 \\ 1 \end{pmatrix} - \begin{pmatrix} 2 \\ 0 \end{pmatrix} \right\|_2}{\left\| \begin{pmatrix} 1 \\ 1 \end{pmatrix} \right\|_2} = \frac{\left\| \begin{pmatrix} -1 \\ 1 \end{pmatrix} \right\|_2}{\sqrt{2}} = \frac{\sqrt{(-1)^2 + 1^2}}{\sqrt{2}} = \frac{\sqrt{2}}{\sqrt{2}} = 1.
+\]
+
+The relative residual is:
+
+\[
+\frac{\|\mathbf{r}\|_2}{\|\mathbf{b}\|_2} = \frac{\left\| \begin{pmatrix} -0.001 \\ 0 \end{pmatrix} \right\|_2}{\left\| \begin{pmatrix} 2.001 \\ 2 \end{pmatrix} \right\|_2} = \frac{\sqrt{(-0.001)^2 + 0^2}}{\sqrt{(2.001)^2 + 2^2}} = \frac{0.001}{\sqrt{8.004001}} \approx \frac{0.001}{2.829} \approx 0.000353.
+\]
+
+The relative error (1) is much larger than the relative residual (\(\approx 0.000353\)), indicating that the system is ill-conditioned."
+70,"The system of equations is \(Ax = b\), where
+\[
+A = \begin{bmatrix}
+\frac{1}{2} & \frac{1}{3} & \frac{1}{4} \\
+\frac{1}{3} & \frac{1}{4} & \frac{1}{5} \\
+\frac{1}{4} & \frac{1}{5} & \frac{1}{6}
+\end{bmatrix}
+\]
+and each component of \(b\) has an error bounded by \(\epsilon\), so \(b = b_{\text{true}} + \delta b\) with \(|\delta b_i| \leq \epsilon\).
+
+The solution vector is \(x = A^{-1} b\). The components of \(x\) are thus given by solving the system:
+\[
+x_1 = \text{first component of } A^{-1} b, \quad
+x_2 = \text{second component of } A^{-1} b, \quad
+x_3 = \text{third component of } A^{-1} b.
+\]
+
+The sum \(y = x_1 + x_2 + x_3\) can be expressed as \(y = e^T x = e^T A^{-1} b\), where \(e = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}\). Solving \(A c = e\) yields \(c = \begin{bmatrix} 12 \\ -60 \\ 60 \end{bmatrix}\), so
+\[
+y = 12 b_1 - 60 b_2 + 60 b_3.
+\]
+
+Due to the error in \(b\), the error in \(y\) is bounded by
+\[
+|\delta y| \leq 12 \epsilon + 60 \epsilon + 60 \epsilon = 132 \epsilon.
+\]"
+71,"The eigenvalues of the matrix \( A \) are given by \( \lambda_k = 2 \cos\left( \frac{k \pi}{7} \right) \) for \( k = 1, 2, \dots, 6 \).
+
+The eigenvalues of \( A^{-1} \) are \( \mu_k = \frac{1}{\lambda_k} \).
+
+The spectral radius of \( A^{-1} \) is \( \rho(A^{-1}) = \max_k \left| \mu_k \right| = \frac{1}{\min_k |\lambda_k|} \).
+
+The minimum absolute eigenvalue of \( A \) is \( |\lambda_3| = 2 \cos\left( \frac{3\pi}{7} \right) \).
+
+Thus, \( \rho(A^{-1}) = \frac{1}{2 \cos\left( \frac{3\pi}{7} \right)} \)."
+72,"To estimate the eigenvalues and the matrix 2-norm of the matrix \( A = \begin{bmatrix} -1 & 0 & 1 + 2i \\ 0 & 2 & 1 - i \\ 1 - 2i & 1 + i & 0 \end{bmatrix} \), consider the following bounds.
+
+The magnitude of any eigenvalue \( \lambda \) of \( A \) satisfies \( |\lambda| \leq \|A\|_2 \), where \( \|A\|_2 \) is the matrix 2-norm.
+
+The 1-norm and infinity-norm of \( A \) are computed as follows:  
+- \( \|A\|_1 = \max(\text{column sums of absolute values}) = \sqrt{5} + \sqrt{2} \),  
+- \( \|A\|_\infty = \max(\text{row sums of absolute values}) = \sqrt{5} + \sqrt{2} \).  
+
+Thus, an upper estimate for \( \|A\|_2 \) is given by \( \|A\|_2 \leq \sqrt{\|A\|_1 \, \|A\|_\infty} = \sqrt{(\sqrt{5} + \sqrt{2})^2} = \sqrt{5} + \sqrt{2} \).
+
+Therefore:  
+- A good upper estimate for the magnitude of any eigenvalue is \( |\lambda| \leq \sqrt{5} + \sqrt{2} \), approximately 3.65.  
+- An upper estimate for the matrix 2-norm is \( \|A\|_2 \leq \sqrt{5} + \sqrt{2} \), approximately 3.65."
+73,"Let \( A = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} \) and \( B = \begin{bmatrix} \beta_1 & 1 \\ 0 & \beta_2 \end{bmatrix} \).
+
+The product is \( AB = \begin{bmatrix} \beta_1 & 1 + \beta_2 \\ \beta_1 & 1 + \beta_2 \end{bmatrix} \).
+
+The eigenvalues of \( AB \) are \( 0 \) and \( \beta_1 + \beta_2 + 1 \).
+
+For \( (AB)^k \to 0 \) as \( k \to \infty \), all eigenvalues must satisfy \( |\lambda| < 1 \), so \( |\beta_1 + \beta_2 + 1| < 1 \).
+
+This is equivalent to \( -2 < \beta_1 + \beta_2 < 0 \)."
+74,"To calculate the matrix function $f(A) = e^A - e^{-A}$, we can use the method of polynomial interpolation based on the eigenvalues of the matrix $A$. For a diagonalizable $n \times n$ matrix, any analytic function $f(A)$ can be expressed as a polynomial in $A$ of degree at most $n-1$. Since $A$ is a $3 \times 3$ matrix, we seek a representation of the form:
+$f(A) = c_0 I + c_1 A + c_2 A^2$
+
+The coefficients $c_0, c_1, c_2$ are determined by the scalar-valued equivalent equation $f(\lambda) = c_0 + c_1 \lambda + c_2 \lambda^2$ for each eigenvalue $\lambda$ of $A$.
+
+**Step 1: Find the eigenvalues of $A$**
+
+The eigenvalues are the roots of the characteristic equation $\det(A - \lambda I) = 0$.
+$A - \lambda I = \begin{bmatrix} 2-\lambda & 4 & 0 \\ 6 & -\lambda & 8 \\ 0 & 3 & -2-\lambda \end{bmatrix}$
+
+The determinant is:
+$\det(A - \lambda I) = (2-\lambda) \begin{vmatrix} -\lambda & 8 \\ 3 & -2-\lambda \end{vmatrix} - 4 \begin{vmatrix} 6 & 8 \\ 0 & -2-\lambda \end{vmatrix}$
+$= (2-\lambda) [-\lambda(-2-\lambda) - (8)(3)] - 4 [6(-2-\lambda) - 0]$
+$= (2-\lambda) (\lambda^2 + 2\lambda - 24) - 24(-2-\lambda)$
+$= 2\lambda^2 + 4\lambda - 48 - \lambda^3 - 2\lambda^2 + 24\lambda + 48 + 24\lambda$
+$= -\lambda^3 + 52\lambda$
+
+Setting the characteristic polynomial to zero to find the eigenvalues:
+$-\lambda^3 + 52\lambda = 0$
+$-\lambda(\lambda^2 - 52) = 0$
+The eigenvalues are $\lambda_1 = 0$, $\lambda_2 = \sqrt{52}$, and $\lambda_3 = -\sqrt{52}$.
+
+**Step 2: Set up the system of equations for the coefficients**
+
+We apply the equation $f(\lambda_i) = c_0 + c_1 \lambda_i + c_2 \lambda_i^2$ for each eigenvalue.
+The function is $f(\lambda) = e^\lambda - e^{-\lambda}$.
+
+For $\lambda_1 = 0$:
+$f(0) = e^0 - e^{-0} = 1 - 1 = 0$.
+$0 = c_0 + c_1(0) + c_2(0)^2 \implies c_0 = 0$.
+
+With $c_0=0$, the equation simplifies to $f(\lambda) = c_1 \lambda + c_2 \lambda^2$.
+
+For $\lambda_2 = \sqrt{52}$:
+$f(\sqrt{52}) = e^{\sqrt{52}} - e^{-\sqrt{52}}$.
+$e^{\sqrt{52}} - e^{-\sqrt{52}} = c_1 (\sqrt{52}) + c_2 (\sqrt{52})^2$
+$e^{\sqrt{52}} - e^{-\sqrt{52}} = c_1 \sqrt{52} + 52 c_2$
+
+For $\lambda_3 = -\sqrt{52}$:
+$f(-\sqrt{52}) = e^{-\sqrt{52}} - e^{\sqrt{52}} = -(e^{\sqrt{52}} - e^{-\sqrt{52}})$.
+$e^{-\sqrt{52}} - e^{\sqrt{52}} = c_1 (-\sqrt{52}) + c_2 (-\sqrt{52})^2$
+$-(e^{\sqrt{52}} - e^{-\sqrt{52}}) = -c_1 \sqrt{52} + 52 c_2$
+
+**Step 3: Solve for the coefficients**
+
+We have the following system of linear equations for $c_1$ and $c_2$:
+1. $e^{\sqrt{52}} - e^{-\sqrt{52}} = c_1 \sqrt{52} + 52 c_2$
+2. $-(e^{\sqrt{52}} - e^{-\sqrt{52}}) = -c_1 \sqrt{52} + 52 c_2$
+
+Adding equation (1) and (2):
+$0 = (c_1 \sqrt{52} - c_1 \sqrt{52}) + (52 c_2 + 52 c_2)$
+$0 = 104 c_2 \implies c_2 = 0$.
+
+Substituting $c_2 = 0$ into equation (1):
+$e^{\sqrt{52}} - e^{-\sqrt{52}} = c_1 \sqrt{52}$
+$c_1 = \frac{e^{\sqrt{52}} - e^{-\sqrt{52}}}{\sqrt{52}}$
+
+**Step 4: Calculate $f(A)$**
+
+With $c_0 = 0$, $c_2 = 0$, and the calculated value for $c_1$, the matrix function is:
+$f(A) = e^A - e^{-A} = c_1 A$
+$f(A) = \left( \frac{e^{\sqrt{52}} - e^{-\sqrt{52}}}{\sqrt{52}} \right) A$
+
+Noting that $\sqrt{52} = \sqrt{4 \times 13} = 2\sqrt{13}$, the scalar coefficient is:
+$c_1 = \frac{e^{2\sqrt{13}} - e^{-2\sqrt{13}}}{2\sqrt{13}}$
+
+Substituting the matrix $A$:
+$f(A) = \frac{e^{2\sqrt{13}} - e^{-2\sqrt{13}}}{2\sqrt{13}} \begin{bmatrix} 2 & 4 & 0 \\ 6 & 0 & 8 \\ 0 & 3 & -2 \end{bmatrix}$
+
+Thus, the final result is:
+$f(A) = \begin{bmatrix}
+2 \left( \frac{e^{2\sqrt{13}} - e^{-2\sqrt{13}}}{2\sqrt{13}} \right) & 4 \left( \frac{e^{2\sqrt{13}} - e^{-2\sqrt{13}}}{2\sqrt{13}} \right) & 0 \\
+6 \left( \frac{e^{2\sqrt{13}} - e^{-2\sqrt{13}}}{2\sqrt{13}} \right) & 0 & 8 \left( \frac{e^{2\sqrt{13}} - e^{-2\sqrt{13}}}{2\sqrt{13}} \right) \\
+0 & 3 \left( \frac{e^{2\sqrt{13}} - e^{-2\sqrt{13}}}{2\sqrt{13}} \right) & -2 \left( \frac{e^{2\sqrt{13}} - e^{-2\sqrt{13}}}{2\sqrt{13}} \right)
+\end{bmatrix}$
+
+This can be simplified to:
+$f(A) = \frac{e^{2\sqrt{13}} - e^{-2\sqrt{13}}}{\sqrt{13}} \begin{bmatrix}
+1 & 2 & 0 \\
+3 & 0 & 4 \\
+0 & 3/2 & -1
+\end{bmatrix}$"
+75,"The eigenvalues of the matrix \( A = \begin{bmatrix} 1 & -2 & 3 \\ 6 & -13 & 18 \\ 4 & -10 & 14 \end{bmatrix} \) are \( \lambda_1 = 1 \), \( \lambda_2 = 2 \), and \( \lambda_3 = -1 \).
+
+The corresponding eigenvectors are:
+
+- For \( \lambda_1 = 1 \): \( \begin{bmatrix} 1 \\ 3 \\ 2 \end{bmatrix} \)
+- For \( \lambda_2 = 2 \): \( \begin{bmatrix} 0 \\ 3 \\ 2 \end{bmatrix} \)
+- For \( \lambda_3 = -1 \): \( \begin{bmatrix} 1 \\ 4 \\ 3 \end{bmatrix} \)"
+76,"To estimate \( |\lambda_i(\epsilon) - \lambda_i(0)| \) for \( i = 1, 2, 3 \), where \( \lambda_i(\epsilon) \) are the eigenvalues of \( A + \epsilon B \) and \( \lambda_i(0) \) are the eigenvalues of \( A \), first compute the eigenvalues of \( A \).
+
+The eigenvalues of \( A \) are \( \lambda_1(0) = -1 \), \( \lambda_2(0) = 0 \), and \( \lambda_3(0) = 1 \).
+
+Using first-order perturbation theory for non-symmetric matrices, the perturbed eigenvalue is approximated as \( \lambda_i(\epsilon) \approx \lambda_i(0) + \epsilon \cdot \frac{\mathbf{u}_i^H B \mathbf{v}_i}{\mathbf{u}_i^H \mathbf{v}_i} + O(\epsilon^2) \), where \( \mathbf{v}_i \) and \( \mathbf{u}_i \) are the right and left eigenvectors corresponding to \( \lambda_i(0) \), respectively.
+
+The right eigenvectors are:
+- For \( \lambda_1(0) = -1 \): \( \mathbf{v}_1 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix} \)
+- For \( \lambda_2(0) = 0 \): \( \mathbf{v}_2 = \begin{bmatrix} 1 \\ -2 \\ 0 \end{bmatrix} \)
+- For \( \lambda_3(0) = 1 \): \( \mathbf{v}_3 = \begin{bmatrix} 0 \\ 2 \\ 1 \end{bmatrix} \)
+
+The left eigenvectors are:
+- For \( \lambda_1(0) = -1 \): \( \mathbf{u}_1 = \begin{bmatrix} 2 \\ 1 \\ -2 \end{bmatrix} \)
+- For \( \lambda_2(0) = 0 \): \( \mathbf{u}_2 = \begin{bmatrix} 1 \\ 1 \\ -2 \end{bmatrix} \)
+- For \( \lambda_3(0) = 1 \): \( \mathbf{u}_3 = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \)
+
+The first-order corrections are:
+- For \( i=1 \): \( \frac{\mathbf{u}_1^H B \mathbf{v}_1}{\mathbf{u}_1^H \mathbf{v}_1} = 2 \), so \( |\lambda_1(\epsilon) - \lambda_1(0)| \approx |2\epsilon| = 2\epsilon \)
+- For \( i=2 \): \( \frac{\mathbf{u}_2^H B \mathbf{v}_2}{\mathbf{u}_2^H \mathbf{v}_2} = -6 \), so \( |\lambda_2(\epsilon) - \lambda_2(0)| \approx |-6\epsilon| = 6\epsilon \)
+- For \( i=3 \): \( \frac{\mathbf{u}_3^H B \mathbf{v}_3}{\mathbf{u}_3^H \mathbf{v}_3} = 1 \), so \( |\lambda_3(\epsilon) - \lambda_3(0)| \approx |1 \cdot \epsilon| = \epsilon \)
+
+Thus, the estimates are:
+\[
+|\lambda_1(\epsilon) - \lambda_1(0)| \approx 2\epsilon
+\]
+\[
+|\lambda_2(\epsilon) - \lambda_2(0)| \approx 6\epsilon
+\]
+\[
+|\lambda_3(\epsilon) - \lambda_3(0)| \approx \epsilon
+\]"
+77,"To estimate \(|\lambda_i - \tilde{\lambda}_i|\) for \(i = 1, 2, 3\), where \(\lambda_i\) are the eigenvalues of 
+\[
+A = \begin{bmatrix} 2 & 3/2 & 0 \\ 1/2 & 1 & 0 \\ 0 & 0 & -1 \end{bmatrix}
+\]
+and \(\tilde{\lambda}_i\) are the eigenvalues of 
+\[
+\tilde{A} = \begin{bmatrix} 1.99 & 1.49 & 0.01 \\ 0.49 & 1.01 & -0.01 \\ 0.01 & -0.01 & -0.99 \end{bmatrix},
+\]
+apply Gershgorin's theorem to both matrices.
+
+For \(A\), the Gershgorin discs are:
+- Disc 1: centered at 2 with radius \(R_1 = |3/2| + |0| = 1.5\), so eigenvalues lie in \([0.5, 3.5]\).
+- Disc 2: centered at 1 with radius \(R_2 = |1/2| + |0| = 0.5\), so eigenvalues lie in \([0.5, 1.5]\).
+- Disc 3: centered at \(-1\) with radius \(R_3 = |0| + |0| = 0\), so an eigenvalue is exactly at \(-1\).
+
+For \(\tilde{A}\), the Gershgorin discs are:
+- Disc 1: centered at 1.99 with radius \(\tilde{R}_1 = |1.49| + |0.01| = 1.50\), so eigenvalues lie in \([0.49, 3.49]\).
+- Disc 2: centered at 1.01 with radius \(\tilde{R}_2 = |0.49| + |-0.01| = 0.50\), so eigenvalues lie in \([0.51, 1.51]\).
+- Disc 3: centered at \(-0.99\) with radius \(\tilde{R}_3 = |0.01| + |-0.01| = 0.02\), so eigenvalues lie in \([-1.01, -0.97]\).
+
+Comparing the discs:
+- The discs for \(A\) and \(\tilde{A}\) are perturbations of each other due to the small matrix difference.
+- The maximum difference between corresponding discs is determined by the shifts in centers and radii.
+- For Disc 3, the eigenvalue of \(A\) is at \(-1\), and for \(\tilde{A}\), it lies in \([-1.01, -0.97]\), so \(|\lambda_3 - \tilde{\lambda}_3| \leq \max\{|-1 - (-1.01)|, |-1 - (-0.97)|\} = 0.03\).
+- For Discs 1 and 2, the differences in the intervals suggest bounds up to the maximum shift, which is at most 0.03 based on the perturbation.
+
+Thus, the estimates are:
+\[
+|\lambda_i - \tilde{\lambda}_i| \leq 0.03 \quad \text{for} \quad i = 1, 2, 3.
+\]"
+78,"The matrix is \( A = \begin{bmatrix} \frac{3}{2} & \frac{1}{2} \\ \frac{1}{2} & \frac{3}{2} \end{bmatrix} \), and the sequence is defined by \( y_n = (\mathbf{I} + \alpha A + \alpha^2 A^2) y_{n+1} \) for \( n = 1, 2, \ldots \), with \( y_0 \) arbitrary.
+
+The eigenvalues of \( A \) are \( \lambda_1 = 1 \) and \( \lambda_2 = 2 \).
+
+The matrix \( B = \mathbf{I} + \alpha A + \alpha^2 A^2 \) has eigenvalues \( \mu_1 = 1 + \alpha + \alpha^2 \) and \( \mu_2 = 1 + 2\alpha + 4\alpha^2 \).
+
+For the sequence \( \{y_n\} \) to converge to 0 as \( n \to \infty \), the spectral radius of \( B^{-1} \) must be less than 1, which requires \( |\mu_1| > 1 \) and \( |\mu_2| > 1 \).
+
+This leads to the conditions:
+
+- \( 1 + \alpha + \alpha^2 > 1 \), so \( \alpha^2 + \alpha > 0 \), which holds for \( \alpha < -1 \) or \( \alpha > 0 \).
+
+- \( 1 + 2\alpha + 4\alpha^2 > 1 \), so \( 4\alpha^2 + 2\alpha > 0 \), which holds for \( \alpha < -\frac{1}{2} \) or \( \alpha > 0 \).
+
+The intersection of these conditions is \( \alpha < -1 \) or \( \alpha > 0 \).
+
+Thus, the sequence converges to 0 for \( \alpha \in (-\infty, -1) \cup (0, \infty) \)."
+79,"The exact integer solution to the system \( \mathbf{Ax} = \mathbf{b} \), where \(\mathbf{A}\) is the 4th-order Hilbert matrix and \(\mathbf{b} = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix} \), is obtained through iterative improvement using \(\mathbf{B}\) as an approximate inverse.
+
+After performing the iterative refinement process, the solution converges to:
+
+\[
+\mathbf{x} = \begin{bmatrix} 140 \\ 210 \\ 120 \\ 24 \end{bmatrix}
+\]"
+80,"The given iteration is a form of the gradient descent method for solving the linear system \(\mathbf{Ax} = \mathbf{y}\), where
+
+\[
+\mathbf{A} = \begin{bmatrix} 3 & 2 \\ 1 & 2 \end{bmatrix}, \quad \mathbf{y} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}, \quad \mathbf{x}^{(0)} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
+\]
+
+The iteration is
+
+\[
+\mathbf{x}^{(n+1)} = \mathbf{x}^{(n)} + \alpha (\mathbf{A} \mathbf{x}^{(n)} - \mathbf{y}),
+\]
+
+which can be rewritten as
+
+\[
+\mathbf{x}^{(n+1)} = (\mathbf{I} - \alpha \mathbf{A}) \mathbf{x}^{(n)} + \alpha \mathbf{y}.
+\]
+
+For convergence, the spectral radius of the iteration matrix \(\mathbf{I} - \alpha \mathbf{A}\) must be less than 1. The eigenvalues of \(\mathbf{A}\) are \(\lambda_1 = 1\) and \(\lambda_2 = 4\), both positive, confirming that \(\mathbf{A}\) is symmetric positive definite.
+
+The eigenvalues of \(\mathbf{I} - \alpha \mathbf{A}\) are \(1 - \alpha \lambda_i\). Thus, the spectral radius is \(\rho = \max \{ |1 - \alpha \lambda_1|, |1 - \alpha \lambda_2| \} = \max \{ |1 - \alpha|, |1 - 4\alpha| \}\).
+
+To achieve optimal convergence, minimize the spectral radius. For this method, the optimal \(\alpha\) is
+
+\[
+\alpha = \frac{2}{\lambda_{\min} + \lambda_{\max}} = \frac{2}{1 + 4} = \frac{2}{5}.
+\]
+
+Thus, set \(\alpha = \frac{2}{5}\). With this value, the spectral radius is \(0.6\), ensuring convergence at the fastest rate for a fixed step size."
+81,"The system of equations is:
+
+\[
+\begin{align*}
+4x_1 + 2x_2 + x_3 &= 4, \\
+x_1 + 3x_2 + x_3 &= 4, \\
+3x_1 + 2x_2 + 6x_3 &= 7.
+\end{align*}
+\]
+
+The matrix form is \(A \mathbf{x} = b\), where
+
+\[
+A = \begin{pmatrix} 4 & 2 & 1 \\ 1 & 3 & 1 \\ 3 & 2 & 6 \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 4 \\ 7 \end{pmatrix}.
+\]
+
+Using the Gauss-Seidel method with initial approximation \(\mathbf{x}^{(0)} = \begin{pmatrix} 0.1 \\ 0.8 \\ 0.5 \end{pmatrix}\), the iterations are as follows:
+
+\[
+\begin{align*}
+\mathbf{x}^{(1)} &= \begin{pmatrix} 0.475 \\ 1.008333 \\ 0.592722 \end{pmatrix}, \\
+\mathbf{x}^{(2)} &= \begin{pmatrix} 0.347653 \\ 1.019875 \\ 0.652882 \end{pmatrix}, \\
+\mathbf{x}^{(3)} &= \begin{pmatrix} 0.326842 \\ 1.006759 \\ 0.667993 \end{pmatrix}.
+\end{align*}
+\]
+
+The errors are computed as the Euclidean norm of the difference between successive approximations, \(\|\mathbf{x}^{(k+1)} - \mathbf{x}^{(k)}\|_2\):
+
+\[
+\begin{align*}
+\|\mathbf{x}^{(1)} - \mathbf{x}^{(0)}\|_2 &\approx 0.4389, \\
+\|\mathbf{x}^{(2)} - \mathbf{x}^{(1)}\|_2 &\approx 0.1413, \\
+\|\mathbf{x}^{(3)} - \mathbf{x}^{(2)}\|_2 &\approx 0.0289.
+\end{align*}
+\]"
+82,"For the matrix \( A = \begin{bmatrix} 1 & k \\ 2k & 1 \end{bmatrix} \) with \( k \neq \sqrt{2}/2 \) and \( k \) real, the Jacobi method iteration matrix is \( M = \begin{bmatrix} 0 & -k \\ -2k & 0 \end{bmatrix} \).
+
+The eigenvalues of \( M \) are \( \lambda = \pm k \sqrt{2} \), so the spectral radius is \( \rho(M) = |k| \sqrt{2} \).
+
+Convergence requires \( \rho(M) < 1 \), so \( |k| \sqrt{2} < 1 \), or \( |k| < \frac{\sqrt{2}}{2} \).
+
+For \( k = 0.25 \), the optimal relaxation factor \( \omega \) for the SOR method is found by solving the equation derived from setting the discriminant of the SOR iteration matrix eigenvalues to zero: \( \omega^2 + 28 \omega - 28 = 0 \).
+
+The positive root is \( \omega = -14 + 4 \sqrt{14} \)."
+83,"To determine whether the Jacobi and Gauss-Seidel methods converge for solving \(\mathbf{Ax} = \mathbf{b}\) with \(\mathbf{A} = \begin{bmatrix} 1 & 2 & -2 \\ 1 & 1 & 1 \\ 2 & 2 & 1 \end{bmatrix}\), analyze the convergence conditions for each method.
+
+The matrix \(\mathbf{A}\) is neither strictly diagonally dominant nor symmetric positive definite.
+
+- **Strict diagonal dominance**: For row \(i\), check if \(|a_{ii}| > \sum_{j \neq i} |a_{ij}|\).  
+  - Row 1: \(|1| = 1\), \(\sum_{j \neq 1} |a_{1j}| = |2| + |-2| = 4\), and \(1 < 4\).  
+  - Row 2: \(|1| = 1\), \(\sum_{j \neq 2} |a_{2j}| = |1| + |1| = 2\), and \(1 < 2\).  
+  - Row 3: \(|1| = 1\), \(\sum_{j \neq 3} |a_{3j}| = |2| + |2| = 4\), and \(1 < 4\).  
+  Thus, \(\mathbf{A}\) is not strictly diagonally dominant.
+
+- **Symmetric positive definite**: \(\mathbf{A}\) is not symmetric because \(a_{13} = -2\) and \(a_{31} = 2\). Additionally, the leading principal minors are:  
+  - First: \(\det([1]) = 1 > 0\).  
+  - Second: \(\det(\begin{bmatrix} 1 & 2 \\ 1 & 1 \end{bmatrix}) = 1 \cdot 1 - 2 \cdot 1 = -1 < 0\).  
+  Since a leading minor is negative, \(\mathbf{A}\) is not positive definite.
+
+- **Jacobi method**: Convergence requires \(\mathbf{A}\) to be strictly diagonally dominant or symmetric positive definite. Since neither condition holds, the Jacobi method does not converge.
+
+- **Gauss-Seidel method**: Convergence requires \(\mathbf{A}\) to be strictly diagonally dominant or positive definite. Since neither condition holds, the Gauss-Seidel method does not converge."
+84,"The system of equations is:
+
+\[
+\begin{align*}
+2x - y &= 1, \\
+- x + 2y - z &= 0, \\
+- y + 2z - w &= 0, \\
+- z + 2w &= 1.
+\end{align*}
+\]
+
+The matrix form is \(A \mathbf{x} = b\), where
+
+\[
+A = \begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 &-1 \\ 0 & 0 & -1 & 2 \end{pmatrix}, \quad b = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 1 \end{pmatrix}.
+\]
+
+The exact solution is \(\mathbf{x} = [1, 1 опасности, 1, 1]^T\).
+
+### Gauss-Seidel Iterative Scheme
+
+The Gauss-Seidel iterations from the initial guess \(\mathbf{x}^{(0)} = [0.5, 0.5, 0.5, 0.5]^T\) are:
+
+\[
+ NODE\mathbf{x}^{(1)} = [0.75, 0.625, 0.5625, 0.78125]^T,
+\]
+
+\[
+\mathbf{x}^{(2)} = [0.8125, 0.6875, 0.734375, 0.8671875]^T,
+\]
+
+\[
+\mathbf{x}^{(3)} = [0.84375, 0.7890625, 0.828125, 0.9140625]^T.
+\]
+
+The iteration matrix for Gauss-Seidel is
+
+\[
+G = \begin{pmatrix} 0 & -0.5 & 0 & 0 \\ 0 & -0.25 & -0.5 & 0 \\ 0 & -0.125 & -0.25 & -0.5 \\ 0 & -0.0625 & -0.125 & -0.25 \end{pmatrix}.
+\]
+
+The eigenvalues of \(G\) are the roots of the characteristic equation \(\det(G - \lambda I) = 0\), which are \(\lambda = 0, 0, -0.25, -0.5\).
+
+### Successive Over-Relaxation (SOR) with \(\omega = 1.25\)
+
+The SOR iterations from the same initial guess are:
+
+\[
+\mathbf{x}^{(1)} = [0.8125, -0.9453125, 0.1533203125, 0.4041748046875]^T,
+\]
+
+\[
+\mathbf{x}^{(2)} = [-0.6396484375, -1.2314147949277344, -0.6009521484375, 0.61175537109375]^T,
+\]
+
+\[
+\mathbf{x}^{(3)} = [ -1.5836661633758545, -1.440543701171875, -1.0563048629760742, 0.7155208587646484]^T.
+\]
+
+### Comparison of Maximum Absolute Error and Rate of Convergence
+
+The maximum absolute error after three iterations is:
+
+- Gaussian-Seidel: \(\max|\mathbf{x}^{(3)} - [1, 1, 1, 1]^T| = 0.2109375\).
+- SOR (\(\omega = 1.25\)): \(\max|\mathbf{x}^{(3)} - [1, 1, 1, 1]^T| = 2.5836661633758545\).
+
+The spectral radius of the iteration matrix for Gauss-Seidel is \(\rho(G) = 0.5\). For SOR, the iteration matrix depends on \(\omega\), and with \(\omega = 1.25\), the iterations show poorer convergence compared to Gauss-Searel, as the spectral radius is likely greater than 0.5, leading to a slower or divergent rate. Thus, Gauss-Seidel converges faster in this case."
+85,"For the given system \( A \mathbf{x} = \mathbf{b} \), where
+\[
+A = \begin{bmatrix} 4 & 0 & 2 \\ 0 & 5 & 2 \\ 5 & 4 & 10 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} 4 \\ -3 \\ 2 \end{bmatrix},
+\]
+the convergence factor for each method is as follows:
+
+- For the Jacobi method, the iteration matrix is \( G_J = \begin{bmatrix} 0 & 0 & -0.5 \\ 0 & 0 & -0.4 \\ -0.5 & -0.4 & 0 \end{bmatrix} \). The eigenvalues are \( 0 \), \( \frac{\sqrt{41}}{10} \), and \( -\frac{\sqrt{41}}{10} \). Thus, the spectral radius is \( \rho(G_J) = \frac{\sqrt{41}}{10} \).
+
+- For the Gauss-Seidel method, the iteration matrix is \( G_{GS} = \begin{bmatrix} 0 & 0 & 0.5 \\ 0 & 0 & 0.4 \\ 0 & 0 & -\frac{41}{100} \end{bmatrix} \). The eigenvalues are \( 0 \), \( 0 \), and \( -\frac{41}{100} \). Thus, the spectral radius is \( \rho(G_{GS}) = \frac{41}{100} \).
+
+For the relaxation method (Successive Over-Relaxation, SOR), the optimal \( \omega \) is determined using the spectral radius of the Jacobi matrix:
+\[
+\omega = \frac{2}{1 + \sqrt{1 - \left( \frac{\sqrt{41}}{10} \right)^2}} = \frac{2}{1 + \sqrt{1 - \frac{41}{100}}} = \frac{2}{1 + \sqrt{\frac{59}{100}}} = \frac{2}{1 + \frac{\sqrt{59}}{10}} = \frac{20}{10 + \sqrt{59}}.
+\]
+The SOR iteration formulas are:
+\[
+\begin{align*}
+x_1^{(k+1)} &= (1 - \omega) x_1^{(k)} + \frac{\omega}{4} \left( 4 - 2 x_3^{(k)} \right), \\
+x_2^{(k+1)} &= (1 - \omega) x_2^{(k)} + \frac{\omega}{5} \left( -3 - 2 x_3^{(k)} \right), \\
+x_3^{(k+1)} &= (1 - \omega) x_3^{(k)} + \frac{\omega}{10} \left( 2 - 5 x_1^{(k+1)} - 4 x_2^{(k+1)} \right).
+\end{align*}
+\]"
+86,"The system of equations is given by:
+
+\[
+\begin{align*}
+4x + y + 2z &= 4, \\
+3x + 5y + z &= 7, \\
+x + y + 3z &= 3.
+\end{align*}
+\]
+
+In matrix form, this is \(A \mathbf{x} = b\), where
+
+\[
+A = \begin{pmatrix} 4 & 1 & 2 \\ 3 & 5 & 1 \\ 1 & 1 & 3 \end{pmatrix}, \quad \mathbf{x} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}, \quad b = \begin{pmatrix} 4 \\ 7 \\ 3 \end{pmatrix}.
+\]
+
+### Jacobi Iterative Scheme
+
+The Jacobi iteration is derived from \(A = D + R\), where \(D\) is the diagonal matrix of \(A\):
+
+\[
+D = \begin{pmatrix} 4 & 0 & 0 \\ 0 & 5 & 0 \\ 0 & 0 & 3 \end{pmatrix}.
+\]
+
+The iterative formula is:
+
+\[
+\mathbf{x}^{(k+1)} = -D^{-1} (L + U) \mathbf{x}^{(k)} + D^{-1} b,
+\]
+
+where \(L\) is the lower triangular part and \(U\) is the upper triangular part of \(A\).
+
+Component-wise, the iteration is:
+
+\[
+\begin{align*}
+x^{(k+1)} &= 1 - \frac{1}{4} y^{(k)} - \frac{1}{2} z^{(k)}, \\
+y^{(k+1)} &= \frac{7}{5} - \frac{3}{5} x^{(k)} - \frac{1}{5} z^{(k)}, \\
+z^{(k+1)} &= 1 - \frac{1}{3} x^{(k)} - \frac{1}{3} y^{(k)}.
+\end{align*}
+\]
+
+Starting with \(\mathbf{x}^{(0)} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\):
+
+- Iteration 1: \(\mathbf{x}^{(1)} = \begin{pmatrix} 1 \\ 1.4 \\ 1 \end{pmatrix}\)
+- Iteration 2: \(\mathbf{x}^{(2)} = \begin{pmatrix} 0.15 \\ 0.6 \\ 0.2 \end{pmatrix}\)
+- Iteration 3: \(\mathbf{x}^{(3)} = \begin{pmatrix} 0.75 \\ 1.27 \\ 0.75 \end{pmatrix}\)
+
+The iteration matrix for Jacobi is \(B_J = -D^{-1} (L + U) = \begin{pmatrix} 0 & -1/4 & -1/2 \\ -3/5 & 0 & -1/5 \\ -1/3 & -1/3 & 0 \end{pmatrix}\).
+
+### Gauss-Seidel Iterative Scheme
+
+The Gauss-Seidel iteration is derived from \(A = (D + L) + U\).
+
+The iterative formula is:
+
+\[
+\mathbf{x}^{(k+1)} = -(D + L)^{-1} U \mathbf{x}^{(k)} + (D + L)^{-1} b.
+\]
+
+Component-wise, the iteration is:
+
+\[
+\begin{align*}
+x^{(k+1)} &= 1 - \frac{1}{4} y^{(k)} - \frac{1}{2} z^{(k)}, \\
+y^{(k+1)} &= \frac{7}{5} - \frac{3}{5} x^{(k+1)} - \frac{1}{5} z^{(k)}, \\
+z^{(k+1)} &= 1 - \frac{1}{3} x^{(k+1)} - \frac{1}{3} y^{(k+1)}.
+\end{align*}
+\]
+
+Starting with \(\mathbf{x}^{(0)} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\):
+
+- Iteration 1: \(\mathbf{x}^{(1)} = \begin{pmatrix} 1 \\ 0.8 \\ 0.4 \end{pmatrix}\)
+- Iteration 2: \(\mathbf{x}^{(2)} = \begin{pmatrix} 0.6 \\ 0.96 \\ 0.48 \end{pmatrix}\)
+- Iteration 3: \(\mathbf{x}^{(3)} = \begin{pmatrix} 0.52 \\ 0.992 \\ 0.496 \end{pmatrix}\)
+
+The iteration matrix for Gauss-Seidel is \(B_{GS} = (D + L)^{-1} U\).
+
+### Comparison with Exact Solution
+
+The exact solution is \(\mathbf{x} = \begin{pmatrix} 0.5 \\ 1 \\ 0.5 \end{pmatrix}\).
+
+- After 3 Jacobi iterations: \(\mathbf{x}^{(3)} = \begin{pmatrix} 0.75 \\ 1.27 \\ 0.75 \end{pmatrix}\)
+- After 3 Gauss-Seidel iterations: \(\mathbf{x}^{(3)} = \begin{pmatrix} 0.52 \\ 0.992 \\ 0.496 \end{pmatrix}\)
+
+The Gauss-Seidel iterates are closer to the exact solution than the Jacobi iterates.
+
+### Spectral Radii and Rate of Convergence
+
+The spectral radius is the largest absolute eigenvalue of the iteration matrix.
+
+For Jacobi, the characteristic equation of \(B_J\) is \(60\lambda^3 - 23\lambda + 7 = 0\).
+
+Using Newton-Raphson on \(f(\lambda) = 60\lambda^3 - 23\lambda + 7\) with initial guess \(\lambda_0 = -0.7\):
+
+\[
+\lambda_1 = -0.7386, \quad \lambda_2 = -0.73567.
+\]
+
+The eigenvalues are approximately \(-0.736\) and two complex conjugates with magnitudes less than 1. Thus, \(\rho(B_J) \approx 0.736\).
+
+For Gauss-Seidel, \(\rho(B_{GS})\) is less than \(\rho(B_J)\), as Gauss-Seidel typically has a smaller spectral radius for this system.
+
+The rate of convergence is determined by \(\rho\): the error decreases as \(\rho^k\). For Jacobi, the rate is approximately 0.736 per iteration, indicating slower convergence. For Gauss-Seidel, the smaller \(\rho\) implies faster convergence."
+87,"To address the query, we first prove that the matrix \(A\) has property A and then determine the optimum relaxation factor \(\omega\) for the Successive Over-Relaxation (SOR) method.
+
+### Proof that \(A\) Has Property A
+
+The matrix \(A\) is given by:
+\[
+A = \begin{bmatrix}
+2 & -1 & 0 & 0 & 0 \\
+-1 & 2 & -1 & 0 & 0 \\
+0 & -1 & 2 & -1 & 0 \\
+0 & 0 & -1 & 2 & -1 \\
+0 & 0 & 0 & -1 & 2 \\
+\end{bmatrix}.
+\]
+
+A matrix \(A\) has property A if it is symmetric positive definite and its associated graph is such that it can be consistently ordered (e.g., the graph is a tree or can be permuted to an irreducible diagonally dominant form).
+
+1. **Symmetry**: \(A\) is symmetric, as \(A = A^T\).
+
+2. **Positive Definiteness**: The eigenvalues of \(A\) are \(\lambda_k = 2 - 2\cos\left(\frac{k\pi}{n+1}\right)\) for \(k = 1, \dots, n\), where \(n=5\). Thus,
+   \[
+   \lambda_k = 4 \sin^2\left(\frac{k\pi}{2(n+1)}\right) = 4 \sin^2\left(\frac{k\pi}{12}\right).
+   \]
+   For \(k = 1\) to \(5\), the eigenvalues are:
+   \[
+   \lambda_1 = 4 \sin^2\left(\frac{\pi}{12}\right) > 0, \quad \dots, \quad \lambda_5 = 4 \sin^2\left(\frac{5\pi}{12}\right) > 0.
+   \]
+   Since all eigenvalues are positive, \(A\) is positive definite.
+
+3. **Graph Structure**: The matrix \(A\) is tridiagonal with non-zero entries only on the main diagonal and the sub- and super-diagonals. Its associated graph is a path graph (a tree), which is irreducible and consistently ordered.
+
+Thus, \(A\) satisfies the conditions for property A.
+
+### Optimum Relaxation Factor \(\omega\) for SOR
+
+For a matrix \(A\) with property A, the optimum relaxation factor for the SOR method is given by:
+\[
+\omega_{\text{opt}} = \frac{2}{1 + \sqrt{1 - \rho(J)^2}},
+\]
+where \(\rho(J)\) is the spectral radius of the Jacobi iteration matrix \(J = D^{-1}(L + U)\), with \(A = D - L - U\) (where \(D\) is diagonal, \(L\) is strictly lower triangular, and \(U\) is strictly upper triangular).
+
+For this tridiagonal matrix, the eigenvalues of \(J\) are \(\mu_k = \cos\left(\frac{k\pi}{n+1}\right)\) for \(k = 1, \dots, n\), with \(n=5\). Thus,
+\[
+\rho(J) = \max_k |\mu_k| = \cos\left(\frac{\pi}{n+1}\right) = \cos\left(\frac{\pi}{6}\right) = \frac{\sqrt{3}}{2}.
+\]
+
+Substitute into the formula:
+\[
+\omega_{\text{opt}} = \frac{2}{1 + \sqrt{1 - \left(\frac{\sqrt{3}}{2}\right)^2}} = \frac{2}{1 + \sqrt{1 - \frac{3}{4}}} = \frac{2}{1 + \sqrt{\frac{1}{4}}} = \frac{2}{1 + \frac{1}{2}} = \frac{2}{\frac{3}{2}} = \frac{4}{3}.
+\]
+
+Thus, the optimum \(\omega\) is \(\frac{4}{3}\)."
+88,"The system of equations is given by:
+
+\[
+\begin{align*}
+3x + 2y &= 4.5, \\
+2x + 3y - z &= 5, \\
+-y + 2z &= -0.5.
+\end{align*}
+\]
+
+This can be written in matrix form as \(A\mathbf{x} = \mathbf{b}\), where
+
+\[
+A = \begin{pmatrix} 3 & 2 & 0 \\ 2 & 3 & -1 \\ 0 & -1 & 2 \end{pmatrix}, \quad
+\mathbf{x} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}, \quad
+\mathbf{b} = \begin{pmatrix} 4.5 \\ 5 \\ -0.5 \end{pmatrix}.
+\]
+
+### SOR Iteration Scheme
+
+The SOR iteration for this system is derived as follows. The general SOR formula is:
+
+\[
+x_i^{(k+1)} = (1 - \omega) x_i^{(k)} + \omega \left( \frac{b_i - \sum_{j=1}^{i-1} a_{ij} x_j^{(k+1)} - \sum_{j=i+1}^n a_{ij} x_j^{(k)}}{a_{ii}} \right).
+\]
+
+For the given system:
+
+1. For \(x\) (first equation):
+   \[
+   x^{(k+1)} = (1 - \omega) x^{(k)} + \omega \left( \frac{4.5 - 2 y^{(k)}}{3} \right).
+   \]
+
+2. For \(y\) (second equation):
+   \[
+   y^{(k+1)} = (1 - \omega) y^{(k)} + \omega \left( \frac{5 - 2 x^{(k+1)} + z^{(k)}}{3} \right).
+   \]
+
+3. For \(z\) (third equation):
+   \[
+   z^{(k+1)} = (1 - \omega) z^{(k)} + \omega \left( \frac{-0.5 + y^{(k+1)}}{2} \right).
+   \]
+
+### Optimal Relaxation Factor
+
+The Jacobi iteration matrix is \(B_J = D^{-1}(L + U)\), where \(A = D - L - U\), with
+
+\[
+D = \begin{pmatrix} 3 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 2 \end{pmatrix}, \quad
+L = \begin{pmatrix} 0 & 0 & 0 \\ 2 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}, \quad
+U = \begin{pmatrix} 0 & 2 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}.
+\]
+
+Thus,
+
+\[
+B_J = \begin{pmatrix} 0 & \frac{2}{3} & 0 \\ \frac{2}{3} & 0 & \frac{1}{3} \\ 0 & \frac{1}{2} & 0 \end{pmatrix}.
+\]
+
+The eigenvalues of \(B_J\) are \(0\), \(\sqrt{\frac{11}{18}}\), and \(-\sqrt{\frac{11}{18}}\), so the spectral radius is \(\rho = \sqrt{\frac{11}{18}}\).
+
+The optimal relaxation factor is
+
+\[
+\omega_{\text{opt}} = \frac{2}{1 + \sqrt{1 - \rho^2}} = \frac{2}{1 + \sqrt{1 - \frac{11}{18}}} = \frac{2}{1 + \sqrt{\frac{7}{18}}} \approx 1.232.
+\]
+
+### Rate of Convergence
+
+The rate of convergence for SOR is determined by the spectral radius of the SOR iteration matrix, which is less than \(\rho\) for \(1 < \omega_{\text{opt}} < 2\). Specifically, the asymptotic rate of convergence is governed by \(\rho_{\text{SOR}} = \sqrt{\frac{2 \omega_{\text{opt}} - (\omega_{\text{opt}} - 1) \lambda_{\text{max}}^2 - (\omega_{\text{opt}} + 1) \lambda_{\text{min}}^2}{\omega_{\text{opt}} (2 - \omega_{\text{opt}})}}\), but with \(\omega_{\text{opt}} \approx 1.232\), the method converges faster than Jacobi.
+
+### Iterations with \(\omega_{\text{opt}} \approx 1.232\) and Initial Guess \(\mathbf{x}^{(0)} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}\)
+
+Using \(\omega = 1.232\):
+
+- Iteration 1:
+  \[
+  x^{(1)} = (1 - 1.232) \cdot 0 + 1.232 \cdot \frac{4.5 - 2 \cdot 0}{3} = 1.232 \cdot 1.5 \approx 1.848,
+  \]
+  \[
+  y^{(1)} = (1 - 1.232) \cdot 0 + 1.232 \cdot \frac{5 - 2 \cdot 1.848 + 0}{3} \approx 1.232 \cdot \frac{1.304}{3} \approx 0.304,
+  \]
+  \[
+  z^{(1)} = (1 - 1.232) \cdot 0 + 1.232 \cdot \frac{-0.5 + 0.304}{2} \approx 1.232 \cdot \frac{-0.196}{2} \approx -0.353.
+  \]
+  So, \(\mathbf{x}^{(1)} \approx \begin{pmatrix} 1.848 \\ 0.304 \\ -0.353 \end{pmatrix}\).
+
+- Iteration 2:
+  \[
+  x^{(2)} = (1 - 1.232) \cdot 1.848 + 1.232 \cdot \frac{4.5 - 2 \cdot 0.304}{3} \approx -0.232 \cdot 1.848 + 1.232 \cdot \frac{3.892}{3} \approx 1.174,
+  \]
+  \[
+  y^{(2)} = (1 - 1.232) \cdot 0.304 + 1.232 \cdot \frac{5 - 2 \cdot 1.174 + (-0.353)}{3} \approx -0.232 \cdot 0.304 + 1.232 \cdot \frac{2.299}{3} \approx 0.874,
+  \]
+  \[
+  z^{(2)} = (1 - 1.232) \cdot (-0.353) + 1.232 \cdot \frac{-0.5 + 0.874}{2} \approx -0.232 \cdot (-0.353) + 1.232 \cdot \frac{0.374}{2} \approx 0.312.
+  \]
+  So, \(\mathbf{x}^{(2)} \approx \begin{pmatrix} 1.174 \\ 0.874 \\ 0.312 \end{pmatrix}\).
+
+- Iteration 3:
+  \[
+  x^{(3)} = (1 - 1.232) \cdot 1.174 + 1.232 \cdot \frac{4.5 - 2 \cdot 0.874}{3} \approx -0.232 \cdot 1.174 + 1.232 \cdot \frac{2.752}{3} \approx 0.934,
+  \]
+  \[
+  y^{(3)} = (1 - 1.232) \cdot 0.874 + 1.232 \cdot \frac{5 - 2 \cdot 0.934 + 0.312}{3} \approx -0.232 \cdot 0.874 + 1.232 \cdot \frac{3.454}{3} \approx 1.238,
+  \]
+  \[
+  z^{(3)} = (1 - 1.232) \cdot 0.312 + 1.232 \cdot \frac{-0.5 + 1.238}{2} \approx -0.232 \cdot 0.312 + 1.232 \cdot \frac{0.738}{2} \approx 0.412.
+  \]
+  So, \(\mathbf{x}^{(3)} \approx \begin{pmatrix} 0.934 \\ 1.238 \\ 0.412 \end{pmatrix}\).
+
+- Iteration 4:
+  \[
+  x^{(4)} = (1 - 1.232) \cdot 0.934 + 1.232 \cdot \frac{4.5 - 2 \cdot 1.238}{3} \approx -0.232 \cdot 0.934 + 1.232 \cdot \frac{2.024}{3} \approx 0.692,
+  \]
+  \[
+  y^{(4)} = (1 - 1.232) \cdot 1.238 + 1.232 \cdot \frac{5 - 2 \cdot 0.692 + 0.412}{3} \approx -0.232 \cdot 1.238 + 1.232 \cdot \frac{4.032}{3} \approx 1.392,
+  \]
+  \[
+  z^{(4)} = (1 - 1.232) \cdot 0.412 + 1.232 \cdot \frac{-0.5 + 1.392}{2} \approx -0.232 \cdot 0.412 + 1.232 \cdot \frac{0.892}{2} \approx 0.475.
+  \]
+  So, \(\mathbf{x}^{(4)} \approx \begin{pmatrix} 0.692 \\ 1.392 \\ 0.475 \end{pmatrix}\).
+
+- Iteration 5:
+  \[
+  x^{(5)} = (1 - 1.232) \cdot 0.692 + 1.232 \cdot \frac{4.5 - 2 \cdot 1.392}{3} \approx -0.232 \cdot 0.692 + 1.232 \cdot \frac{1.716}{3} \approx 0.582,
+  \]
+  \[
+  y^{(5)} = (1 - 1.232) \cdot 1.392 + 1.232 \cdot \frac{5 - 2 \cdot 0.582 + 0.475}{3} \approx -0.232 \cdot 1.392 + 1.232 \cdot \frac{4.361}{3} \approx 1.457,
+  \]
+  \[
+  z^{(5)} = (1 - 1.232) \cdot 0.475 + 1.232 \cdot \frac{-0.5 + 1.457}{2} \approx -0.232 \cdot 0.475 + 1.232 \cdot \frac{0.957}{2} \approx 0.491.
+  \]
+  So, \(\mathbf{x}^{(5)} \approx \begin{pmatrix} 0.582 \\ 1.457 \\ 0.491 \end{pmatrix}\).
+
+### Comparison with Exact Solution
+
+The exact solution is \(\mathbf{x} = \begin{pmatrix} 0.5 \\ 1.5 \\ 0.5 \end{pmatrix}\).
+
+- Absolute errors after 5 iterations: \(\| \mathbf{x}^{(5)} - \mathbf{x} \|_2 \approx \| \begin{pmatrix} 0.582 - 0.5 \\ 1.457 - 1.5 \\ 0.491 - 0.5 \end{pmatrix} \|_2 = \| \begin{pmatrix} 0.082 \\ -0.043 \\ -0.009 \end{pmatrix} \|_2 \approx 0.094\).
+
+The iterations are converging toward the exact solution, with the error decreasing, as expected with \(\omega_{\text{opt}}\)."
+89,"The Jacobi method for the symmetric matrix \( A = \begin{bmatrix} 1 & \sqrt{2} & 2 \\ \sqrt{2} & 3 & \sqrt{2} \\ 2 & \sqrt{2} & 1 \end{bmatrix} \) yields the following eigenvalues and eigenvectors.
+
+The eigenvalues are the diagonal elements of the converged matrix: \( \lambda_1 = -1 \), \( \lambda_2 = 1 \), \( \lambda_3 = 5 \).
+
+The corresponding eigenvectors are the columns of the accumulated rotation matrix:
+
+- For \( \lambda_1 = -1 \): \( \begin{pmatrix} \dfrac{\sqrt{2}}{2} \\ 0 \\ -\dfrac{\sqrt{2}}{2} \end{pmatrix} \)
+
+- For \( \lambda_2 = 1 \): \( \begin{pmatrix} -\dfrac{1}{2} \\ \dfrac{\sqrt{2}}{2} \\ -\dfrac{1}{2} \end{pmatrix} \)
+
+- For \( \lambda_3 = 5 \): \( \begin{pmatrix} \dfrac{1}{2} \\ \dfrac{\sqrt{2}}{2} \\ \dfrac{1}{2} \end{pmatrix} \)"
+90,"The Jacobi method is applied to the symmetric matrix \(A = \begin{bmatrix} 2 & 3 & 1 \\ 3 & 2 & insecurities2 \\ 1 & 2 & 1 \end{bmatrix}\).
+
+After iterations, the matrix diagonalizes to \(\begin{bmatrix} 6 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & -1endendo \end{bmatrix}\).
+
+The eigenvalues are \(\lambda = 6\), \(\lambda = 1\), and \(\lambda = -1\).
+
+The corresponding eigenvectors are:
+
+- For \(\lambda = 6\): \(\begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}\)
+
+- For \(\lambda = 1\): \(\begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix}\)
+
+- For \(\lambda = -1\): \(\begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}\)"
+91,"To transform the matrix \( M = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 1 & -1 \\ 3 & -1 & 1 \end{bmatrix} \) to tridiagonal form using Givens rotations, apply orthogonal similarity transformations to zero out the subdiagonal elements below the first subdiagonal.
+
+First, zero out the (3,1) element by applying a Givens rotation in the (1,3) plane. The rotation parameters are derived from the 2x2 submatrix \(\begin{bmatrix} 1 & 3 \\ 3 & 1 \end{bmatrix}\):
+
+\[
+r = \sqrt{1^2 + 3^2} = \sqrt{10}, \quad c = \frac{1}{\sqrt{10}}, \quad s = \frac{3}{\sqrt{10}}.
+\]
+
+The rotation matrix is:
+\[
+Q_1 = \begin{bmatrix} \frac{2}{\sqrt{10}} & 0 & -\frac{3}{\sqrt{10}} \\ 0 & 1 & 0 \\ \frac{3}{\sqrt{10}} & 0 & \frac{1}{\sqrt{10}} \end{bmatrix}.
+\]
+
+Compute \( M_1 = Q_1 M Q_1^T \):
+\[
+M_1 = \begin{bmatrix} -\frac{8}{\sqrt{10}} & \frac{5}{\sqrt{10}} & 0 \\ \frac{5}{\sqrt{10}} & 1 & -1 \\ 0 & -1 & \frac{10}{\sqrt{10}} \end{bmatrix}.
+\]
+
+Next, zero out the (3,2) element of \( M_1 \) by applying a Givens rotation in the (2,3) plane. The 2x2 submatrix is \(\begin{bmatrix}Кон 1 & -1 \\ -1 & \frac{10}{\sqrt{10}} \end{bmatrix}\):
+
+\[\begin{bmatrix}
+r = \sqrt{1^2 + (-1)^2} = \sqrt{2}, \\
+c = \frac{1}{\sqrt{2}}, \\ 
+s = \frac{-1}{\sqrt{2}}.
+\end{bmatrix}\]
+
+The rotation matrix is:
+\[
+Q_2 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ 0 & \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}.
+\]
+
+Compute \( M_2 = Q_2 M_1 Q_2^T \):
+\[
+M_2 = \begin{bmatrix} -\frac{8}{\sqrt{10}} & \frac{5}{\sqrt{10}} & 0 \\ \frac{5}{\sqrt{10}} & \frac{5}{\sqrt{10}} & -\frac{5}{\sqrt-turned{10}} \\ 0 & -\frac{5}{\sqrt{10}} & \frac{10}{\sqrt{10}} \end{bmatrix}.
+\]
+
+The final tridiagonal matrix is:
+\[
+\begin{bmatrix} -\dfrac{8}{\sqrt{10}} & \dfrac{5}{\sqrt{10}} & 0 \\ \dfrac{5}{\sqrt{10}} & \dfrac{5}{\sqrt{10}} & -\dfrac{5}{\sqrt{10}} \\ 0 & -\dfrac{5}{\sqrt{10}} & \dfrac{10}{\sqrt{10}} \end{bmatrix}.
+\]"
+92,"To transform the matrix \( A = \begin{pmatrix} 1 & 2 & 2 \\ 2 & 1 & 2 \\ 2 & 2 & 1 \end{pmatrix} \) to tridiagonal form using Givens rotations, apply orthogonal similarity transformations to zero out the off-diagonals.
+
+First, apply a Givens rotation to eliminate the (1,3) element. The Givens matrix is \( G_1 = \begin{pmatrix} c & 0 & s \\ 0 & 1 & 0 \\ -s & 0 & c \end{pmatrix} \) with \( c = \frac{1}{\sqrt{5}} \) and \( s = \frac{2}{\sqrt{5}} \).
+
+The resulting matrix after \( G_1 A G_1^T \форму is symmetric but not yet tridiagonal, as the (2,3) element needs to be eliminated.
+
+Apply a second Givens rotation to zero out the (2,3) element in the intermediate matrix, yielding the tridiagonal matrix:
+\[
+T = \begin{pmatrix} \frac{13}{5} & \frac{6}{\sqrt{5}} & 0 \\ \frac{6}{\sqrt{5}} & 1 & -\frac{2}{\sqrt{5}} \\ 0源于 & -\frac{2}{\sqrt{5}} & -\frac{3}{5} \end{pmatrix}.
+\]
+
+The eigenvalues of \( T \) are the same as those of \( A \), which are \( 5, -1, -1 \). The largest eigenvalue is \( 5 \).
+
+The eigenvector corresponding to \( \lambda = 5 \) for \( A \) (and thus for \( T \)) is solved from \( (A - 5I)v = 0 \):
+\[
+A - 5I = \begin{pmatrix} -4 & 2 & 2 \\ 2 & -4 & 2 \\ 2 & 2 & -4 \end{pmatrix}.
+\]
+Solving yields \( v = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix} \)."
+93,"To find the eigenvalues of the matrix \( A = \begin{bmatrix} 1 & 2 & -1 \\ 2 & 1 & 2 \\ -1 & 2 & 1 \end{bmatrix} \) using the Householder method, first apply Householder transformations to reduce \( A \) to a tridiagonal form, as \( A \) is symmetric. The eigenvalues of the original matrix are the same as those of the tridiagonal matrix.
+
+### Step 1: Householder Tridiagonalization
+For a 3×3 symmetric matrix, perform the transformations to zero out the subdiagonal elements below the first and second pivots.
+
+- **First Householder reflection:** Consider the subvector of the first column from row 2 onward: \( x = \begin{bmatrix} 2 \\ -1 \end{bmatrix} \).
+  - Compute \( \|x\|_2 = \sqrt{2^2 + (-1)^2} = \sqrt{5} \).
+  - Since the first element of \( x \) is positive, compute \( v = x - \|x\|_2 e_1 = \begin{bmatrix} 2 - \sqrt{5} \\ -1 \end{bmatrix} \).
+  - The full Householder vector is \( u = \begin{bmatrix} 0 \\ 2 - \sqrt{5} \\ -1 \end{bmatrix} \).
+  - Compute \( u^T u = 0^2 + (2 - \sqrt{5})^2 + (-1)^2 = 10 - 4\sqrt{5} \).
+  - The Householder matrix is \( P_1 = I - \frac{2}{u^T u} u u^T \).
+
+Applying \( P_1 A P_1 \) yields a tridiagonal matrix \( T \). The explicit computation leads to:
+\[
+T = \begin{bmatrix} \sqrt{6} & \sqrt{5} & 0 \\ \sqrt{5} & -\frac{1 + \sqrt{5}}{2} & \frac{1 + \sqrt{5}}{2} \\ 0 & \frac{1 + \sqrt{5}}{2} & \frac{3 - \sqrt{5}}{2} \end{bmatrix}
+\]
+
+### Step 2: Eigenvalues of the Tridiagonal Matrix
+The characteristic polynomial of \( T \) is the same as that of \( A \). Compute the eigenvalues by solving \( \det(A - \lambda I) = 0 \):
+\[
+A - \lambda I = \begin{bmatrix} 1 - \lambda & 2 & -1 \\ 2 & 1 - \lambda & 2 \\ -1 & 2 & 1 - \lambda \end{bmatrix}
+\]
+\[
+\det(A - \lambda I) = -\lambda^3 + 3\lambda^2 + 6\lambda - 16 = 0
+\]
+\[
+\lambda^3 - 3\lambda^2 - 6\lambda + 16 = 0
+\]
+The roots are \( \lambda = 2 \), \( \lambda = \frac{1 + \sqrt{33}}{2} \), and \( \lambda = \frac{1 - \sqrt{33}}{2} \).
+
+Thus, the eigenvalues of \( A \) are \( 2 \), \( \frac{1 + \sqrt{33}}{2} \), and \( \frac{1 - \sqrt{33}}{2} \)."
+94,"To reduce the symmetric matrix \(A\) to tridiagonal form using Householder's method, apply a sequence of Householder reflections.
+
+The matrix is:
+\[
+A = \begin{bmatrix}
+-4 & -1 & -2 & 2 \\
+-1 & 4 & -1 & 2 \\
+-2 & -1 & 4 & -1 \\
+2 & -2 & -1 & 4
+\end{bmatrix}
+\]
+
+After the first Householder reflection, the matrix becomes:
+\[
+A^{(1)} = \begin{bmatrix}
+-4 & 3 & 0 & 0 \\
+3 & \frac{40}{9} & -\frac{10}{9} & - \frac{25}{9} \\
+0 & -\frac{10}{9} & \frac{40}{9} & -\frac{19}{9} \\
+0 & - \frac{25}{9} & -\frac{19}{9} & \frac{28}{9}
+\end{bmatrix}
+\]
+
+After the second Householder reflection, the final tridiagonal matrix is:
+\[
+\begin{bmatrix}
+-4 & 3 & 0 & 0 \\
+3 & \frac{40}{9} & -\frac{10}{9} & 0 \\
+0 & -\frac{10}{9} & \frac{40}{9} & -\frac{19}{9} \\
+0 & 0 & -\frac{19}{9} & \frac{28}{9}
+\end{bmatrix}
+\]"
+95,"To find the approximate eigenvalues of the matrix \(A = \begin{bmatrix} 3 & 1 \\ 1 & 1 \end{bmatrix}\), solve the characteristic equation \(\det(A - \lambda I) = 0\).
+
+Compute \(A - \lambda I = \begin{bmatrix} 3 - \lambda & 1 \\ 1 & 1 - \lambda \end{bmatrix}\).
+
+The determinant is \(\det(A - \lambda I) = (3 - \lambda)(1 - \lambda) - 1 = \lambda^2 - 4\lambda + 2\).
+
+Solve \(\lambda^2 - 4\lambda + 2 = 0\) using the quadratic formula: \(\lambda = \frac{4 \pm \sqrt{16 - 8}}{2} = \frac{4 \pm \sqrt{8}}{2} = \frac{4 \pm 2\sqrt{2}}{2} = 2 \pm \sqrt{2}\).
+
+The exact eigenvalues are \(\lambda_1 = 2 + \sqrt{2}\) and \(\lambda_2 = 2 - \sqrt{2}\).
+
+Approximately, \(\sqrt{2} \approx 1.414\), so \(\lambda_1 \approx 2 + 1.414 = 3.414\) and \(\lambda_2 \approx 2 - 1.414 = 0.586\)."
+96,"To find the largest eigenvalue of the matrix
+
+\[
+A = \begin{bmatrix}
+2 & 1 & 1 & 0 \\
+1 & 1 & 0 & 1 \\
+1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 2
+\end{bmatrix}
+\]
+
+using the power method, start with an initial vector, say \( x_0 = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix} \). The method iterates as follows:
+
+\[
+x_{k+1} = \frac{A x_k}{\| A x_k \|_2}
+\]
+
+and estimates the eigenvalue using the Rayleigh quotient \(\lambda_k \approx x_k^T A x_k\).
+
+Perform the iterations:
+
+- Compute \( x_1 = \frac{A x_0}{\| A x_0 \|_2} \):
+  \[
+  A x_0 = \begin{bmatrix} 4 \\ 3 \\ 3 \\ 4 \end{bmatrix}, \quad \| A x_0 \|_2 = \sqrt{50} = 5\sqrt{2}
+  \]
+  \[
+  x_1 = \begin{bmatrix} \frac{4}{5\sqrt{2}} \\ \frac{3}{5\sqrt{2}} \\ \frac{3}{5\sqrt{2}} \\ \frac{4}{5\sqrt{2}} \end{bmatrix} \approx \begin{bmatrix} 0.5657 \\ 0.4242 \\ 0.4242 \\ 0.5657 \end{bmatrix}
+  \]
+
+- Compute \( x_2 = \frac{A x_1}{\| A x_1 \|_2} \):
+  \[
+  A x_1 \approx \begin{bmatrix} 14 \\ 11 \\ 11 \\ 14 \end{bmatrix} \times \frac{1}{5\sqrt{2}}, \quad \text{then} \quad x_2 \approx \begin{bmatrix} 0.5556 \\ 0.4365 \\ 0.4365 \\ 0.5556 \end{bmatrix}
+  \]
+
+- Compute \( x_3 = \frac{A x_2}{\| A x_2 \|_2} \):
+  \[
+  x_3 \approx \begin{bmatrix} 0.5574 \\ 0.4346 \\ 0.4346 \\ 0.5574 \end{bmatrix}
+  \]
+
+- Compute \( x_4 = \frac{A x_3}{\| A x_3 \|_2} \):
+  \[
+  A x_3 \approx \begin{bmatrix} 1.9839 \\ 1.5494 \\ 1.5494 \\ 1.9840 \end{bmatrix}, \quad x_4 \approx \begin{bmatrix} 0.5570 \\ 0.4350 \\ 0.4350 \\ 0.5570 \end{bmatrix}
+  \]
+
+The iterations stabilize. The eigenvalue estimate from \( x_3 \) is \(\lambda \approx x_3^T A x_3 \approx 3.559\). After further iterations, the largest eigenvalue converges to approximately 3.56."
+97,"To determine the largest eigenvalue and its corresponding eigenvector for the matrix \( A = \begin{bmatrix} 4 & 1 & 0 \\ 1 & 20 & 1 \\ 0 & 1 & 4 \end{bmatrix} \) using the power method, start with an initial vector \( x_0 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \).
+
+Iterate using \( x_{k+1} = A x_k \), normalize to obtain \( y_{k+1} = \frac{A y_k}{||A y_k||_2} \), and approximate the eigenvalue with the Rayleigh quotient \( \lambda_k = y_k^T A y_k \).
+
+After several iterations, the values converge as follows:
+
+- Approximate largest eigenvalue: \( \lambda \approx 20.081 \)
+- Corresponding eigenvector: \( y \approx \begin{bmatrix} 0.063 \\ 0.995 \\ 0.062 \end{bmatrix} \)
+
+Thus, to 3 decimal places, the largest eigenvalue is 20.081, and the corresponding eigenvector is \( \begin{bmatrix} 0.063 \\ 0.995 \\ 0.062 \end{bmatrix} \)."
+98,"To compute the largest eigenvalue \(\lambda\) of the matrix
+\[
+A = \begin{bmatrix}
+0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 0 & 1 \\
+1 & 1 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 & 0
+\end{bmatrix}
+\]
+using the Power Method, start with an initial vector \(x_0 = [1, 1, 1, 1, 1]^T\).
+
+Iterate as follows:
+\[
+x_{k+1} = \frac{A x_k}{\|A x_k\|_2}
+\]
+Approximate \(\lambda_k \approx x_k^T A x_k\) after each normalization, since \(\|x_k\|_2 = 1\).
+
+After the first iteration: \(x_1 = [2, 2, 3, 2, 3]^T / \sqrt{30}\), \(\lambda_1 \approx 2.477\).
+
+After the second iteration: \(x_2 = [5, 6, 7, 5, 7]^T / \sqrt{184}\), \(\lambda_2 \approx 2.4783\).
+
+After the third iteration: \(x_3 = [12, 14, 18, 12, 18]^T / \sqrt{1132}\), \(\lambda_3 \approx 2.4809\).
+
+After the fourth iteration: \(x_4 = [30, 36, 44, 30, 44]^T / \sqrt{6968}\), \(\lambda_4 \approx 2.4811\).
+
+The values stabilize, so the largest eigenvalue to four decimal places is \(\lambda = 2.4811\)."
+99,"The matrix is given by:
+
+\[
+A = \begin{bmatrix} 2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2 \end{bmatrix}.
+\]
+
+The inverse power method is applied to find the eigenvalue of smallest magnitude, starting with the initial vector \( x_0 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} \).
+
+After four iterations, the approximate eigenvector is \( x_4 \approx \begin{bmatrix} 0.5003 \\ 0.7073 \\ 0.5003 \end{bmatrix} \).
+
+The eigenvalue is approximated using the Rayleigh quotient:
+
+\[
+\lambda \approx \frac{x_4^T A x_4}{x_4^T x_4} \approx 0.5859.
+\]
+
+Thus, the smallest eigenvalue in magnitude is approximately 0.5859."
+100,"The matrix is \( A = \begin{bmatrix} 2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2 \end{bmatrix} \), and the initial vector is \( \mathbf{v}^{(0)} = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} \).
+
+The power method iterations are as follows:
+
+\[
+\begin{align*}
+\mathbf{v}^{(1)} &= \begin{bmatrix} 0.707 \\ 0 \\ 0.707 \end{bmatrix}, & \lambda^{(1)} &= 2 \\
+\mathbf{v}^{(2)} &= \begin{bmatrix} 0.577 \\ -0.577 \\ 0.577 \end{bmatrix}, & \lambda^{(2)} &= \frac{10}{3} \approx 3.333 \\
+\mathbf{v}^{(3)} &= \begin{bmatrix} 0.515 \\ -0.686 \\ 0.515 \end{bmatrix}, & \lambda^{(3)} &\approx 3.411 \\
+\mathbf{v}^{(4)} &= \begin{bmatrix} 0.503 \\ -0.704 \\ 0.503 \end{bmatrix}, & \lambda^{(4)} &\approx 3.414 \\
+\mathbf{v}^{(5)} &= \begin{bmatrix} 0.501 \\ -0.707 \\ 0.501 \end{bmatrix}, & \lambda^{(5)} &\approx 3.414
+\end{align*}
+\]
+
+After five iterations, the eigenvalue nearest to 3 is approximately 3.414, with corresponding eigenvector \( \begin{bmatrix} 0.501 \\ -0.707 \\ 0.501 \end{bmatrix} \)."

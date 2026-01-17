@@ -1,0 +1,4622 @@
+id,answer
+1,"We carry out two Householder‐reflections \(H_{1}\in\R^{3\times3}\) and \(H_{2}\in\R^{3\times3}\) so that
+\[
+R \;=\; H_{2}\,H_{1}\,A
+\quad\text{is upper‐triangular,}
+\qquad
+Q \;=\; H_{1}\,H_{2}\;\text{orthogonal,}
+\quad A=QR.
+\]
+
+1. First reflector to zero out the \((2,1)\)– and \((3,1)\)–entries of \(A\).  
+   Set
+   \[
+     x \;=\;\begin{pmatrix}1\\0\\1\end{pmatrix},\qquad
+     \alpha=\|x\|_2=\sqrt2,\qquad
+     v_1=x-\alpha\,e_1
+           =\begin{pmatrix}1-\sqrt2\\0\\1\end{pmatrix},\qquad
+     H_1=I_3-2\,\frac{v_1v_1^T}{v_1^Tv_1}.
+   \]
+   One checks
+   \[
+     H_{1}A
+     =
+     \begin{pmatrix}
+       \sqrt2 & \tfrac1{\sqrt2}\\
+       0      & 1\\
+       0      & -\tfrac{\sqrt2}{2}
+     \end{pmatrix}
+     =:A^{(1)}.
+   \]
+
+2. Second reflector to zero out the \((3,2)\)–entry of \(A^{(1)}\).  
+   Focus on the trailing \(2\times1\)‐vector
+   \(
+     x^{(2)}=\begin{pmatrix}1\\-{\sqrt2}/2\end{pmatrix}
+   \), set
+   \[
+     \alpha_2=\|x^{(2)}\|_2=\sqrt{\tfrac32},\quad
+     v_2=x^{(2)}-\alpha_2\,e_1^{(2)},\quad
+     H_2=
+     \begin{pmatrix}
+       1 & 0\\
+       0 & I_2-2\frac{v_2v_2^T}{v_2^Tv_2}
+     \end{pmatrix}
+     =
+     \begin{pmatrix}
+       1 & 0 & 0\\
+       0 & \sqrt{\tfrac23} & \sqrt{\tfrac13}\\
+       0 & \sqrt{\tfrac13} & -\sqrt{\tfrac23}
+     \end{pmatrix}.
+   \]
+   Then
+   \[
+     R \;=\; H_{2}\,A^{(1)}
+     \;=\;
+     \begin{pmatrix}
+       \sqrt2   & \tfrac1{\sqrt2}\\
+       0        & \sqrt{\tfrac32}\\
+       0        & 0
+     \end{pmatrix}
+     =
+     \begin{pmatrix}
+       \sqrt2   & \tfrac{\sqrt2}{2}\\
+       0        & \tfrac{\sqrt6}{2}\\
+       0        & 0
+     \end{pmatrix}.
+   \]
+
+3. The orthogonal factor is
+   \[
+     Q \;=\; H_{1}\,H_{2}
+     \;=\;
+     \begin{pmatrix}
+       \tfrac1{\sqrt2} & \tfrac1{\sqrt6} & -\tfrac1{\sqrt3}\\[6pt]
+       0                & \sqrt{\tfrac23}  & \tfrac1{\sqrt3}\\[6pt]
+       \tfrac1{\sqrt2} & -\tfrac1{\sqrt6}& \tfrac1{\sqrt3}
+     \end{pmatrix},
+   \]
+   and one checks \(Q^TQ=I_3\), \(A=QR\)."
+2,"The eigenvalues of the symmetric matrix  
+\[  
+A = \begin{bmatrix}  
+1 & 0 & 1 \\  
+0 & 1 & 0 \\  
+1 & 0 & 1  
+\end{bmatrix}  
+\]  
+can be found by observing that in the basis which reorders indices to $(1,3,2)$ it splits as a $2\times2$ block plus a $1\times1$ block:  
+\[
+A\sim 
+\begin{bmatrix}
+1 & 1 \\[6pt]
+1 & 1
+\end{bmatrix}
+\oplus
+\begin{bmatrix}
+1
+\end{bmatrix}.
+\]
+The $2\times2$ block has eigenvalues $2$ and $0$, and the $1\times1$ block has eigenvalue $1$.  Hence the spectrum of $A$ is
+\[
+\{\;2,\;1,\;0\;\}.
+\]
+Therefore the inertia of $A$, i.e.\ the numbers of positive, negative and zero eigenvalues, is
+\[
+\Inertia(A)\;=\;(2,\;0,\;1).
+\]"
+3,"1. First Givens rotation \(G_{12}\) to annihilate \(a_{21}=1\):  
+   \[
+     a=1,\quad b=1,\quad r=\sqrt{a^2+b^2}=\sqrt2,\quad
+     c_1=\frac{a}{r}=\frac1{\sqrt2},\quad s_1=\frac{b}{r}=\frac1{\sqrt2},
+   \]
+   \[
+     G_{12}=\begin{pmatrix}
+       c_1 & s_1 & 0\\
+      -s_1 & c_1 & 0\\
+       0   & 0   & 1
+     \end{pmatrix},\qquad
+     A^{(1)}=G_{12}\,A
+     =\begin{pmatrix}
+       \sqrt2 & \tfrac1{\sqrt2}   & \tfrac1{\sqrt2}\\
+       0      & \tfrac1{\sqrt2}   & -\tfrac1{\sqrt2}\\
+       0      & 1                  & 1
+     \end{pmatrix}.
+   \]
+
+2. Second Givens rotation \(G_{23}\) to annihilate \(a^{(1)}_{32}=1\):  
+   \[
+     a=\tfrac1{\sqrt2},\quad b=1,\quad r=\sqrt{a^2+b^2}=\sqrt{\tfrac32},\quad
+     c_2=\frac{a}{r}=\frac1{\sqrt3},\quad s_2=\frac{b}{r}=\sqrt{\tfrac23},
+   \]
+   \[
+     G_{23}=\begin{pmatrix}
+       1   & 0   & 0\\
+       0   & c_2 & s_2\\
+       0   & -s_2& c_2
+     \end{pmatrix},\qquad
+     R=G_{23}\,A^{(1)}
+     =\begin{pmatrix}
+       \sqrt2 & \tfrac1{\sqrt2} & \tfrac1{\sqrt2}\\
+       0      & \tfrac{\sqrt6}{2}& \tfrac{\sqrt6}{6}\\
+       0      & 0                & \tfrac{2}{\sqrt3}
+     \end{pmatrix}.
+   \]
+
+Hence the upper–triangular factor is
+\[
+   R=\begin{pmatrix}
+     \sqrt2 & \tfrac1{\sqrt2} & \tfrac1{\sqrt2}\\
+     0      & \tfrac{\sqrt6}{2}& \tfrac{\sqrt6}{6}\\
+     0      & 0                & \tfrac{2}{\sqrt3}
+   \end{pmatrix},
+\]
+with \(G_{23}\,G_{12}\,A=R\)."
+4,"Using the identity  
+\[
+\delta x \;=\; x-\tilde x \;=\;-A^{-1}r,
+\]  
+we have  
+\[
+\|\delta x\|_2\;\le\;\|A^{-1}\|_2\,\|r\|_2.
+\]  
+Since  
+\[
+\|\tilde x\|_2 \;=\;\|x+\delta x\|_2\;\ge\;\|x\|_2-\|\delta x\|_2,
+\]  
+it follows that  
+\[
+\|x\|_2\;\ge\;\|\tilde x\|_2-\|A^{-1}\|_2\,\|r\|_2
+\quad\Longrightarrow\quad
+e \;=\;\frac{\|\delta x\|_2}{\|x\|_2}
+\;\le\;\frac{\|A^{-1}\|_2\,\|r\|_2}
+{\|\tilde x\|_2-\|A^{-1}\|_2\,\|r\|_2}\,.
+\]  
+Equivalently, if one introduces  
+\[
+\eta\;:=\;\frac{\|A^{-1}\|_2\,\|r\|_2}{\|\tilde x\|_2}\,<\,1,
+\]  
+then  
+\[
+\frac{\|\delta x\|_2}{\|\tilde x\|_2}\;\le\;\eta,
+\quad
+e \;=\;\frac{\|\delta x\|_2}{\|x\|_2}
+\;\le\;\frac{\eta}{1-\eta}\,.
+\]  
+In our case  
+\[
+A^{-1}=\begin{pmatrix}1&-1\\0&1\end{pmatrix},\quad
+\|A^{-1}\|_2=\sqrt{\tfrac{3+\sqrt5}2}\approx1.618,\quad
+\|\tilde x\|_2=\sqrt{(-2.001)^2+(5.002)^2},\quad
+\|r\|_2=\|A\tilde x-b\|_2,
+\]  
+so numerically one finds \(\eta\approx6.71\times10^{-4}\) and hence  
+\[
+e\le\frac{\eta}{1-\eta}\approx6.72\times10^{-4}\,. 
+\]"
+5,"Let \(n=3\).  The Wilkinson shift is the eigenvalue of the trailing \(2\times2\) block of \(A_i\) closest to its \((3,3)\)–entry.  Here
+\[
+B=\begin{pmatrix}
+a_{22}&a_{23}\\
+a_{32}&a_{33}
+\end{pmatrix}
+=\begin{pmatrix}
+1&1\\
+0&1
+\end{pmatrix}.
+\]
+Compute
+\[
+\tau=\tr(B)=1+1=2,\quad
+\Delta=\tau^2-4\det(B)=4-4\cdot1=0,
+\]
+so the two eigenvalues are
+\[
+\mu_{\pm}=\frac{\tau\pm\sqrt{\Delta}}{2}
+=\frac{2\pm0}{2}=1.
+\]
+Hence the Wilkinson shift is
+\[
+\sigma_i \;=\;1.
+\]"
+6,"To prove \((AB)^T = B^T A^T\), we compare their \((i,j)\)-entries. 
+
+1. The \((i,j)\)-entry of \((AB)^T\) is
+\[
+\bigl((AB)^T\bigr)_{ij}
+=\,(AB)_{ji}
+=\sum_{k=1}^3 A_{\,j k}\,B_{\,k i}.
+\]
+
+2. The \((i,j)\)-entry of \(B^T A^T\) is
+\[
+\bigl(B^T A^T\bigr)_{ij}
+=\sum_{k=1}^3 \bigl(B^T\bigr)_{i k}\,\bigl(A^T\bigr)_{k j}
+=\sum_{k=1}^3 B_{\,k i}\,A_{\,j k}.
+\]
+
+Since scalar multiplication is commutative,
+\[
+\sum_{k=1}^3 A_{\,j k}\,B_{\,k i}
+=\sum_{k=1}^3 B_{\,k i}\,A_{\,j k},
+\]
+we conclude that for all \(i,j\)
+\[
+\bigl((AB)^T\bigr)_{ij}
+=\bigl(B^T A^T\bigr)_{ij}.
+\]
+Hence
+\[
+(AB)^T = B^T A^T.
+\]"
+7,"1. Compute \(AB\):  
+\[
+AB = \begin{pmatrix}1&1\\0&1\end{pmatrix}
+     \begin{pmatrix}1&0\\1&1\end{pmatrix}
+   = \begin{pmatrix}1\cdot1+1\cdot1 & 1\cdot0+1\cdot1\\
+                     0\cdot1+1\cdot1 & 0\cdot0+1\cdot1
+     \end{pmatrix}
+   = \begin{pmatrix}2&1\\1&1\end{pmatrix}.
+\]
+
+2. Inverse of \(AB\):  
+\[
+\det(AB)=2\cdot1-1\cdot1=1,
+\qquad
+(AB)^{-1} = \frac1{\det(AB)}
+             \begin{pmatrix}1 & -1\\
+                            -1& 2
+             \end{pmatrix}
+           = \begin{pmatrix}1&-1\\-1&2\end{pmatrix}.
+\]
+
+3. Inverses of \(A\) and \(B\):  
+\[
+A^{-1}
+=\begin{pmatrix}1&1\\0&1\end{pmatrix}^{-1}
+=\begin{pmatrix}1 & -1\\
+               0 &  1
+ \end{pmatrix}, 
+\qquad
+B^{-1}
+=\begin{pmatrix}1&0\\1&1\end{pmatrix}^{-1}
+=\begin{pmatrix}1 & 0\\
+               -1& 1
+ \end{pmatrix}.
+\]
+
+4. Product \(B^{-1}A^{-1}\):  
+\[
+B^{-1}A^{-1}
+=\begin{pmatrix}1&0\\-1&1\end{pmatrix}
+ \begin{pmatrix}1&-1\\0&1\end{pmatrix}
+=\begin{pmatrix}
+   1\cdot1+0\cdot0 & 1\cdot(-1)+0\cdot1\\
+  -1\cdot1+1\cdot0 & -1\cdot(-1)+1\cdot1
+ \end{pmatrix}
+=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}.
+\]
+
+5. Conclusion:  
+\[
+(AB)^{-1}
+=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}
+= B^{-1}A^{-1}.
+\]"
+8,"The determinant of  
+\[
+A=\begin{pmatrix}1&1&0\\1&0&1\\0&1&1\end{pmatrix}
+\]
+is  
+\[
+\det(A)
+=1\cdot\det\!\begin{pmatrix}0&1\\1&1\end{pmatrix}
+-1\cdot\det\!\begin{pmatrix}1&1\\0&1\end{pmatrix}
++0\cdot\det\!\begin{pmatrix}1&0\\0&1\end{pmatrix}
+=-1-1+0=-2\,.  
+\]
+
+The matrix of cofactors \(C=(C_{ij})\) has entries  
+\[
+C_{ij}=(-1)^{i+j}\det(A_{ij}),
+\]
+so one finds  
+\[
+C=\begin{pmatrix}
+-1 & -1 &  1\\
+-1 &  1 & -1\\
+ 1 & -1 & -1
+\end{pmatrix}.
+\]
+Since \(C\) is symmetric, the adjugate is  
+\[
+\adj(A)=C^T
+=\begin{pmatrix}
+-1 & -1 &  1\\
+-1 &  1 & -1\\
+ 1 & -1 & -1
+\end{pmatrix}.
+\]
+
+Because \(\det(A)=-2\neq0\), \(A\) is invertible and  
+\[
+A^{-1}
+=\frac1{\det(A)}\,\adj(A)
+=-\tfrac12
+\begin{pmatrix}
+-1 & -1 &  1\\
+-1 &  1 & -1\\
+ 1 & -1 & -1
+\end{pmatrix}
+=\frac12
+\begin{pmatrix}
+1 &  1 & -1\\
+1 & -1 &  1\\
+-1 & 1 &  1
+\end{pmatrix}.
+\]"
+9,"First, compute  
+\[
+\det(A)
+=\begin{vmatrix}
+2&1&3\\
+-1&2&0\\
+3&-2&1
+\end{vmatrix}
+=2\,(2\cdot1-0\cdot(-2))\;-\;1\,((-1)\cdot1-0\cdot3)\;+\;3\,((-1)(-2)-2\cdot3)
+=4+1+3(-4)=-7.
+\]
+
+Next form the matrix of cofactors \(C=(C_{ij})\):  
+\[
+C_{11}=\begin{vmatrix}2&0\\-2&1\end{vmatrix}=2,
+\quad
+C_{12}=-\begin{vmatrix}-1&0\\3&1\end{vmatrix}=1,
+\quad
+C_{13}=\begin{vmatrix}-1&2\\3&-2\end{vmatrix}=-4,
+\]
+\[
+C_{21}=-\begin{vmatrix}1&3\\-2&1\end{vmatrix}=-7,
+\quad
+C_{22}=\begin{vmatrix}2&3\\3&1\end{vmatrix}=-7,
+\quad
+C_{23}=-\begin{vmatrix}2&1\\3&-2\end{vmatrix}=7,
+\]
+\[
+C_{31}=\begin{vmatrix}1&3\\2&0\end{vmatrix}=-6,
+\quad
+C_{32}=-\begin{vmatrix}2&3\\-1&0\end{vmatrix}=-3,
+\quad
+C_{33}=\begin{vmatrix}2&1\\-1&2\end{vmatrix}=5.
+\]
+Hence the classical adjugate is  
+\[
+\operatorname{adj}(A)=C^T
+=\begin{pmatrix}
+2&-7&-6\\
+1&-7&-3\\
+-4&7&5
+\end{pmatrix}.
+\]
+
+Finally, a direct multiplication gives
+\[
+A\,\operatorname{adj}(A)
+=\begin{pmatrix}2&1&3\\-1&2&0\\3&-2&1\end{pmatrix}
+\begin{pmatrix}2&-7&-6\\1&-7&-3\\-4&7&5\end{pmatrix}
+=-7\,I_3,
+\]
+and similarly \(\operatorname{adj}(A)\,A=-7\,I_3\).  Thus
+\[
+A\,\operatorname{adj}(A)
+=\operatorname{adj}(A)\,A
+=\det(A)\,I_3.
+\]"
+10,"Let 
+\(A=\begin{pmatrix}
+4 & 1 & -3\\
+3 & 2 & -6\\
+1 & -5 & 3
+\end{pmatrix},\quad
+b=\begin{pmatrix}9\\-2\\1\end{pmatrix}.\)
+Then
+\[
+\det(A)
+=4\,(2\cdot3-(-6)\cdot(-5))
+-1\,(3\cdot3-(-6)\cdot1)
++(-3)\,(3\cdot(-5)-2\cdot1)
+=-60.
+\]
+Next form \(A_i\) by replacing the \(i\)th column of \(A\) with \(b\):
+\[
+A_1=\begin{pmatrix}9&1&-3\\-2&2&-6\\1&-5&3\end{pmatrix},\ 
+A_2=\begin{pmatrix}4&9&-3\\3&-2&-6\\1&1&3\end{pmatrix},\ 
+A_3=\begin{pmatrix}4&1&9\\3&2&-2\\1&-5&1\end{pmatrix}.
+\]
+Compute
+\[
+\det(A_1)=-240,\quad
+\det(A_2)=-150,\quad
+\det(A_3)=-190.
+\]
+By Cramer's rule,
+\[
+x_i=\frac{\det(A_i)}{\det(A)},
+\]
+hence
+\[
+x_1=\frac{-240}{-60}=4,\quad
+x_2=\frac{-150}{-60}=\frac{5}{2},\quad
+x_3=\frac{-190}{-60}=\frac{19}{6}.
+\]"
+11,"We form the augmented matrix and eliminate step by step:
+
+\[
+\left[\begin{array}{ccc|c}
+3 & 1 & 0 & 1.5\\
+2 & -1 & -1 & 2\\
+4 & 3 & 1 & 0
+\end{array}\right].
+\]
+
+1. Eliminate \(x_1\) from rows 2 and 3 using row 1 as pivot:
+\[
+R_2\leftarrow R_2 - \tfrac{2}{3}R_1,\qquad
+R_3\leftarrow R_3 - \tfrac{4}{3}R_1
+\]
+gives
+\[
+\left[\begin{array}{ccc|c}
+3 & 1     & 0  & 1.5\\
+0 & -\tfrac{5}{3} & -1 & 1\\
+0 & \tfrac{5}{3}  & 1  & -2
+\end{array}\right].
+\]
+
+2. Eliminate \(x_2\) from row 3 by adding row 2 to row 3:
+\[
+R_3\leftarrow R_3 + R_2
+\;\Longrightarrow\;
+\left[\begin{array}{ccc|c}
+3 & 1     & 0 & 1.5\\
+0 & -\tfrac{5}{3} & -1 & 1\\
+0 & 0     & 0 & -1
+\end{array}\right].
+\]
+
+The last row reads
+\[
+0\cdot x_1 + 0\cdot x_2 + 0\cdot x_3 = -1,
+\]
+which is impossible.  Hence the system is inconsistent and has no solution."
+12,"We form the augmented matrix and carry out row‐operations to reduce to upper‐triangular form.
+
+\[
+\begin{bmatrix}
+1 & 1 & 1 &\vrule& 1\\
+2 & 3 & 4 &\vrule& 3\\
+4 & 9 &16 &\vrule&11
+\end{bmatrix}
+\]
+
+1. Eliminate \(x_1\) from rows 2 and 3:
+\[
+R_2\gets R_2 - 2R_1,\quad
+R_3\gets R_3 - 4R_1
+\;\Longrightarrow\;
+\begin{bmatrix}
+1 & 1 & 1 &\vrule& 1\\
+0 & 1 & 2 &\vrule& 1\\
+0 & 5 &12 &\vrule& 7
+\end{bmatrix}
+\]
+
+2. Eliminate \(x_2\) from row 3:
+\[
+R_3\gets R_3 - 5R_2
+\;\Longrightarrow\;
+\begin{bmatrix}
+1 & 1 & 1 &\vrule& 1\\
+0 & 1 & 2 &\vrule& 1\\
+0 & 0 & 2 &\vrule& 2
+\end{bmatrix}
+\]
+
+Now we have the triangular system
+\[
+\begin{cases}
+2\,x_3 = 2,\\
+x_2 + 2\,x_3 = 1,\\
+x_1 + x_2 + x_3 = 1.
+\end{cases}
+\]
+Back‐substitution gives
+\[
+x_3 = \frac{2}{2}=1,\quad
+x_2 = 1 - 2\cdot1 = -1,\quad
+x_1 = 1 - x_2 - x_3 = 1 - (-1) - 1 = 1.
+\]
+Hence the unique solution is
+\[
+\boxed{x = (x_1,x_2,x_3) = (1,\,-1,\,1).}
+\]"
+13,"For a non‐trivial solution we need  
+\[
+\det A=\det\begin{pmatrix}
+2&2&3\\
+3&k&5\\
+1&7&3
+\end{pmatrix}=0.
+\]  
+Compute  
+\[
+\det A
+=2\begin{vmatrix}k&5\\7&3\end{vmatrix}
+-2\begin{vmatrix}3&5\\1&3\end{vmatrix}
++3\begin{vmatrix}3&k\\1&7\end{vmatrix}
+=2(3k-35)-2(9-5)+3(21-k)
+=3k-15,
+\]  
+hence \(3k-15=0\) ⇒ \(\displaystyle k=5\).  
+
+For \(k=5\) the system
+\[
+\begin{cases}
+2x_1+2x_2+3x_3=0,\\
+3x_1+5x_2+5x_3=0,\\
+x_1+7x_2+3x_3=0
+\end{cases}
+\]
+has rank \(2\), so \(\dim\ker A=1\).  Solving, one finds
+\[
+x_2=-\tfrac14x_3,\qquad x_1=-\tfrac54x_3,
+\]
+hence with parameter \(t=x_3\)
+\[
+x=t\begin{pmatrix}-\tfrac54\\[4pt]-\tfrac14\\[4pt]1\end{pmatrix}
+\sim t\begin{pmatrix}-5\\-1\\4\end{pmatrix},\quad t\in\Bbb R.
+\]"
+14,"The ranks can be read off from the determinants of the $3\times3$ matrices (non‐zero ⇒ full rank 3; zero ⇒ check a $2\times2$ minor):
+
+1.  
+$$A=\begin{pmatrix}3&1&-1\\2&0&4\\1&-5&1\end{pmatrix},\quad 
+\det A
+=3\,(0\cdot1-4\cdot(-5))
+-1\,(2\cdot1-4\cdot1)
++(-1)\,(2\cdot(-5)-0\cdot1)
+=72\neq0
+\;\Longrightarrow\;\mathrm{rank}(A)=3.$$
+
+2.  
+$$B=\begin{pmatrix}4&1&6\\-3&6&4\\5&0&9\end{pmatrix},\quad 
+\det B
+=4\,(6\cdot9-4\cdot0)
+-1\,(-3\cdot9-4\cdot5)
++6\,(-3\cdot0-6\cdot5)
+=83\neq0
+\;\Longrightarrow\;\mathrm{rank}(B)=3.$$
+
+3.  
+$$C=\begin{pmatrix}17&46&7\\20&49&8\\23&52&9\end{pmatrix},\quad 
+\det C
+=17\,(49\cdot9-8\cdot52)
+-46\,(20\cdot9-8\cdot23)
++7\,(20\cdot52-49\cdot23)
+=0.$$
+Since for instance the $2\times2$ minor 
+$$\det\begin{pmatrix}17&46\\20&49\end{pmatrix}
+=17\cdot49-46\cdot20=-87\neq0,$$
+we get $\mathrm{rank}(C)=2.$"
+15,"The augmented matrix for the system is:
+\[
+\begin{bmatrix}
+1.001 & 1.5 & | & 0 \\
+2 & 3 & | & 1
+\end{bmatrix}
+\]
+
+**Gaussian Elimination Without Pivoting:**
+
+Perform row operations to eliminate the entry below the pivot in the first column.
+
+The multiplier is \( m = \frac{2}{1.001} \).
+
+Subtract \( m \) times the first row from the second row:
+\[
+\text{New second row} = \begin{bmatrix} 2 - \frac{2}{1.001} \cdot 1.001 \\ 3 - \frac{2}{1.001} \cdot 1.5 \\ 1 - \frac{2}{1.001} \cdot 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 3 - \frac{3}{1.001} \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ \frac{3 \cdot 0.001}{1.001} \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ \frac{0.003}{1.001} \\ 1 \end{bmatrix}
+\]
+
+The matrix becomes:
+\[
+\begin{bmatrix}
+1.001 & 1.5 & | & 0 \\
+0 & \frac{0.003}{1.001} & | & 1
+\end{bmatrix}
+\]
+
+Back-substitution:
+\[
+\frac{0.003}{1.001} x_2 = 1 \implies x_2 = \frac{1.001}{0.003} = \frac{1001}{3} \approx 333.6667
+\]
+\[
+1.001 x_1 + 1.5 \cdot \frac{1001}{3} = 0 \implies 1.001 x_1 = -\frac{1.5 \cdot 1001}{3} \implies x_1 = -\frac{1.5}{0.003} = -500
+\]
+
+Solution: \( x_1 = -500 \), \( x_2 = \frac{1001}{3} \).
+
+**Gaussian Elimination With Partial Pivoting:**
+
+Compare absolute values in the first column: \( |1.001| = 1.001 \), \( |2| = 2 \). Swap rows since 2 > 1.001.
+
+The matrix becomes:
+\[
+\begin{bmatrix}
+2 & 3 & | & 1 \\
+1.001 & 1.5 & | & 0
+\end{bmatrix}
+\]
+
+The multiplier is \( m = \frac{1.001}{2} = 0.5005 \).
+
+Subtract \( m \) times the first row from the second row:
+\[
+\text{New second row} = \begin{bmatrix} 1.001 - 0.5005 \cdot 2 \\ 1.5 - 0.5005 \cdot 3 \\ 0 - 0.5005 \cdot 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 1.5 - 1.5015 \\ -0.5005 \end{bmatrix} = \begin{bmatrix} 0 \\ -0.0015 \\ -0.5005 \end{bmatrix}
+\]
+
+The matrix becomes:
+\[
+\begin{bmatrix}
+2 & 3 & | & 1 \\
+0 & -0.0015 & | & -0.5005
+\end{bmatrix}
+\]
+
+Back-substitution:
+\[
+-0.0015 x_2 = -0.5005 \implies x_2 = \frac{0.5005}{0.0015} = \frac{5005}{15} \cdot \frac{1}{1000} \div \frac{15}{10000} = \frac{1001}{3} \approx 333.6667
+\]
+\[
+2 x_1 + 3 \cdot \frac{1001}{3} = 1 \implies 2 x_1 + 1001 = 1 \implies 2 x_1 = -1000 \implies x_1 = -500
+\]
+
+Solution: \( x_1 = -500 \), \( x_2 = \frac{1001}{3} \)."
+16,"We form the augmented matrix and carry out Gauss–Jordan elimination:
+
+\[
+\bigl[A\mid b\bigr]
+=\begin{pmatrix}
+1 & 4 & 1 & \vline & 1\\
+2 & 4 & 1 & \vline & 9\\
+3 & 5 &-2 & \vline &11
+\end{pmatrix}.
+\]
+
+1. Eliminate below the pivot in column 1:
+\[
+R_2\leftarrow R_2-2R_1,\quad
+R_3\leftarrow R_3-3R_1
+\;\Longrightarrow\;
+\begin{pmatrix}
+1 & 4 & 1 & \vline & 1\\
+0 & -4 & -1 & \vline & 7\\
+0 & -7 & -5 & \vline & 8
+\end{pmatrix}.
+\]
+
+2. Scale \(R_2\) to make the pivot 1:
+\[
+R_2\leftarrow -\tfrac14R_2
+\;\Longrightarrow\;
+\begin{pmatrix}
+1 & 4 & 1 & \vline & 1\\
+0 & 1 & \tfrac14 & \vline & -\tfrac74\\
+0 & -7 & -5 & \vline & 8
+\end{pmatrix}.
+\]
+
+3. Eliminate in column 2:
+\[
+R_1\leftarrow R_1-4R_2,\quad
+R_3\leftarrow R_3+7R_2
+\;\Longrightarrow\;
+\begin{pmatrix}
+1 & 0 & 0 & \vline & 8\\
+0 & 1 & \tfrac14 & \vline & -\tfrac74\\
+0 & 0 & -\tfrac{13}{4} & \vline & -\tfrac{17}{4}
+\end{pmatrix}.
+\]
+
+4. Scale \(R_3\) to make the pivot 1:
+\[
+R_3\leftarrow -\tfrac{4}{13}R_3
+\;\Longrightarrow\;
+\begin{pmatrix}
+1 & 0 & 0 & \vline & 8\\
+0 & 1 & \tfrac14 & \vline & -\tfrac74\\
+0 & 0 & 1 & \vline & \tfrac{17}{13}
+\end{pmatrix}.
+\]
+
+5. Eliminate in column 3:
+\[
+R_2\leftarrow R_2-\tfrac14R_3
+\;\Longrightarrow\;
+\begin{pmatrix}
+1 & 0 & 0 & \vline & 8\\
+0 & 1 & 0 & \vline & -\tfrac{27}{13}\\
+0 & 0 & 1 & \vline & \tfrac{17}{13}
+\end{pmatrix}.
+\]
+
+Thus the unique solution is
+\[
+x_1=8,\quad
+x_2=-\frac{27}{13},\quad
+x_3=\frac{17}{13},
+\]
+or in common denominator form
+\[
+x_1=\frac{104}{13},\quad
+x_2=-\frac{27}{13},\quad
+x_3=\frac{17}{13}.
+\]"
+17,"\[
+A=\begin{pmatrix}
+3 & -9 & 5\\
+0 & 5  & 1\\
+-1& 6  & 3
+\end{pmatrix}.
+\]
+Form the augmented matrix \([A\mid I]\) and apply Gauss–Jordan:
+
+\[
+\left[\begin{array}{ccc|ccc}
+3 & -9 & 5 & 1 & 0 & 0\\
+0 & 5  & 1 & 0 & 1 & 0\\
+-1& 6  & 3 & 0 & 0 & 1
+\end{array}\right]
+\;\xrightarrow{R_1\to \tfrac{1}{3}R_1}\;
+\left[\begin{array}{ccc|ccc}
+1 & -3 & \tfrac{5}{3} & \tfrac{1}{3} & 0 & 0\\
+0 & 5  & 1          & 0           & 1 & 0\\
+-1& 6  & 3          & 0           & 0 & 1
+\end{array}\right]
+\]
+
+\[
+\xrightarrow{R_3\to R_3+R_1}\;
+\left[\begin{array}{ccc|ccc}
+1 & -3 & \tfrac{5}{3} & \tfrac{1}{3} & 0 & 0\\
+0 & 5  & 1          & 0           & 1 & 0\\
+0 & 3  & \tfrac{14}{3}& \tfrac{1}{3}& 0 & 1
+\end{array}\right]
+\;\xrightarrow{R_2\to \tfrac{1}{5}R_2}\;
+\left[\begin{array}{ccc|ccc}
+1 & -3 & \tfrac{5}{3} & \tfrac{1}{3} & 0     & 0\\
+0 & 1  & \tfrac{1}{5} & 0           & \tfrac{1}{5}& 0\\
+0 & 3  & \tfrac{14}{3}& \tfrac{1}{3}& 0     & 1
+\end{array}\right]
+\]
+
+\[
+\xrightarrow{
+\substack{R_1\to R_1+3R_2\\ R_3\to R_3-3R_2}
+}\;
+\left[\begin{array}{ccc|ccc}
+1 & 0 & \tfrac{34}{15} & \tfrac{1}{3} & \tfrac{3}{5} & 0\\
+0 & 1 & \tfrac{1}{5}  & 0           & \tfrac{1}{5} & 0\\
+0 & 0 & \tfrac{61}{15}& \tfrac{1}{3}& -\tfrac{3}{5}& 1
+\end{array}\right]
+\;\xrightarrow{R_3\to \tfrac{15}{61}R_3}\;
+\left[\begin{array}{ccc|ccc}
+1 & 0 & \tfrac{34}{15} & \tfrac{1}{3}   & \tfrac{3}{5}  & 0\\
+0 & 1 & \tfrac{1}{5}  & 0             & \tfrac{1}{5}  & 0\\
+0 & 0 & 1             & \tfrac{5}{61} & -\tfrac{9}{61}& \tfrac{15}{61}
+\end{array}\right]
+\]
+
+Finally eliminate the third column in \(R_1,R_2\):
+
+\[
+\begin{cases}
+R_1\to R_1-\tfrac{34}{15}R_3,\\
+R_2\to R_2-\tfrac{1}{5}R_3,
+\end{cases}
+\]
+\[
+\left[\begin{array}{ccc|ccc}
+1 & 0 & 0 & \tfrac{9}{61}  & \tfrac{57}{61} & -\tfrac{34}{61}\\
+0 & 1 & 0 & -\tfrac{1}{61}& \tfrac{14}{61} & -\tfrac{3}{61}\\
+0 & 0 & 1 & \tfrac{5}{61}  & -\tfrac{9}{61}& \tfrac{15}{61}
+\end{array}\right].
+\]
+
+Thus
+\[
+A^{-1}
+=\frac{1}{61}
+\begin{pmatrix}
+9  & 57  & -34\\
+-1 & 14  & -3 \\
+5  & -9  & 15
+\end{pmatrix}.
+\]"
+18," this problem step by step. The user wants to find the eigenvalues and eigenvectors of the given matrix A and then show that A squared is greater than ρ(A), which I assume refers to the spectral radius. 
+
+First, the matrix A is a 3x3 upper triangular matrix since the entries below the diagonal are zero except for the (3,2) entry, which is -1. Wait, actually, looking again: the matrix is not upper triangular because there's a -1 in position (3,2). Wait no, the matrix is:
+
+First row: 2, -2, 3
+
+Second row: 0, 3, -2
+
+Third row: 0, -1, 2
+
+So, elements below the main diagonal are at (3,2) which is -1 and possibly others? No, the first column has zeros below the first element. The second column has a non-zero element at (3,2). The third column has no elements below the diagonal. So the matrix is not upper triangular, but it's close. Maybe we can compute the eigenvalues by finding the characteristic equation.
+
+To find eigenvalues, we need to compute the determinant of (A - λI). Let's write that out:
+
+|A - λI| = |(2-λ)  -2      3     |
+           |0      (3-λ)  -2     |
+           |0      -1      (2-λ) |
+
+Since the first column has two zeros below the diagonal, expanding the determinant along the first column might be easier. The determinant would be (2 - λ) times the determinant of the submatrix for the element (1,1), and the other terms in the column are zero, so they don't contribute. Therefore:
+
+|A - λI| = (2 - λ) * |(3 - λ)  -2       |
+                      |-1       (2 - λ)  |
+
+Now compute the 2x2 determinant:
+
+(3 - λ)(2 - λ) - (-2)(-1) = (3 - λ)(2 - λ) - 2
+
+Expand that:
+
+(6 - 3λ - 2λ + λ²) - 2 = λ² - 5λ + 6 - 2 = λ² -5λ +4
+
+So the characteristic polynomial is (2 - λ)(λ² -5λ +4) = 0
+
+Now factor the quadratic: λ² -5λ +4 = (λ - 1)(λ - 4)
+
+Therefore, eigenvalues are λ = 2, λ = 1, and λ =4. Wait, no. Wait: (2 - λ)(λ² -5λ +4) =0, so roots are λ=2 (from the first factor) and the roots of λ² -5λ +4=0, which are indeed λ=1 and λ=4 as (λ-1)(λ-4)=λ² -5λ +4. So the eigenvalues are 1, 2, 4.
+
+Wait, hold on, wait. Let me check:
+
+The determinant calculation: The characteristic equation is (2 - λ)[(3 - λ)(2 - λ) - (-1)(-2)]? Wait, no, hold on. Wait the submatrix when expanding is:
+
+In row 2 and 3, columns 2 and 3, so entries:
+
+Row 2, column 2: (3 - λ), column 3: -2
+
+Row 3, column 2: -1, column 3: (2 - λ)
+
+So determinant is (3 - λ)(2 - λ) - (-1)*(-2) = (3 - λ)(2 - λ) - 2. Let me calculate that:
+
+For example: Let's take (3 - λ)(2 - λ) = 6 - 3λ -2λ + λ² = λ² -5λ +6 then subtract 2 gives λ² -5λ +4. Which factors into (λ -1)(λ -4). So yes, eigenvalues are 2, 1, 4. Right.
+
+Wait, actually, the determinant of A -λI is (2 -λ)( (3 -λ)(2 -λ) - (-2)(-1) ). Wait, no, in the original matrix, row 2 column 3 is -2, and row 3 column 3 is (2 -λ), but in the submatrix after removing the first row and column, the entries are:
+
+Row 2: (3 -λ), -2
+
+Row 3: -1, (2 -λ)
+
+Therefore, the 2x2 determinant is (3 -λ)(2 -λ) - (-1)*(-2) = (3 -λ)(2 -λ) - 2 = 6 -5λ +λ² -2 = λ² -5λ +4. Correct. So, the roots are λ = [5 ±√(25 - 16)]/2 = [5 ±3]/2, so 4 and 1. Hence, the eigenvalues are 1,2,4.
+
+So eigenvalues are 1, 2, 4.
+
+Now, eigenvectors. For each eigenvalue, solve (A - λI)v =0.
+
+Starting with λ=1:
+
+Matrix A -I:
+
+1, -2, 3
+
+0, 2, -2
+
+0, -1, 1
+
+I need to row reduce this. Let's write rows as:
+
+Row1: [1, -2, 3 | 0]
+
+Row2: [0, 2, -2 | 0]
+
+Row3: [0, -1, 1 |0]
+
+Looking at Row2: 2y -2z =0 → y = z
+
+Row3: -y +z =0 → y = z. So both equations give y = z.
+
+So let z = t, then y = t.
+
+From Row1: x -2y +3z =0. Substitute y=t, z=t:
+
+x -2t +3t = x + t =0 → x = -t.
+
+Therefore, eigenvector is (-t, t, t) = t(-1,1,1). So the eigenvector for λ=1 is any scalar multiple of (-1,1,1)^T.
+
+Next, λ=2:
+
+Matrix A -2I:
+
+0, -2, 3
+
+0, 1, -2
+
+0, -1, 0
+
+Rows:
+
+Row1: 0x -2y +3z =0
+
+Row2: 0x + y -2z =0
+
+Row3: 0x - y +0z =0 → -y =0 → y=0.
+
+From Row3: y=0. Substitute into Row2: y=0 → 0 -2z=0 → z=0.
+
+Then from Row1: 0x -0 +0 =0 → any x. So free variable is x. So the eigenvectors are (x,0,0)^T, x≠0. So the eigenvector is a multiple of (1,0,0)^T.
+
+Now λ=4:
+
+Matrix A -4I:
+
+-2, -2, 3
+
+0, -1, -2
+
+0, -1, -2
+
+So rows:
+
+Row1: -2x -2y +3z =0
+
+Row2: 0x -y -2z =0
+
+Row3: 0x -y -2z =0
+
+Row2 and Row3 are the same: -y -2z =0 → y = -2z.
+
+So let z = t, then y= -2t.
+
+From Row1: -2x -2*(-2t) +3t =0 → -2x +4t +3t = -2x +7t =0 → 2x =7t → x=7t/2.
+
+Thus eigenvector is (7t/2, -2t, t). Multiply by 2 to eliminate fraction: (7t, -4t, 2t). Thus eigenvectors are multiples of (7,-4,2)^T.
+
+Therefore, summarizing eigenvalues and eigenvectors:
+
+λ=1: eigenvectors k*(-1,1,1)^T, k≠0
+
+λ=2: eigenvectors k*(1,0,0)^T, k≠0
+
+λ=4: eigenvectors k*(7,-4,2)^T, k≠0
+
+Now the second part is to show that A² > ρ(A). Not sure what the notation means, but ρ(A) is typically the spectral radius, which is the maximum absolute value of the eigenvalues. Here, eigenvalues are 1, 2, 4. So ρ(A)=4.
+
+A² > 4? Wait, but A² is a matrix, and ρ(A) is a scalar. Maybe the problem means to show that the matrix A² - ρ(A)I is positive definite? Or perhaps component-wise, but that seems less likely. Alternatively, maybe ρ(A²) > ρ(A)? Wait, ρ(A²) would be (ρ(A))². Because if λ is an eigenvalue of A, then λ² is an eigenvalue of A². So ρ(A²)= (max |λ| )^2= 4²=16. But 16 > 4. Maybe that's the intended.
+
+But the wording says ""A² > ρ(A)"". The problem is that ρ(A) is a scalar and A² is a matrix. Maybe entry-wise comparison? But the question is unusual. Perhaps the user meant to show that A² has entries greater than the spectral radius, but that may not be the case. Need to check.
+
+Alternatively, the question could be to show that ρ(A²) > ρ(A). Since as above, λ=4, so A² has eigenvalue 16, so ρ(A²)=16 >4=ρ(A). So that's straightforward.
+
+But if the question is written as A² > ρ(A), which is ambiguous, then perhaps entry-wise. Let me check the entries of A².
+
+Compute A²:
+
+A = [[2, -2, 3],
+     [0, 3, -2],
+     [0, -1, 2]]
+
+Compute A² = A*A.
+
+First entry: (Row 1)*(Column1):
+
+2*2 + (-2)*0 +3*0 =4
+
+Row1*Column2: 2*(-2) + (-2)*3 +3*(-1) = -4 -6 -3= -13
+
+Row1*Column3: 2*3 + (-2)*(-2) +3*2 =6 +4 +6=16
+
+Second row:
+
+Row2*Column1:0*2 +3*0 + (-2)*0=0
+
+Row2*Column2:0*(-2) +3*3 + (-2)*(-1)=0 +9 +2=11
+
+Row2*Column3:0*3 +3*(-2) + (-2)*2=0 -6 -4= -10
+
+Third row:
+
+Row3*Column1:0*2 + (-1)*0 +2*0=0
+
+Row3*Column2:0*(-2) + (-1)*3 +2*(-1)=0 -3 -2= -5
+
+Row3*Column3:0*3 + (-1)*(-2) +2*2=0 +2 +4=6
+
+So A² equals:
+
+[ 4, -13, 16
+
+0, 11, -10
+
+0, -5, 6 ]
+
+Now, the spectral radius ρ(A) is 4.
+
+Now, when the problem states ""show that A² > ρ(A)"", if interpreting entry-wise, are all entries of A² greater than ρ(A)=4? Let's check each entry:
+
+First row: 4, -13, 16: 4 is not >4, -13 <4, 16 >4. So this is false if entry-wise.
+
+Alternatively, if the inequality is meant in terms of matrix ordering, such as A² - ρ(A)I is positive definite. Let's check the eigenvalues of A².
+
+The eigenvalues of A² are (1)^2=1, (2)^2=4, (4)^2=16. So the eigenvalues of A² are 1,4,16. Therefore, the spectral radius of A² is 16, which is greater than ρ(A)=4.
+
+Therefore, possibly the intended answer is to recognize that the spectral radius of A² is (ρ(A))², which is greater than ρ(A) if ρ(A)>1, which is true here since ρ(A)=4>1. Therefore, ρ(A²) = (ρ(A))²=16>4, so A² in the sense of spectral radius is greater than ρ(A).
+
+Alternatively, if they meant component-wise, as in some norm, but since entry-wise some components are less than 4, that's not valid. So the correct approach is to consider ρ(A²)=16 >4=ρ(A). Hence, A² has a spectral radius greater than that of A. Thus, proving that ρ(A²) > ρ(A).
+
+So to show that A² > ρ(A) in terms of spectral radius, we can state that since the spectral radius of A is 4, and the spectral radius of A² is 16, then yes, (A squared's spectral radius is greater than A's).
+</think>
+
+For the matrix $A = \begin{pmatrix} 2 & -2 & 3 \\ 0 & 3 & -2 \\ 0 & -1 & 2 \end{pmatrix}$:
+
+**Step 1: Find eigenvalues**  
+The characteristic polynomial is derived from $\det(A - \lambda I)$:
+$$
+\begin{vmatrix}
+2-\lambda & -2 & 3 \\
+0 & 3-\lambda & -2 \\
+0 & -1 & 2-\lambda
+\end{vmatrix} = (2-\lambda)\left[(3-\lambda)(2-\lambda) - 2\right] = (2-\lambda)(\lambda^2 - 5\lambda + 4).
+$$
+Solving $\lambda^2 - 5\lambda + 4 = 0$ gives roots $\lambda_1 = 1$ and $\lambda_2 = 4$. Combined with $\lambda_3 = 2$, the eigenvalues are:
+$$
+\lambda \in \{1, 2, 4\}.
+$$
+
+**Step 2: Find eigenvectors**  
+- **For $\lambda = 1$**:  
+  Solve $(A - I)\mathbf{v} = 0$:
+  $$
+  \begin{pmatrix}
+  1 & -2 & 3 \\
+  0 & 2 & -2 \\
+  0 & -1 & 1
+  \end{pmatrix} \xrightarrow{\text{row ops}} \begin{cases}
+  x = -z \\
+  y = z
+  \end{cases} \implies \mathbf{v} = t\begin{pmatrix} -1 \\ 1 \\ 1 \end{pmatrix},\ t \neq 0.
+  $$
+
+- **For $\lambda = 2$**:  
+  Solve $(A - 2I)\mathbf{v} = 0$:
+  $$
+  \begin{pmatrix}
+  0 & -2 & 3 \\
+  0 & 1 & -2 \\
+  0 & -1 & 0
+  \end{pmatrix} \xrightarrow{\text{row ops}} \begin{cases}
+  y = 0 \\
+  z = 0
+  \end{cases} \implies \mathbf{v} = t\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix},\ t \neq 0.
+  $$
+
+- **For $\lambda = 4$**:  
+  Solve $(A - 4I)\mathbf{v} = 0$:
+  $$
+  \begin{pmatrix}
+  -2 & -2 & 3 \\
+  0 & -1 & -2 \\
+  0 & -1 & -2
+  \end{pmatrix} \xrightarrow{\text{row ops}} \begin{cases}
+  y = -2z \\
+  x = \frac{7z}{2}
+  \end{cases} \implies \mathbf{v} = t\begin{pmatrix} 7 \\ -4 \\ 2 \end{pmatrix},\ t \neq 0.
+  $$
+
+**Step 3: Verify $A^2 > \rho(A)$**  
+The spectral radius is $\rho(A) = 4$. Compute $A^2$:
+$$
+A^2 = \begin{pmatrix}
+4 & -13 & 16 \\
+0 & 11 & -10 \\
+0 & -5 & 6
+\end{pmatrix}.
+$$
+The eigenvalues of $A^2$ are $\{1^2, 2^2, 4^2\} = \{1, 4, 16\}$. Thus, the spectral radius of $A^2$ is $\rho(A^2) = 16$, confirming $\rho(A^2) > \rho(A)$. Hence, $A^2 > \rho(A)$ holds under spectral radius interpretation."
+19,"The singular‐value decomposition \(A=U\Sigma V^{T}\) of  
+\[
+A=\begin{pmatrix}3&0\\4&5\end{pmatrix}
+\]
+is given by
+\[
+\Sigma=\begin{pmatrix}3\sqrt5&0\\0&\sqrt5\end{pmatrix},\quad
+V=\begin{pmatrix}\frac1{\sqrt2}&\frac1{\sqrt2}\\[6pt]\frac1{\sqrt2}&-\frac1{\sqrt2}\end{pmatrix},\quad
+U=\begin{pmatrix}\frac1{\sqrt{10}}&\frac{3}{\sqrt{10}}\\[6pt]\frac{3}{\sqrt{10}}&-\frac1{\sqrt{10}}\end{pmatrix}.
+\]
+Indeed, the nonzero singular values are
+\[
+\sigma_1=\sqrt{45}=3\sqrt5,\quad \sigma_2=\sqrt{5} ,
+\]
+the columns of \(V\) are the normalized eigenvectors of \(A^TA\), and
+\[
+u_i=\frac1{\sigma_i}A\,v_i
+\]
+yields the columns of \(U\)."
+20,"Using $v_1=(1,0,0)^T$, $v_2=(0,\cos x,\sin x)^T$, $v_3=(y,z,1)^T$, the orthogonality conditions $v_i^T v_j=0$ for $i\neq j$ give:
+
+1) $v_1^T v_3=y=0\,$.
+
+2) $v_2^T v_3=\;0\cdot y+\cos x\;z+\sin x\;1=0\;\Longrightarrow\;z\cos x+\sin x=0
+\;\Longrightarrow\;z=-\tan x\,$, requiring $\cos x\neq0$.
+
+Hence all solutions are
+\[
+\begin{bmatrix}x\\y\\z\end{bmatrix}
+\;=\;
+\begin{bmatrix}x\\0\\-\tan x\end{bmatrix},
+\qquad x\not\equiv\frac\pi2\pmod\pi.
+\]"
+21,"The columns of  
+\[
+A=\begin{pmatrix}
+1&0&x\\
+0&\cos\theta&y\\
+0&\sin\theta&z
+\end{pmatrix}
+\]
+must be orthonormal.  Writing them as  
+\[
+c_1=(1,0,0)^T,\quad
+c_2=(0,\cos\theta,\sin\theta)^T,\quad
+c_3=(x,y,z)^T,
+\]
+we require
+ 1. \(\|c_3\|_2^2=x^2+y^2+z^2=1,\)
+ 2. \(c_1\cdot c_3=x=0,\)
+ 3. \(c_2\cdot c_3=\cos\theta\,y+\sin\theta\,z=0.\)
+
+From (2) \(x=0\), and then (1),(3) give
+\[
+y^2+z^2=1,\qquad \cos\theta\,y+\sin\theta\,z=0.
+\]
+The unique unit‐length solutions are
+\[
+\begin{pmatrix}y\\z\end{pmatrix}
+=\pm\begin{pmatrix}-\sin\theta\\\cos\theta\end{pmatrix}.
+\]
+Hence all orthogonal \(A\) arise from
+\[
+\begin{pmatrix}x\\y\\z\end{pmatrix}
+=\begin{pmatrix}0\\-\,\sin\theta\\\cos\theta\end{pmatrix}
+\quad\text{or}\quad
+\begin{pmatrix}0\\\sin\theta\\-\,\cos\theta\end{pmatrix}.
+\]"
+22,"The matrix  
+\(A=\begin{pmatrix}0&1&0\\0&0&0\\0&0&1\end{pmatrix}\)  
+has characteristic polynomial  
+\[
+\chi_A(\lambda)=(\lambda-1)\,\lambda^2
+\]  
+so its only eigenvalues are \(\lambda=1\) (simple) and \(\lambda=0\) (algebraic multiplicity 2).  The null‐space of \(A\) is given by  
+\[
+A\,v=0\;\Longrightarrow\;\begin{cases}v_2=0,\\v_3=0,\end{cases}
+\]
+so \(\dim\ker A=1\).  Hence the geometric multiplicity of the eigenvalue \(0\) is only 1, strictly less than its algebraic multiplicity 2.  In particular \(A\) is not diagonalizable over \(\Bbb R\) (or \(\Bbb C\)), and certainly there is no orthogonal \(Q\) and diagonal \(B\) with
+\[
+A=Q\,B\,Q^{-1},\quad Q^TQ=I.
+\]
+Thus no such \(Q\) and \(B\) exist."
+23,"The matrix  
+\(A=\begin{pmatrix}2&4&6\\0&2&2\\0&0&4\end{pmatrix}\)  
+is upper–triangular, so its eigenvalues are  
+\[
+\lambda_1=2\ (\text{alg.\ mult. }2),\quad \lambda_2=4\ (\text{alg.\ mult. }1).
+\]  
+We check the geometric multiplicity of \(\lambda=2\).  Solve
+\[
+(A-2I)x=0
+\;\Longrightarrow\;
+\begin{pmatrix}
+0&4&6\\
+0&0&2\\
+0&0&2
+\end{pmatrix}
+\begin{pmatrix}x\\y\\z\end{pmatrix}
+=0
+\;\Longrightarrow\;
+\begin{cases}
+4y+6z=0,\\
+2z=0,
+\end{cases}
+\]
+so \(z=0\), \(y=0\), and \(x\) free.  Hence
+\[
+\dim\ker(A-2I)=1<2=\text{alg.\ mult. of }2,
+\]
+and \(A\) is not diagonalizable.
+
+Instead, one can exhibit its Jordan normal form.  Let
+\[
+v_1=(1,0,0)^T,\quad
+v_2\text{ solve }(A-2I)v_2=v_1,
+\quad
+v_3\text{ an eigenvector for }\lambda=4.
+\]
+A convenient choice is
+\[
+v_2=(0,\tfrac14,0)^T,\qquad
+v_3=(5,1,1)^T.
+\]
+Then with
+\[
+P=\bigl[v_1\;v_2\;v_3\bigr],\qquad
+J=P^{-1}AP
+=\begin{pmatrix}
+2&1&0\\
+0&2&0\\
+0&0&4
+\end{pmatrix},
+\]
+we have the Jordan decomposition
+\[
+A = P\,J\,P^{-1},
+\]
+where \(J\) consists of one \(2\times2\) Jordan block at \(\lambda=2\) and one \(1\times1\) block at \(\lambda=4\)."
+24,"The characteristic polynomial of \(A\) is
+\[
+p(\lambda)=\det(A-\lambda I)
+=\det\begin{pmatrix}2-\lambda&0&0\\1&2-\lambda&-1\\1&3&-2-\lambda\end{pmatrix}
+=(2-\lambda)\bigl((2-\lambda)(-2-\lambda)-(-1)\cdot3\bigr)
+=(2-\lambda)(\lambda^2-1).
+\]
+Hence
+\[
+p(\lambda)=-(\lambda-2)(\lambda-1)(\lambda+1),
+\]
+and the eigenvalues are
+\[
+\lambda_1=2,\quad \lambda_2=1,\quad \lambda_3=-1.
+\]
+
+1. \(\lambda=2\):  
+\[
+A-2I=\begin{pmatrix}0&0&0\\1&0&-1\\1&3&-4\end{pmatrix}, 
+\quad
+(A-2I)x=0
+\;\Longrightarrow\;
+\begin{cases}
+x_1=x_3,\\
+x_3+3x_2-4x_3=0\;\Rightarrow\;x_2=x_3.
+\end{cases}
+\]
+Basis of \(E_{2}=\ker(A-2I)\):
+\[
+v_{2}=\begin{pmatrix}1\\1\\1\end{pmatrix}.
+\]
+
+2. \(\lambda=1\):  
+\[
+A-I=\begin{pmatrix}1&0&0\\1&1&-1\\1&3&-3\end{pmatrix}, 
+\quad
+(A-I)x=0
+\;\Longrightarrow\;
+\begin{cases}
+x_1=0,\\
+x_2=x_3.
+\end{cases}
+\]
+Basis of \(E_{1}=\ker(A-I)\):
+\[
+v_{1}=\begin{pmatrix}0\\1\\1\end{pmatrix}.
+\]
+
+3. \(\lambda=-1\):  
+\[
+A+I=\begin{pmatrix}3&0&0\\1&3&-1\\1&3&-1\end{pmatrix}, 
+\quad
+(A+I)x=0
+\;\Longrightarrow\;
+\begin{cases}
+x_1=0,\\
+3x_2-x_3=0\;\Rightarrow\;x_3=3x_2.
+\end{cases}
+\]
+Basis of \(E_{-1}=\ker(A+I)\):
+\[
+v_{-1}=\begin{pmatrix}0\\1\\3\end{pmatrix}.
+\]"
+25,"We first observe that in order for a real matrix \(A\) to be diagonalized by an orthogonal similarity \(P^{-1}AP=P^TAP\), \(A\) must be symmetric.  Assuming the intended matrix is the symmetric one     
+\[
+A=\begin{pmatrix}
+1&0&-1\\
+0&1&-2\\
+-1&-2&5
+\end{pmatrix},
+\]
+its characteristic polynomial is  
+\[
+\det(A-\lambda I)
+=\begin{vmatrix}
+1-\lambda&0&-1\\
+0&1-\lambda&-2\\
+-1&-2&5-\lambda
+\end{vmatrix}
+=(1-\lambda)\bigl((1-\lambda)(5-\lambda)-4\bigr)-\,(1-\lambda)
+=(1-\lambda)\lambda(\lambda-6)\,,
+\]
+so the eigenvalues are
+\[
+\lambda_1=0,\qquad \lambda_2=1,\qquad\lambda_3=6\,.
+\]
+
+We now find an orthonormal eigenbasis:
+
+1.  \(\lambda=0\): solve \(Ax=0\):
+\[
+x_1=x_3,\quad x_2=2x_3,
+\]
+so one eigenvector is \(v_1=(1,2,1)^T\).  Normalize:
+\[
+u_1=\frac1{\sqrt{6}}\,(1,2,1)^T.
+\]
+
+2.  \(\lambda=1\): solve \((A-I)x=0\):
+\[
+x_3=0,\quad x_1=-2x_2,
+\]
+so \(v_2=(-2,1,0)^T\), and
+\[
+u_2=\frac1{\sqrt5}\,(-2,1,0)^T.
+\]
+
+3.  \(\lambda=6\): solve \((A-6I)x=0\):
+\[
+x_2=2x_1,\quad x_3=-5x_1,
+\]
+so \(v_3=(1,2,-5)^T\), and
+\[
+u_3=\frac1{\sqrt{30}}\,(1,2,-5)^T.
+\]
+
+These three vectors are mutually orthonormal.  Set
+\[
+P=\bigl[u_1\;u_2\;u_3\bigr]
+=\begin{pmatrix}
+\frac{1}{\sqrt6}&-\frac{2}{\sqrt5}&\frac{1}{\sqrt{30}}\\[1ex]
+\frac{2}{\sqrt6}&\frac{1}{\sqrt5}&\frac{2}{\sqrt{30}}\\[1ex]
+\frac{1}{\sqrt6}&0&-\frac{5}{\sqrt{30}}
+\end{pmatrix}.
+\]
+Then \(P\) is orthogonal (\(P^{-1}=P^T\)) and
+\[
+P^T\,A\,P
+=\operatorname{diag}(0,\,1,\,6)\,,
+\]
+as required."
+26,"The eigenvalues of  
+\(A=\begin{pmatrix}8&-2&2\\2&5&4\\2&4&5\end{pmatrix}\)  
+are found from  
+\[
+\det(A-\lambda I)
+=\lambda^3-18\lambda^2+89\lambda-72
+=(\lambda-1)(\lambda-8)(\lambda-9)\,,
+\]  
+so  
+\[
+\lambda_1=1,\quad\lambda_2=8,\quad\lambda_3=9.
+\]
+
+Corresponding eigenvectors may be chosen (and then normalized) as follows:
+
+1. \(\lambda_1=1\):  
+   Solve \((A-I)v=0\) ⇒  
+   \(v_1=(2,3,-4)^T\),  
+   \(\|v_1\|=\sqrt{29}\),  
+   \(u_1=\frac{1}{\sqrt{29}}(2,3,-4)^T\).
+
+2. \(\lambda_2=8\):  
+   Solve \((A-8I)v=0\) ⇒  
+   \(v_2=(-1,2,2)^T\),  
+   \(\|v_2\|=3\),  
+   \(u_2=\frac{1}{3}(-1,2,2)^T\).
+
+3. \(\lambda_3=9\):  
+   Solve \((A-9I)v=0\) ⇒  
+   \(v_3=(0,1,1)^T\),  
+   \(\|v_3\|=\sqrt2\),  
+   \(u_3=\frac{1}{\sqrt2}(0,1,1)^T\).
+
+Form the orthogonal matrix  
+\[
+P=\begin{pmatrix}
+\frac{2}{\sqrt{29}} & -\frac13 & 0\\[6pt]
+\frac{3}{\sqrt{29}} & \frac23   & \frac{1}{\sqrt2}\\[6pt]
+-\frac{4}{\sqrt{29}}& \frac23   & \frac{1}{\sqrt2}
+\end{pmatrix},
+\]
+and let
+\[
+D=\operatorname{diag}(1,8,9).
+\]
+Then
+\[
+P^T\,A\,P
+=D,
+\quad
+A=P\,D\,P^T
+\]
+is the desired orthogonal diagonalization."
+27,"The matrix  
+\(A=\begin{pmatrix}-1&2&2\\2&-1&2\\2&2&-1\end{pmatrix}\)  
+is real symmetric, hence orthogonally diagonalizable.  Note that  
+\[
+A=2J-3I,\qquad J=\begin{pmatrix}1&1&1\\1&1&1\\1&1&1\end{pmatrix},
+\]  
+and \(J\) has eigenvalues \(3\) (mult.~1) and \(0\) (mult.~2).  Therefore the eigenvalues of \(A\) are  
+\[
+\lambda_1=2\cdot3-3=3,\quad 
+\lambda_2=\lambda_3=2\cdot0-3=-3.
+\]  
+An orthonormal eigenbasis is:  
+\[
+v_1=\frac1{\sqrt3}\begin{pmatrix}1\\1\\1\end{pmatrix},\qquad
+v_2=\frac1{\sqrt2}\begin{pmatrix}1\\-1\\0\end{pmatrix},\qquad
+v_3=\frac1{\sqrt6}\begin{pmatrix}1\\1\\-2\end{pmatrix},
+\]  
+with  
+\[
+Av_1=3v_1,\quad Av_2=-3v_2,\quad Av_3=-3v_3.
+\]  
+Form the orthogonal matrix  
+\[
+Q=\begin{pmatrix}v_1&v_2&v_3\end{pmatrix}
+=\begin{pmatrix}
+\frac1{\sqrt3}&\frac1{\sqrt2}&\frac1{\sqrt6}\\
+\frac1{\sqrt3}&-\frac1{\sqrt2}&\frac1{\sqrt6}\\
+\frac1{\sqrt3}&0&-\frac2{\sqrt6}
+\end{pmatrix}.
+\]  
+Then  
+\[
+Q^T A\,Q=\operatorname{diag}(3,\,-3,\,-3).
+\]"
+28,"The Jacobi iteration for 
+$$A x=b,\qquad A=\begin{pmatrix}
+4&1&-1&1\\
+1&4&-1&-1\\
+-1&-1&5&1\\
+1&-1&1&3
+\end{pmatrix},\quad
+b=\begin{pmatrix}-2\\-1\\0\\1\end{pmatrix},$$ 
+is 
+$$x_i^{(k+1)}
+=\frac1{a_{ii}}\Bigl(b_i-\sum_{j\neq i}a_{ij}\,x_j^{(k)}\Bigr),\qquad x^{(0)}=\mathbf0.$$
+
+1) \(k=0\to1\): since \(x^{(0)}=0\),
+\[
+\begin{aligned}
+x_1^{(1)}&=\tfrac14(-2)= -\tfrac12,\\
+x_2^{(1)}&=\tfrac14(-1)= -\tfrac14,\\
+x_3^{(1)}&=\tfrac15(0)=0,\\
+x_4^{(1)}&=\tfrac13(1)= \tfrac13,
+\end{aligned}
+\qquad
+x^{(1)}=\begin{pmatrix}-\tfrac12\\-\tfrac14\\0\\\tfrac13\end{pmatrix}.
+\]
+
+2) \(k=1\to2\):
+\[
+\begin{aligned}
+x_1^{(2)}
+&=\tfrac14\bigl(-2 -x_2^{(1)}+x_3^{(1)}-x_4^{(1)}\bigr)
+=\tfrac14\Bigl(-2 +\tfrac14 -\tfrac13\Bigr)
+=-\tfrac{25}{48},\\
+x_2^{(2)}
+&=\tfrac14\bigl(-1 -x_1^{(1)}+x_3^{(1)}+x_4^{(1)}\bigr)
+=\tfrac14\Bigl(-1 +\tfrac12 +\tfrac13\Bigr)
+=-\tfrac1{24},\\
+x_3^{(2)}
+&=\tfrac15\bigl(x_1^{(1)}+x_2^{(1)}-x_4^{(1)}\bigr)
+=\tfrac15\Bigl(-\tfrac12-\tfrac14-\tfrac13\Bigr)
+=-\tfrac{13}{60},\\
+x_4^{(2)}
+&=\tfrac13\bigl(1 -x_1^{(1)}+x_2^{(1)}-x_3^{(1)}\bigr)
+=\tfrac13\Bigl(1+\tfrac12-\tfrac14\Bigr)
+=\tfrac5{12},
+\end{aligned}
+\]
+\[
+x^{(2)}=\begin{pmatrix}
+-\tfrac{25}{48}\\[4pt]-\tfrac1{24}\\[4pt]-\tfrac{13}{60}\\[4pt]\tfrac5{12}
+\end{pmatrix}.
+\]"
+29,"The Gauss–Seidel updates are, for \(k\ge0\),  
+\[
+x_1^{(k+1)}=\frac1{4}\bigl(-2 -x_2^{(k)}+x_3^{(k)}-x_4^{(k)}\bigr),\quad
+x_2^{(k+1)}=\frac1{4}\bigl(-1 -x_1^{(k+1)}+x_3^{(k)}+x_4^{(k)}\bigr),
+\]
+\[
+x_3^{(k+1)}=\frac1{5}\bigl(x_1^{(k+1)}+x_2^{(k+1)}-x_4^{(k)}\bigr),\quad
+x_4^{(k+1)}=\frac1{3}\bigl(1 -x_1^{(k+1)}+x_2^{(k+1)}-x_3^{(k+1)}\bigr).
+\]
+Starting from \(\mathbf x^{(0)}=(0,0,0,0)^T\) one finds:
+
+Iteration \(k=0\to1\):
+\[
+x_1^{(1)}=\frac{-2-0+0-0}{4}=-\frac12,\quad
+x_2^{(1)}=\frac{-1-(-\tfrac12)+0+0}{4}=-\frac18,
+\]
+\[
+x_3^{(1)}=\frac{(-\tfrac12)+(-\tfrac18)-0}{5}=-\frac18,\quad
+x_4^{(1)}=\frac{1-(-\tfrac12)+(-\tfrac18)-(-\tfrac18)}{3}=\frac12,
+\]
+so
+\[
+\mathbf x^{(1)}=\begin{pmatrix}-\tfrac12\\[4pt]-\tfrac18\\[4pt]-\tfrac18\\[4pt]\tfrac12\end{pmatrix}.
+\]
+
+Iteration \(k=1\to2\):
+\[
+x_1^{(2)}=\frac{-2-(-\tfrac18)+(-\tfrac18)-\tfrac12}{4}=-\frac{5}{8},\quad
+x_2^{(2)}=\frac{-1-(-\tfrac{5}{8})+(-\tfrac18)+\tfrac12}{4}=0,
+\]
+\[
+x_3^{(2)}=\frac{(-\tfrac{5}{8})+0-\tfrac12}{5}=-\frac{9}{40},\quad
+x_4^{(2)}=\frac{1-(-\tfrac{5}{8})+0-(-\tfrac{9}{40})}{3}=\frac{37}{60},
+\]
+hence
+\[
+\mathbf x^{(2)}
+=\begin{pmatrix}-\tfrac{5}{8}\\[4pt]0\\[4pt]-\tfrac{9}{40}\\[4pt]\tfrac{37}{60}\end{pmatrix}.
+\]"
+30,"The Moore–Penrose (and hence a valid {1}-) inverse of  
+\(A\in\R^{3\times4}\), \(\rank A=2\), may be obtained by the rank‐factorization  
+\[
+A = X\,\[
+X = \begin{pmatrix}
+1 & 0 \\[1ex]
+3 & 1 \\[1ex]
+2 & 0
+\end{pmatrix}, 
+\qquad
+Y = \begin{pmatrix}
+1 & 2 & 4 & 3 \\[1ex]
+0 & 1 & 0 & 0
+\end{pmatrix},
+\]
+so that \(A = X\,Y\), \(\;X\in\R^{3\times2}\), \(\;Y\in\R^{2\times4}\), both full‐rank.  Then the Moore–Penrose inverse is
+\[
+A^+ \;=\;
+Y^T\,(Y\,Y^T)^{-1}\,(X^T\,X)^{-1}\,X^T
+\;=\;
+\begin{pmatrix}
+-\,\tfrac1{26}&\;\tfrac1{13}&-\,\tfrac1{13}\\[1ex]
+\;\tfrac35&-1&\;\tfrac65\\[1ex]
+-\,\tfrac2{13}&\;\tfrac4{13}&-\,\tfrac4{13}\\[1ex]
+-\,\tfrac3{26}&\;\tfrac3{13}&-\,\tfrac3{13}
+\end{pmatrix},
+\]
+which indeed satisfies \(A\,A^+\,A=A\)."
+31,"The matrix \(A\) has \(\det A=0\) and \(\rank A=2\), so its Moore–Penrose inverse is not the ordinary inverse but the unique \(3\times3\) matrix \(A^+\) satisfying the Penrose equations. One convenient way to compute it is via the identity
+\[
+A^+ \;=\; A^T\,(A\,A^T)^+.
+\]
+We first form
+\[
+B \;=\; A\,A^T
+\;=\;
+\begin{pmatrix}
+5 & 2 & 1\\
+2 & 2 & -2\\
+1 & -2 & 5
+\end{pmatrix},
+\]
+whose eigenvalues are \(0,6,6\).  Hence
+\[
+B^+ \;=\;\sum_{\lambda_i\neq0}\frac{1}{\lambda_i}\,u_i\,u_i^T
+\;=\;\frac1{6}\,P_{\range(B)}
+\;=\;\frac1{36}\,B,
+\]
+since \(B=6\,P_{\range(B)}\).  Therefore
+\[
+A^+ \;=\;\frac1{36}\,A^T\,B
+\;=\;\frac1{36}
+\begin{pmatrix}
+1&0&1\\
+0&-1&2\\
+2&1&0
+\end{pmatrix}
+\begin{pmatrix}
+5&2&1\\2&2&-2\\1&-2&5
+\end{pmatrix}
+\;=\;\frac1{36}
+\begin{pmatrix}
+6&0&6\\
+0&-6&12\\
+12&6&0
+\end{pmatrix}.
+\]
+In simplified form,
+\[
+\boxed{
+A^+ \;=\;
+\begin{pmatrix}
+\dfrac16 & 0 & \dfrac16\\[1ex]
+0 & -\dfrac16 & \dfrac13\\[1ex]
+\dfrac13 & \dfrac16 & 0
+\end{pmatrix}.
+}
+\]"
+32,"The characteristic polynomial of \(A\) is
+\[
+\det(A-\lambda I)
+= -\lambda^3+5\lambda^2-17\lambda+13
+\;\Longrightarrow\;
+\lambda^3-5\lambda^2+17\lambda-13=0,
+\]
+which factors as \((\lambda-1)(\lambda^2-4\lambda+13)=0\).  Hence the eigenvalues are
+\[
+\lambda_1=1,\qquad
+\lambda_{2,3}=2\pm3\,i.
+\]
+
+1. \(\lambda_1=1\).  Solve \((A-I)x=0\):
+\[
+(A-I)=\begin{pmatrix}3&-5&7\\1&-5&9\\-4&0&4\end{pmatrix}
+\;\Longrightarrow\;
+x_1=x,\;y_1=2x,\;z_1=x.
+\]
+An eigenvector is
+\[
+v_1=\begin{pmatrix}1\\2\\1\end{pmatrix}.
+\]
+
+2. \(\lambda_2=2+3i\).  Solve \((A-(2+3i)I)v=0\).  One finds
+\[
+v_2\propto
+\begin{pmatrix}\frac{3-3i}4\\[6pt]\frac{5-3i}4\\[4pt]1\end{pmatrix}
+\;\sim\;
+\begin{pmatrix}3-3i\\5-3i\\4\end{pmatrix}.
+\]
+
+3. \(\lambda_3=2-3i\).  By conjugation
+\[
+v_3\propto
+\begin{pmatrix}3+3i\\5+3i\\4\end{pmatrix}.
+\]
+
+Summary:
+
+\[
+\begin{aligned}
+\lambda_1&=1,\quad &
+v_1&=\begin{pmatrix}1\\2\\1\end{pmatrix},\\
+\lambda_2&=2+3i,\quad &
+v_2&=\begin{pmatrix}3-3i\\5-3i\\4\end{pmatrix},\\
+\lambda_3&=2-3i,\quad &
+v_3&=\begin{pmatrix}3+3i\\5+3i\\4\end{pmatrix}.
+\end{aligned}
+\]"
+33,"The QR–decomposition \(A=QR\) may be obtained by (classical) Gram–Schmidt on the columns of 
+\[
+A=\begin{pmatrix}
+12 & -51 &   4\\
+ 6 & 167 & -68\\
+-4 &  24 & -41
+\end{pmatrix}.
+\]
+One finds
+\[
+q_1=\frac1{14}\begin{pmatrix}12\\6\\-4\end{pmatrix}
+=\begin{pmatrix}6/7\\3/7\\-2/7\end{pmatrix},\quad
+r_{11}=14,
+\]
+\[
+v_2=a_2-r_{12}\,q_1,\quad
+r_{12}=q_1^Ta_2=21,\quad
+\|v_2\|=175,\quad
+q_2=v_2/175
+=\begin{pmatrix}-69/175\\158/175\\6/35\end{pmatrix},
+\]
+\[
+r_{22}=175,\quad
+r_{23}=q_2^Ta_3=-70,\quad
+v_3=a_3-r_{13}q_1-r_{23}q_2,\quad
+r_{13}=q_1^Ta_3=-14,
+\]
+\[
+\|v_3\|=35,\quad
+q_3=v_3/35
+=\begin{pmatrix}-58/175\\6/175\\-33/35\end{pmatrix},
+\quad
+r_{33}=35.
+\]
+Hence
+\[
+Q=\begin{pmatrix}
+6/7   & -\,69/175 & -\,58/175\\
+3/7   & 158/175   &   6/175\\
+-2/7  &   6/35    & -\,33/35
+\end{pmatrix},\qquad
+R=\begin{pmatrix}
+14 & 21  & -14\\
+ 0 &175  & -70\\
+ 0 &  0  &  35
+\end{pmatrix},
+\]
+with \(Q^TQ=I\) and \(QR=A\)."
+34,"We seek a single Householder‐reflection which annihilates the $(3,1)$–entry of $A$.  Set
+$$x=\begin{pmatrix}a_{21}\\a_{31}\end{pmatrix}=\begin{pmatrix}1\\0\end{pmatrix},\qquad 
+\|x\|_2=1,\qquad 
+\alpha=-\operatorname{sign}(x_1)\,\|x\|_2=-1.$$ 
+Then 
+$$v=x-\alpha e_1=\begin{pmatrix}1-(-1)\\0\end{pmatrix}=\begin{pmatrix}2\\0\end{pmatrix},\qquad
+\beta=v^Tv=4,\qquad
+u=\frac v{\sqrt\beta}=\begin{pmatrix}1\\0\end{pmatrix}.$$ 
+The $2\times2$ Householder is 
+$$\widehat H=I_2-2\,u\,u^T=\begin{pmatrix}-1&0\\0&1\end{pmatrix},$$ 
+and we embed it into $H_1\in\R^{3\times3}$ by
+$$H_1=\begin{pmatrix}1&0^T\\0&\widehat H\end{pmatrix}
+=\begin{pmatrix}1&0&0\\0&-1&0\\0&0&1\end{pmatrix}.$$
+Finally
+$$A_1=H_1\,A\,H_1
+=\begin{pmatrix}1&0&0\\0&-1&0\\0&0&1\end{pmatrix}
+\begin{pmatrix}5&1&0\\1&6&3\\0&3&7\end{pmatrix}
+\begin{pmatrix}1&0&0\\0&-1&0\\0&0&1\end{pmatrix}
+=\begin{pmatrix}5&-1&0\\-1&6&-3\\0&-3&7\end{pmatrix},$$
+which is (obviously) symmetric tridiagonal."
+35,"Let  
+\(A=\begin{pmatrix}
+4&1&-2&2\\
+1&2&0&1\\
+-2&0&3&-2\\
+2&1&-2&-1
+\end{pmatrix}\)  
+be reduced in two steps to tridiagonal form.
+
+1. First Householder on the 2–4 subvector of column 1.  Set  
+\[
+x^{(1)}=\begin{pmatrix}1\\-2\\2\end{pmatrix},\quad 
+\alpha_1=-\|x^{(1)}\|_2=-3,\quad
+u^{(1)}=x^{(1)}-\alpha_1e_1=\begin{pmatrix}4\\-2\\2\end{pmatrix},\quad
+v^{(1)}=\frac{u^{(1)}}{\|u^{(1)}\|_2}=\frac1{2\sqrt6}\begin{pmatrix}4\\-2\\2\end{pmatrix}.
+\]  
+Define  
+\[
+H_1=\begin{pmatrix}1&0\\0&I_3-2\,v^{(1)}(v^{(1)})^T\end{pmatrix},
+\]
+then  
+\[
+A^{(1)}=H_1\,A\,H_1
+=\begin{pmatrix}
+4&-3&0&0\\
+-3&\frac{10}{3}&1&\frac{4}{3}\\
+0&1&\frac{5}{3}&-\frac{4}{3}\\
+0&\frac{4}{3}&-\frac{4}{3}&-1
+\end{pmatrix}.
+\]
+
+2. Second Householder on the 3–4 subvector of column 2 of \(A^{(1)}\).  Set  
+\[
+x^{(2)}=\begin{pmatrix}1\\\tfrac{4}{3}\end{pmatrix},\quad
+\alpha_2=-\|x^{(2)}\|_2=-\tfrac{5}{3},\quad
+u^{(2)}=x^{(2)}-\alpha_2e_1=\begin{pmatrix}\tfrac{8}{3}\\\tfrac{4}{3}\end{pmatrix},\quad
+v^{(2)}=\frac{u^{(2)}}{\|u^{(2)}\|_2}
+=\frac1{\sqrt5}\begin{pmatrix}2\\1\end{pmatrix}.
+\]  
+Define  
+\[
+H_2=\begin{pmatrix}
+I_2&0\\
+0&I_2-2\,v^{(2)}(v^{(2)})^T
+\end{pmatrix},
+\]
+then the final tridiagonal matrix is  
+\[
+A_2=H_2\,A^{(1)}\,H_2
+=\begin{pmatrix}
+4 & -3 & 0 & 0\\
+-3 & \tfrac{10}{3} & -\tfrac{5}{3} & 0\\
+0 & -\tfrac{5}{3} & -\tfrac{33}{25} & \tfrac{68}{75}\\
+0 & 0 & \tfrac{68}{75} & \tfrac{149}{75}
+\end{pmatrix},
+\]  
+which is similar to \(A\) and has nonzeros only on the main and first sub‐ and super‐diagonals."
+36,"Let \(A=\begin{pmatrix}12&-51&4\\6&167&-68\\-4&24&-41\end{pmatrix}\).  We wish to annihilate the \((3,1)\)-entry of \(A\) by a similarity
+\[
+A^{(1)} \;=\; H_1^TA\,H_1,
+\]
+where \(H_1\) is a Householder reflector acting on the subspace spanned by \(e_2,e_3\).  Set
+\[
+x \;=\;\begin{pmatrix}6\\-4\end{pmatrix},\qquad
+\|x\|_2=\sqrt{6^2+(-4)^2}=2\sqrt{13},\qquad
+\alpha=-\sgn(6)\,\|x\|_2=-2\sqrt{13},
+\]
+\[
+u=x-\alpha\,e_1=\begin{pmatrix}6+2\sqrt{13}\\-4\end{pmatrix},\qquad
+\beta=u^Tu=104+24\sqrt{13},
+\]
+\[
+v=\frac{1}{\sqrt{\beta}}\begin{pmatrix}0\\6+2\sqrt{13}\\-4\end{pmatrix}\in\R^3.
+\]
+Then
+\[
+H_1 \;=\; I-2\,v\,v^T
+\;=\;
+\begin{pmatrix}
+1&0&0\\
+0&1&0\\
+0&0&1
+\end{pmatrix}
+\;-\;\frac{2}{104+24\sqrt{13}}
+\begin{pmatrix}0\\6+2\sqrt{13}\\-4\end{pmatrix}
+\begin{pmatrix}0&(6+2\sqrt{13})&(-4)\end{pmatrix}
+\]
+which simplifies to
+\[
+H_1 \;=\;
+\begin{pmatrix}
+1 & 0 & 0\\[1ex]
+0 & -\frac{3\sqrt{13}}{13} & \frac{2\sqrt{13}}{13}\\[1ex]
+0 & \frac{2\sqrt{13}}{13} & \frac{3\sqrt{13}}{13}
+\end{pmatrix}.
+\]
+One checks at once that \(H_1^T A\,H_1\) is upper–Hessenberg (in fact has a zero in the \((3,1)\)–position)."
+37,"Step 1.  “Left’’ reflector \(H_{1}\) to kill \(a_{21},a_{31}\).  Set 
+\[
+x^{(1)}=\begin{pmatrix}4\\3\\0\end{pmatrix},\quad 
+\alpha_{1}=-\operatorname{sgn}(4)\|x^{(1)}\|_{2}=-5,
+\]
+\[
+u^{(1)}=x^{(1)}-\alpha_{1}e_{1}
+=\begin{pmatrix}4+5\\3\\0\end{pmatrix}
+=\begin{pmatrix}9\\3\\0\end{pmatrix},\quad
+v^{(1)}=\frac{u^{(1)}}{\|u^{(1)}\|},\;\|u^{(1)}\|=3\sqrt{10}.
+\]
+Hence
+\[
+H_{1}=I-2\,v^{(1)}(v^{(1)})^{T}
+=\;I-\frac{1}{5}\begin{pmatrix}9&3&0\\3&1&0\\0&0&0\end{pmatrix}
+=\begin{pmatrix}-\tfrac45&-\tfrac35&0\\[6pt]-\tfrac35&\tfrac45&0\\[3pt]0&0&1\end{pmatrix}.
+\]
+One checks
+\[
+A^{(1)}=H_{1}A
+=\begin{pmatrix}-5&-\tfrac{34}{5}&-3\\[3pt]0&\tfrac{12}{5}&-1\\[3pt]0&1&7\end{pmatrix}.
+\]
+
+Step 2.  “Right’’ reflector \(H_{2}\) to kill \(a^{(1)}_{1,3}\).  Let
+\[
+x^{(2)}=\begin{pmatrix}-\tfrac{34}{5}\\-3\end{pmatrix},\quad
+\|x^{(2)}\|=\frac{\sqrt{1381}}5,\quad
+\alpha_{2}=-\operatorname{sgn}(-\tfrac{34}{5})\,\|x^{(2)}\|
+=+\frac{\sqrt{1381}}5,
+\]
+\[
+u^{(2)}=x^{(2)}-\alpha_{2}e_{1}
+=\begin{pmatrix}-\tfrac{34}{5}-\tfrac{\sqrt{1381}}5\\-3\end{pmatrix},\quad
+w^{(2)}=\frac{u^{(2)}}{\|u^{(2)}\|}.
+\]
+Embed into \(3\times3\) as
+\[
+H_{2}=\begin{pmatrix}1&0_{1\times2}\\[3pt]0_{2\times1}&I_{2}-2\,w^{(2)}(w^{(2)})^{T}\end{pmatrix},
+\]
+so that
+\[
+A^{(2)}=A^{(1)}H_{2}
+\approx
+\begin{pmatrix}
+-5&\;\;\tfrac{\sqrt{1381}}5&0\\[3pt]
+0&-1.7924&-1.8835\\[3pt]
+0&-3.7401&6.0000
+\end{pmatrix}.
+\]
+
+Step 3.  “Left’’ reflector \(H_{3}\) to kill \(a^{(2)}_{3,2}\).  Write
+\[
+x^{(3)}=\begin{pmatrix}-1.7924\\-3.7401\end{pmatrix},\quad
+\|x^{(3)}\|\approx4.147,\quad
+\alpha_{3}=-\operatorname{sgn}(-1.7924)\,\|x^{(3)}\|\approx+4.147,
+\]
+\[
+u^{(3)}=x^{(3)}-\alpha_{3}e_{1},\quad
+v^{(3)}=\frac{u^{(3)}}{\|u^{(3)}\|}.
+\]
+Embed into \(3\times3\) as
+\[
+H_{3}=\begin{pmatrix}1&0&0\\0&I_{2}-2\,v^{(3)}(v^{(3)})^{T}\end{pmatrix},
+\]
+and set
+\[
+B=H_{3}\,A^{(2)}\approx
+\begin{pmatrix}
+-5&\;7.430&0\\[3pt]
+0&\;4.147&-4.589\\[3pt]
+0&\;0&\;4.294
+\end{pmatrix},
+\]
+which is upper‐bidiagonal.  Finally one has the bidiagonalization
+\[
+U^{T}AV
+=B,\quad
+U=H_{3}H_{1},\quad V=H_{2}.
+\]"
+38,"Let  
+$$A=\begin{pmatrix}5&4&3\\4&6&1\\3&1&7\end{pmatrix}$$  
+be our symmetric matrix. We wish to find a reflector \(H\) so that  
+\[
+T=H\,A\,H
+\]  
+is tridiagonal.  Since \(A\in\R^{3\times3}\), one Householder step suffices to zero out \(A_{31}\).  
+
+1.  Partition the first column of \(A\) below the diagonal:  
+   \[
+   x=\begin{pmatrix}A_{21}\\A_{31}\end{pmatrix}
+     =\begin{pmatrix}4\\3\end{pmatrix},\qquad \|x\|_2=\sqrt{4^2+3^2}=5.
+   \]
+
+2.  Form the 2-vector  
+   \[
+   v_{2} = x + \operatorname{sign}(x_1)\,\|x\|_2\,e_1
+          =\begin{pmatrix}4\\3\end{pmatrix} + 5\begin{pmatrix}1\\0\end{pmatrix}
+          =\begin{pmatrix}9\\3\end{pmatrix},\qquad
+   v_2^T v_2 = 9^2+3^2=90.
+   \]
+
+3.  Embed \(v_2\) in \(\R^3\) by   
+   \[
+   v=\begin{pmatrix}0\\9\\3\end{pmatrix},\qquad
+   \beta=\frac{2}{v^T v}=\frac{2}{90}=\frac1{45}.
+   \]
+
+4.  The Householder reflector is  
+   \[
+   H = I - \beta\,v\,v^T
+     =I - \frac1{45}\begin{pmatrix}0\\9\\3\end{pmatrix}
+                     \begin{pmatrix}0&9&3\end{pmatrix}
+     =\begin{pmatrix}
+        1 & 0    & 0   \\
+        0 & 1-\tfrac{2\cdot81}{90} & -\tfrac{2\cdot27}{90}\\[6pt]
+        0 & -\tfrac{2\cdot27}{90} & 1-\tfrac{2\cdot9}{90}
+       \end{pmatrix}
+     =\begin{pmatrix}
+        1   & 0    & 0\\
+        0   & -\tfrac45 & -\tfrac35\\
+        0   & -\tfrac35 &  \tfrac45
+       \end{pmatrix}.
+   \]
+
+5.  Finally compute  
+   \[
+   T = H\,A\,H
+     = \begin{pmatrix}
+         5 & -5           & 0\\
+        -5 & \tfrac{183}{25}& -\tfrac{19}{25}\\
+         0 & -\tfrac{19}{25}& \tfrac{142}{25}
+       \end{pmatrix}.
+   \]
+
+One checks immediately that \(T\) is symmetric tridiagonal and \(\operatorname{tr}T=\operatorname{tr}A=18\)."
+39,"The singular‐value decomposition of  
+\(A=\begin{pmatrix}1&0&1\\-1&1&0\end{pmatrix}\)  
+is given by  
+\[
+A \;=\; U\,\Sigma\,V^{T},
+\]  
+with  
+\[
+U \;=\;\begin{pmatrix}
+\dfrac{1}{\sqrt2}&\dfrac{1}{\sqrt2}\\[1ex]
+-\dfrac{1}{\sqrt2}&\dfrac{1}{\sqrt2}
+\end{pmatrix},\qquad
+\Sigma=\begin{pmatrix}\sqrt3&0&0\\0&1&0\end{pmatrix},
+\]  
+and  
+\[
+V \;=\;\begin{pmatrix}
+\sqrt{\tfrac23}&0&-\tfrac1{\sqrt3}\\[1ex]
+-\tfrac1{\sqrt6}&\tfrac1{\sqrt2}&-\tfrac1{\sqrt3}\\[1ex]
+\tfrac1{\sqrt6}&\tfrac1{\sqrt2}&\tfrac1{\sqrt3}
+\end{pmatrix}.
+\]  
+One checks easily that the singular values are  
+\(\sigma_1=\sqrt3,\;\sigma_2=1\),  
+that \(U\in\R^{2\times2}\) and \(V\in\R^{3\times3}\) are orthogonal, and that indeed \(A=U\,\Sigma\,V^T\)."
+40,"The SVD of  
+\[  
+A=\begin{pmatrix}1&0\\0&0\\0&0\end{pmatrix}_{3\times2}  
+\]  
+is  
+\[  
+A=U\Sigma V^T,\qquad  
+\Sigma=\begin{pmatrix}1&0\\0&0\\0&0\end{pmatrix},\  
+\Sigma^+=\begin{pmatrix}1&0&0\\0&0&0\end{pmatrix},  
+\]  
+so the Moore–Penrose pseudoinverse is  
+\[  
+A^+=V\,\Sigma^+\,U^T  
+=\begin{pmatrix}1&0\\0&1\end{pmatrix}\begin{pmatrix}1&0&0\\0&0&0\end{pmatrix}\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}  
+=\begin{pmatrix}1&0&0\\0&0&0\end{pmatrix}_{2\times3}\,.  
+\]"
+41,"An easy way is to compute the eigen‐pairs of  
+\(S=\begin{pmatrix}1&0&2\\0&-1&-2\\2&-2&0\end{pmatrix}\).  One finds the eigenvalues  
+\[
+\lambda_1=3,\quad \lambda_2=0,\quad \lambda_3=-3,
+\]  
+with corresponding unit‐eigenvectors  
+\[
+u_1=\frac1{3}(2,\,-1,\,2)^T,\qquad
+u_2=\frac1{3}(-2,\,-2,\,1)^T,\qquad
+u_3=\frac1{3}(1,\,-2,\,-2)^T.
+\]  
+Putting these as the columns of \(Q\) and the \(\lambda_i\) on the diagonal of \(D\) gives the required orthogonal diagonalization:  
+\[
+Q=\begin{pmatrix}
+\;\tfrac23 & -\tfrac23 & \tfrac13\\
+-\tfrac13 & -\tfrac23 & -\tfrac23\\
+\;\tfrac23 & \;\tfrac13 & -\tfrac23
+\end{pmatrix}, 
+\qquad
+D=\operatorname{diag}(3,\,0,\,-3),
+\]  
+and one checks at once that  
+\[
+S \;=\; Q\,D\,Q^T,\quad Q^TQ=I\,. 
+\]"
+42,"The singular–value decomposition of  
+\(A=\begin{pmatrix}4&0\\3&-5\end{pmatrix}\)  
+is given by  
+\[
+A \;=\; U\,\Sigma\,V^{T},
+\]  
+where the singular values are  
+\[
+\sigma_{1}=\sqrt{40}=2\sqrt{10},\qquad
+\sigma_{2}=\sqrt{10},
+\]  
+and one convenient choice of orthonormal singular‐vector matrices is
+
+\[
+U \;=\;\begin{pmatrix}
+\frac{1}{\sqrt5} & \frac{2}{\sqrt5}\\[1ex]
+\frac{2}{\sqrt5} & -\frac{1}{\sqrt5}
+\end{pmatrix}, 
+\quad
+\Sigma \;=\;\begin{pmatrix}
+2\sqrt{10} & 0\\[1ex]
+0 & \sqrt{10}
+\end{pmatrix}, 
+\quad
+V \;=\;\begin{pmatrix}
+\frac{1}{\sqrt2} & \frac{1}{\sqrt2}\\[1ex]
+-\frac{1}{\sqrt2} & \frac{1}{\sqrt2}
+\end{pmatrix}.
+\]
+
+Indeed, one checks
+\[
+A^{T}A=\begin{pmatrix}25&-15\\-15&25\end{pmatrix}
+\]
+has eigenvalues \(40,10\) with corresponding unit–eigenvectors
+\(\tfrac1{\sqrt2}(1,-1)^{T},\;\tfrac1{\sqrt2}(1,1)^{T}\),  
+and then  
+\[
+u_{i}=\frac{1}{\sigma_{i}}\,A\,v_{i},\quad i=1,2,
+\]  
+yields the columns of \(U\) as above."
+43,"The SVD of  
+\(A=\begin{pmatrix}3&2&2\\2&-3&-2\end{pmatrix}\)  
+is  
+\[A=U\Sigma V^T,\]  
+where the non‐zero singular values are  
+\[
+\sigma_1=\sqrt{21},\quad \sigma_2=\sqrt{13},
+\]
+and one zero singular value \(\sigma_3=0\).  Concretely:
+
+\[
+U=\begin{pmatrix}
+\frac1{\sqrt2}&\frac1{\sqrt2}\\[1ex]
+-\frac1{\sqrt2}&\frac1{\sqrt2}
+\end{pmatrix},
+\qquad
+\Sigma=\begin{pmatrix}
+\sqrt{21}&0&0\\[1ex]
+0&\sqrt{13}&0
+\end{pmatrix},
+\]
+\[
+V=\begin{pmatrix}
+\frac{1}{\sqrt{42}} & \frac{5}{\sqrt{26}} & \frac{2}{\sqrt{273}}\\[1ex]
+\frac{5}{\sqrt{42}} & -\frac{1}{\sqrt{26}} & \frac{10}{\sqrt{273}}\\[1ex]
+\frac{4}{\sqrt{42}} & 0 & -\frac{13}{\sqrt{273}}
+\end{pmatrix}.
+\]
+
+One checks that \(U\in\mathbb R^{2\times2}\), \(V\in\mathbb R^{3\times3}\) are orthogonal, \(\Sigma\in\mathbb R^{2\times3}\) has the singular values on the diagonal, and \(A=U\Sigma V^T\)."
+44,"The non‐zero structure of \(A\) splits into two \(2\times2\) blocks, one with eigenvalue \(0\) of algebraic multiplicity 2 and one with eigenvalue 1 of algebraic multiplicity 2.  One finds easily that each block is a single Jordan chain of length 2.  A convenient choice of Jordan basis is
+
+– for \(\lambda=0\):  
+\[
+v_1=\begin{pmatrix}1\\-1\\0\\0\end{pmatrix},\quad 
+v_2=\begin{pmatrix}1\\0\\1\\0\end{pmatrix},
+\]
+so that 
+\[
+A\,v_1=0,\quad A\,v_2=v_1,
+\]
+  
+– for \(\lambda=1\):
+\[
+v_3=\begin{pmatrix}0\\0\\1\\-1\end{pmatrix},\quad
+v_4=\begin{pmatrix}0\\0\\1\\0\end{pmatrix},
+\]
+so that
+\[
+A\,v_3=v_3,\quad A\,v_4=v_3+v_4.
+\]
+
+If we form
+\[
+S=\bigl[v_1\;v_2\;v_3\;v_4\bigr]
+=\begin{pmatrix}
+1 & 1 & 0 & 0\\
+-1& 0 & 0 & 0\\
+0 & 1 & 1 & 1\\
+0 & 0 & -1& 0
+\end{pmatrix},
+\]
+then one checks
+\[
+A\,S \;=\; S\,
+\begin{pmatrix}
+0&1&0&0\\
+0&0&0&0\\
+0&0&1&1\\
+0&0&0&1
+\end{pmatrix}
+\;=\; S\,J,
+\]
+i.e. \(A=S\,J\,S^{-1}\), with
+\[
+J=\operatorname{diag}\!\bigl(J_{2}(0),\,J_{2}(1)\bigr)
+=\begin{pmatrix}
+0&1&0&0\\
+0&0&0&0\\
+0&0&1&1\\
+0&0&0&1
+\end{pmatrix},
+\]
+where \(J_2(\lambda)=\begin{pmatrix}\lambda&1\\0&\lambda\end{pmatrix}\)."
+45,"\begin{enumerate}  
+\item An orthonormal basis of \(W^\perp=\{x\in\Bbb R^3:x_1+x_2+x_3=0\}\) is for instance  
+\[
+e_1=\frac{1}{\sqrt2}(1,-1,0), 
+\quad
+e_2=\frac{1}{\sqrt6}(1,1,-2).
+\]
+One checks \(e_i\cdot e_j=\delta_{ij}\) and \(e_i\perp(1,1,1)\).  
+
+\item The projection of \(v=(1,0,1)\) onto \(W\) is  
+\[
+\Proj_W(v)
+=\Bigl(v\cdot\frac{1}{\sqrt3}(1,1,1)\Bigr)\frac{1}{\sqrt3}(1,1,1)
+=\frac{2}{3}(1,1,1).
+\]
+Hence  
+\[
+\Proj_{W^\perp}(v)
+=\,v-\Proj_W(v)
+=(1,0,1)-\frac{2}{3}(1,1,1)
+=\Bigl(\tfrac13,-\tfrac23,\tfrac13\Bigr).
+\]
+Equivalently, using the \(e_i\) one finds  
+\[
+\Proj_{W^\perp}(v)
+=(v\cdot e_1)e_1+(v\cdot e_2)e_2
+=\frac1{\sqrt2}e_1-\frac1{\sqrt6}e_2
+=\Bigl(\tfrac13,-\tfrac23,\tfrac13\Bigr).
+\]
+
+\item The minimal distance is 
+\[
+\min_{w\in W^\perp}\|v-w\|
+=\bigl\|\Proj_{W^\perp}(v)\bigr\|
+=\sqrt{\Bigl(\tfrac13\Bigr)^2+\Bigl(-\tfrac23\Bigr)^2+\Bigl(\tfrac13\Bigr)^2}
+=\sqrt{\tfrac{6}{9}}
+=\sqrt{\tfrac23}\,. 
+\]
+\end{enumerate}"
+46,"Compute  
+\[
+A^TA=\begin{pmatrix}1&-2&2\\-1&2&-2\end{pmatrix}
+\begin{pmatrix}1&-1\\-2&2\\2&-2\end{pmatrix}
+=\begin{pmatrix}9&-9\\-9&9\end{pmatrix}
+=9\begin{pmatrix}1&-1\\-1&1\end{pmatrix}.
+\]
+The eigenvalues are \(\lambda_1=18\), \(\lambda_2=0\), so the singular values are
+\[
+\sigma_1=\sqrt{18}=3\sqrt2,\quad \sigma_2=0.
+\]
+A convenient choice of right singular vectors is
+\[
+v_1=\frac1{\sqrt2}\begin{pmatrix}1\\-1\end{pmatrix},\qquad
+v_2=\frac1{\sqrt2}\begin{pmatrix}1\\1\end{pmatrix}.
+\]
+Then the first left singular vector is
+\[
+u_1=\frac1{\sigma_1}A\,v_1
+=\frac1{3\sqrt2}A\frac1{\sqrt2}\begin{pmatrix}1\\-1\end{pmatrix}
+=\frac1{3} \begin{pmatrix}1\\-2\\2\end{pmatrix}.
+\]
+Extend \(\{u_1\}\) to an orthonormal basis \(\{u_1,u_2,u_3\}\) of \(\Bbb R^3\). For instance one may take
+\[
+u_2=\frac1{\sqrt5}\begin{pmatrix}2\\1\\0\end{pmatrix},\qquad
+u_3=\frac1{3\sqrt5}\begin{pmatrix}-2\\4\\5\end{pmatrix}.
+\]
+Define
+\[
+U=\begin{pmatrix}u_1&u_2&u_3\end{pmatrix},\quad
+\Sigma=\begin{pmatrix}3\sqrt2&0\\0&0\\0&0\end{pmatrix},\quad
+V=\begin{pmatrix}v_1&v_2\end{pmatrix}.
+\]
+Then the full SVD is
+\[
+A \;=\; U\,\Sigma\,V^T,
+\]
+i.e.
+\[
+U=\begin{pmatrix}
+\tfrac13 & \tfrac{2}{\sqrt5} & -\tfrac{2}{3\sqrt5}\\[6pt]
+-\tfrac23 & \tfrac{1}{\sqrt5} & \tfrac{4}{3\sqrt5}\\[6pt]
+\tfrac23 & 0 & \tfrac{5}{3\sqrt5}
+\end{pmatrix},\quad
+\Sigma=\begin{pmatrix}3\sqrt2&0\\0&0\\0&0\end{pmatrix},\quad
+V=\begin{pmatrix}
+\tfrac1{\sqrt2}&\tfrac1{\sqrt2}\\[3pt]
+-\tfrac1{\sqrt2}&\tfrac1{\sqrt2}
+\end{pmatrix}.
+\]
+One checks easily that \(U\), \(V\) are orthogonal and \(A=U\Sigma V^T\)."
+47,"The nonzero singular‐values of  
+\(A=\begin{pmatrix}4&11&14\\8&7&-2\end{pmatrix}\)  
+are  
+\[
+\sigma_1=\sqrt{360}=6\sqrt{10},\qquad
+\sigma_2=\sqrt{90}=3\sqrt{10}\,.
+\]  
+One convenient choice of singular‐vectors is  
+\[
+u_1=\frac1{\sqrt{10}}\begin{pmatrix}3\\1\end{pmatrix},\quad
+u_2=\frac1{\sqrt{10}}\begin{pmatrix}-1\\3\end{pmatrix},
+\]  
+\[
+v_1=\frac13\begin{pmatrix}1\\2\\2\end{pmatrix},\quad
+v_2=\frac13\begin{pmatrix}2\\1\\-2\end{pmatrix},\quad
+v_3=\frac13\begin{pmatrix}2\\-2\\1\end{pmatrix}.
+\]  
+Then  
+\[
+U=\begin{pmatrix}
+\tfrac3{\sqrt{10}} & -\tfrac1{\sqrt{10}}\\[1ex]
+\tfrac1{\sqrt{10}} & \;\tfrac3{\sqrt{10}}
+\end{pmatrix},\qquad
+\Sigma=\begin{pmatrix}
+6\sqrt{10} & 0 & 0\\[1ex]
+0 & 3\sqrt{10} & 0
+\end{pmatrix},\qquad
+V=\begin{pmatrix}
+\tfrac13 & \tfrac23 & \tfrac23\\[1ex]
+\tfrac23 & \tfrac13 & -\tfrac23\\[1ex]
+\tfrac23 & -\tfrac23 & \tfrac13
+\end{pmatrix}.
+\]  
+One checks easily that  
+\[
+A \;=\; U\,\Sigma\,V^{T}\,,
+\]  
+which is the desired singular‐value decomposition."
+48,"The singular‐value decomposition of  
+\(A=\begin{pmatrix}1&2\\-1&2\end{pmatrix}\)  
+is obtained by first forming  
+\[
+A^TA=\begin{pmatrix}1&-1\\2&2\end{pmatrix}\begin{pmatrix}1&2\\-1&2\end{pmatrix}
+=\begin{pmatrix}2&0\\0&8\end{pmatrix}\!,
+\]  
+whose eigenvalues are \(\lambda_1=8,\;\lambda_2=2\).  Hence the singular values are  
+\[
+\sigma_1=\sqrt{8}=2\sqrt2,\quad \sigma_2=\sqrt{2}.
+\]  
+An orthonormal basis of eigenvectors of \(A^TA\) is  
+\[
+v_1=\begin{pmatrix}0\\1\end{pmatrix},\quad
+v_2=\begin{pmatrix}1\\0\end{pmatrix},
+\]  
+so we may take  
+\[
+V=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+\Sigma=\begin{pmatrix}2\sqrt2&0\\0&\sqrt2\end{pmatrix}.
+\]  
+Finally the left singular vectors are  
+\[
+u_i=\frac{1}{\sigma_i}A\,v_i,
+\]  
+giving
+\[
+u_1=\frac1{2\sqrt2}\begin{pmatrix}1&2\\-1&2\end{pmatrix}\begin{pmatrix}0\\1\end{pmatrix}
+=\frac1{2\sqrt2}\begin{pmatrix}2\\2\end{pmatrix}
+=\frac1{\sqrt2}\begin{pmatrix}1\\1\end{pmatrix}, 
+\]
+\[
+u_2=\frac1{\sqrt2}\begin{pmatrix}1\\-1\end{pmatrix}.
+\]  
+Thus one convenient choice is
+\[
+U=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix},\quad
+\Sigma=\begin{pmatrix}2\sqrt2&0\\0&\sqrt2\end{pmatrix},\quad
+V^T=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\]
+and indeed
+\[
+A=U\,\Sigma\,V^T.
+\]"
+49,"1. Eigenvalues and eigenvectors of \(A\).
+
+Solve \(\det(A-\lambda I)=0\):
+\[
+\det\begin{pmatrix}1-\lambda&2\\2&1-\lambda\end{pmatrix}
+=(1-\lambda)^2-4=0
+\;\Longrightarrow\;
+\lambda_1=3,\;\lambda_2=-1.
+\]
+Corresponding unit–eigenvectors:
+\[
+v_1=\frac1{\sqrt2}\begin{pmatrix}1\\1\end{pmatrix},\qquad
+v_2=\frac1{\sqrt2}\begin{pmatrix}1\\-1\end{pmatrix}.
+\]
+
+2. Singular values:
+\[
+\sigma_i=|\lambda_i|,\quad
+\sigma_1=3,\;\sigma_2=1.
+\]
+
+3. Construct \(V=[v_1\;v_2]\) and \(U\) by
+\[
+u_i=\frac{Av_i}{\sigma_i},\quad
+u_1=v_1,\;\;u_2=-v_2.
+\]
+Thus
+\[
+U=\begin{pmatrix}u_1&u_2\end{pmatrix}
+=\frac1{\sqrt2}\begin{pmatrix}1&-1\\1&1\end{pmatrix},\qquad
+V=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix},
+\]
+and
+\[
+\Sigma=\begin{pmatrix}3&0\\0&1\end{pmatrix}.
+\]
+
+4. Final SVD:
+\[
+A=U\,\Sigma\,V^T,\quad
+U=\frac1{\sqrt2}\begin{pmatrix}1&-1\\1&1\end{pmatrix},\quad
+\Sigma=\begin{pmatrix}3&0\\0&1\end{pmatrix},\quad
+V=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix}.
+\]"
+50,"The non‐zero singular values of 
+\[
+A=\begin{pmatrix}2&-2&1\\-4&-8&-8\end{pmatrix}
+\]
+are 
+\[
+\sigma_1=\sqrt{\lambda_{\max}(AA^T)}=\sqrt{144}=12,\qquad
+\sigma_2=\sqrt{9}=3,
+\]
+and \(\sigma_3=0\).  One convenient choice of orthonormal singular‐vector bases is
+
+\[
+AA^T=\begin{pmatrix}9&0\\0&144\end{pmatrix}
+\quad\Longrightarrow\quad
+u_1=\begin{pmatrix}0\\1\end{pmatrix},\;
+u_2=\begin{pmatrix}1\\0\end{pmatrix},
+\]
+so 
+\[
+U=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+\Sigma=\begin{pmatrix}12&0&0\\0&3&0\end{pmatrix}.
+\]
+Next compute 
+\[
+v_i=\frac{1}{\sigma_i}A^Tu_i,\quad i=1,2,
+\]
+giving
+\[
+v_1=\frac1{12}A^T\begin{pmatrix}0\\1\end{pmatrix}
+=\frac1{12}\begin{pmatrix}-4\\-8\\-8\end{pmatrix}
+=\begin{pmatrix}-\tfrac13\\-\tfrac23\\-\tfrac23\end{pmatrix},\quad
+v_2=\frac1{3}A^T\begin{pmatrix}1\\0\end{pmatrix}
+=\frac1{3}\begin{pmatrix}2\\-2\\1\end{pmatrix}
+=\begin{pmatrix}\tfrac23\\-\tfrac23\\\tfrac13\end{pmatrix}.
+\]
+Choose \(v_3\) orthonormal to \(v_1,v_2\), e.g.\ 
+\[
+v_3=v_2\times v_1
+=\begin{pmatrix}\tfrac23\\\tfrac13\\-\tfrac23\end{pmatrix}.
+\]
+Then
+\[
+V=\begin{pmatrix}
+-1/3 & 2/3 & 2/3\\
+-2/3 & -2/3 & 1/3\\
+-2/3 & 1/3 & -2/3
+\end{pmatrix},
+\]
+and one checks
+\[
+A=U\,\Sigma\,V^T,\quad
+U\in\R^{2\times2},\; \Sigma\in\R^{2\times3},\; V\in\R^{3\times3}.
+\]"
+51,"We set  
+ M = (A − I)/s,  
+so that A = I + sM and one checks easily M² = 0.  Hence for any integer n ≥ 1,  
+\[
+A^n = (I + sM)^n \;=\; I + n\,s\,M 
+       = I + n\,(A−I)
+       = n\,A − (n−1)\,I.
+\]  
+Thus in the ansatz \(A^n = p\,A + q\,I\) one has  
+\[
+p(n)=n,\qquad q(n)=-(n-1).
+\]
+
+Next, since [I,M]=0 and M²=0,  
+\[
+e^A = e^{\,I + sM} = e^I\,e^{\,sM}
+    = e\,(I + sM)
+    = e\,A.
+\]
+
+In particular,
+\[
+e^A \;=\; e\begin{pmatrix}1+s & -s\\ s & 1-s\end{pmatrix}.
+\]"
+52,"The inverse $L^{-1}=(m_{ij})_{1\le i,j\le n}$ is again unit lower‐triangular, with entries for $i\ge j$ given by the telescoping product
+
+\[
+m_{ij}
+=\prod_{k=j+1}^i\frac{k-1}{k}
+=\frac{j}{i},
+\]
+
+and $m_{ij}=0$ for $i<j$.  In other words
+
+\[
+(L^{-1})_{ij}=\begin{cases}
+\dfrac{j}{i},&i\ge j,\\
+0,&i<j.
+\end{cases}
+\]
+
+Equivalently,
+\[
+L^{-1}=\begin{bmatrix}
+1\\[6pt]
+\tfrac12&1\\[6pt]
+\tfrac13&\tfrac23&1\\
+\vdots&\vdots&\ddots&\ddots\\
+\tfrac1n&\tfrac2n&\cdots&\tfrac{n-1}n&1
+\end{bmatrix}.
+\]"
+53,"Solvability and uniqueness can most easily be seen by block‐elimination.  From the first two equations one finds  
+\[
+2x_{1}+3x_{2}=1,\qquad x_{3}=2-2x_{1}-4x_{2}.
+\]  
+Hence  
+\[
+x_{1}=\frac{1-3x_{2}}{2},\qquad x_{3}=1-x_{2}.
+\]  
+The last two equations become the $2\times2$ system in $(x_{4},x_{2})$:  
+\[
+\begin{cases}
+A\,x_{4}-4\,x_{2}=-2,\\
+B\,x_{4}-4\,x_{2}=C-4.
+\end{cases}
+\]  
+Subtracting gives  
+\[
+(B-A)\,x_{4}=C-2\quad\Longrightarrow\quad
+x_{4}=\frac{C-2}{\,B-A\,},
+\]  
+provided $B\neq A$.  Then
+\[
+x_{2}=\frac{A\,x_{4}+2}{4},\qquad
+x_{3}=1-x_{2},\qquad
+x_{1}=\frac{1-3x_{2}}{2}.
+\]  
+Thus:
+
+• If $B\neq A$, the system is non‐singular and there is a unique solution given by  
+\[
+x_{4}=\frac{C-2}{B-A},\quad
+x_{2}=\frac{A(C-2)/(B-A)+2}{4},\quad
+x_{3}=1-x_{2},\quad
+x_{1}=\frac{1-3x_{2}}{2}.
+\]
+
+• If $B=A$ then both equations reduce to $A\,x_{4}-4x_{2}=-2$.  Consistency requires
+\[
+C-4=-2\;\Longleftrightarrow\;C=2.
+\]
+  – If $C\neq2$, no solution exists.  
+  – If $C=2$, there are infinitely many solutions, for example parametrized by $t=x_{4}$:
+\[
+x_{4}=t,\quad
+x_{2}=\frac{A\,t+2}{4},\quad
+x_{3}=1-x_{2},\quad
+x_{1}=\frac{1-3x_{2}}{2}.
+\]"
+54,"The system  
+\[
+A x=b,\qquad A\in\Bbb R^{(N-1)\times(N-1)},\;b=(1,0,\dots,0)^T,
+\]  
+with  
+\[
+A=\begin{pmatrix}
+-3&1\\[6pt]
+2&-3&1\\
+&\ddots&\ddots&\ddots\\
+&&2&-3&1\\
+&&&2&-3
+\end{pmatrix},
+\]  
+is equivalent to the second‐order difference equation
+\[
+2\,x_{\,i-1}\;-\;3\,x_{\,i}\;+\;x_{\,i+1}\;=\;\delta_{\,i1},
+\qquad i=1,2,\dots,N-1,
+\]  
+with the “boundary” values
+\[
+x_{0}=0,\quad x_{N}=0,
+\]  
+and where \(\delta_{i1}=1\) if \(i=1\) and \(0\) otherwise.
+
+One shows by the standard tridiagonal‐matrix inverse or by solving the homogeneous recurrence \(x_{i+1}-3x_i+2x_{i-1}=0\) together with the “impulse” at \(i=1\) and the end‐condition \(2x_{N-2}-3x_{N-1}=0\), that the unique solution is
+\[
+\boxed{
+x_{\,i}
+\;=\;
+-\,\frac{2^{\,i-1}\,\bigl(2^{\,N-i}-1\bigr)}{2^{\,N}-1}
+\;=\;
+\frac{2^{\,i-1}-2^{\,N-1}}{2^{\,N}-1},
+\quad
+i=1,2,\dots,N-1.
+}
+\]"
+55,"The matrix \(A\) is symmetric positive definite, so the Cholesky factorization \(A = LL^T\) exists, where \(L\) is lower triangular.
+
+The lower triangular matrix \(L\) is computed as follows:
+
+\[
+L = \begin{pmatrix}
+\sqrt{\frac{11}{2}} & 0 & 0 & 0 & 0 & 0 \\
+0 & \sqrt{\frac{11}{2}} & 0 & 0 & 0 & 0 \\
+0 & 0 & \frac{5}{2} & 0 & 0 & 0 \\
+0 & 0 & 0 & \sqrt{\frac{11}{2}} & 0 & 0 \\
+0 & 0 & \frac{3}{2} & 0 & 2 & 0 \\
+\frac{7}{\sqrt{22}} & \frac{3}{\sqrt{22}} & 0 & \frac{1}{\sqrt{22}} & 0 & \sqrt{\frac{31}{11}}
+\end{pmatrix}
+\]
+
+To solve the system \(A\mathbf{x} = \mathbf{b}\), solve \(L\mathbf{y} = \mathbf{b}\) for \(\mathbf{y}\) using forward substitution, then solve \(L^T \mathbf{x} = \mathbf{y}\) for \(\mathbf{x}\) using back substitution.
+
+Given \(\mathbf{b} = \begin{pmatrix} 1 & 1 & 1 & 1 & 1 & 1 \end{pmatrix}^T\), the forward substitution for \(L\mathbf{y} = \mathbf{b}\) gives:
+
+\[
+\mathbf{y} = \begin{pmatrix}
+\frac{\sqrt{22}}{11} \\
+\frac{\sqrt{22}}{11} \\
+\frac{2}{5} \\
+\frac{\sqrt{22}}{11} \\
+\frac{1}{5} \\
+0
+\end{pmatrix}
+\]
+
+Then, back substitution for \(L^T \mathbf{x} = \mathbf{y}\) yields the solution:
+
+\[
+\mathbf{x} = \begin{pmatrix}
+\frac{2}{11} \\
+\frac{2}{11} \\
+\frac{1}{10} \\
+\frac{2}{11} \\
+\frac{1}{10} \\
+0
+\end{pmatrix}
+\]
+
+This solution satisfies \(A\mathbf{x} = \mathbf{b}\)."
+56,"We set 
+\(A=LL^{T}\) with 
+\[
+L=\begin{pmatrix}
+1&0&0&0\\
+1&2&0&0\\
+1&2&3&0\\
+1&2&3&4
+\end{pmatrix},\quad
+B=\begin{pmatrix}
+1&2&3&4\\
+5&6&7&8\\
+9&10&11&12\\
+13&14&15&16
+\end{pmatrix},\quad
+C=\begin{pmatrix}1\\5\\14\\30\end{pmatrix}.
+\]
+We compute \(X=A^{-1}B\) by solving
+\[
+L\,Y=B,\quad L^{T}X=Y.
+\]
+Forward‐substitution \(L\,Y=B\) gives for each column \(b_j\) of \(B\):
+\[
+Y=\begin{pmatrix}
+y_{1j}\\y_{2j}\\y_{3j}\\y_{4j}
+\end{pmatrix}
+=
+\begin{pmatrix}
+b_{1j}\\
+\dfrac{b_{2j}-y_{1j}}2\\
+\dfrac{b_{3j}-y_{1j}-2y_{2j}}3\\
+\dfrac{b_{4j}-y_{1j}-2y_{2j}-3y_{3j}}4
+\end{pmatrix}
+\;\Rightarrow\;
+Y=\begin{pmatrix}
+1&2&3&4\\
+2&2&2&2\\
+\frac43&\frac43&\frac43&\frac43\\
+1&1&1&1
+\end{pmatrix}.
+\]
+Then back‐substitution \(L^{T}X=Y\) yields
+\[
+X=A^{-1}B
+=\begin{pmatrix}
+0&1&2&3\\
+\frac59&\frac59&\frac59&\frac59\\
+\frac7{36}&\frac7{36}&\frac7{36}&\frac7{36}\\
+\frac14&\frac14&\frac14&\frac14
+\end{pmatrix}.
+\]
+Finally
+\[
+C^{T}A^{-1}B
+=C^{T}X
+=\sum_{i=1}^4C_i\,X_{i,j}
+\;=\;\bigl[\,13\;\;14\;\;15\;\;16\,\bigr].
+\]"
+57,"The matrix \(A\) can be written as the finite geometric series in the lower‐shift \(S\) (with \(S_{i,i-1}=1\), all other entries zero):
+\[
+A \;=\; I + xS + x^2S^2 + \cdots + x^{n-1}S^{\,n-1}
+\;=\;(I - xS)^{-1},
+\]
+since \(S^n=0\).  Hence
+\[
+A^{-1} \;=\; I - xS
+\;=\;
+\begin{bmatrix}
+1      &        &        &        &        \\[6pt]
+-\,x   & 1      &        &        &        \\[6pt]
+0      & -\,x   & 1      &        &        \\[4pt]
+\vdots & \ddots & \ddots & \ddots &        \\[4pt]
+0      & \cdots & 0      & -\,x   & 1
+\end{bmatrix}.
+\]
+In particular,
+\[
+(A^{-1})_{ij} \;=\;
+\begin{cases}
+1, & i=j,\\
+-\,x, & i=j+1,\\
+0, & \text{otherwise.}
+\end{cases}
+\]"
+58,"We factor  
+\(A\) as \(A=LL^T\) with  
+\[
+L=\begin{pmatrix}
+\ell_{11}&0&0\\[6pt]
+\ell_{21}&\ell_{22}&0\\[6pt]
+\ell_{31}&\ell_{32}&\ell_{33}
+\end{pmatrix}.
+\]
+Computing the entries one finds  
+\[
+\ell_{11}=\sqrt2,\qquad
+\ell_{21}=-\frac1{\sqrt2},\qquad
+\ell_{31}=\frac{2}{\sqrt2}=\sqrt2,
+\]
+\[
+\ell_{22}=\sqrt{2-\ell_{21}^2}
+=\sqrt{2-\tfrac12}=\sqrt{\tfrac32}=\frac{\sqrt6}{2},\qquad
+\ell_{32}
+=\frac{-1-\ell_{31}\,\ell_{21}}{\ell_{22}}
+=\frac{-1+1}{\sqrt{3/2}}=0,
+\]
+\[
+\ell_{33}
+=\sqrt{\,3-\ell_{31}^2-\ell_{32}^2\,}
+=\sqrt{3-2-0}=1.
+\]
+Hence
+\[
+L
+=\begin{pmatrix}
+\sqrt2&0&0\\[4pt]
+-\dfrac1{\sqrt2}&\dfrac{\sqrt6}{2}&0\\[6pt]
+\sqrt2&0&1
+\end{pmatrix}.
+\]
+Since \(A^{-1}=L^{-T}L^{-1}\), we next invert \(L\).  Straightforward forward‐substitution gives
+\[
+L^{-1}
+=\begin{pmatrix}
+\frac1{\sqrt2}&0&0\\[6pt]
+\frac{\sqrt6}{6}&\frac{\sqrt6}{3}&0\\[6pt]
+-1&0&1
+\end{pmatrix},
+\qquad
+L^{-T}=(L^{-1})^T.
+\]
+Finally
+\[
+A^{-1}=L^{-T}L^{-1}
+=\begin{pmatrix}
+\frac53&\frac13&-1\\[4pt]
+\frac13&\frac23&0\\[4pt]
+-1&0&1
+\end{pmatrix}.
+\]"
+59,"The matrix  
+A =  
+\begin{pmatrix}  
+1 & -1 &  0 &  0 &  0 \\  
+-1 & 2 & -1 &  0 &  0 \\  
+ 0 & -1 & 2 & -1 &  0 \\  
+ 0 &  0 & -1 & 2 & -1 \\  
+ 0 &  0 &  0 & -1 & 2  
+\end{pmatrix}  
+admits the Cholesky factorization  
+\[  
+A \;=\; L\,L^T,  
+\]  
+where \(L\) is the lower‐triangular bidiagonal matrix  
+\[
+L \;=\;
+\begin{pmatrix}
+\ell_{11} & 0         & 0         & 0         & 0\\
+\ell_{21} & \ell_{22} & 0         & 0         & 0\\
+0         & \ell_{32} & \ell_{33} & 0         & 0\\
+0         & 0         & \ell_{43} & \ell_{44} & 0\\
+0         & 0         & 0         & \ell_{54} & \ell_{55}
+\end{pmatrix}
+\]
+with the recurrence
+\[
+\begin{aligned}
+\ell_{11}&=\sqrt{1}=1,\\
+\ell_{i,i-1}&=\frac{-1}{\ell_{\,i-1,i-1}}=-1,\quad i=2,\dots,5,\\
+\ell_{ii}&=\sqrt{2-\ell_{i,i-1}^2}=\sqrt{2-1}=1,\quad i=2,\dots,5.
+\end{aligned}
+\]
+Hence explicitly
+\[
+L=
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0\\
+-1& 1 & 0 & 0 & 0\\
+0 &-1 & 1 & 0 & 0\\
+0 & 0 &-1 & 1 & 0\\
+0 & 0 & 0 &-1 & 1
+\end{pmatrix},
+\]
+and one checks \(A=L\,L^T\)."
+60,"Let  
+\[
+A=\begin{pmatrix}1&1&1\\4&3&-1\\3&5&3\end{pmatrix}
+\]
+be partitioned as
+\[
+A=\begin{pmatrix}
+a & r^T\\[1ex]
+q & B
+\end{pmatrix},\quad
+a=1,\;r^T=(1\;1),\;q=\begin{pmatrix}4\\3\end{pmatrix},\;
+B=\begin{pmatrix}3&-1\\5&3\end{pmatrix}.
+\]
+Since \(\det B=3\cdot3-(-1)\cdot5=14\), 
+\[
+B^{-1}=\frac1{14}\begin{pmatrix}3&1\\-5&3\end{pmatrix}.
+\]
+Compute the Schur‐complement
+\[
+T=a-r^T\,B^{-1}q
+=1-\,(1\;1)\,\frac1{14}\begin{pmatrix}3&1\\-5&3\end{pmatrix}\begin{pmatrix}4\\3\end{pmatrix}
+=1-\frac{2}{7}=\frac{5}{7},
+\]
+so \(T^{-1}=7/5\).  By the block‐inverse formula,
+\[
+A^{-1}=
+\begin{pmatrix}
+T^{-1} & -\,T^{-1}r^T B^{-1}\\[1ex]
+-\,B^{-1}q\,T^{-1} & B^{-1}+B^{-1}q\,T^{-1}r^T B^{-1}
+\end{pmatrix}.
+\]
+A direct simplification yields
+\[
+A^{-1}
+=\frac1{10}
+\begin{pmatrix}
+14 & 2 & -4\\
+-15 & 0 & 5\\
+11 & -2 & -1
+\end{pmatrix}.
+\]
+Hence for \(b=(1,6,4)^T\) the unique solution \(x=A^{-1}b\) is
+\[
+x
+=\frac1{10}
+\begin{pmatrix}
+14 & 2 & -4\\
+-15 & 0 & 5\\
+11 & -2 & -1
+\end{pmatrix}
+\begin{pmatrix}1\\6\\4\end{pmatrix}
+=\frac1{10}\begin{pmatrix}10\\5\\-5\end{pmatrix}
+=\begin{pmatrix}1\\\tfrac12\\-\tfrac12\end{pmatrix}.
+\]"
+61,"The inverse can be written in closed‐form. One convenient representation is
+
+\[
+(A^{-1})_{ij}
+=\;(-1)^{\,i+j}\;\frac{\min(i,j)\,\bigl(5-\max(i,j)\bigr)}{5}
+\,,\qquad i,j=1,\dots,4,
+\]
+
+so that in matrix form
+
+\[
+A^{-1}
+=\frac{1}{5}
+\begin{pmatrix}
+4 & -3 &  2 & -1\\
+-3&  6 & -4 &  2\\
+ 2& -4 &  6 & -3\\
+-1&  2 & -3 &  4
+\end{pmatrix}.
+\]"
+62,"\[
+\begin{aligned}
+A&=\begin{pmatrix}1&0.1\\0.1&1\end{pmatrix}
+\quad\Longrightarrow\quad
+A=Q\begin{pmatrix}1.1&0\\0&0.9\end{pmatrix}Q^T,\quad
+Q=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix},\\
+A^{10}&=Q\begin{pmatrix}1.1^{10}&0\\0&0.9^{10}\end{pmatrix}Q^T
+=\frac12\begin{pmatrix}
+1.1^{10}+0.9^{10}&1.1^{10}-0.9^{10}\\
+1.1^{10}-0.9^{10}&1.1^{10}+0.9^{10}
+\end{pmatrix}\\
+&=\frac1{2\cdot10^{10}}
+\begin{pmatrix}
+11^{10}+9^{10}&11^{10}-9^{10}\\
+11^{10}-9^{10}&11^{10}+9^{10}
+\end{pmatrix}\,. 
+\end{aligned}
+\]"
+63,"Using the fact that the eigenvalues of  
+\[
+M=\begin{pmatrix}4&1&-8\\7&4&4\\4&-8&1\end{pmatrix}
+\]
+are \(9,\,9i,\,-9i\), so that \(A=\frac1{9}M\) has spectrum \(1,i,-i\), one sees immediately that
+\[
+A^{10}\;=\;V\diag(1^{10},\,i^{10},\,(-i)^{10})V^{-1}
+\;=\;V\diag(1,-1,-1)V^{-1}.
+\]
+Noting further that
+\[
+\diag(1,-1,-1)\;=\;-I+2\,\Pi_{\lambda=1}
+\quad\text{and}\quad
+\Pi_{\lambda=1}=\frac{(A-iI)(A+iI)}{(1-i)(1+i)}
+=\frac{A^2+I}{2},
+\]
+one obtains
+\[
+A^{10}=-I+2\frac{A^2+I}{2}=A^2.
+\]
+Hence it suffices to compute
+\[
+M^2=\begin{pmatrix}-9&72&-36\\72&-9&-36\\-36&-36&-63\end{pmatrix},
+\]
+so
+\[
+A^{10}=A^2=\frac1{9^2}M^2
+=\frac1{81}
+\begin{pmatrix}-9&72&-36\\72&-9&-36\\-36&-36&-63\end{pmatrix}
+=\frac1{9}
+\begin{pmatrix}-1&8&-4\\8&-1&-4\\-4&-4&-7\end{pmatrix}.
+\]"
+64,"Given  
+\(A=\begin{pmatrix}1&1\\1&1\end{pmatrix}\),  
+\(Y=\begin{pmatrix}1\\2\end{pmatrix}\),  
+we set  
+\[M=I+\tfrac14A=\begin{pmatrix}1+\tfrac14&\tfrac14\\\tfrac14&1+\tfrac14\end{pmatrix} 
+=\begin{pmatrix}5/4&1/4\\1/4&5/4\end{pmatrix}.\]  
+The eigen‐decomposition of \(M\) is  
+\[
+M = \tfrac32\cdot\frac1{2}\begin{pmatrix}1&1\\1&1\end{pmatrix}
++1\cdot\frac1{2}\begin{pmatrix}1&-1\\-1&1\end{pmatrix},
+\]
+so 
+\[
+\ln M
+=\ln\!\bigl(\tfrac32\bigr)\frac1{2}\begin{pmatrix}1&1\\1&1\end{pmatrix}
++0\cdot\frac1{2}\begin{pmatrix}1&-1\\-1&1\end{pmatrix}
+=\frac{\ln(3/2)}{2}\begin{pmatrix}1&1\\1&1\end{pmatrix}.
+\]
+Hence
+\[
+\ln(M)\,Y
+=\frac{\ln(3/2)}{2}
+\begin{pmatrix}1&1\\1&1\end{pmatrix}
+\begin{pmatrix}1\\2\end{pmatrix}
+=\frac{\ln(3/2)}{2}\begin{pmatrix}3\\3\end{pmatrix}
+=\frac{3}{2}\ln\!\bigl(\tfrac32\bigr)\begin{pmatrix}1\\1\end{pmatrix}.
+\]
+Numerically, \(\ln(3/2)\approx0.4054651\), so
+\[
+\ln(I+\tfrac14A)\,Y
+\approx\begin{pmatrix}0.6082\\0.6082\end{pmatrix}.
+\]"
+65,"The matrix can be written as  
+\[A = I + vv^T,\qquad v = \begin{pmatrix}1\\-1\\-1\\1\end{pmatrix}.\]  
+Since \(vv^T\) has rank 1 and eigen‐value \(\|v\|_2^2=4\), its spectrum is \(\{4,0,0,0\}\).  Hence the eigenvalues of \(A\) are  
+\[
+\lambda_1 = 1+4 = 5,\quad \lambda_2=\lambda_3=\lambda_4 = 1,
+\]  
+so  
+\[
+\|A\|_2 = \rho(A) = 5.
+\]  
+Moreover  
+\[
+A\,v = (I+vv^T)v = v + (v^Tv)\,v = 5\,v,
+\]  
+so the unit‐norm maximizer is  
+\[
+x = \frac{v}{\|v\|_2}
+    = \frac1{2}\begin{pmatrix}1\\-1\\-1\\1\end{pmatrix},
+\]  
+and indeed \(\|x\|_2=1\) and  
+\[
+\|Ax\|_2 = \|5x\|_2 = 5 = \rho(A).
+\]"
+66,"Using the notation  
+\( \|A\|_\infty=\max_{1\le i\le n}\sum_{j=1}^n|a_{ij}|\),  
+\(\|A\|_2=\max_{\|x\|_2=1}\|Ax\|_2\),  
+and \(\kappa_p(A)=\|A\|_p\,\|A^{-1}\|_p\), we find:
+
+1. ∞–norm condition number
+
+Compute  
+\[
+\|A\|_\infty
+=\max\{1+4+9,\;4+9+16,\;9+16+25\}
+=\max\{14,29,50\}=50.
+\]  
+Since  
+\[
+A^{-1}=\frac{1}{8}
+\begin{pmatrix}
+31 & -44 & 17\\
+-44&56 &-20\\
+17&-20&7
+\end{pmatrix},
+\]  
+its row‐sums are  
+\[
+\sum_j|a^{-1}_{1j}|=\frac{31+44+17}{8}=11.5,\quad
+\sum_j|a^{-1}_{2j}|=\frac{44+56+20}{8}=15,\quad
+\sum_j|a^{-1}_{3j}|=\frac{17+20+7}{8}=5.5,
+\]  
+so  
+\[
+\|A^{-1}\|_\infty=15,\qquad
+\boxed{\kappa_\infty(A)=50\cdot15=750.}
+\]
+
+2. 2–norm (“spectral”) condition number
+
+Since \(A\) is symmetric, its singular values are \(\sigma_i=|\lambda_i|\) where \(\lambda_i\) are the roots of  
+\(\det(A-\lambda I)=\lambda^3-35\lambda^2-94\lambda+8=0\).  Numerically one finds  
+\[
+\lambda_1\approx37.497,\quad
+\lambda_2\approx0.08248,\quad
+\lambda_3\approx-2.579,
+\]  
+hence  
+\[
+\|A\|_2=\sigma_{\max}=37.497,\qquad
+\|A^{-1}\|_2=\frac1{\sigma_{\min}}=\frac1{0.08248}\approx12.121,
+\]  
+and  
+\[
+\boxed{\kappa_2(A)=\frac{\|A\|_2}{\sigma_{\min}}\approx37.497\times12.121\approx454.2.}
+\]"
+67,"1. Definitions  
+Let  
+\(A(\alpha)=\begin{pmatrix}0.1\alpha&0.1\alpha\\10&1.5\end{pmatrix},\)  
+so  
+\[
+\det A(\alpha)
+=(0.1\alpha)(1.5)-(0.1\alpha)(10)
+=-0.85\,\alpha,
+\]  
+and  
+\[
+A^{-1}(\alpha)
+=\frac1{-0.85\alpha}
+\begin{pmatrix}1.5&-0.1\alpha\\-10&0.1\alpha\end{pmatrix}
+=
+\begin{pmatrix}
+-\tfrac{1.5}{0.85\,\alpha}&\tfrac{0.1}{0.85}\\[1ex]
+\tfrac{10}{0.85\,\alpha}&-\tfrac{0.1}{0.85}
+\end{pmatrix}.
+\]
+
+2. Infinity–norms  
+\[
+\|A\|_\infty
+=\max\{0.1\alpha+0.1\alpha,\;10+1.5\}
+=\max\{0.2\alpha,\;11.5\},
+\]  
+\[
+\|A^{-1}\|_\infty
+=\max\Big\{\frac{1.5}{0.85\alpha}+\frac{0.1}{0.85},\;
+\frac{10}{0.85\alpha}+\frac{0.1}{0.85}\Big\}
+=\frac{10}{0.85\,\alpha}+\frac{0.1}{0.85}.
+\]
+
+3. Condition number  
+\[
+\mathrm{cond}_\infty(A)
+=\|A\|_\infty\,\|A^{-1}\|_\infty
+=\max(0.2\alpha,11.5)\;\Bigl(\tfrac{10}{0.85\,\alpha}+\tfrac{0.1}{0.85}\Bigr).
+\]  
+Set the “kink’’ \(0.2\alpha=11.5\implies\alpha=57.5\).  
+
+– For \(0<\alpha\le57.5\): \(\|A\|_\infty=11.5\), so  
+\[
+\mathrm{cond}_\infty=
+11.5\Bigl(\tfrac{10}{0.85\alpha}+\tfrac{0.1}{0.85}\Bigr)
+\;\searrow\;\text{decreases with }\alpha.
+\]  
+– For \(\alpha\ge57.5\): \(\|A\|_\infty=0.2\alpha\), so  
+\[
+\mathrm{cond}_\infty
+=0.2\alpha\Bigl(\tfrac{10}{0.85\alpha}+\tfrac{0.1}{0.85}\Bigr)
+=\tfrac{1}{0.85}(2+0.02\,\alpha)
+\;\nearrow\;\text{increases with }\alpha.
+\]  
+
+Hence the unique minimizer is  
+\[
+\boxed{\alpha=57.5},
+\]  
+at which  
+\[
+\min_\alpha\mathrm{cond}_\infty(A)
+=\frac{63}{17}\approx3.706.
+\]"
+68,"Let  
+\(A=\begin{pmatrix}1&2\\2&-1\end{pmatrix},\quad b=\begin{pmatrix}5\\0\end{pmatrix},\quad \epsilon=\begin{pmatrix}\epsilon_1\\\epsilon_2\end{pmatrix},\;|\epsilon_i|\le10^{-4}.\)  
+Then  
+\[
+\det A=-5,\qquad
+A^{-1}=\frac1{-5}\begin{pmatrix}-1&-2\\-2&1\end{pmatrix}
+=\begin{pmatrix}1/5&2/5\\2/5&-1/5\end{pmatrix}.
+\]  
+The perturbed solution satisfies  
+\[
+x+\delta x
+= A^{-1}(b+\epsilon)
+\;\Longrightarrow\;
+\delta x = A^{-1}\,\epsilon
+=\frac1{5}\begin{pmatrix}\epsilon_1+2\epsilon_2\\2\epsilon_1-\epsilon_2\end{pmatrix}.
+\]  
+Hence  
+\[
+|\delta x_1|\le\frac{|\epsilon_1|+2|\epsilon_2|}{5}\le\frac{3\cdot10^{-4}}5=6\times10^{-5}, 
+\quad
+|\delta x_2|\le\frac{2|\epsilon_1|+|\epsilon_2|}{5}\le6\times10^{-5}.
+\]  
+In the \(\infty\)–norm  
+\[
+\|\delta x\|_\infty\le\|A^{-1}\|_\infty\|\epsilon\|_\infty
+=\frac35\cdot10^{-4}=6\times10^{-5}.
+\]  
+Since \(\|x\|_\infty=\|A^{-1}b\|_\infty=2\), the relative error satisfies  
+\[
+\frac{\|\delta x\|_\infty}{\|x\|_\infty}\le\frac{6\times10^{-5}}{2}=3\times10^{-5}.
+\]"
+69,"The system  
+$$
+A=\begin{pmatrix}1 & 1.001\\1 & 1\end{pmatrix},\qquad 
+\mathbf b=\begin{pmatrix}2.001\\2\end{pmatrix}
+$$  
+has exact solution  
+\[
+x_1+1.001x_2=2.001,\quad x_1+x_2=2
+\;\Longrightarrow\;
+x_2=1,\;x_1=1
+\;\Longrightarrow\;
+\mathbf x=\begin{pmatrix}1\\1\end{pmatrix}.
+\]  
+For the approximate iterate $\mathbf y=(2,0)^T$ the residual is  
+\[
+\mathbf r
+= A\mathbf y-\mathbf b
+=\begin{pmatrix}1\cdot2+1.001\cdot0-2.001\\1\cdot2+1\cdot0-2\end{pmatrix}
+=\begin{pmatrix}-0.001\\0\end{pmatrix}.
+\]  
+Hence  
+\[
+\|\mathbf r\|_2=0.001,
+\qquad
+\|\mathbf b\|_2=\sqrt{2.001^2+2^2}\approx2.82859,
+\]
+\[
+\frac{\|\mathbf r\|_2}{\|\mathbf b\|_2}
+\approx\frac{0.001}{2.82859}\approx3.54\times10^{-4}.
+\]  
+The error in the solution is  
+\[
+\mathbf x-\mathbf y
+=\begin{pmatrix}1-2\\1-0\end{pmatrix}
+=\begin{pmatrix}-1\\1\end{pmatrix},
+\]
+so
+\[
+\|\mathbf x-\mathbf y\|_2=\sqrt{1^2+1^2}=\sqrt2,
+\qquad
+\|\mathbf x\|_2=\sqrt{1^2+1^2}=\sqrt2,
+\]
+\[
+\frac{\|\mathbf x-\mathbf y\|_2}{\|\mathbf x\|_2}
+=\frac{\sqrt2}{\sqrt2}=1.
+\]  
+Conclusion: the residual‐norm relative to $\mathbf b$ is only about $3.5\times10^{-4}$, yet the relative error in the solution is $1\,$ (i.e.\ $100\%$)."
+70,"The key is that one can compute explicitly  
+\[A^{-1}=\frac1{\det A}\operatorname{adj}(A)\,,\qquad\det A=\frac1{43200}\,,\]  
+and one finds  
+\[A^{-1}=\begin{pmatrix}
+72&-240&180\\
+-240&900&-720\\
+180&-720&600
+\end{pmatrix}. \]  
+Hence if \(b=(b_1,b_2,b_3)^T\) then  
+\[
+\begin{aligned}
+x_1&=72\,b_1-240\,b_2+180\,b_3,\\
+x_2&=-240\,b_1+900\,b_2-720\,b_3,\\
+x_3&=180\,b_1-720\,b_2+600\,b_3,
+\end{aligned}
+\]  
+and therefore  
+\[
+y=x_1+x_2+x_3
+=(72-240+180)\,b_1+(-240+900-720)\,b_2+(180-720+600)\,b_3
+=12\,b_1-60\,b_2+60\,b_3.
+\]  
+If each \(b_i\) is known up to an error \(\le\epsilon\), then in the worst case
+\[
+|\Delta y|\le(|12|+|{-60}|+|60|)\,\epsilon=132\,\epsilon.
+\]"
+71,"The matrix \(A\) is the tridiagonal “path‐graph’’ adjacency matrix of size \(6\).  Its eigenvalues are well‐known to be
+\[
+\lambda_k \;=\;2\cos\!\Bigl(\tfrac{k\pi}{7}\Bigr),
+\qquad k=1,2,\dots,6.
+\]
+Since \(A\) is symmetric and invertible, the eigenvalues of \(A^{-1}\) are
+\[
+\lambda_k^{-1} \;=\;\frac1{2\cos\!\bigl(\tfrac{k\pi}{7}\bigr)},
+\quad k=1,\dots,6,
+\]
+and hence
+\[
+\rho(A^{-1})
+=\max_{1\le k\le6}\Bigl|\lambda_k^{-1}\Bigr|
+=\frac1{\min_{1\le k\le6}\bigl|\lambda_k\bigr|}
+=\frac1{2\cos\!\bigl(\tfrac{3\pi}{7}\bigr)}.
+\]
+Numerically,
+\[
+2\cos\!\Bigl(\tfrac{3\pi}{7}\Bigr)\approx0.445041\quad\Longrightarrow\quad
+\rho(A^{-1})\approx2.2469796.
+\]"
+72,"By Gershgorin’s circle theorem, every eigenvalue \(\lambda\) of \(A\) lies in one of the discs
+\[
+D\bigl(a_{ii},R_i\bigr)
+\,,\quad
+R_i=\sum_{j\neq i}|a_{ij}|\,. 
+\]
+Here
+\[
+R_1=|0|+|1+2i|=\sqrt5,\quad
+R_2=|0|+|1-i|=\sqrt2,\quad
+R_3=|1-2i|+|1+i|=\sqrt5+\sqrt2,
+\]
+so
+\[
+\lambda\in D(-1,\sqrt5)\;\cup\;D(2,\sqrt2)\;\cup\;D(0,\sqrt5+\sqrt2).
+\]
+In particular
+\[
+|\lambda|\;\le\;\max\{\,|-1|+\sqrt5,\;|2|+\sqrt2,\;\sqrt5+\sqrt2\}
+\;=\;\sqrt5+\sqrt2\approx3.650\,. 
+\]
+
+Moreover, for the spectral (Euclidean) norm one has the well‐known bound
+\[
+\|A\|_2\;\le\;\sqrt{\|A\|_1\,\|A\|_\infty}\,.
+\]
+Since
+\[
+\|A\|_1=\max_j\sum_i|a_{ij}|=\sqrt5+\sqrt2,\qquad
+\|A\|_\infty=\max_i\sum_j|a_{ij}|=\sqrt5+\sqrt2,
+\]
+we obtain
+\[
+\|A\|_2\;\le\;\sqrt{(\sqrt5+\sqrt2)^2} \;=\;\sqrt5+\sqrt2\approx3.650.
+\]"
+73,"We compute  
+\[
+AB \;=\;
+\begin{bmatrix}1&1\\1&1\end{bmatrix}
+\begin{bmatrix}\beta_1&1\\0&\beta_2\end{bmatrix}
+\;=\;
+\begin{bmatrix}\beta_1 & 1+\beta_2\\[6pt]\beta_1 & 1+\beta_2\end{bmatrix}
+\;=\;
+\underbrace{\begin{pmatrix}1\\1\end{pmatrix}}_{u}
+\underbrace{\begin{pmatrix}\beta_1 & 1+\beta_2\end{pmatrix}}_{v^T}\,.
+\]
+Hence $AB=u\,v^T$ is rank-one with eigenvalues
+\[
+\lambda_1=v^T u \;=\;\beta_1+(1+\beta_2)=\beta_1+\beta_2+1,
+\qquad
+\lambda_2=0.
+\]
+Since $(AB)^k\to0$ as $k\to\infty$ if and only if its spectral radius $\rho(AB)=|\lambda_1|<1$, we conclude
+\[
+(AB)^k\;\longrightarrow\;0
+\quad\Leftrightarrow\quad
+\bigl|\beta_1+\beta_2+1\bigr|<1.
+\]
+In particular, for real \(\beta_1,\beta_2\) this is equivalent to 
+\[
+-2<\beta_1+\beta_2<0.
+\]"
+74,"Since  
+\[
+f(A)=e^A-e^{-A}=2\sinh(A)
+\]
+and the minimal polynomial of \(A\) is  
+\[
+m(\lambda)=\lambda(\lambda^2-52)\;\Longrightarrow\;A^3=52A,
+\]
+we have the Taylor series reduction
+\[
+\sinh(A)
+=\sum_{k=0}^\infty\frac{A^{2k+1}}{(2k+1)!}
+= A\sum_{k=0}^\infty\frac{(A^2)^k}{(2k+1)!}
+= A\sum_{k=0}^\infty\frac{52^k}{(2k+1)!}
+= A\;\frac{\sinh(2\sqrt{13})}{2\sqrt{13}}.
+\]
+Hence
+\[
+f(A)=2\sinh(A)
+=2\,A\,\frac{\sinh(2\sqrt{13})}{2\sqrt{13}}
+=\frac{\sinh(2\sqrt{13})}{\sqrt{13}}\;A,
+\]
+so finally
+\[
+\boxed{
+f(A)
+=\frac{\sinh(2\sqrt{13})}{\sqrt{13}}
+\begin{bmatrix}
+2 & 4 & 0\\
+6 & 0 & 8\\
+0 & 3 & -2
+\end{bmatrix}.
+}
+\]"
+75,"The fact that  
+\[
+T^{-1}AT=\operatorname{diag}(1,\,-1,\,2)
+\]  
+means that the columns of  
+\[
+T=\begin{pmatrix}1&0&1\\3&3&4\\2&2&3\end{pmatrix}
+\]  
+are eigenvectors of \(A\) with eigenvalues \(1,-1,2\), respectively.  In particular:
+
+\[
+v_1=\begin{pmatrix}1\\3\\2\end{pmatrix},\quad
+v_2=\begin{pmatrix}0\\3\\2\end{pmatrix},\quad
+v_3=\begin{pmatrix}1\\4\\3\end{pmatrix},
+\]
+and one checks
+\[
+A\,v_1=1\cdot v_1,\quad
+A\,v_2=(-1)\cdot v_2,\quad
+A\,v_3=2\cdot v_3.
+\]
+Hence the eigen‐pairs of \(A\) are
+\[
+\bigl(\lambda_1=1,\;v_1\bigr),\quad
+\bigl(\lambda_2=-1,\;v_2\bigr),\quad
+\bigl(\lambda_3=2,\;v_3\bigr),
+\]
+where each \(v_i\) may be rescaled arbitrarily."
+76,"By classical first‐order perturbation theory one has for each simple eigenvalue 
+\[
+\lambda_i(\eps)
+=\lambda_i(0)
++\eps\,\frac{v_i^T\,B\,v_i}{v_i^T v_i}+O(\eps^2),
+\]
+where \(v_i\) is a right‐eigenvector of \(A\) for \(\lambda_i(0)\).  In particular, since
+\[
+\lambda_1(0)=1,\quad v_1=\begin{pmatrix}0\\2\\1\end{pmatrix},
+\quad
+\lambda_2(0)=0,\quad v_2=\begin{pmatrix}1\\-2\\0\end{pmatrix},
+\quad
+\lambda_3(0)=-1,\quad v_3=\begin{pmatrix}1\\-1\\0\end{pmatrix},
+\]
+one computes
+\[
+\frac{v_1^T B v_1}{v_1^T v_1}
+=-\frac{1}{5},
+\quad
+\frac{v_2^T B v_2}{v_2^T v_2}
+=-\frac{9}{5},
+\quad
+\frac{v_3^T B v_3}{v_3^T v_3}
+=-2,
+\]
+and hence
+\[
+\lambda_1(\eps)=1-\tfrac15\eps+O(\eps^2),\quad
+\lambda_2(\eps)=-\tfrac95\eps+O(\eps^2),\quad
+\lambda_3(\eps)=-1-2\eps+O(\eps^2).
+\]
+Moreover, by Bauer–Fike (or by Weyl’s theorem for non‐Hermitian matrices) one gets the global bound
+\[
+\bigl|\lambda_i(\eps)-\lambda_i(0)\bigr|
+\;\le\;\|\,\eps B\|_2
+\;=\;\eps\,\|B\|_2
+\;=\;3\,\eps,
+\]
+since \(\|B\|_2=\sigma_{\max}(B)=3\)."
+77,"We set  
+\[E=\tilde A - A \;=\;10^{-2}\begin{pmatrix}-1&-1&1\\-1&1&-1\\1&-1&1\end{pmatrix},\]
+and for each \(i\) let
+\[
+r_i(A)=\sum_{j\ne i}|a_{ij}|,\qquad
+r_i(E)=\sum_{j\ne i}|E_{ij}|\,,\qquad
+\delta_i=|E_{ii}|+r_i(E)\,.  
+\]
+
+1) Gershgorin discs of \(A\):
+\[
+D_i(A)=\{z:|z-a_{ii}|\le r_i(A)\},  
+\]
+with
+\[
+r_1(A)=\tfrac32,\quad r_2(A)=\tfrac12,\quad r_3(A)=0.
+\]
+
+2) Gershgorin discs of \(\tilde A\):
+\[
+D_i(\tilde A)=\{z:|z-(a_{ii}+E_{ii})|\le r_i(A)+r_i(E)\}.
+\]
+
+Since any eigenvalue \(\tilde\lambda\) of \(\tilde A\) lies in some \(D_i(\tilde A)\) and the corresponding eigenvalue \(\lambda\) of \(A\) lay in \(D_i(A)\), we conclude
+\[
+|\lambda-\tilde\lambda|\;\le\;|E_{ii}|+r_i(E)\;=\;\delta_i.
+\]
+
+Finally, from
+\[
+|E_{ii}|=10^{-2},\quad
+r_i(E)=\sum_{j\ne i}10^{-2}=2\cdot10^{-2},\quad
+\delta_i=3\cdot10^{-2},
+\]
+we obtain the uniform bound
+\[
+\boxed{|\lambda_i-\tilde\lambda_i|\le 3\times10^{-2},\qquad i=1,2,3.}
+\]"
+78,"The key observation is that \(A\) is symmetric with eigen‐decomposition
+\[
+A=Q\begin{pmatrix}2&0\\0&1\end{pmatrix}Q^T,
+\]
+so that the polynomial
+\[
+P(\alpha)\;\equiv\;I+\alpha A+\alpha^2A^2
+\]
+has eigenvalues
+\[
+\mu_1(\alpha)\;=\;1+2\alpha+4\alpha^2,
+\qquad
+\mu_2(\alpha)\;=\;1+\alpha+\alpha^2.
+\]
+The iteration
+\[
+y_{n+1}
+\;=\;
+\bigl[I+\alpha A+\alpha^2A^2\bigr]^{-1}y_n
+\]
+converges to \(0\) if and only if
+\[
+\rho\!\bigl(P(\alpha)^{-1}\bigr)
+\;=\;
+\max\Bigl\{\tfrac1{|\mu_1(\alpha)|},\,\tfrac1{|\mu_2(\alpha)|}\Bigr\}
+\;<\;1
+\;\;\Longleftrightarrow\;\;
+|\mu_1(\alpha)|>1
+\quad\text{and}\quad
+|\mu_2(\alpha)|>1.
+\]
+Since
+\[
+\mu_1(\alpha)=4\alpha^2+2\alpha+1>1
+\;\Longleftrightarrow\;
+4\alpha^2+2\alpha>0
+\;\Longleftrightarrow\;
+\alpha(2\alpha+1)>0
+\;\Longleftrightarrow\;
+\alpha\in(-\infty,-\tfrac12)\cup(0,\infty),
+\]
+and
+\[
+\mu_2(\alpha)=\alpha^2+\alpha+1>1
+\;\Longleftrightarrow\;
+\alpha^2+\alpha>0
+\;\Longleftrightarrow\;
+\alpha(\alpha+1)>0
+\;\Longleftrightarrow\;
+\alpha\in(-\infty,-1)\cup(0,\infty),
+\]
+we must take the intersection of these two sets.  Hence
+\[
+\{\,\alpha\in\Bbb R:\;y_n\to0\}
+\;=\;
+(-\infty,-1)\,\cup\,(0,\infty).
+\]"
+79,"1.  Compute the initial approximation  
+\[
+\mathbf x_0 \;=\;\mathbf B\,\mathbf b
+\;=\;
+\begin{pmatrix}
+202 & -1212 & 2121 & -1131\\
+-1212 & 8181 & -15271 & 8484\\
+2121 & -15271 & 29694 & -16968\\
+-1131 & 8484 & -16968 & 9898
+\end{pmatrix}
+\begin{pmatrix}1\\1\\1\\1\end{pmatrix}
+=
+\begin{pmatrix}-20\\182\\-424\\283\end{pmatrix}.
+\]
+
+2.  Form the residual  
+\[
+\mathbf r_0 \;=\;\mathbf b-\mathbf A\,\mathbf x_0
+=\;
+\begin{pmatrix}1\\1\\1\\1\end{pmatrix}
+-
+\underbrace{
+\begin{pmatrix}
+\tfrac12 & \tfrac13 & \tfrac14 & \tfrac15\\
+\tfrac13 & \tfrac14 & \tfrac15 & \tfrac16\\
+\tfrac14 & \tfrac15 & \tfrac16 & \tfrac17\\
+\tfrac15 & \tfrac16 & \tfrac17 & \tfrac18
+\end{pmatrix}
+}_{\mathbf A}
+\begin{pmatrix}-20\\182\\-424\\283\end{pmatrix}
+=
+\begin{pmatrix}
+-\tfrac{4}{15}\\[6pt]
+-\tfrac{1}{5}\\[4pt]
+-\tfrac{17}{105}\\[4pt]
+-\tfrac{23}{168}
+\end{pmatrix}.
+\]
+
+3.  Compute the correction  
+\[
+\delta\mathbf x \;=\;\mathbf B\,\mathbf r_0
+\;=\;
+\begin{pmatrix}
+202 & -1212 & 2121 & -1131\\
+-1212 & 8181 & -15271 & 8484\\
+2121 & -15271 & 29694 & -16968\\
+-1131 & 8484 & -16968 & 9898
+\end{pmatrix}
+\begin{pmatrix}
+-\tfrac{4}{15}\\[4pt]
+-\tfrac{1}{5}\\[4pt]
+-\tfrac{17}{105}\\[4pt]
+-\tfrac{23}{168}
+\end{pmatrix}
+=
+\begin{pmatrix}0\\-2\\4\\-3\end{pmatrix}.
+\]
+
+4.  Update and obtain the exact integer solution  
+\[
+\mathbf x_1 \;=\;\mathbf x_0+\delta\mathbf x
+\;=\;
+\begin{pmatrix}-20\\182\\-424\\283\end{pmatrix}
++
+\begin{pmatrix}0\\-2\\4\\-3\end{pmatrix}
+\;=\;
+\begin{pmatrix}-20\\180\\-420\\280\end{pmatrix}.
+\]"
+80,"The Richardson‐iteration 
+\[
+\bx^{(n+1)} \;=\;\bx^{(n)} + \alpha\bigl(\bA\,\bx^{(n)}-\by\bigr)
+\]
+converges iff 
+\[
+\rho\bigl(\bI - \alpha \bA\bigr)\;<\;1,
+\]
+and the asymptotic rate is
+\[
+q(\alpha)\;=\;\max_{i=1,2}\bigl|1-\alpha\lambda_i\bigr|,
+\]
+where \(\lambda_1,\lambda_2\) are the eigenvalues of \(\bA\).  For
+\[
+\bA=\begin{pmatrix}3&2\\1&2\end{pmatrix}
+\]
+one finds
+\[
+\lambda_{1,2}
+=\frac{5\pm\sqrt{25-20}}{2}
+=\frac{5\pm\sqrt5}{2},
+\]
+so that
+\[
+\lambda_{\min}=\frac{5-\sqrt5}{2},\quad
+\lambda_{\max}=\frac{5+\sqrt5}{2}.
+\]
+Minimizing 
+\(\max|1-\alpha\lambda_i|\) in \(\alpha\) gives the classical choice
+\[
+\alpha^*
+=\frac{2}{\lambda_{\min}+\lambda_{\max}}
+=\frac{2}{\;(\,5-\sqrt5\,)/2+(\,5+\sqrt5\,)/2\;}
+=\frac{2}{5}
+=0.4.
+\]
+With this choice the convergence factor is
+\[
+q^*= \frac{\lambda_{\max}-\lambda_{\min}}{\lambda_{\max}+\lambda_{\min}}
+=\frac{\sqrt5}{5}\approx0.447.
+\]"
+81,"\[
+A=\begin{pmatrix}
+4&2&1\\
+1&3&1\\
+3&2&6
+\end{pmatrix},\quad
+b=\begin{pmatrix}4\\4\\7\end{pmatrix},\quad
+x^{(0)}=\begin{pmatrix}0.1\\0.8\\0.5\end{pmatrix}.
+\]
+1. Exact solution:
+\[
+\begin{cases}
+4x_1+2x_2+x_3=4,\\
+x_1+3x_2+x_3=4,\\
+3x_1+2x_2+6x_3=7
+\end{cases}
+\;\Longrightarrow\;
+x^*=\begin{pmatrix}1/3\\1\\2/3\end{pmatrix}.
+\]
+
+2. Gauss–Seidel splitting \(A=D+L+U\):
+\[
+D=\mathrm{diag}(4,3,6),\quad
+L=\begin{pmatrix}0&0&0\\1&0&0\\3&2&0\end{pmatrix},\quad
+U=\begin{pmatrix}0&2&1\\0&0&1\\0&0&0\end{pmatrix}.
+\]
+Iteration:
+\[
+x_1^{(k+1)}=\frac1{4}\bigl(4-2x_2^{(k)}-x_3^{(k)}\bigr),\quad
+x_2^{(k+1)}=\frac1{3}\bigl(4-x_1^{(k+1)}-x_3^{(k)}\bigr),\quad
+x_3^{(k+1)}=\frac1{6}\bigl(7-3x_1^{(k+1)}-2x_2^{(k+1)}\bigr).
+\]
+Directly one finds:
+\[
+x^{(1)}=\begin{pmatrix}0.475\\1.0083333\\0.5930556\end{pmatrix},\quad
+x^{(2)}=\begin{pmatrix}0.3475694\\1.0197917\\0.6529514\end{pmatrix},\quad
+x^{(3)}=\begin{pmatrix}0.3268663\\1.0067274\\0.6676577\end{pmatrix}.
+\]
+
+3. Error‐form of the iteration. Define \(e^{(k)}=x^*-x^{(k)}\).  One shows
+\[
+x^{(k+1)}=(D+L)^{-1}\bigl(b - U\,x^{(k)}\bigr)
+\;\Longrightarrow\;
+e^{(k+1)}=-(D+L)^{-1}U\,e^{(k)}=:G_{\rm GS}\,e^{(k)}.
+\]
+An easy forward‐solve gives
+\[
+G_{\rm GS}=-(D+L)^{-1}U
+=\begin{pmatrix}
+0&-0.5&-0.25\\
+0&\tfrac16&-0.25\\
+0&\tfrac{7}{36}&\tfrac{5}{24}
+\end{pmatrix}.
+\]
+With
+\[
+e^{(0)}=x^*-x^{(0)}
+=\begin{pmatrix}1/3-0.1\\1-0.8\\2/3-0.5\end{pmatrix}
+=\begin{pmatrix}0.2333333\\0.2\\0.1666667\end{pmatrix},
+\]
+one obtains by \(e^{(k+1)}=G_{\rm GS}\,e^{(k)}\):
+\[
+e^{(1)}=\begin{pmatrix}-0.1416667\\-0.0083333\\0.0736111\end{pmatrix},\quad
+e^{(2)}=\begin{pmatrix}-0.0142361\\-0.0197917\\0.0137153\end{pmatrix},\quad
+e^{(3)}=\begin{pmatrix}0.0064670\\-0.0067274\\-0.0009910\end{pmatrix}.
+\]
+Hence after three Gauss–Seidel steps
+\[
+x^{(3)}=x^*-e^{(3)}
+\approx\begin{pmatrix}0.3333\\1.0000\\0.6667\end{pmatrix}
+-\begin{pmatrix}0.006467\\-0.0067274\\-0.000991\end{pmatrix}
+=\begin{pmatrix}0.3268663\\1.0067274\\0.6676577\end{pmatrix}.
+\]"
+82,"Let  
+A=\begin{pmatrix}1 & k\\2k&1\end{pmatrix},  
+so that in the Jacobi splitting A=D−(L+U),  
+D=\begin{pmatrix}1&0\\0&1\end{pmatrix},\quad  
+L+U=\begin{pmatrix}0&-\,k\\-\,2k&0\end{pmatrix}.  
+Hence the Jacobi iteration matrix is  
+M_J=D^{-1}(L+U)=\begin{pmatrix}0&k\\2k&0\end{pmatrix}.  
+Its characteristic equation is  
+\det(\lambda I - M_J)=\lambda^2-2k^2=0  
+⇒\lambda_{1,2}=\pm\sqrt2\,k,  
+so  
+\rho(M_J)=\max|\lambda_i|=\sqrt2\,|k|.  
+Jacobi converges⇔\rho(M_J)<1⇔\sqrt2\,|k|<1⇔|k|<1/\sqrt2.  
+
+For successive over‐relaxation (SOR) one shows (for a wide class of A) that the empirically optimal ω is  
+\[
+\omega_{\rm opt}
+=\frac{2}{1+\sqrt{1-\rho(M_J)^2}}
+=\frac{2}{1+\sqrt{1-2k^2}}.
+\]
+In particular, for k=0.25 we have ρ(M_J)=\sqrt2·0.25=\tfrac{\sqrt2}{4}, so  
+\[
+\omega_{\rm opt}
+=\frac{2}{1+\sqrt{1-\tfrac12\,(0.25)^2}}
+=\frac{2}{1+\sqrt{1-\tfrac18}}
+=\frac{2}{1+\sqrt{\tfrac78}}
+\approx1.0336.
+\]"
+83,"The Jacobi and Gauss–Seidel iteration matrices are respectively
+
+\[
+M_{J} \;=\;-D^{-1}(L+U)
+\;=\;-\,(L+U)
+\;=\;\begin{pmatrix}
+0 & -2 & 2\\
+-1& 0 & -1\\
+-2&-2 &0
+\end{pmatrix},
+\]
+
+\[
+M_{GS}\;=\;-(D+L)^{-1}U
+\;=\;-\begin{pmatrix}
+1&0&0\\
+1&1&0\\
+2&2&1
+\end{pmatrix}^{-1}
+\begin{pmatrix}
+0&2&-2\\
+0&0&1\\
+0&0&0
+\end{pmatrix}
+\;=\;\begin{pmatrix}
+0 & -2 & 2\\
+0 & 2 & -3\\
+0 & 0 & 2
+\end{pmatrix}.
+\]
+
+Computing their spectral radii:
+
+1.  For Jacobi,
+\[
+\chi_{M_J}(\lambda)=-\lambda^3\quad\Longrightarrow\quad
+\rho(M_J)=0<1,
+\]
+so the Jacobi method converges (in fact $M_J^3=0$).
+
+2.  For Gauss–Seidel,
+\[
+M_{GS}\text{ is upper‐triangular with }\,
+\sigma(M_{GS})=\{0,2,2\}
+\quad\Longrightarrow\quad
+\rho(M_{GS})=2>1,
+\]
+so the Gauss–Seidel method diverges."
+84,"1.  System $A x=b$,  
+   $$A=\begin{pmatrix}2&-1&0&0\\-1&2&-1&0\\0&-1&2&-1\\0&0&-1&2\end{pmatrix},\quad 
+     b=\begin{pmatrix}1\\0\\0\\1\end{pmatrix},$$  
+   exact solution $x^*=(1,1,1,1)^T$.  
+
+2.  Gauss–Seidel iteration  
+   $$x^{(k+1)}=(D+L)^{-1}\bigl(b - U\,x^{(k)}\bigr),$$  
+   where $A=D+L+U$ with  
+   $$D=\diag(2,2,2,2),\quad
+     L=\begin{pmatrix}0&0&0&0\\-1&0&0&0\\0&-1&0&0\\0&0&-1&0\end{pmatrix},\quad
+     U=\begin{pmatrix}0&-1&0&0\\0&0&-1&0\\0&0&0&-1\\0&0&0&0\end{pmatrix}.$$  
+   Starting from $x^{(0)}=(0.5,0.5,0.5,0.5)^T$ one finds  
+   $$x^{(1)}=\begin{pmatrix}0.7500\\0.6250\\0.5625\\0.78125\end{pmatrix},\quad
+     x^{(2)}=\begin{pmatrix}0.81250\\0.68750\\0.734375\\0.8671875\end{pmatrix},\quad
+     x^{(3)}=\begin{pmatrix}0.84375\\0.7890625\\0.828125\\0.9140625\end{pmatrix}.$$  
+
+3.  Iteration matrix  
+   $$G_{\rm GS}=-(D+L)^{-1}U
+     =\begin{pmatrix}
+       0&\tfrac12&0&0\\[6pt]
+       0&\tfrac14&\tfrac12&0\\[6pt]
+       0&\tfrac18&\tfrac14&\tfrac12\\[6pt]
+       0&\tfrac1{16}&\tfrac18&\tfrac14
+     \end{pmatrix}.$$  
+   Its characteristic polynomial is  
+   $$\det(\lambda I-G_{\rm GS})
+     =\lambda^2\Bigl(16\lambda^2-12\lambda+1\Bigr)=0,$$  
+   so  
+   $$\spec(G_{\rm GS})=\Bigl\{0,0,\frac{3\pm\sqrt5}8\Bigr\},\qquad
+     \rho(G_{\rm GS})=\frac{3+\sqrt5}8\approx0.6545.$$
+
+4.  Extrapolated GS = SOR with optimal relaxation  
+   $$\omega_{\rm opt}
+     =\frac{2}{1+\sqrt{1-\rho(G_{\rm GS})^2}}
+     \approx1.1391,$$  
+   iteration  
+   $$x_i^{(k+1)}=(1-\omega)x_i^{(k)}
+     +\frac\omega{a_{ii}}\Bigl(b_i-\sum_{j<i}a_{ij}x_j^{(k+1)}
+                         -\sum_{j>i}a_{ij}x_j^{(k)}\Bigr).$$  
+   From $x^{(0)}=(0.5,0.5,0.5,0.5)^T$ one obtains  
+   $$x^{(1)}_{\omega}\approx\begin{pmatrix}0.78478\\0.66184\\0.59216\\0.83665\end{pmatrix},\quad
+     x^{(2)}_{\omega}\approx\begin{pmatrix}0.83760\\0.72235\\0.80530\\0.91240\end{pmatrix},\quad
+     x^{(3)}_{\omega}\approx\begin{pmatrix}0.86505\\0.85080\\0.89170\\0.95030\end{pmatrix}.$$  
+
+5.  Error analysis (max‐norm)  
+   k | $\|x^{(k)}-x^*\|_\infty$ | $\|x^{(k)}_{\omega}-x^*\|_\infty$   
+   ---|-------------------------|-----------------------------  
+   1  | 0.4375                  | 0.4078  
+   2  | 0.3125                  | 0.2776  
+   3  | 0.21094                 | 0.14920  
+
+   Asymptotic rates:  
+   $$\rho(G_{\rm GS})\approx0.6545,\qquad
+     \rho(G_{\rm SOR})\approx\frac{1-\sqrt{1-\rho(G_{\rm GS})^2}}
+                                 {1+\sqrt{1-\rho(G_{\rm GS})^2}}
+     \approx0.139.$$  
+   Hence SOR converges roughly five times faster than plain Gauss–Seidel."
+85,"Convergence factors.  Write 
+$$A=D\!-\!(L+U),\quad D=\diag(4,5,10),\;
+L=\begin{pmatrix}0&0&0\\0&0&0\\5&4&0\end{pmatrix},\;
+U=\begin{pmatrix}0&0&2\\0&0&2\\0&0&0\end{pmatrix}.$$
+
+1. Jacobi.  The iteration matrix is 
+$$M_J=-D^{-1}(L+U)
+=\begin{pmatrix}0&0&-½\\0&0&-2/5\\-½&-2/5&0\end{pmatrix}$$
+and one finds 
+$$\chi_{M_J}(λ)=-λ(λ^2-0.41)\;\Longrightarrow\;
+ρ(M_J)=\sqrt{0.41}\approx0.6403.$$
+
+2. Gauss–Seidel.  The iteration matrix is 
+$$M_{GS}=-(D+L)^{-1}U,\quad(D+L)^{-1}U=\begin{pmatrix}0&0&½\\0&0&0.4\\0&0&-0.41\end{pmatrix},$$
+so 
+$$M_{GS}=\begin{pmatrix}0&0&-½\\0&0&-0.4\\0&0&0.41\end{pmatrix},$$
+and 
+$$\chi_{M_{GS}}(λ)=λ^2(λ-0.41)\;\Longrightarrow\;ρ(M_{GS})=0.41.$$
+
+Relaxation (SOR).  With 
+$$ρ_J^2=0.41,\quad\sqrt{1-ρ_J^2}=\sqrt{0.59},$$ 
+the “optimal’’ relaxation parameter is  
+$$\omega=\frac{2}{\,1+\sqrt{1-ρ_J^2}\,}
+=\frac{2}{1+\sqrt{0.59}}\approx1.1315.$$
+
+The SOR‐iteration can be written in component form as
+\[
+x_i^{(k+1)}
+=(1-\omega)x_i^{(k)}
++\frac{\omega}{a_{ii}}\Bigl(b_i-\sum_{j<i}a_{ij}\,x_j^{(k+1)}
+-\sum_{j>i}a_{ij}\,x_j^{(k)}\Bigr),
+\]
+so for our system
+\begin{align*}
+x_1^{(k+1)}&=(1-\omega)x_1^{(k)}
++\frac{\omega}{4}\bigl(4-2\,x_3^{(k)}\bigr),\\
+x_2^{(k+1)}&=(1-\omega)x_2^{(k)}
++\frac{\omega}{5}\bigl(-3-2\,x_3^{(k)}\bigr),\\
+x_3^{(k+1)}&=(1-\omega)x_3^{(k)}
++\frac{\omega}{10}\bigl(2-5\,x_1^{(k+1)}-4\,x_2^{(k+1)}\bigr).
+\end{align*}"
+86,"1. Decomposition  
+Let  
+\[
+A=\begin{pmatrix}
+4&1&2\\
+3&5&1\\
+1&1&3
+\end{pmatrix}=D+L+U,\quad
+D=\begin{pmatrix}4&0&0\\0&5&0\\0&0&3\end{pmatrix},\ 
+L=\begin{pmatrix}0&0&0\\3&0&0\\1&1&0\end{pmatrix},\ 
+U=\begin{pmatrix}0&1&2\\0&0&1\\0&0&0\end{pmatrix}.
+\]  
+Let \(\mathbf b=(4,7,3)^T\).
+
+2. Jacobi iteration  
+\[
+T_J=-D^{-1}(L+U)
+=\begin{pmatrix}
+0&-\tfrac14&-\tfrac12\\
+-\tfrac35&0&-\tfrac15\\
+-\tfrac13&-\tfrac13&0
+\end{pmatrix},\quad
+\mathbf c_J=D^{-1}\mathbf b=\begin{pmatrix}1\\1.4\\1\end{pmatrix},
+\]  
+\[
+\mathbf x^{(k+1)}=T_J\,\mathbf x^{(k)}+\mathbf c_J.
+\]  
+With \(\mathbf x^{(0)}=(0,0,0)^T\) one finds  
+\[
+\mathbf x^{(1)}=\begin{pmatrix}1\\1.4\\1\end{pmatrix},\quad
+\mathbf x^{(2)}\approx\begin{pmatrix}0.15\\0.6\\0.2\end{pmatrix},\quad
+\mathbf x^{(3)}\approx\begin{pmatrix}0.75\\1.27\\0.75\end{pmatrix}.
+\]
+
+3. Gauss–Seidel iteration  
+\[
+T_{GS}=-(D+L)^{-1}U,\quad
+\mathbf c_{GS}=(D+L)^{-1}\mathbf b
+\]  
+explicitly gives the pointwise formula  
+\[
+\begin{cases}
+x_1^{(k+1)}=\tfrac14\bigl(4 -y^{(k)}-2z^{(k)}\bigr),\\
+x_2^{(k+1)}=\tfrac15\bigl(7 -3x^{(k+1)}-z^{(k)}\bigr),\\
+x_3^{(k+1)}=\tfrac13\bigl(3 -x^{(k+1)}-y^{(k+1)}\bigr),
+\end{cases}
+\]  
+so that with \(\mathbf x^{(0)}=(0,0,0)^T\)  
+\[
+\mathbf x^{(1)}\approx\begin{pmatrix}1\\0.8\\0.4\end{pmatrix},\quad
+\mathbf x^{(2)}\approx\begin{pmatrix}0.6\\0.96\\0.48\end{pmatrix},\quad
+\mathbf x^{(3)}\approx\begin{pmatrix}0.52\\0.992\\0.496\end{pmatrix}.
+\]
+
+4. Exact solution  
+Solving \(A\mathbf x=\mathbf b\) by elimination gives  
+\[
+\mathbf x^\ast=(0.5,1,0.5)^T.
+\]  
+After three iterations
+\[
+\|\mathbf x^{(3)}_J-\mathbf x^\ast\|\approx\|(0.75,1.27,0.75)-(0.5,1,0.5)\|\approx0.43,
+\quad
+\|\mathbf x^{(3)}_{GS}-\mathbf x^\ast\|\approx0.033,
+\]
+so Gauss–Seidel is already much closer.
+
+5. Spectral radii and rate of convergence  
+(a) Jacobi: the characteristic polynomial of \(T_J\) is
+\[
+\det(T_J-\lambda I)
+=60\lambda^3-23\lambda+7=0.
+\]
+Using Newton–Raphson on 
+\(f(\lambda)=60\lambda^3-23\lambda+7\), 
+\(\lambda_{n+1}=\lambda_n-\frac{f(\lambda_n)}{f'(\lambda_n)}\),
+with \(\lambda_0=-1\), converges to the unique real root
+\[
+\lambda_1\approx-0.73705,\quad
+\rho(T_J)=|\lambda_1|\approx0.73705.
+\]
+Thus
+\[
+\|\mathbf e^{(k)}\|= \|\mathbf x^{(k)}-\mathbf x^\ast\| = O\bigl((0.73705)^k\bigr).
+\]
+
+(b) Gauss–Seidel:
+\[
+T_{GS}=-(D+L)^{-1}U
+=\begin{pmatrix}
+0&-\tfrac14&-\tfrac12\\
+0&0.15&0.10\\
+0&0.03333&0.13333
+\end{pmatrix}.
+\]
+Its eigenvalues are \(\{0,\lambda_2,\lambda_3\}\) where
+\[
+\lambda_{2,3}=\frac{0.15+0.13333\pm\sqrt{(0.15+0.13333)^2-4(0.15\cdot0.13333-0.1\cdot0.03333)}}{2}
+\approx0.20010,\;0.08323.
+\]
+Hence
+\[
+\rho(T_{GS})\approx0.20010,\quad
+\|\mathbf e^{(k)}\|=O\bigl((0.20010)^k\bigr).
+\]
+
+Conclusion: both methods converge (since \(\rho<1\)), but Gauss–Seidel does so substantially faster than Jacobi."
+87,"1. Verification of “property A′”  
+Let  
+\(A=D-(L+U)\),  
+where  
+\[
+D=\mathrm{diag}(2,2,2,2,2),\quad
+L=\begin{bmatrix}
+0&0&0&0&0\\
+1&0&0&0&0\\
+0&1&0&0&0\\
+0&0&1&0&0\\
+0&0&0&1&0
+\end{bmatrix},\quad
+U=L^T.
+\]  
+(i)  \(A\) is a \(Z\)-matrix: \(a_{ii}>0\), \(a_{ij}\le0\) for \(i\neq j\).  
+(ii)  \(A\) is irreducibly diagonally dominant (each row sum of strict dominance is connected).  
+(iii)  \(A\) is symmetric, hence Hermitian, and for any \(x\neq0\)  
+\[
+x^T A x
+=\sum_{i=1}^5 2\,x_i^2-2\sum_{i=1}^4x_i x_{i+1}
+=\sum_{i=1}^4(x_i-x_{i+1})^2+x_1^2+x_5^2>0,
+\]  
+so \(A\) is positive definite.  
+Hence \(A\) is an irreducible SPD \(M\)-matrix, i.e.\ it has “property A′,” and the SOR iteration converges for all \(0<\omega<2\).
+
+2. Optimal relaxation factor \(\omega_{\rm opt}\)  
+The Jacobi iteration matrix is  
+\[
+B_J=D^{-1}(L+U),\qquad
+\rho(B_J)
+=\max_{1\le k\le5}\bigl|\cos\frac{k\pi}{6}\bigr|
+=\cos\frac{\pi}{6}
+=\frac{\sqrt3}{2}.
+\]  
+The classical formula for the optimal SOR‐parameter is  
+\[
+\omega_{\rm opt}
+=\frac{2}{1+\sqrt{1-\rho(B_J)^2}}
+=\frac{2}{1+\sqrt{1-\tfrac34}}
+=\frac{2}{1+\tfrac12}
+=\frac{4}{3}.
+\]  
+Therefore, the SOR method on \(Ax=b\) attains its fastest convergence when  
+\[
+\boxed{\omega_{\rm opt}=\frac{4}{3}}.
+\]"
+88,"1. System in matrix form  
+   \(A=\begin{pmatrix}3&2&0\\2&3&-1\\0&-1&2\end{pmatrix},\;b=\begin{pmatrix}4.5\\5\\-0.5\end{pmatrix}.\)  
+   Denote \(x^{(k)}=(x^{(k)}_1,x^{(k)}_2,x^{(k)}_3)^T\).  The SOR‐formula with relaxation \(\omega\) is
+   \[
+     x^{(k+1)}_i=(1-\omega)x^{(k)}_i
+       +\frac{\omega}{a_{ii}}\Bigl(b_i-\sum_{j<i}a_{ij}x^{(k+1)}_j-\sum_{j>i}a_{ij}x^{(k)}_j\Bigr).
+   \]
+   Hence
+   \[
+     \begin{cases}
+       x^{(k+1)}_1=(1-\omega)x^{(k)}_1
+         +\frac{\omega}{3}\bigl(4.5-2\,x^{(k)}_2\bigr),\\[1ex]
+       x^{(k+1)}_2=(1-\omega)x^{(k)}_2
+         +\frac{\omega}{3}\bigl(5-2\,x^{(k+1)}_1+1\cdot x^{(k)}_3\bigr),\\[1ex]
+       x^{(k+1)}_3=(1-\omega)x^{(k)}_3
+         +\frac{\omega}{2}\bigl(-0.5-(-1)\,x^{(k+1)}_2\bigr).
+     \end{cases}
+   \]
+
+2. Eigenvalues of the Jacobi‐matrix  
+   \[
+     B_J=-D^{-1}(L+U)
+     =\begin{pmatrix}0&-2/3&0\\-2/3&0&1/3\\0&1/2&0\end{pmatrix}
+     \quad\Longrightarrow\quad
+     \spec(B_J)=\{0,\;\pm\sqrt{11/18}\}.
+   \]
+   Thus \(\rho(B_J)=\sqrt{11/18}\).  The optimal \(\omega\) for SOR on SPD is
+   \[
+     \omega_{\rm opt}
+       =\frac{2}{1+\sqrt{1-\rho(B_J)^2}}
+       =\frac{2}{1+\sqrt{7/18}}\approx1.2317.
+   \]
+   The corresponding asymptotic convergence factor is
+   \[
+     \rho_{\rm SOR}
+     =\frac{1-\sqrt{1-\rho(B_J)^2}}{1+\sqrt{1-\rho(B_J)^2}}
+     =\frac{1-\sqrt{7/18}}{1+\sqrt{7/18}}\approx0.2318.
+   \]
+
+3. Five SOR‐iterations with \(x^{(0)}=(0,0,0)^T\), \(\omega=1.2317\)  
+   \[
+   \begin{array}{c|ccc|c}
+     k& x_1^{(k)}&x_2^{(k)}&x_3^{(k)}&\|x^{(k)}-x^*\|_\infty\\\hline
+     0&0&0&0&\|x^*\|_\infty=1.5\\
+     1&1.8476&0.5359&0.0221&1.3476\\
+     2&0.9788&1.1343&0.3855&0.4788\\
+     3&0.6895&1.3830&0.4542&0.1895\\
+     4&0.5523&1.4642&0.4884&0.0523\\
+     5&0.5172&1.4904&0.4965&0.0172
+   \end{array}
+   \]
+   where the exact solution is found by direct elimination
+   \[
+     x^*=(0.5,\;1.5,\;0.5)^T.
+   \]
+   After five SOR‐steps the error in the max‐norm is
+   \[
+     \|x^{(5)}-x^*\|_\infty\approx0.0172,
+   \]
+   in good agreement with the predicted rate \(\rho_{\rm SOR}\approx0.2318\)."
+89,"The symmetric matrix  
+\(  
+A=\begin{pmatrix}  
+1 & \sqrt2 & 2\\  
+\sqrt2&3&\sqrt2\\  
+2&\sqrt2&1  
+\end{pmatrix}  
+\)  
+has characteristic polynomial  
+\[
+\det(A-\lambda I)
+=\begin{vmatrix}
+1-\lambda & \sqrt2 & 2\\
+\sqrt2 & 3-\lambda & \sqrt2\\
+2 & \sqrt2 & 1-\lambda
+\end{vmatrix}
+=-(\lambda+1)(\lambda-1)(\lambda-5)\,,
+\]  
+so the eigenvalues are  
+\[
+\lambda_1=-1,\quad \lambda_2=1,\quad \lambda_3=5.
+\]
+
+An orthogonal set of corresponding eigenvectors is easily found in closed form:
+
+1. \(\lambda_1=-1\):  
+   Solve \((A+I)v=0\).  One finds \(v_1=[1,0,-1]^T\).  Normalizing,  
+   \[
+     v_1=\frac1{\sqrt2}\begin{pmatrix}1\\0\\-1\end{pmatrix}.
+   \]
+
+2. \(\lambda_2=1\):  
+   Restrict to the subspace \(\{[x,y,x]^T\}\).  One obtains  
+   \((3-1)x+\sqrt2\,y=0\implies 2x+\sqrt2\,y=0\implies y=-\sqrt2\,x\).  
+   Choose \(x=1\), \(y=-\sqrt2\), so \(v_2=[1,-\sqrt2,1]^T\).  Normalizing,  
+   \[
+     v_2=\frac1{2}\begin{pmatrix}1\\-\sqrt2\\1\end{pmatrix}.
+   \]
+
+3. \(\lambda_3=5\):  
+   In the same subspace \(\{[x,y,x]^T\}\) one finds  
+   \((3-5)x+\sqrt2\,y=0\implies -2x+\sqrt2\,y=0\implies y=+\sqrt2\,x\).  
+   Choose \(x=1\), \(y=+\sqrt2\), so \(v_3=[1,\sqrt2,1]^T\).  Normalizing,  
+   \[
+     v_3=\frac1{2}\begin{pmatrix}1\\\sqrt2\\1\end{pmatrix}.
+   \]
+
+Thus the spectral decomposition is  
+\[
+A=V\,\diag(-1,1,5)\,V^T,\qquad
+V=\bigl[v_1\;v_2\;v_3\bigr],
+\]  
+with  
+\[
+v_1=\frac1{\sqrt2}(1,0,-1)^T,\quad
+v_2=\frac1{2}(1,-\sqrt2,1)^T,\quad
+v_3=\frac1{2}(1,\sqrt2,1)^T.
+\]"
+90,"The symmetric matrix   
+\[
+A=\begin{pmatrix}
+2&3&1\\
+3&2&2\\
+1&2&1
+\end{pmatrix}
+\]   
+can be orthogonally diagonalized by the Jacobi method.  After convergence one obtains  
+\[
+Q^T\,A\,Q
+=\mathrm{diag}(\lambda_1,\lambda_2,\lambda_3)
+\,,\qquad
+Q=(v_1\;v_2\;v_3)\,,
+\]  
+with the following approximate eigen‐pairs (sorted in descending order of \(\lambda\)):
+
+1. \(\displaystyle \lambda_1\approx5.9257\),  
+   \[
+   v_1\approx\begin{pmatrix}
+    \phantom{-}0.6186\\
+    \phantom{-}0.6766\\
+    \phantom{-}0.3992
+   \end{pmatrix},
+   \quad\|v_1\|_2=1.
+   \]
+
+2. \(\displaystyle \lambda_2\approx0.3867\),  
+   \[
+   v_2\approx\begin{pmatrix}
+    -0.5648\\
+    \phantom{-}0.0293\\
+    \phantom{-}0.8251
+   \end{pmatrix},
+   \quad\|v_2\|_2=1.
+   \]
+
+3. \(\displaystyle \lambda_3\approx-1.3124\),  
+   \[
+   v_3\approx\begin{pmatrix}
+    \phantom{-}0.5451\\
+    -0.7359\\
+    \phantom{-}0.4010
+   \end{pmatrix},
+   \quad\|v_3\|_2=1.
+   \]
+
+Indeed one checks  
+\[
+A\,v_i\approx\lambda_i\,v_i,
+\quad
+Q^TQ=QQ^T=I,
+\quad
+Q^TAQ=\mathrm{diag}(5.9257,\,0.3867,\,-1.3124)\,. 
+\]"
+91,"Let  
+\[
+M=\begin{pmatrix}
+1&2&3\\
+2&1&-1\\
+3&-1&1
+\end{pmatrix},
+\]
+and denote by \(G=G_{13}(θ)\) the plane‐rotation in the \((1,3)\)–plane
+\[
+G=\begin{pmatrix}
+c&0&s\\
+0&1&0\\
+-\,s&0&c
+\end{pmatrix},\qquad
+c=\cos θ,\;s=\sin θ.
+\]
+To eliminate the off–diagonal entries \(M_{13}=M_{31}=3\) by a symmetric similarity
+\[
+T=G^T\,M\,G,
+\]
+we choose \(θ\) so that
+\[
+\tan2θ=\frac{2\,M_{13}}{M_{33}-M_{11}}
+=\frac{2\cdot3}{1-1}=\infty
+\quad\Longrightarrow\quad
+θ=\frac\pi4,
+\]
+hence
+\[
+c=\cos\frac\pi4
+=\frac1{\sqrt2},\qquad
+s=\sin\frac\pi4
+=\frac1{\sqrt2}.
+\]
+One then finds
+\[
+G^T\,M\,G
+=\begin{pmatrix}
+-2 & \tfrac{3\sqrt2}{2} & 0\\
+\tfrac{3\sqrt2}{2} & 1 & \tfrac{\sqrt2}{2}\\
+0 & \tfrac{\sqrt2}{2} & 4
+\end{pmatrix},
+\]
+which is symmetric and tridiagonal.  In particular, defining
+\[
+G=\begin{pmatrix}
+\frac1{\sqrt2}&0&\frac1{\sqrt2}\\
+0&1&0\\
+-\frac1{\sqrt2}&0&\frac1{\sqrt2}
+\end{pmatrix},
+\]
+we have
+\[
+T=G^T\,M\,G
+=\begin{pmatrix}
+-2 & \frac{3\sqrt2}{2} & 0\\[6pt]
+\frac{3\sqrt2}{2} & 1 & \frac{\sqrt2}{2}\\[6pt]
+0 & \frac{\sqrt2}{2} & 4
+\end{pmatrix}.
+\]"
+92,"1. Givens rotation to annihilate $a_{13}=a_{31}=2$.  Set 
+   $$G=G_{13}(\theta),\qquad 
+     c=\cos\theta=\frac1{\sqrt2},\quad s=\sin\theta=\frac1{\sqrt2},$$ 
+   so that 
+   $$G=\begin{pmatrix}c&0&s\\0&1&0\\-s&0&c\end{pmatrix} 
+   =\frac1{\sqrt2}\begin{pmatrix}1&0&1\\0&\sqrt2&0\\-1&0&1\end{pmatrix}.$$
+
+2.  Form the tridiagonal matrix 
+   $$T=G^T\,A\,G
+   =\begin{pmatrix}-1&0&0\\0&1&2\sqrt2\\0&2\sqrt2&3\end{pmatrix}.$$
+
+3.  The $2\times2$ trailing block 
+   $$M=\begin{pmatrix}1&2\sqrt2\\2\sqrt2&3\end{pmatrix}$$ 
+   has characteristic 
+   $$\lambda^2-4\lambda-5=0\;\Longrightarrow\;\lambda_{\max}=5.$$ 
+   Its (unnormalized) eigenvector satisfies 
+   $$(M-5I)\begin{pmatrix}x\\y\end{pmatrix}
+     =\begin{pmatrix}-4&2\sqrt2\\2\sqrt2&-2\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=0
+     \;\implies\;y=\sqrt2\,x,$$ 
+   so we take 
+   $$w=\frac1{\sqrt{1+2}}\begin{pmatrix}0\\1\\\sqrt2\end{pmatrix}=\frac1{\sqrt3}\begin{pmatrix}0\\1\\\sqrt2\end{pmatrix}$$ 
+   as the unit‐norm eigenvector of $T$ for $\lambda=5$.
+
+4.  Back‐transform to the original basis: 
+   $$v=G\,w
+     =\frac1{\sqrt3}\,G\begin{pmatrix}0\\1\\\sqrt2\end{pmatrix}
+     =\frac1{\sqrt3}\begin{pmatrix}1\\1\\1\end{pmatrix}.$$
+
+Therefore the eigenvector of $A$ corresponding to its largest eigenvalue $5$ is 
+$$v=\frac1{\sqrt3}\begin{pmatrix}1\\1\\1\end{pmatrix}\,. $$"
+93,"1. Define  
+A=\begin{pmatrix}1&2&-1\\2&1&2\\-1&2&1\end{pmatrix}.  
+We wish to apply one Householder reflector to annihilate the (3,1)-entry of A.  Let  
+x=\begin{pmatrix}2\\-1\end{pmatrix},\quad \|x\|_2=\sqrt{5},\quad v=x+\|x\|_2e_1=\begin{pmatrix}2+\sqrt5\\-1\end{pmatrix},  
+and  
+H_1=I-\;2\,\frac{vv^T}{v^Tv}\;\oplus\;1\in\R^{3\times3}.  
+Then  
+T:=H_1\,A\,H_1=\begin{pmatrix}t_{11}&t_{12}&0\\t_{12}&t_{22}&t_{23}\\0&t_{23}&t_{33}\end{pmatrix}  
+is symmetric tridiagonal and has the same spectrum as A.
+
+2. Its characteristic polynomial is  
+\[
+\det(T-\lambda I)
+=\det(A-\lambda I)
+=\lambda^3-3\lambda^2-6\lambda+16
+=(\lambda-2)\,(\lambda^2-\lambda-8)\,.
+\]
+
+3. Hence the eigenvalues are  
+\[
+\lambda_1=2,\qquad
+\lambda_{2,3}=\frac{1\pm\sqrt{1+32}}{2}
+=\frac{1\pm\sqrt{33}}{2}\,.
+\]"
+94,"1.  First Householder reflection \(H_{1}\) to annihilate \(a_{31},a_{41}\) in column 1.
+
+   Let 
+   \[
+     x=
+     \begin{pmatrix}a_{21}\\a_{31}\\a_{41}\end{pmatrix}
+     =\begin{pmatrix}-1\\-2\\2\end{pmatrix},\quad \alpha=\|x\|_{2}=3,
+     \quad v=x+\operatorname{sign}(x_{1})\,\alpha\,e_{1}
+        =\begin{pmatrix}-1\\-2\\2\end{pmatrix}-3\begin{pmatrix}1\\0\\0\end{pmatrix}
+        =\begin{pmatrix}-4\\-2\\2\end{pmatrix},
+   \]
+   \[
+     u=\frac{v}{\|v\|_{2}},\qquad \|v\|_{2}=2\sqrt6,
+   \]
+   and extend to \(\Bbb R^{4}\) by
+   \[
+     H_{1}
+     =\begin{pmatrix}
+       1&0_{1\times3}\\
+       0_{3\times1}&I_{3}
+     \end{pmatrix}
+     -2\begin{pmatrix}0\\u\end{pmatrix}
+       \begin{pmatrix}0\\u\end{pmatrix}^{T}.
+   \]
+   One checks \(H_{1}=H_{1}^{T}=H_{1}^{-1}\) and
+   \[
+     A^{(1)}=H_{1}AH_{1}
+     =\begin{pmatrix}
+       * & \beta_{1} & 0 & 0\\
+       \beta_{1} & * & * & *\\
+       0 & * & * & *\\
+       0 & * & * & *
+     \end{pmatrix},\quad \beta_{1}=3.
+   \]
+
+2.  Second Householder reflection \(H_{2}\) on the \(3\times3\) trailing submatrix of \(A^{(1)}\) to annihilate the \((4,2)\)–entry.  Write
+   \[
+     x'=\bigl(A^{(1)}_{3:4,2}\bigr),\quad
+     v'=x'+\|x'\|_{2}e_{1},\quad
+     u'=\frac{v'}{\|v'\|_{2}},
+   \]
+   embed into \(\Bbb R^{4}\) by
+   \[
+     H_{2}
+     =I_{4}-2\,\widetilde{u'}\,\widetilde{u'}^{T},\qquad
+     \widetilde{u'}=\bigl(0,0,u'_{1},u'_{2}\bigr)^{T}.
+   \]
+   Then
+   \[
+     T
+     =H_{2}A^{(1)}H_{2}
+     =H_{2}H_{1}\,A\,H_{1}H_{2}
+   \]
+   is symmetric tridiagonal:
+   \[
+     T=\begin{pmatrix}
+       \alpha_{1}&\beta_{1}&0&0\\
+       \beta_{1}&\alpha_{2}&\beta_{2}&0\\
+       0&\beta_{2}&\alpha_{3}&\beta_{3}\\
+       0&0&\beta_{3}&\alpha_{4}
+     \end{pmatrix}.
+   \]
+
+3.  Numerical values (rounded) are
+   \[
+     \alpha_{1}=-4,\quad \beta_{1}=3,
+   \]
+   \[
+     \alpha_{2}\approx 4.4444,\quad
+     \beta_{2}\approx 1.5410,
+   \]
+   \[
+     \alpha_{3}\approx 1.5556,\quad
+     \beta_{3}\approx 0.3919,
+   \]
+   \[
+     \alpha_{4}\approx 2.0000.
+   \]
+
+Hence under the orthogonal similarity \(Q=H_{1}H_{2}\) one gets
+\[
+  Q^{T} A\,Q
+  =T
+  =\begin{pmatrix}
+    -4 & 3    & 0     & 0\\
+     3 & 4.4444 & 1.5410 & 0\\
+     0 & 1.5410 & 1.5556 & 0.3919\\
+     0 & 0    & 0.3919 & 2
+  \end{pmatrix},
+\]
+which is the desired tridiagonal form."
+95,"The characteristic polynomial is  
+\[
+\det\bigl(\begin{bmatrix}3&1\\1&1\end{bmatrix}-\lambda I\bigr)
+=(3-\lambda)(1-\lambda)-1
+=\lambda^2-4\lambda+2=0,
+\]  
+so  
+\[
+\lambda = \frac{4\pm\sqrt{16-8}}{2}
+=2\pm\sqrt2.
+\]  
+Numerically,  
+\[
+\lambda_1=2+\sqrt2\approx3.4142,
+\quad
+\lambda_2=2-\sqrt2\approx0.5858.
+\]"
+96,"We apply the power‐method to  
+$$A=\begin{pmatrix}2&1&1&0\\1&1&0&1\\1&0&1&1\\0&1&1&2\end{pmatrix},$$  
+choosing  
+$$x^{(0)}=\begin{pmatrix}1\\1\\1\\1\end{pmatrix}.$$  
+At each step  
+$$x^{(k+1)}=A\,x^{(k)},\qquad 
+\mu_{k+1}=\|x^{(k+1)}\|_\infty,\qquad 
+y^{(k+1)}=\frac{x^{(k+1)}}{\mu_{k+1}}\,. $$  
+
+Iterations:  
+k=0→1  
+$$x^{(1)}=A\,x^{(0)}=\begin{pmatrix}4\\3\\3\\4\end{pmatrix},\quad 
+\mu_1=4,\quad 
+y^{(1)}=\begin{pmatrix}1\\0.75\\0.75\\1\end{pmatrix}.$$  
+k=1→2  
+$$x^{(2)}=A\,y^{(1)}=\begin{pmatrix}3.5\\2.75\\2.75\\3.5\end{pmatrix},\quad 
+\mu_2=3.5,\quad 
+y^{(2)}=\begin{pmatrix}1\\0.7857\\0.7857\\1\end{pmatrix}.$$  
+k=2→3  
+$$x^{(3)}=A\,y^{(2)}\approx\begin{pmatrix}3.5714\\2.7857\\2.7857\\3.5714\end{pmatrix},\quad 
+\mu_3\approx3.5714,\quad 
+y^{(3)}\approx\begin{pmatrix}1\\0.7806\\0.7806\\1\end{pmatrix}.$$  
+k=3→4  
+$$x^{(4)}=A\,y^{(3)}\approx\begin{pmatrix}3.5612\\2.7806\\2.7806\\3.5612\end{pmatrix},\quad 
+\mu_4\approx3.5612\,. $$  
+Thus the iterates $\mu_k$ converge to  
+$$\lambda_{\max}\approx3.5616\,. $$  
+
+In fact one can show by block‐diagonalization of $A$ that  
+$$\lambda_{\max}=\frac{3+\sqrt{17}}2\approx3.5615528\,. $$"
+97,"We apply the (plain‐vanilla) power method to  
+\[A=\begin{pmatrix}4&1&0\\1&20&1\\0&1&4\end{pmatrix},\]  
+with initial guess  
+\[x^{(0)}=\begin{pmatrix}1\\1\\1\end{pmatrix},\]  
+and normalize at each step by the largest component (∞–norm).  
+
+Iteration k=1  
+\[
+y^{(1)}=A\,x^{(0)}=\begin{pmatrix}5\\22\\5\end{pmatrix},\qquad
+\lambda^{(1)}=\|y^{(1)}\|_\infty=22,\qquad
+x^{(1)}=\frac{y^{(1)}}{22}=\begin{pmatrix}0.2273\\1\\0.2273\end{pmatrix}.
+\]  
+
+k=2  
+\[
+y^{(2)}=A\,x^{(1)}=\begin{pmatrix}1.9092\\20.4546\\1.9092\end{pmatrix},\quad
+\lambda^{(2)}=20.4546,\quad
+x^{(2)}=\frac{y^{(2)}}{20.4546}=\begin{pmatrix}0.0934\\1\\0.0934\end{pmatrix}.
+\]  
+
+k=3  
+\[
+y^{(3)}=\begin{pmatrix}1.3736\\20.1868\\1.3736\end{pmatrix},\;
+\lambda^{(3)}=20.1868,\;
+x^{(3)}=\begin{pmatrix}0.06804\\1\\0.06804\end{pmatrix}.
+\]  
+
+k=4  
+\[
+y^{(4)}=\begin{pmatrix}1.2722\\20.1361\\1.2722\end{pmatrix},\;
+\lambda^{(4)}=20.1361,\;
+x^{(4)}=\begin{pmatrix}0.06316\\1\\0.06316\end{pmatrix}.
+\]  
+
+k=5  
+\[
+y^{(5)}=\begin{pmatrix}1.2526\\20.1263\\1.2526\end{pmatrix},\;
+\lambda^{(5)}=20.1263,\;
+x^{(5)}=\begin{pmatrix}0.06234\\1\\0.06234\end{pmatrix}.
+\]  
+
+k=6  
+\[
+y^{(6)}=\begin{pmatrix}1.2493\\20.1247\\1.2493\end{pmatrix},\;
+\lambda^{(6)}=20.1247,\;
+x^{(6)}=\begin{pmatrix}0.06227\\1\\0.06227\end{pmatrix}.
+\]  
+
+By k=6 the estimates have stabilized to three‐decimal accuracy.  Hence the dominant eigenpair is  
+\[
+\boxed{\lambda_{\max}\approx20.124,\qquad 
+x\approx\begin{pmatrix}0.06227\\1\\0.06227\end{pmatrix}.}
+\]  
+If one prefers a unit‐2-norm eigenvector, set  
+\[
+v=\frac{x}{\|x\|_2}
+=\frac{1}{\sqrt{(0.06227)^2+1^2+(0.06227)^2}}
+\begin{pmatrix}0.06227\\1\\0.06227\end{pmatrix}
+\approx\begin{pmatrix}0.062\\0.996\\0.062\end{pmatrix}.
+\]"
+98,"We apply the classical Power–Iteration to  
+A=\begin{pmatrix}  
+0&0&1&1&0\\  
+0&0&1&0&1\\  
+1&1&0&0&1\\  
+1&0&0&0&1\\  
+0&1&1&1&0  
+\end{pmatrix}\in\R^{5\times5}.  
+Let x₀=(1,1,1,1,1)^T. For k=0,1,2,… define  
+\[
+y_{k+1}=A\,x_k,\qquad
+x_{k+1}=\frac{y_{k+1}}{\|y_{k+1}\|_2},\qquad
+\mu_{k+1}=x_{k+1}^T\,A\,x_{k+1}.
+\]  
+Iteration:
+
+k=0:  
+y₁=A x₀=(2,2,3,2,3)^T,\quad  
+\|y₁\|_2=\sqrt{30},\quad  
+x₁=\frac1{\sqrt{30}}(2,2,3,2,3)^T,\quad  
+\mu₁\approx2.4782.  
+
+k=1:  
+y₂=A x₁\approx(0.913,1.096,1.278,0.913,1.278)^T,  
+\quad\|y₂\|_2\approx2.4760,  
+\quad x₂=y₂/2.4760,\quad  
+\mu₂\approx2.4815.  
+
+k=2:  
+y₃=A x₂\approx(0.8849,1.0328,1.3277,0.8849,1.3277)^T,  
+\quad\|y₃\|_2\approx2.4817,  
+\quad x₃=y₃/2.4817,\quad  
+\mu₃\approx2.4815.  
+
+Already \mu_k has stabilized to four decimals. Hence the largest eigenvalue is  
+\[
+\lambda_{\max}(A)=\lim_{k\to\infty}\mu_k\approx 2.4815\,.  
+\]"
+99,"We apply the inverse‐power method to  
+\(A=\begin{pmatrix}2&-1&0\\-1&2&-1\\0&-1&2\end{pmatrix}\)  
+with initial vector  
+\[
+v^{(0)}=\frac1{\sqrt3}\begin{pmatrix}1\\1\\1\end{pmatrix}\,.
+\]  
+At each step we solve \(A\,y^{(k+1)}=v^{(k)}\), set \(v^{(k+1)}=y^{(k+1)}/\|y^{(k+1)}\|_2\), and form the Rayleigh quotient  
+\(\lambda^{(k+1)} = (v^{(k+1)})^T A\,v^{(k+1)}\).  
+
+\[
+\begin{aligned}
+k=0:&\quad
+y^{(1)}=A^{-1}v^{(0)}=\begin{pmatrix}\tfrac{\sqrt3}{2}\\[4pt]\tfrac{2}{\sqrt3}\\[4pt]\tfrac{\sqrt3}{2}\end{pmatrix},\quad
+\|y^{(1)}\|\approx1.6833,\\
+&\quad v^{(1)}\approx\begin{pmatrix}0.5145\\0.6869\\0.5145\end{pmatrix},\quad
+\lambda^{(1)}\approx0.5892.\\[6pt]
+k=1:&\quad
+y^{(2)}=A^{-1}v^{(1)}\approx\begin{pmatrix}0.8579\\1.2013\\0.8579\end{pmatrix},\quad
+\|y^{(2)}\|\approx1.7074,\\
+&\quad v^{(2)}\approx\begin{pmatrix}0.5025\\0.7040\\0.5025\end{pmatrix},\quad
+\lambda^{(2)}\approx0.5864.\\[6pt]
+k=2:&\quad
+y^{(3)}=A^{-1}v^{(2)}\approx\begin{pmatrix}0.8545\\1.2065\\0.8545\end{pmatrix},\quad
+\|y^{(3)}\|\approx1.7074,\\
+&\quad v^{(3)}\approx\begin{pmatrix}0.5007\\0.7070\\0.5007\end{pmatrix},\quad
+\lambda^{(3)}\approx0.5864.\\[6pt]
+k=3:&\quad
+y^{(4)}=A^{-1}v^{(3)}\approx\begin{pmatrix}0.8543\\1.2078\\0.8543\end{pmatrix},\quad
+\|y^{(4)}\|\approx1.7081,\\
+&\quad v^{(4)}\approx\begin{pmatrix}0.5002\\0.7071\\0.5002\end{pmatrix},\quad
+\lambda^{(4)}\approx0.5858.
+\end{aligned}
+\]
+
+Thus after four inverse‐power iterations the smallest eigenvalue in magnitude is  
+\[
+\lambda_{\min}\approx0.5858,
+\]  
+in excellent agreement with the exact value \(2-\sqrt2\approx0.5858\)."
+100,"Let  
+\[A=\begin{pmatrix}2&-1&0\\-1&2&-1\\0&-1&2\end{pmatrix},\qquad\sigma=3,\]  
+and set  
+\[B=(A-\sigma I)^{-1}.\]  
+We run the (shift-invert) power method  
+\[
+\begin{cases}
+(A-3I)\,y^{(k)}=v^{(k-1)},\\
+v^{(k)}=y^{(k)}/\|y^{(k)}\|_2,
+\end{cases}
+\]
+with \(v^{(0)}=(1,1,1)^T\).  After five iterations one obtains:
+
+\[
+\begin{array}{c|c|c|c}
+k & y^{(k)} & \|y^{(k)}\|_2 & v^{(k)}=y^{(k)}/\|y^{(k)}\|_2\\\hline
+1 & (0,\,-1,\,0)^T & 1 & (0,\,-1,\,0)^T\\
+2 & (1,\,-1,\,1)^T & \sqrt3 & \tfrac1{\sqrt3}(1,\,-1,\,1)^T\\
+3 & (2,\,-3,\,2)^T & \sqrt{17} & \tfrac1{\sqrt{17}}(2,\,-3,\,2)^T\\
+4 & (5,\,-7,\,5)^T & \sqrt{99} & \tfrac1{\sqrt{99}}(5,\,-7,\,5)^T\\
+5 & (12,\,-17,\,12)^T & \sqrt{577} & \tfrac1{\sqrt{577}}(12,\,-17,\,12)^T
+\end{array}
+\]
+
+We then form the Rayleigh quotient on \(A\) with \(v^{(5)}\):  
+\[
+\lambda^{(5)}
+=\frac{(v^{(5)})^T\,A\,v^{(5)}}{(v^{(5)})^T\,v^{(5)}}
+=\frac{1970}{577}\approx3.4141.
+\]
+Equivalently, one may compute  
+\[
+\mu^{(5)}=(v^{(5)})^T B\,v^{(5)}=\frac{1393}{577}\approx2.4146,
+\quad
+\lambda^{(5)}=3+\frac1{\mu^{(5)}}\approx3.4141.
+\]
+
+Thus the eigenvalue of \(A\) nearest to 3 is  
+\[
+\boxed{\lambda\approx3.4142},
+\]
+with corresponding (normalized) eigenvector  
+\[
+\boxed{v\approx\frac1{\sqrt{577}}\,(12,\,-17,\,12)^T}.
+\]"
