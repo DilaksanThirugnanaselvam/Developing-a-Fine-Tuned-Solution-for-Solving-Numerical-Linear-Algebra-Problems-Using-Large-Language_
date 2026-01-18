@@ -1,0 +1,1700 @@
+id,question
+1," Solve the system $Ax = b$ using Gaussian elimination, where $A = \begin{bmatrix} 2 & 1 & -1 \\ -3 & -1 & 2 \\ 1 & 2 & 3 \end{bmatrix}$, $b = \begin{bmatrix} 8 \\ -11 \\ 10 \end{bmatrix}$."
+2, Compute the eigenvalues of $A = \begin{bmatrix} 4 & 1 \\ 2 & 3 \end{bmatrix}$.
+3,"Perform one iteration of the power method to estimate the dominant eigenvalue of $A = \begin{bmatrix} 3 & 1 \\ 1 & 2 \end{bmatrix}$, starting with $x_0 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$."
+4,Find the LU decomposition of $A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 5 & 7 \\ 3 & 7 & 8 \end{bmatrix}$.
+5, Compute the determinant of $A = \begin{bmatrix} 2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2 \end{bmatrix}$.
+6,Perform QR factorization of $A = \begin{bmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{bmatrix}$.
+7, Compute the condition number of $A = \begin{bmatrix} 1 & 2 \\ 2 & 4.01 \end{bmatrix}$ using the 2-norm.
+8,"Solve the least squares problem $Ax \approx b$, where $A = \begin{bmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{bmatrix}$, $b = \begin{bmatrix} 1 \\ 2 \\ 2 \end{bmatrix}$."
+9,"Apply one iteration of the Jacobi method to $Ax = b$, where $A = \begin{bmatrix} 4 & 1 & 0 \\ 1 & 4 & 1 \\ 0 & 1 & 4 \end{bmatrix}$, $b = \begin{bmatrix} 6 \\ 6 \\ 6 \end{bmatrix}$, $x_0 = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$."
+10,Find the Cholesky factorization of $A = \begin{bmatrix} 4 & 2 & 1 \\ 2 & 5 & 2 \\ 1 & 2 & 6 \end{bmatrix}$.
+11,Compute the singular values of $A = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}$.
+12," Perform one iteration of the conjugate gradient method for $Ax = b$, where $A = \begin{bmatrix} 4 & 1 \\ 1 & 3 \end{bmatrix}$, $b = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$, $x_0 = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$."
+13, Find the inverse of $A = \begin{bmatrix} 2 & 1 \\ 1 & 3 \end{bmatrix}$.
+14,Compute the Frobenius norm of $A = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$.
+15,"Apply one iteration of the Gauss-Seidel method to $Ax = b$, where $A = \begin{bmatrix} 4 & 1 & 0 \\ 1 & 4 & 1 \\ 0 & 1 & 4 \end{bmatrix}$, $b = \begin{bmatrix} 6 \\ 6 \\ 6 \end{bmatrix}$, $x_0 = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}$."
+16,Compute the rank of $A = \begin{bmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 3 & 6 & 9 \end{bmatrix}$.
+17,Find the eigenvalues of $A = \begin{bmatrix} 0 & 1 \\ -2 & -3 \end{bmatrix}$.
+18,Compute the spectral radius of $A = \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}$.
+19,"Perform one iteration of the inverse power method on $A = \begin{bmatrix} 3 & 1 \\ 1 & 2 \end{bmatrix}$, starting with $x_0 = \begin{bmatrix} 1 \\ 1 \end{bmatrix}$, to estimate the smallest eigenvalue."
+20,Find the condition number of $A = \begin{bmatrix} 1 & 1 \\ 1 & 1.01 \end{bmatrix}$ using the 1-norm.
+21,"Consider the following matrix
+\[
+A = \begin{bmatrix}
+1 & 0 & x \\
+0 & \cos \theta & y \\
+0 & \sin \theta & z
+\end{bmatrix}
+\]
+
+Find all the possible $\begin{bmatrix} x \\ y \\ z \end{bmatrix}$ that makes $A$ orthogonal."
+22,"Diagonalize the following matrix
+\[
+A = \begin{bmatrix}
+0 & 1 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\]
+into $QBQ^{-1}$ where $B$ is a diagonal matrix, and $Q$ is an orthogonal matrix. You need to give the details of only $Q$ and $B$, namely, you do not need to give the details of $Q^{-1}$."
+23,"Diagonalize the following matrix, if possible.
+\[
+A = \begin{bmatrix}
+2 & 4 & 6 \\
+0 & 2 & 2 \\
+0 & 0 & 4
+\end{bmatrix}.
+\]"
+24,"Find the characteristic polynomial, eigenvalues, and basic eigenvectors for
+\[
+A = \begin{bmatrix}
+2 & 0 & 0 \\
+1 & 2 & -1 \\
+1 & 3 & -2
+\end{bmatrix}.
+\]"
+25,"Find an orthogonal matrix $P$ such that $P^{-1} A P$ is diagonal, where $A = \begin{bmatrix} 1 & 0 & -1 \\ 0 & 1 & -2 \\ -1 & 2 & 5 \end{bmatrix}$."
+26,Orthogonally diagonalize the symmetric matrix $A = \begin{bmatrix} 8 & -2 & 2 \\ 2 & 5 & 4 \\ 2 & 4 & 5 \end{bmatrix}$.
+27,"If possible, diagonalize the matrix and find an orthogonal basis in which it has diagonal form:
+\[
+A = \begin{bmatrix}
+-1 & 2 & 2 \\
+2 & -1 & 2 \\
+2 & 2 & -1"
+28,"Find the first two iterations of the Jacobi method for the following linear system, using \(\mathbf{x}^{(0)} = \mathbf{0}\):
+\begin{align*}
+4x_1 + x_2 - x_3 + x_4 &= -2, \\
+x_1 + 4x_2 - x_3 - x_4 &= -1, \\
+-x_1 - x_2 + 5x_3 + x_4 &= 0, \\
+x_1 - x_2 + x_3 + 3x_4 &= 1.
+\end{align*}"
+29,"Find the first two iterations of the Gauss-Seidel method for the following linear system, using \(\mathbf{x}^{(0)} = \mathbf{0}\):
+\begin{align*}
+4x_1 + x_2 - x_3 + x_4 &= -2, \\
+x_1 + 4x_2 - x_3 - x_4 &= -1, \\
+-x_1 - x_2 + 5x_3 + x_4 &= 0, \\
+x_1 - x_2 + x_3 + 3x_4 &= 1.
+\end{align*}"
+30,"\[
+A = \begin{bmatrix}
+1 & 2 & 4 & 3 \\
+3 & 5 & 12 & 9 \\
+2 & 4 & 8 & 6
+\end{bmatrix}.
+\]
+find G-inverse of the matrix \( A \)"
+31,"Find the Moore-Penrose inverse is to be obtained for the matrix \( A \) .
+\[
+A = \begin{bmatrix}
+1 & 0 & 2 \\
+0 & -1 & 1 \\
+1 & 2 & 0
+\end{bmatrix}.
+\]"
+32,"calculate all eigenvalues and all eigenvectors of the matrix $A
+$
+\[
+A = \begin{pmatrix}
+4 & -5 & 7 \\
+1 & -4 & 9 \\
+-4 & 0 & 5
+\end{pmatrix}.
+\]"
+33,"calculate the QR decomposition of a matrix A
+
+\[
+A = \begin{pmatrix}
+12 & -51 & 4 \\
+6 & 167 & -68 \\
+-4 & 24 & -41
+\end{pmatrix}
+\]"
+34,"the given matrix $A$
+
+\[
+A = \begin{pmatrix} 5 & 1 & 0 \\ 1 & 6 & 3 \\ 0 & 3 & 7 \end{pmatrix}
+\]
+
+transformed to the similar tridiagonal matrix $A_1$ by using Householder Method. "
+35,"the given matrix $A$ of the size 4-by-4
+
+\[
+A = \begin{pmatrix}
+4 & 1 & -2 & 2 \\
+1 & 2 & 0 & 1 \\
+-2 & 0 & 3 & -2 \\
+2 & 1 & -2 & -1
+\end{pmatrix},
+\]
+
+is transformed to the similar tridiagonal matrix $A_2$ using Householder reflections."
+36,"Find the Householder reflection to get the upper Hessenberg matrix from the matrix.
+
+\[
+A = \begin{pmatrix}
+12 & -51 & 4 \\
+6 & 167 & -68 \\
+-4 & 24 & -41
+\end{pmatrix}.
+\]"
+37,"apply  on the bidiagonal reduction of the matrix
+
+\[
+A = \begin{pmatrix}
+4 & 4 &3 \\
+3 & 6 & 1 \\
+0 & 1 & 7
+\end{pmatrix},
+\]
+
+using Householder transformation."
+38,"apply  to make the tridiagonal reduction of the matrix
+
+\[
+A = \begin{pmatrix}
+5 & 4 & 3 \\
+4 & 6 & 1 \\
+3 & 1 & 7
+\end{pmatrix},
+\]
+
+using Householder transformation."
+39,Find a singular value decomposition for $A = \begin{bmatrix} 1 & 0 & 1 \\ -1 & 1 & 0 \end{bmatrix}$.
+40,"Find \( A^+ \) if \( A = \begin{bmatrix} 1 & 0 \\ 0 & 0 \\ 0 & 0 \end{bmatrix} \),
+pseudoinverse of A
+is the unique n � m
+matrix \( A^+ \)."
+41,"Consider the symmetric matrix
+\[
+S = \begin{pmatrix}
+1 & 0 & 2 \\
+0 & -1 & -2 \\
+2 & -2 & 0
+\end{pmatrix}.
+\]
+
+Find an orthogonal matrix \( Q \) and a diagonal matrix \( D \) such that \( S = Q D Q^T \).
+"
+42,"Compute the full SVD for the following matrix:
+\[
+A = \begin{bmatrix}
+4 & 0 \\
+3 & -5
+\end{bmatrix}.
+\]"
+43,"Find the SVD of \( A \), \( U \Sigma V^T \), where \( A = \begin{pmatrix} 3 & 2 & 2 \\ 2 & -3 & -2 \end{pmatrix} \)"
+44,"Let \( A = \begin{pmatrix}
+1 & 1 & 0 & 0 \\
+-1 & -1 & 0 & 0 \\
+-2 & -2 & 2 & 1 \\
+1 & 1 & -1 & 0
+\end{pmatrix} ).
+
+\begin{enumerate}
+    Find Jordan canonical form \( J \) of \( A \) 
+    and  invertible matrix \( S \) so that \( A = S J S^{-1} \) 
+\end{enumerate}"
+45,"Let \( W \subset \mathbb{R}^3 \) be the subspace spanned by \( w = (1, 1, 1) \). Let \( W^\perp \) be the orthogonal complement of \( W \). Let \( v = (1, 0, 1) \).
+begin{enumerate}
+    \item Find an orthonormal basis of \( W^\perp \),projection of \( v \) to \( W^\perp \) and  minimum \( \min_{w \in W^\perp} \|v - w\| \) "
+46,"Find a singular value decomposition of \( A = \begin{pmatrix}
+1 & -1 \\
+-2 & 2 \\
+2 & -2
+\end{pmatrix} )."
+47,"Find a singular value decomposition of
+\[
+A = \begin{pmatrix}
+4 & 11 & 14 \\
+8 & 7 & -2
+\end{pmatrix}.
+\]"
+48,find a singular value decomposition of the matrix \( A = \begin{pmatrix} 1 & 2 \\ -1 & 2 \end{pmatrix} \). Notice that this matrix is not symmetric so it cannot be orthogonally diagonalized.
+49,find a singular value decomposition for the symmetric matrix \( A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \). 
+50,find a singular value decomposition of the matrix \( A = \begin{pmatrix} 2 & -2 & 1 \\ -4 & -8 & -8 \end{pmatrix} \)
+51,"The matrix
+\[
+A = \begin{pmatrix}
+1 + s & -s \\
+s & 1 - s
+\end{pmatrix}
+\]
+is given. Calculate \(p\) and \(q\) such that \(A^n = pA + qI\) and determine \(e^A\)."
+52,"Calculate the inverse of the $n$-rowed square matrix $L$}
+
+\[
+L = \begin{bmatrix}
+1 & & & 0 \\
+-1/2 & 1 & \\
+ & -2/3 &1& \\
+ & \ddots \\
+0 & & -(n-1)/n & 1
+\end{bmatrix}
+\]"
+53,"Given the system of equations}
+
+\[
+\begin{bmatrix}
+2 & 3 & 0 & 0 \\
+2 & 4 & 1 & 0 \\
+0 & 2 & 6 & A \\
+0 & 0 & 4 & B
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 \\
+x_4
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\
+2 \\
+4 \\
+C
+\end{bmatrix}
+\]
+
+State the solvability and uniqueness conditions for this system. Give the solution when it exists."
+54,"We want to solve the tridiagonal system \(Ax = b\), where \(A\) is \((N-1) \times (N-1)\) and
+
+\[
+A = 
+\begin{bmatrix}
+-3 & 1 & & & \\
+2 & -3 & 1 & & &0 \\
+& 2 & -3 & 1 & \\
+& \cdots& \cdots & \cdots &  \\
+0& & & 2 & -3 & 1 \\
+& & & & 2 & -3
+\end{bmatrix},
+\quad
+b = 
+\begin{bmatrix}
+1 \\
+0 \\
+0 \\
+\vdots \\
+0 \\
+0
+\end{bmatrix}
+\]
+
+State the difference equation which replaces this matrix formulation of the problem, and find the solution."
+55,"A = 
+\begin{bmatrix}
+5.5 & 0 & 0 & 0 & 0 & 3.5 \\
+0 & 5.5 & 0 & 0 & 0 & 1.5 \\
+0 & 0 & 6.25 & 0 & 3.75 & 0 \\
+0 & 0 & 0 & 5.5 & 0 & 0.5 \\
+0 & 0 & 3.75 & 0 & 6.25 & 0 \\
+3.5 & 1.5 & 0 & 0.5 & 0 & 5.5
+\end{bmatrix},
+\quad
+b = 
+\begin{bmatrix}
+1 \\
+1 \\
+1 \\
+1 \\
+1 \\
+1
+\end{bmatrix}
+\]
+
+     Find the lower triangular matrix \(L\) of the Cholesky factorization and solve the system \(Ax = b\).
+    "
+56,"Calculate \(C^T A^{-1} B\) when \(A = LL^T\), with}
+\[
+L = 
+\begin{bmatrix}
+1 & 0 \\
+1 & 2 \\
+1 & 2 & 3 \\
+1 & 2 & 3 & 4
+\end{bmatrix},
+\quad
+B = 
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+5 & 6 & 7 & 8 \\
+9 & 10 & 11 & 12 \\
+13 & 14 & 15 & 16
+\end{bmatrix},
+\quad
+C = 
+\begin{bmatrix}
+1 \\
+5 \\
+14 \\
+30
+\end{bmatrix}.
+\]"
+57,"{ Find the inverse of the following \(n \times n\) matrix}
+\[
+A = 
+\begin{bmatrix}
+1 &  &  & & \\
+x & 1 & &  & & 0 &\\
+x^2 & x & 1 &  &  \\
+x^3 & x^2 & x & 1 &  \\
+\vdots &  & \vdots &  &  \\
+x^{n-1} & x^{n-2} &  & \cdots & x^2 &x & 1
+\end{bmatrix}.
+\]"
+58,"Find the inverse of the matrix}
+\[
+A = 
+\begin{bmatrix}
+2 & -1 &2 \\
+-1 & 2 &-1\\
+2 &-1 &3
+\end{bmatrix}
+\]
+by the Cholesky method."
+59,"Find the Cholesky factorization of}
+\[
+\begin{bmatrix}
+1 & -1 & 0 & 0 & 0 \\
+-1 & 2 & -1 & 0 & 0 \\
+0 & -1 & 2 & -1 & 0 \\
+0 & 0 & -1 & 2 & -1 \\
+0 & 0 & 0 & -1 & 2
+\end{bmatrix}.
+\]"
+60,"Determine the inverse of the matrix}
+\[
+\begin{bmatrix}
+1 & 1 & 1 \\
+4 & 3 & -1 \\
+3 & 5 & 3
+\end{bmatrix}
+\]
+using the partition method. Hence, find the solution of the system of equations
+\begin{align*}
+x_1 + x_2 + x_3 &= 1 \\
+4x_1 + 3x_2 - x_3 &= 6 \\
+3x_1 + 5x_2 + 3x_3 &= 4
+\end{align*}"
+61,"Find the inverse of the matrix}
+\[
+\begin{bmatrix}
+2 & 1 & 0 & 0 \\
+1 & 2 & 1 & 0 \\
+0 & 1 & 2 & 1 \\
+0 & 0 & 1 & 2
+\end{bmatrix}
+\]
+by the partition method."
+62,"Compute}
+\[
+\begin{bmatrix}
+1 & 0.1 \\
+0.1 & 1
+\end{bmatrix}^{10}
+\]
+exactly."
+63,"Compute \(A^{10}\) where}
+\[
+A = \frac{1}{9} \begin{bmatrix} 4 & 1 & -8 \\ 7 & 4 & 4 \\ 4 & -8 & 1 \end{bmatrix}.
+\]"
+64,"Compute \(\ln (I + \frac{1}{4} A) Y\) when}
+\[
+A = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} \quad \text{and} \quad Y = \begin{bmatrix} 1 \\ 2 \end{bmatrix},
+\]
+correct to four decimals."
+65,"Consider the matrix}
+\[
+A = \begin{bmatrix}
+2 & -1 & -1 & 1 \\
+-1 & 2 & 1 & -1 \\
+-1 & 1 & 2 & -1 \\
+1 & -1 & -1 & 2
+\end{bmatrix}.
+\]
+Determine the spectral norm \(\rho(A)\) and Determine a vector \(x\) with \(\|x\|_2 = 1\) satisfying \(\|A x\|_2 = \rho(A)\)."
+66,"Determine the condition number of the matrix}
+\[
+A = \begin{bmatrix}
+1 & 4 & 9 \\
+4 & 9 & 16 \\
+9 & 16 & 25
+\end{bmatrix}
+\]
+using the maximum absolute row sum norm, and  spectral norm."
+67,"Let \(A(\alpha) = \begin{bmatrix} 0.1\alpha & 0.1\alpha \\ 10 & 1.5 \end{bmatrix}\)}
+Determine \(\alpha\) such that \(\text{cond}(A(\alpha))\) is minimized. Use the maximum norm."
+68,"Estimate the effect of a disturbance $[\epsilon_1, \epsilon_2]^T$ on the right hand side of the system of equations}
+
+\[
+\begin{bmatrix}
+1 & 2 \\
+2 & -1
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix}
+=
+\begin{bmatrix}
+5 \\
+0
+\end{bmatrix}
+\]
+
+if $|\epsilon_1|, |\epsilon_2| \leq 10^{-4}$."
+69,"Solve the system
+
+\begin{align*}
+x_1 + 1.001x_2 &= 2.001 \\
+x_1 + x_2 &= 2.
+\end{align*}
+
+Compute the residual $\mathbf{r} = A\mathbf{y} - \mathbf{b}$ for $\mathbf{y} = [2 \quad 0]^T$ and compare the relative size $\|\mathbf{x} - \mathbf{y}\| / \|\mathbf{x}\|$ of the error in the solution with the size $\|\mathbf{r}\| / \|\mathbf{b}\|$ of the residual relative to the right side."
+70,"Given the system of equations $Ax = \mathbf{b}$ where}
+
+\[
+A = \begin{bmatrix}
+1/2 & 1/3 & 1/4 \\
+1/3 & 1/4 & 1/5 \\
+1/4 & 1/5 & 1/6
+\end{bmatrix}
+\]
+
+the vector $\mathbf{b}$ consists of three quantities measured with an error bounded by $\epsilon$. Derive
+The components of $\mathbf{x}$ and The sum of the components $y = x_1 + x_2 + x_3$."
+71,"Compute the spectral radius of the matrix $A^{-1}$ where}
+
+\[
+A = \begin{bmatrix}
+0 & 1 & 0 & 0 & 0 & 0 \\
+1 & 0 & 1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 1 \\
+0 & 0 & 0 & 0 & 1 & 0
+\end{bmatrix}
+\]"
+72,"Give a good upper estimate of the eigenvalues of the matrix \(A\) in the complex number plane. Also, give an upper estimate of the matrix norm of \(A\), which corresponds to the Euclidean vector norm}
+\[
+A = \begin{bmatrix}
+-1 & 0 & 1 + 2i \\
+0 & 2 & 1 - i \\
+1 - 2i & 1 + i & 0
+\end{bmatrix}
+\]"
+73,"\begin{enumerate}
+     Let \( A = \begin{bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix} \), \( B = \begin{bmatrix} \beta_1 & 1 \\ 0 & \beta_2 \end{bmatrix} \). \\
+    For which \(\beta_1, \beta_2\) does \((AB)^k \to 0\) as \( k \to \infty \)?
+\end{enumerate}"
+74,"Calculate \( f(A) = e^A - e^{-A} \), where \( A \) is the matrix
+\[
+\begin{bmatrix}
+2 & 4 & 0 \\
+6 & 0 & 8 \\
+0 & 3 & -2
+\end{bmatrix}
+\]"
+75,"The matrix
+\[
+A = \begin{bmatrix}
+1 & -2 & 3 \\
+6 & -13 & 18 \\
+4 & -10 & 14
+\end{bmatrix}
+\]
+is transformed to diagonal form by the matrix
+\[
+T = \begin{bmatrix}
+1 & 0 & 1 \\
+3 & 3 & 4 \\
+2 & 2 & 3
+\end{bmatrix},
+\]
+i.e., \( T^{-1} A T \).
+
+Calculate the eigenvalues and the corresponding eigenvectors of \( A \)."
+76,"Let
+\[
+A = \begin{bmatrix}
+-2 & -1 & 2 \\
+2 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+\quad \text{and} \quad
+B = \begin{bmatrix}
+-1 & 1 & -1 \\
+1 & -1 & 1 \\
+-1 & 1 & -1
+\end{bmatrix}.
+\]
+\(\lambda_i(\epsilon)\) are the eigenvalues of \(A + \epsilon B\), \(\epsilon \geq 0\).
+Estimate \(|\lambda_i(\epsilon) - \lambda_i(0)|, i = 1, 2, 3\)."
+77,"Use Gershgorin's theorem to estimate
+\[
+|\lambda_i - \tilde{\lambda}_i|, i = 1, 2, 3
+\]
+where \(\lambda_i\) are eigenvalues of
+\[
+A = \begin{bmatrix}
+2 & 3/2 & 0 \\
+1/2 & 1 & 0 \\
+0 & 0 & -1
+\end{bmatrix}
+\]
+and \(\tilde{\lambda}_i\) are eigenvalues of
+\[
+\tilde{A} = A + 10^{-2} \begin{bmatrix}
+-1 & -1 & 1 \\
+-1 & 1 & -1 \\
+1 & -1 & 1
+\end{bmatrix}.
+\]"
+78,"Given
+\[
+A = \begin{bmatrix}
+3/2 & 1/2 \\
+1/2 & 3/2
+\end{bmatrix}.
+\]
+
+For which values of \(\alpha\) does the vector sequence \(\{y_n\}^\infty_{n=0}\) defined by
+\[
+y_n = (\mathbf{I} + \alpha A + \alpha^2 A^2) y_{n+1}, \quad n = 1, 2, \ldots
+\]
+\(y_0\) arbitrary, converges to 0 as \(n \to \infty\)?"
+79,"The system \(\mathbf{Ax} = \mathbf{b}\) is to be solved, where \(\mathbf{A}\) is the fourth order Hilbert matrix, the elements of which are \(a_{ij} = 1/(i + j)\) and \(\mathbf{b}^T = (1 \, 1 \, 1 \, 1)\). Since \(\mathbf{A}\) is ill-conditioned, the matrix \(\mathbf{B}\), a close approximation to (the unknown) \(\mathbf{A}^{-1}\), is used to get an approximate solution \(\mathbf{x}_0 = \mathbf{Bb}\).
+
+\[
+\mathbf{B} = \begin{bmatrix}
+202 & -1212 & 2121 & -1131 \\
+-1212 & 8181 & -15271 & 8484 \\
+2121 & -15271 & 29694 & -16968 \\
+-1131 & 8484 & -16968 & 9898
+\end{bmatrix}
+\]
+
+It is known that the given system has an integer solution, however \(\mathbf{x}_0\) is not the correct one. Use iterative improvement (with \(\mathbf{B}\) replacing \(\mathbf{A}^{-1}\)) to find the correct integer solution. "
+80,"The system of equations \(\mathbf{Ax} = \mathbf{y}\), where
+\[
+\mathbf{A} = \begin{bmatrix} 3 & 2 \\ 1 & 2 \end{bmatrix}, \quad \mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}, \quad \mathbf{y} = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+\]
+can be solved by the following iteration
+\[
+\mathbf{x}^{(n+1)} = \mathbf{x}^{(n)} + \alpha (\mathbf{A} \mathbf{x}^{(n)} - \mathbf{y}),
+\]
+\[
+\mathbf{x}^{(0)} = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.
+\]
+
+How should the parameter \(\alpha\) be chosen to produce optimal convergence? "
+81,"Solve the system of equations
+\begin{align*}
+4x_1 + 2x_2 + x_3 &= 4 \\
+x_1 + 3x_2 + x_3 &= 4 \\
+3x_1 + 2x_2 + 6x_3 &= 7
+\end{align*}
+using the Gauss-Seidel method, directly and in error format. Perform three iterations using the initial approximation, \(\mathbf{x}^{(0)} = [0.1 \, 0.8 \, 0.5]^T\)."
+82,"The system of equations \(\mathbf{Ax} = \mathbf{b}\) is to be solved iteratively by
+\[
+\mathbf{x}_{n+1} = \mathbf{Mx}_n + \mathbf{b}
+\]
+
+
+Suppose
+\[
+\mathbf{A} = \begin{bmatrix} 1 & k \\ 2k & 1 \end{bmatrix}, \quad k \neq \sqrt{2}/2, k \text{ real},
+\]
+
+Find a necessary and sufficient condition on \(k\) for convergence of the Jacobi method and For \(k = 0.25\) determine the optimal relaxation factor \(\omega\), if the system is to be solved with relaxation method."
+83,"Given the matrix \(\mathbf{A} = \mathbf{I} + \mathbf{L} + \mathbf{U}\) where
+\[
+\mathbf{A} = \begin{bmatrix}
+1 & 2 & -2 \\
+1 & 1 & 1 \\
+2 & 2 & 1
+\end{bmatrix},
+\]
+\(\mathbf{L}\) and \(\mathbf{U}\) are strictly lower and upper triangular matrices respectively, decide whether
+(a) Jacobi and  Gauss-Seidel methods converge to the solution of \(\mathbf{Ax} = \mathbf{b}\)."
+84,"Solve the system of equations
+\begin{align*}
+2x - y &= 1 \\
+-x + 2y - z &= 0 \\
+-y + 2z - w &= 0 \\
+-z + 2w &= 1
+\end{align*}
+using Gauss-Seidel iteration scheme with \(\mathbf{x}^{(0)} = [0.5 \, 0.5 \, 0.5 \, 0.5]^T\). Iterate three times. Obtain the iteration matrix and determine its eigenvalues. Use the extrapolation method and iterate three times. Compare the maximum absolute error and the rate of convergence of the methods."
+85,"Determine the convergence factor for the Jacobi and Gauss-Seidel methods for the system
+\[
+\begin{bmatrix}
+4 & 0 & 2 \\
+0 & 5 & 2 \\
+5 & 4 & 10
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+4 \\
+-3 \\
+2
+\end{bmatrix}.
+\]
+
+
+and  This system can also be solved by the relaxation method. Determine \(\omega\) and write down the iteration formula exactly."
+86,"The following system of equations is given
+\begin{align*}
+4x + y + 2z &= 4 \\
+3x + 5y + z &= 7 \\
+x + y + 3z &= 3
+\end{align*}
+
+ Set up the Jacobi and Gauss-Seidel iterative schemes for the solution and iterate three times starting with the initial vector $\mathbf{x}^{(0)} = 0$. Compare with the exact solution.
+
+and  Find the spectral radii of the iteration matrices and hence find the rate of convergence of these schemes. (Use the Newton-Raphson method, to find the spectral radius of the iteration matrix of the Jacobi method)."
+87,"Given a system of equations \( Ax = \mathbf{b} \) where}
+\[
+A = \begin{bmatrix}
+2 & -1 & 0 & 0 & 0 \\
+-1 & 2 & -1 & 0 & 0 \\
+0 & -1 & 2 & -1 & 0 \\
+0 & 0 & -1 & 2 & -1 \\
+0 & 0 & 0 & -1 & 2 \\
+\end{bmatrix}, \quad
+\mathbf{b} = \begin{bmatrix}
+1 \\
+1 \\
+1 \\
+1 \\
+1 \\
+\end{bmatrix}
+\]
+Prove that the matrix \( A \) has 'property \( A' \) and find the optimum value of the relaxation factor \( \omega \) for the method of successive over-relaxation."
+88,"The following system of equations is given}
+\begin{align*}
+3x + 2y &= 4.5 \\
+2x + 3y - z &= 5 \\
+-y + 2z &= -0.5
+\end{align*}
+
+Set up the SOR iteration scheme for the solution.
+Find the optimal relaxation factor and determine the rate of convergence 
+
+and Using the optimal relaxation factor, iterate five times with the above scheme with \(\mathbf{x}^{(0)} = 0\).}
+(See above iterations)
+
+and Taking this value of the optimal relaxation factor, iterate five times, using the error format of the SOR scheme, with \(\mathbf{x}^{(0)} = 0\). Compare with the exact solution."
+89,"Using the Jacobi method find all the eigenvalues and the corresponding eigenvectors of the matrix}
+\[
+A = \begin{bmatrix}
+1 & \sqrt{2} & 2 \\
+\sqrt{2} & 3 & \sqrt{2} \\
+2 & \sqrt{2} & 1
+\end{bmatrix}
+\]"
+90,"Find all the eigenvalues and eigenvectors of the matrix}
+\[
+A = \begin{bmatrix}
+2 & 3 & 1 \\
+3 & 2 & 2 \\
+1 & 2 & 1
+\end{bmatrix}
+\]
+by the Jacobi method."
+91,"Transform the matrix}
+\[
+M = \begin{bmatrix}
+1 & 2 & 3 \\
+2 & 1 & -1 \\
+3 & -1 & 1
+\end{bmatrix}
+\]
+to tridiagonal form by Given's method. Use exact arithmetic."
+92,"Transform the matrix}
+\[
+A = \begin{bmatrix}
+1 & 2 & 2 \\
+2 & 1 & 2 \\
+2 & 2 & 1
+\end{bmatrix}
+\]
+to tridiagonal form by Given's method. Find the eigenvector corresponding to the largest eigenvalue from the eigenvectors of the tridiagonal matrix."
+93,"Find all the eigenvalues of the matrix}
+\[
+\begin{bmatrix}
+1 & 2 & -1 \\
+2 & 1 & 2 \\
+-1 & 2 & 1
+\end{bmatrix}
+\]
+using the Householder method."
+94,"Use the Householder's method to reduce the given matrix \( A \) into the tridiagonal form}
+\[
+A = \begin{bmatrix}
+-4 & -1 & -2 & 2 \\
+-1 & 4 & -1 & 2 \\
+-2 & -1 & 4 & -1 \\
+2 & -2 & -1 & 4
+\end{bmatrix}
+\]"
+95,"Find approximately the eigenvalues of the matrix
+\[
+\begin{bmatrix}
+3 & 1 \\
+1 & 1
+\end{bmatrix}
+\]"
+96,"Find the largest eigenvalue of the matrix
+\[
+A = \begin{bmatrix}
+2 & 1 & 1 & 0 \\
+1 & 1 & 0 & 1 \\
+1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 2
+\end{bmatrix}
+\]
+using power method."
+97,"Determine the largest eigenvalue and the corresponding eigenvector of the matrix
+\[
+A = \begin{bmatrix}
+4 & 1 & 0 \\
+1 & 20 & 1 \\
+0 & 1 & 4
+\end{bmatrix}
+\]
+to 3 correct decimal places using the power method."
+98,"Compute with an iterative method the greatest characteristic number \( \lambda \) of the matrix
+\[
+A = \begin{bmatrix}
+0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 0 & 1 \\
+1 & 1 & 0 & 0 & 1 \\
+1 & 0 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 & 0
+\end{bmatrix}
+\]
+with four correct decimal places."
+99,"Find the smallest eigenvalue in magnitude of the matrix
+\[
+A = \begin{bmatrix}
+2 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 2
+\end{bmatrix}
+\]
+using four iterations of the inverse power method."
+100,"Find the eigenvalue nearest to 3 for the matrix
+\[
+A = \begin{bmatrix}
+2 & -1 & 0 \\
+-1 & 2 & -1 \\
+0 & -1 & 2
+\end{bmatrix}
+\]
+using the power method. Perform five iterations. Take the initial approximate vector as \(\mathbf{v}^{(0)} = [1, \, 1, \, 1]^T\). Also obtain the corresponding eigenvector."
+101,Calculate the determinant of $A = \begin{pmatrix} 2 & -3 & 1 \\ 4 & 0 & -2 \\ 1 & 5 & 3 \end{pmatrix}$ using cofactor expansion along the second row.
+102,Solve the system $\begin{pmatrix} 3 & -1 & 2 \\ 1 & 2 & -1 \\ 2 & 1 & 3 \end{pmatrix}\begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 8 \\ 3 \\ 11 \end{pmatrix}$ using Gaussian elimination.
+103,Find the eigenvalues of $B = \begin{pmatrix} 5 & -2 \\ 3 & 0 \end{pmatrix}$.
+104,Compute the LU decomposition of $C = \begin{pmatrix} 4 & 2 & 1 \\ 8 & 7 & 2 \\ 4 & 6 & 5 \end{pmatrix}$.
+105,Calculate the 2-norm of vector $v = \begin{pmatrix} 2 \\ -3 \\ 6 \\ 1 \end{pmatrix}$.
+106,Find the inverse of $D = \begin{pmatrix} 3 & 1 \\ 7 & 2 \end{pmatrix}$ using the adjugate method.
+107,Perform two iterations of the Jacobi method for $\begin{pmatrix} 5 & -1 & 1 \\ -1 & 4 & -1 \\ 1 & -1 & 3 \end{pmatrix}x = \begin{pmatrix} 10 \\ 8 \\ 6 \end{pmatrix}$ starting with $x^{(0)} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$.
+108,Find the QR decomposition of $E = \begin{pmatrix} 1 & 2 \\ 1 & 0 \\ 0 & 1 \end{pmatrix}$ using Gram-Schmidt process.
+109,Calculate the Frobenius norm of $F = \begin{pmatrix} 1 & -2 & 3 \\ 4 & 0 & -1 \\ 2 & 3 & 5 \end{pmatrix}$.
+110,Solve $Gx = b$ using Cholesky decomposition where $G = \begin{pmatrix} 4 & 2 \\ 2 & 5 \end{pmatrix}$ and $b = \begin{pmatrix} 10 \\ 9 \end{pmatrix}$.
+111,Find the singular values of $H = \begin{pmatrix} 2 & 0 \\ 0 & -3 \\ 1 & 0 \end{pmatrix}$.
+112,Calculate the spectral radius of $I = \begin{pmatrix} 0.6 & 0.2 \\ 0.3 & 0.4 \end{pmatrix}$.
+113,Find the least squares solution to $Jx = c$ where $J = \begin{pmatrix} 1 & 2 \\ 2 & 1 \\ 1 & 1 \end{pmatrix}$ and $c = \begin{pmatrix} 5 \\ 6 \\ 4 \end{pmatrix}$.
+114,Compute the condition number $\kappa_2(K)$ where $K = \begin{pmatrix} 1 & 1 \\ 1 & 1.01 \end{pmatrix}$.
+115,Find the null space of $L = \begin{pmatrix} 1 & 3 & -2 & 1 \\ 2 & 6 & -1 & 5 \\ 1 & 3 & 1 & 4 \end{pmatrix}$.
+116,Calculate three iterations of power method for $M = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}$ starting with $v_0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$.
+117,Find the rank of $N = \begin{pmatrix} 2 & 4 & 6 & 8 \\ 1 & 2 & 3 & 4 \\ 3 & 6 & 9 & 12 \\ 1 & 2 & 4 & 5 \end{pmatrix}$.
+118,Calculate the 1-norm and $\infty$-norm of $O = \begin{pmatrix} -1 & 2 & -3 \\ 4 & -5 & 6 \\ -7 & 8 & -9 \end{pmatrix}$.
+119,Find eigenvalues of the tridiagonal matrix $P = \begin{pmatrix} 3 & -1 & 0 & 0 \\ -1 & 3 & -1 & 0 \\ 0 & -1 & 3 & -1 \\ 0 & 0 & -1 & 3 \end{pmatrix}$.
+120,Perform Gaussian elimination with partial pivoting on $\begin{pmatrix} 0.0001 & 1 \\ 1 & 1 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.
+121,Calculate the pseudoinverse of $Q = \begin{pmatrix} 2 & 0 \\ 0 & 0 \\ 0 & 3 \end{pmatrix}$.
+122,Find the characteristic polynomial of $R = \begin{pmatrix} 2 & 1 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{pmatrix}$.
+123,Compute the matrix square root of $S = \begin{pmatrix} 4 & 0 \\ 0 & 16 \end{pmatrix}$.
+124,Solve the Lyapunov equation $AX + XA^T = -C$ where $A = \begin{pmatrix} -2 & 1 \\ 0 & -3 \end{pmatrix}$ and $C = \begin{pmatrix} 4 & 0 \\ 0 & 6 \end{pmatrix}$.
+125,Find the Jordan normal form of $T = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}$.
+126,Calculate the condition number of the Hilbert matrix $H_2 = \begin{pmatrix} 1 & 1/2 \\ 1/2 & 1/3 \end{pmatrix}$.
+127,Find the eigenvector corresponding to $\lambda = 4$ for $U = \begin{pmatrix} 2 & 2 \\ 2 & 2 \end{pmatrix}$.
+128,Compute the matrix 2-norm of $V = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$.
+129,Solve using Cramer's rule: $\begin{pmatrix} 3 & 2 \\ 1 & 5 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 11 \\ 9 \end{pmatrix}$.
+130,Find the minimal polynomial of $W = \begin{pmatrix} 3 & 1 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 2 \end{pmatrix}$.
+131,Calculate the trace and determinant of $X = \begin{pmatrix} 1 & 2 & -1 \\ 3 & 0 & 4 \\ -2 & 1 & 5 \end{pmatrix}$.
+132,Find the orthogonal projection of $v = \begin{pmatrix} 2 \\ 1 \\ 3 \end{pmatrix}$ onto the subspace spanned by $u_1 = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}$ and $u_2 = \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$.
+133,Compute the Schur decomposition of $Y = \begin{pmatrix} 3 & 2 \\ 0 & 1 \end{pmatrix}$.
+134,Solve $Zx = b$ using forward substitution where $Z = \begin{pmatrix} 3 & 0 & 0 \\ 2 & 4 & 0 \\ 1 & -1 & 5 \end{pmatrix}$ and $b = \begin{pmatrix} 6 \\ 10 \\ 8 \end{pmatrix}$.
+135,Calculate the angle between vectors $u = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}$ and $v = \begin{pmatrix} 2 \\ 1 \\ 2 \end{pmatrix}$.
+136,Find matrix $A$ such that $A^2 = \begin{pmatrix} 9 & 0 \\ 0 & 25 \end{pmatrix}$.
+137,Compute the generalized inverse of $B = \begin{pmatrix} 2 & 4 \\ 1 & 2 \end{pmatrix}$.
+138,Solve the homogeneous system $(C - 2I)x = 0$ where $C = \begin{pmatrix} 4 & -2 \\ 3 & -1 \end{pmatrix}$.
+139,Find the polar decomposition of $D = \begin{pmatrix} 4 & 3 \\ 0 & 5 \end{pmatrix}$.
+140,Calculate the residual vector for approximate solution $x = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ to $Ex = f$ where $E = \begin{pmatrix} 3 & 1 \\ 2 & 4 \end{pmatrix}$ and $f = \begin{pmatrix} 6 \\ 9 \end{pmatrix}$.
+141,Find the column space of $F = \begin{pmatrix} 1 & 3 & 2 \\ 2 & 6 & 5 \\ 1 & 3 & 3 \end{pmatrix}$.
+142,Compute two steps of Gauss-Seidel method for $\begin{pmatrix} 4 & 1 \\ 2 & 5 \end{pmatrix}x = \begin{pmatrix} 7 \\ 12 \end{pmatrix}$ with $x^{(0)} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+143,Find eigenvalues of the symmetric matrix $G = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 2 \end{pmatrix}$.
+144,Calculate the matrix logarithm of $H = \begin{pmatrix} e^2 & 0 \\ 0 & e^3 \end{pmatrix}$.
+145,Find the best rank-1 approximation to $I = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}$ using SVD.
+146,Solve the matrix equation $XJ + JX = K$ where $J = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}$ and $K = \begin{pmatrix} 10 & 0 \\ 0 & 15 \end{pmatrix}$.
+147,Find the Gershgorin discs for $L = \begin{pmatrix} 4 & 1 & -1 \\ 2 & 3 & 0 \\ -1 & 0 & 5 \end{pmatrix}$.
+148,Calculate the Householder reflector that zeros the last component of $v = \begin{pmatrix} 2 \\ 3 \\ 4 \end{pmatrix}$.
+149,Solve the triangular system $\begin{pmatrix} 2 & 1 & 3 \\ 0 & 3 & 1 \\ 0 & 0 & 4 \end{pmatrix}x = \begin{pmatrix} 12 \\ 10 \\ 8 \end{pmatrix}$ using back substitution.
+150,Compute the spectral norm of $M = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$.
+151,Calculate the determinant of $A = \begin{pmatrix} 1 & 4 & 7 \\ 2 & 5 & 8 \\ 3 & 6 & 10 \end{pmatrix}$ using row operations.
+152,Find the eigenvalues of $B = \begin{pmatrix} 7 & -3 \\ 2 & 2 \end{pmatrix}$ and verify using the trace and determinant.
+153,Solve the system $\begin{pmatrix} 2 & 1 & -3 \\ 4 & 3 & -1 \\ 1 & 2 & 4 \end{pmatrix}\begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 5 \\ 13 \\ 12 \end{pmatrix}$ using matrix inversion.
+154,Compute the LU decomposition with partial pivoting for $C = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$.
+155,Calculate the infinity norm and 1-norm of vector $v = \begin{pmatrix} -5 \\ 2 \\ -8 \\ 3 \end{pmatrix}$.
+156,Find the inverse of $D = \begin{pmatrix} 2 & 3 \\ 5 & 8 \end{pmatrix}$ using Gauss-Jordan elimination.
+157,Perform three iterations of the power method for $E = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix}$ starting with $v_0 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.
+158,Find the QR decomposition of $F = \begin{pmatrix} 3 & 1 \\ 4 & 2 \\ 0 & 2 \end{pmatrix}$ using Householder reflections.
+159,Calculate the Frobenius norm of $G = \begin{pmatrix} 2 & -1 & 0 \\ 1 & 3 & -2 \\ -1 & 0 & 4 \end{pmatrix}$.
+160,Solve $Hx = b$ using Cholesky decomposition where $H = \begin{pmatrix} 9 & 3 \\ 3 & 2 \end{pmatrix}$ and $b = \begin{pmatrix} 15 \\ 7 \end{pmatrix}$.
+161,Find the singular values of $I = \begin{pmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{pmatrix}$.
+162,Calculate the spectral radius of $J = \begin{pmatrix} 0.3 & 0.4 \\ 0.5 & 0.2 \end{pmatrix}$.
+163,Find the least squares solution to $Kx = c$ where $K = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 2 & 1 \\ 1 & 3 \end{pmatrix}$ and $c = \begin{pmatrix} 2 \\ 3 \\ 4 \\ 5 \end{pmatrix}$.
+164,Compute the condition number $\kappa_2(L)$ where $L = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}$.
+165,Find the null space of $M = \begin{pmatrix} 2 & 4 & -2 & 6 \\ 1 & 2 & -1 & 3 \\ 3 & 6 & -3 & 9 \end{pmatrix}$.
+166,Calculate four iterations of inverse power method for $N = \begin{pmatrix} 5 & 2 \\ 2 & 2 \end{pmatrix}$ with shift $\sigma = 1$ starting with $v_0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$.
+167,Find the rank of $O = \begin{pmatrix} 1 & 3 & 5 & 7 \\ 2 & 6 & 10 & 14 \\ 1 & 3 & 6 & 8 \\ 0 & 0 & 1 & 1 \end{pmatrix}$.
+168,Calculate the matrix 1-norm and $\infty$-norm of $P = \begin{pmatrix} 2 & -3 & 1 \\ -1 & 4 & -2 \\ 3 & -1 & 5 \end{pmatrix}$.
+169,Find the eigenvalues of the pentadiagonal matrix $Q = \begin{pmatrix} 3 & -1 & 0 & 0 & 0 \\ -1 & 3 & -1 & 0 & 0 \\ 0 & -1 & 3 & -1 & 0 \\ 0 & 0 & -1 & 3 & -1 \\ 0 & 0 & 0 & -1 & 3 \end{pmatrix}$.
+170,Perform Gaussian elimination with complete pivoting on $\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 10 \end{pmatrix}\begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 6 \\ 15 \\ 25 \end{pmatrix}$.
+171,Calculate the Moore-Penrose pseudoinverse of $R = \begin{pmatrix} 1 & 2 \\ 2 & 4 \\ 3 & 6 \end{pmatrix}$.
+172,Find the characteristic polynomial of $S = \begin{pmatrix} 4 & 1 & 0 \\ 0 & 4 & 1 \\ 0 & 0 & 4 \end{pmatrix}$.
+173,Compute the principal square root of $T = \begin{pmatrix} 5 & 2 \\ 2 & 2 \end{pmatrix}$.
+174,Solve the discrete Lyapunov equation $AXA^T - X = -C$ where $A = \begin{pmatrix} 0.5 & 0.2 \\ 0 & 0.3 \end{pmatrix}$ and $C = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$.
+175,Find the Jordan canonical form of $U = \begin{pmatrix} 2 & 1 & 1 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{pmatrix}$.
+176,Calculate the condition number of the Vandermonde matrix $V = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 2 & 3 \\ 1 & 4 & 9 \end{pmatrix}$.
+177,Find the eigenvector corresponding to $\lambda = 6$ for $W = \begin{pmatrix} 4 & 2 \\ 2 & 4 \end{pmatrix}$.
+178,Compute the spectral norm of $X = \begin{pmatrix} 1 & 3 \\ 2 & 1 \end{pmatrix}$.
+179,Solve using Cramer's rule: $\begin{pmatrix} 2 & -1 \\ 3 & 4 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 5 \\ 14 \end{pmatrix}$.
+180,Find the minimal polynomial of $Y = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}$.
+181,Calculate the trace and determinant of $Z = \begin{pmatrix} 3 & 1 & -2 \\ 0 & 4 & 3 \\ 1 & -1 & 2 \end{pmatrix}$.
+182,Find the orthogonal projection of $v = \begin{pmatrix} 1 \\ 3 \\ 2 \end{pmatrix}$ onto the line spanned by $u = \begin{pmatrix} 2 \\ 1 \\ 2 \end{pmatrix}$.
+183,Compute the Schur decomposition of $AA = \begin{pmatrix} 2 & 3 \\ 0 & 4 \end{pmatrix}$.
+184,Solve $BBx = b$ using backward substitution where $BB = \begin{pmatrix} 2 & 1 & 3 \\ 0 & 3 & 2 \\ 0 & 0 & 4 \end{pmatrix}$ and $b = \begin{pmatrix} 14 \\ 11 \\ 12 \end{pmatrix}$.
+185,Calculate the angle between vectors $u = \begin{pmatrix} 3 \\ 0 \\ 4 \end{pmatrix}$ and $v = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix}$.
+186,Find matrix $CC$ such that $CC^3 = \begin{pmatrix} 27 & 0 \\ 0 & 64 \end{pmatrix}$.
+187,Compute the generalized inverse of $DD = \begin{pmatrix} 3 & 6 \\ 1 & 2 \end{pmatrix}$.
+188,Solve the homogeneous system $(EE - 3I)x = 0$ where $EE = \begin{pmatrix} 5 & 2 \\ 4 & 1 \end{pmatrix}$.
+189,Find the polar decomposition of $FF = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}$.
+190,Calculate the residual for approximate solution $x = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$ to $GGx = f$ where $GG = \begin{pmatrix} 1 & 3 \\ 2 & 1 \end{pmatrix}$ and $f = \begin{pmatrix} 5 \\ 6 \end{pmatrix}$.
+191,Find the column space of $HH = \begin{pmatrix} 2 & 4 & 6 \\ 1 & 2 & 3 \\ 3 & 6 & 9 \end{pmatrix}$.
+192,Compute three steps of conjugate gradient method for $\begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}x = \begin{pmatrix} 4 \\ 3 \end{pmatrix}$ with $x_0 = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+193,Find eigenvalues of the block diagonal matrix $II = \begin{pmatrix} 2 & 1 & 0 & 0 \\ 1 & 3 & 0 & 0 \\ 0 & 0 & 4 & 2 \\ 0 & 0 & 2 & 5 \end{pmatrix}$.
+194,Calculate the matrix logarithm of $JJ = \begin{pmatrix} e & 0 \\ 0 & e^4 \end{pmatrix}$.
+195,Find the best rank-2 approximation to $KK = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$ using SVD.
+196,"Solve the Sylvester equation $AX - XB = C$ where $A = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$, $B = \begin{pmatrix} 3 \end{pmatrix}$, and $C = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$."
+197,Find the Gershgorin circles for $LL = \begin{pmatrix} 6 & 1 & 2 \\ 3 & 4 & 1 \\ 1 & 2 & 5 \end{pmatrix}$.
+198,"Calculate the Givens rotation that zeros the (2,1) entry of $\begin{pmatrix} 3 \\ 4 \end{pmatrix}$."
+199,Solve the upper triangular system $\begin{pmatrix} 3 & 2 & 1 \\ 0 & 2 & 3 \\ 0 & 0 & 1 \end{pmatrix}x = \begin{pmatrix} 11 \\ 8 \\ 2 \end{pmatrix}$ using back substitution.
+200,Compute the nuclear norm of $MM = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$.
+201,Find eigenvalues of the companion matrix $NN = \begin{pmatrix} 0 & 0 & -2 \\ 1 & 0 & -3 \\ 0 & 1 & -4 \end{pmatrix}$.
+202,Calculate the condition number of $OO = \begin{pmatrix} 1 & 1 \\ 0 & \epsilon \end{pmatrix}$ where $\epsilon = 10^{-8}$.
+203,Find the solution using GMRES method (one iteration) for $\begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}x = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ with $x_0 = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+204,Calculate the Hadamard product $PP \circ QQ$ where $PP = \begin{pmatrix} 2 & 3 \\ 1 & 4 \end{pmatrix}$ and $QQ = \begin{pmatrix} 5 & 2 \\ 3 & 1 \end{pmatrix}$.
+205,Find eigenvalues of the circulant matrix $RR = \begin{pmatrix} 2 & 1 & 3 \\ 3 & 2 & 1 \\ 1 & 3 & 2 \end{pmatrix}$.
+206,"Compute the generalized eigenvalues of $(SS, TT)$ where $SS = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}$ and $TT = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}$."
+207,"Find the solution to the block system $\begin{pmatrix} A & B \\ C & D \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} b_1 \\ b_2 \end{pmatrix}$ where $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$, $B = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 0 \end{pmatrix}$, $D = 2$, $b_1 = \begin{pmatrix} 3 \\ 7 \end{pmatrix}$, $b_2 = 3$."
+208,Calculate the matrix sign function of $UU = \begin{pmatrix} 3 & 0 \\ 0 & -2 \end{pmatrix}$.
+209,"Find the Schur complement of $\begin{pmatrix} A & B \\ C & D \end{pmatrix}$ where $A = \begin{pmatrix} 1 & 2 \\ 2 & 5 \end{pmatrix}$, $B = \begin{pmatrix} 1 \\ 3 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 3 \end{pmatrix}$, $D = 4$."
+210,Compute the Kronecker product $VV \otimes WW$ where $VV = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $WW = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
+211,Find the matrix exponential of $XX = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
+212,Calculate the vec operation on $YY = \begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix}$.
+213,Find the solution using BiCGSTAB method (conceptual setup) for $\begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix}x = \begin{pmatrix} 5 \\ 4 \end{pmatrix}$.
+214,Compute the Drazin inverse of $ZZ = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 2 \end{pmatrix}$.
+215,Find eigenvalues of the Toeplitz matrix $AAA = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 2 \end{pmatrix}$.
+216,Calculate the Rayleigh quotient $\frac{x^TAx}{x^Tx}$ where $A = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}$ and $x = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.
+217,Find the solution to the Riccati equation $X + XAX = Q$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$ and $Q = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix}$.
+218,Compute the Frobenius companion matrix for polynomial $p(x) = x^3 + 2x^2 + 3x + 4$.
+219,Find the solution using QMR method (setup) for $\begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}x = \begin{pmatrix} 3 \\ 3 \end{pmatrix}$.
+220,Calculate the group inverse of $BBB = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}$.
+221,Find eigenvalues of the Hankel matrix $CCC = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 3 & 4 \\ 3 & 4 & 5 \end{pmatrix}$.
+222,"Compute the weighted least squares solution to $Ax = b$ with weight matrix $W$ where $A = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 2 & 1 \end{pmatrix}$, $b = \begin{pmatrix} 2 \\ 3 \\ 4 \end{pmatrix}$, $W = \begin{pmatrix} 2 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 3 \end{pmatrix}$."
+223,Find the solution to the generalized Sylvester equation $AXB + CXD = E$ where all matrices are $2 \times 2$.
+224,Calculate the numerical rank of $DDD = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6.0001 \\ 3 & 6 & 9 \end{pmatrix}$ with tolerance $10^{-3}$.
+225,Find the solution using MINRES method (setup) for the symmetric system $\begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}x = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$.
+226,"Compute the matrix $p$-norm $\|EEE\|_p$ for $p = 1, 2, \infty$ where $EEE = \begin{pmatrix} 1 & -2 \\ 3 & 4 \end{pmatrix}$."
+227,Find the Cholesky factorization with pivoting for $FFF = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 5 & 8 \\ 3 & 8 & 14 \end{pmatrix}$.
+228,Calculate the condition number with respect to matrix inversion for $GGG = \begin{pmatrix} 1 & 1 \\ 1 & 1+\epsilon \end{pmatrix}$ where $\epsilon = 10^{-6}$.
+229,Find the solution to the tensor equation $\mathcal{A} \times_1 X = \mathcal{B}$ where $\mathcal{A}$ is a $2 \times 2 \times 2$ tensor.
+230,Compute the generalized singular value decomposition (GSVD) of matrices $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$.
+231,Find the solution using LSQR method (setup) for the least squares problem $\min\|Ax - b\|$ where $A = \begin{pmatrix} 1 & 1 \\ 2 & 1 \\ 1 & 2 \end{pmatrix}$ and $b = \begin{pmatrix} 2 \\ 3 \\ 4 \end{pmatrix}$.
+232,Calculate the matrix cosine of $HHH = \begin{pmatrix} 0 & \pi/2 \\ -\pi/2 & 0 \end{pmatrix}$.
+233,"Find the Padé approximation of order $(1,1)$ to the matrix exponential of $III = \begin{pmatrix} 0.1 & 0 \\ 0 & 0.2 \end{pmatrix}$."
+234,Compute the Bauer-Fike bound for eigenvalue perturbation of $JJJ = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$ with perturbation $\Delta A = \begin{pmatrix} 0.1 & 0 \\ 0 & 0.1 \end{pmatrix}$.
+235,Find the solution to the algebraic Riccati equation $A^TX + XA - XBR^{-1}B^TX + Q = 0$ for small matrices.
+236,Calculate the structured condition number for the Vandermonde matrix $V = \begin{pmatrix} 1 & 1 \\ 2 & 4 \end{pmatrix}$.
+237,Find the solution using IDR(s) method with $s=2$ (setup) for $\begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}x = \begin{pmatrix} 4 \\ 3 \end{pmatrix}$.
+238,Compute the logarithmic norm of $KKK = \begin{pmatrix} -1 & 2 \\ 1 & -3 \end{pmatrix}$.
+239,Find the solution to the discrete-time Lyapunov equation $X - AXA^T = Q$ where $A = \begin{pmatrix} 0.5 & 0.1 \\ 0 & 0.8 \end{pmatrix}$ and $Q = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+240,Calculate the field of values (numerical range) boundary points for $LLL = \begin{pmatrix} 1 & i \\ -i & 1 \end{pmatrix}$.
+241,Find the solution using flexible GMRES (FGMRES) method (setup) for $\begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix}x = \begin{pmatrix} 5 \\ 4 \end{pmatrix}$.
+242,Compute the Drazin inverse of the singular matrix $MMM = \begin{pmatrix} 1 & 1 & 1 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}$.
+243,"Find eigenvalues of the matrix pencil $(A, B)$ where $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}$."
+244,Calculate the pseudospectrum $\sigma_\epsilon(A)$ for $\epsilon = 0.1$ where $A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
+245,Find the solution using restarted GMRES(m) with $m=2$ for $\begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}x = \begin{pmatrix} 4 \\ 3 \end{pmatrix}$.
+246,Compute the matrix $p$-th root $A^{1/p}$ for $p=3$ where $A = \begin{pmatrix} 8 & 0 \\ 0 & 27 \end{pmatrix}$.
+247,Find the solution to the coupled Sylvester equations $AX + YB = C$ and $DX + YE = F$.
+248,Calculate the stability radius of $A = \begin{pmatrix} -1 & 1 \\ 0 & -2 \end{pmatrix}$.
+249,Find the solution using the Arnoldi method to approximate eigenvalues of $\begin{pmatrix} 2 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 2 \end{pmatrix}$.
+250,Compute the matrix unwinding number for $\log(A)$ where $A = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}$.
+251,Find the determinant of $A = \begin{pmatrix} 5 & 3 & 2 \\ 1 & 6 & 4 \\ 2 & 1 & 7 \end{pmatrix}$ using cofactor expansion along the first column.
+252,Solve the system $\begin{pmatrix} 4 & 2 & 1 \\ 2 & 5 & 3 \\ 1 & 3 & 6 \end{pmatrix}\begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 18 \\ 23 \\ 22 \end{pmatrix}$ using matrix inversion.
+253,Calculate the eigenvalues of $B = \begin{pmatrix} 8 & -4 \\ 2 & 2 \end{pmatrix}$ and determine if the matrix is diagonalizable.
+254,Perform LU decomposition with partial pivoting on $C = \begin{pmatrix} 2 & 4 & 6 \\ 6 & 8 & 10 \\ 4 & 10 & 12 \end{pmatrix}$.
+255,"Find the 1-norm, 2-norm, and infinity norm of vector $v = \begin{pmatrix} -2 \\ 5 \\ -3 \\ 1 \end{pmatrix}$."
+256,Calculate the inverse of $D = \begin{pmatrix} 3 & 2 \\ 5 & 4 \end{pmatrix}$ using Gauss-Jordan elimination.
+257,Apply four iterations of the Jacobi method to solve $\begin{pmatrix} 6 & 1 & 2 \\ 1 & 7 & 1 \\ 2 & 1 & 8 \end{pmatrix}x = \begin{pmatrix} 15 \\ 18 \\ 22 \end{pmatrix}$ starting with $x^{(0)} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$.
+258,Find the QR decomposition of $E = \begin{pmatrix} 1 & 2 \\ 2 & 1 \\ 2 & 2 \end{pmatrix}$ using Householder reflections.
+259,Compute the Frobenius norm of $F = \begin{pmatrix} 1 & -3 & 2 \\ 4 & 0 & -1 \\ -2 & 5 & 3 \end{pmatrix}$.
+260,Solve $Gx = b$ using Cholesky decomposition where $G = \begin{pmatrix} 16 & 4 \\ 4 & 2 \end{pmatrix}$ and $b = \begin{pmatrix} 24 \\ 8 \end{pmatrix}$.
+261,Find the singular values of $H = \begin{pmatrix} 2 & 3 \\ 1 & 4 \\ 0 & 1 \end{pmatrix}$.
+262,Calculate the spectral radius of $I = \begin{pmatrix} 0.7 & 0.2 \\ 0.3 & 0.6 \end{pmatrix}$.
+263,Find the least squares solution to $Jx = c$ where $J = \begin{pmatrix} 2 & 1 \\ 1 & 3 \\ 3 & 2 \\ 1 & 1 \end{pmatrix}$ and $c = \begin{pmatrix} 8 \\ 9 \\ 12 \\ 5 \end{pmatrix}$.
+264,Compute the condition number $\kappa_2(K)$ where $K = \begin{pmatrix} 3 & 2 \\ 2 & 2 \end{pmatrix}$.
+265,Find the null space of $L = \begin{pmatrix} 3 & 6 & -3 & 9 \\ 1 & 2 & -1 & 3 \\ 2 & 4 & -2 & 6 \end{pmatrix}$.
+266,Perform five iterations of the power method for $M = \begin{pmatrix} 6 & 1 \\ 2 & 3 \end{pmatrix}$ starting with $v_0 = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$.
+267,Find the rank of $N = \begin{pmatrix} 1 & 2 & 3 & 4 & 5 \\ 2 & 4 & 6 & 8 & 10 \\ 3 & 6 & 9 & 12 & 15 \\ 1 & 2 & 4 & 5 & 6 \end{pmatrix}$.
+268,"Calculate the matrix norms $\|O\|_1, \|O\|_2, \|O\|_\infty$ for $O = \begin{pmatrix} 4 & -1 & 2 \\ -2 & 3 & -1 \\ 1 & -2 & 4 \end{pmatrix}$."
+269,Find eigenvalues of the block diagonal matrix $P = \begin{pmatrix} 3 & 2 & 0 & 0 \\ 1 & 4 & 0 & 0 \\ 0 & 0 & 5 & 1 \\ 0 & 0 & 2 & 6 \end{pmatrix}$.
+270,Perform Gaussian elimination with complete pivoting on $\begin{pmatrix} 2 & 1 & 3 \\ 1 & 4 & 2 \\ 3 & 2 & 1 \end{pmatrix}\begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 10 \\ 11 \\ 8 \end{pmatrix}$.
+271,Calculate the Moore-Penrose pseudoinverse of $Q = \begin{pmatrix} 3 & 0 \\ 0 & 0 \\ 4 & 0 \end{pmatrix}$.
+272,Find the characteristic polynomial of $R = \begin{pmatrix} 5 & 3 & 2 \\ 0 & 5 & 3 \\ 0 & 0 & 5 \end{pmatrix}$.
+273,Compute the matrix square root of $S = \begin{pmatrix} 25 & 0 \\ 0 & 36 \end{pmatrix}$.
+274,Solve the Lyapunov equation $AX + XA^T = -C$ where $A = \begin{pmatrix} -3 & 1 \\ 0 & -2 \end{pmatrix}$ and $C = \begin{pmatrix} 6 & 0 \\ 0 & 4 \end{pmatrix}$.
+275,Find the Jordan normal form of $T = \begin{pmatrix} 4 & 1 & 0 & 0 \\ 0 & 4 & 1 & 0 \\ 0 & 0 & 4 & 0 \\ 0 & 0 & 0 & 3 \end{pmatrix}$.
+276,Calculate the condition number of the Hilbert matrix $H_4$.
+277,Find the eigenvector corresponding to $\lambda = 9$ for $U = \begin{pmatrix} 6 & 3 \\ 3 & 6 \end{pmatrix}$.
+278,Compute the spectral norm of $V = \begin{pmatrix} 5 & 2 \\ 1 & 3 \end{pmatrix}$.
+279,Solve using Cramer's rule: $\begin{pmatrix} 5 & 2 \\ 3 & 4 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 19 \\ 17 \end{pmatrix}$.
+280,Find the minimal polynomial of $W = \begin{pmatrix} 7 & 2 & 0 \\ 0 & 7 & 0 \\ 0 & 0 & 5 \end{pmatrix}$.
+281,Calculate the trace and determinant of $X = \begin{pmatrix} 4 & 1 & -2 \\ 3 & 5 & 1 \\ -1 & 2 & 6 \end{pmatrix}$.
+282,Find the orthogonal projection of $v = \begin{pmatrix} 5 \\ 2 \\ 1 \end{pmatrix}$ onto the subspace spanned by $u_1 = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}$ and $u_2 = \begin{pmatrix} 1 \\ -1 \\ 0 \end{pmatrix}$.
+283,Compute the real Schur decomposition of $Y = \begin{pmatrix} 3 & 4 \\ -1 & 3 \end{pmatrix}$.
+284,Solve $Zx = b$ using forward substitution where $Z = \begin{pmatrix} 4 & 0 & 0 \\ 2 & 3 & 0 \\ 1 & -1 & 5 \end{pmatrix}$ and $b = \begin{pmatrix} 12 \\ 13 \\ 14 \end{pmatrix}$.
+285,Calculate the angle between vectors $u = \begin{pmatrix} 4 \\ 3 \\ 0 \end{pmatrix}$ and $v = \begin{pmatrix} 2 \\ 1 \\ 4 \end{pmatrix}$.
+286,Find matrix $A$ such that $A^5 = \begin{pmatrix} 32 & 0 \\ 0 & 243 \end{pmatrix}$.
+287,Compute the generalized inverse of $B = \begin{pmatrix} 4 & 8 \\ 1 & 2 \end{pmatrix}$.
+288,Solve the homogeneous system $(C - 6I)x = 0$ where $C = \begin{pmatrix} 8 & 2 \\ 4 & 4 \end{pmatrix}$.
+289,Find the polar decomposition of $D = \begin{pmatrix} 5 & 0 \\ 3 & 4 \end{pmatrix}$.
+290,Calculate the residual for approximate solution $x = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$ to $Ex = f$ where $E = \begin{pmatrix} 3 & 1 \\ 2 & 4 \end{pmatrix}$ and $f = \begin{pmatrix} 9 \\ 16 \end{pmatrix}$.
+291,Find the column space of $F = \begin{pmatrix} 2 & 4 & 6 \\ 1 & 2 & 4 \\ 3 & 6 & 8 \end{pmatrix}$.
+292,Compute four steps of Gauss-Seidel method for $\begin{pmatrix} 6 & 2 \\ 1 & 5 \end{pmatrix}x = \begin{pmatrix} 13 \\ 17 \end{pmatrix}$ with $x^{(0)} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+293,Find eigenvalues of the symmetric matrix $G = \begin{pmatrix} 4 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 4 \end{pmatrix}$.
+294,Calculate the matrix logarithm of $H = \begin{pmatrix} e^4 & 0 \\ 0 & e^{-2} \end{pmatrix}$.
+295,Find the best rank-1 approximation to $I = \begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix}$ using SVD.
+296,Solve the matrix equation $XA + AX = B$ where $A = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}$ and $B = \begin{pmatrix} 8 & 0 \\ 0 & 18 \end{pmatrix}$.
+297,Find the Gershgorin discs for $L = \begin{pmatrix} 7 & 2 & -1 \\ 1 & 5 & 2 \\ -2 & 1 & 6 \end{pmatrix}$.
+298,Calculate the Householder reflector that zeros all but the first component of $v = \begin{pmatrix} 4 \\ 3 \\ 5 \end{pmatrix}$.
+299,Solve the triangular system $\begin{pmatrix} 4 & 3 & 2 \\ 0 & 5 & 1 \\ 0 & 0 & 6 \end{pmatrix}x = \begin{pmatrix} 20 \\ 16 \\ 18 \end{pmatrix}$ using back substitution.
+300,Compute the operator norm of $M = \begin{pmatrix} 4 & 2 \\ 2 & 4 \end{pmatrix}$.
+301,Find eigenvalues of the skew-symmetric matrix $N = \begin{pmatrix} 0 & 3 & -2 \\ -3 & 0 & 4 \\ 2 & -4 & 0 \end{pmatrix}$.
+302,Calculate the condition number of $O = \begin{pmatrix} 2 & 3 \\ 0 & 0.0001 \end{pmatrix}$.
+303,Find the solution using one iteration of GMRES for $\begin{pmatrix} 4 & 2 \\ 1 & 3 \end{pmatrix}x = \begin{pmatrix} 6 \\ 4 \end{pmatrix}$ with $x_0 = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+304,Calculate the Hadamard product $P \circ Q$ where $P = \begin{pmatrix} 3 & 1 \\ 4 & 2 \end{pmatrix}$ and $Q = \begin{pmatrix} 2 & 5 \\ 1 & 3 \end{pmatrix}$.
+305,Find eigenvalues of the circulant matrix $R = \begin{pmatrix} 2 & 1 & 4 \\ 4 & 2 & 1 \\ 1 & 4 & 2 \end{pmatrix}$.
+306,"Compute the generalized eigenvalues of $(S, T)$ where $S = \begin{pmatrix} 4 & 2 \\ 2 & 3 \end{pmatrix}$ and $T = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}$."
+307,"Find the solution to the block system $\begin{pmatrix} A & B \\ C & D \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} b_1 \\ b_2 \end{pmatrix}$ where $A = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}$, $B = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 2 \end{pmatrix}$, $D = 4$, $b_1 = \begin{pmatrix} 8 \\ 6 \end{pmatrix}$, $b_2 = 9$."
+308,Calculate the matrix sign function of $U = \begin{pmatrix} 5 & 0 \\ 0 & -2 \end{pmatrix}$.
+309,"Find the Schur complement of $\begin{pmatrix} A & B \\ C & D \end{pmatrix}$ where $A = \begin{pmatrix} 3 & 1 \\ 1 & 4 \end{pmatrix}$, $B = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 2 \end{pmatrix}$, $D = 6$."
+310,Compute the Kronecker product $V \otimes W$ where $V = \begin{pmatrix} 1 & 3 \\ 2 & 0 \end{pmatrix}$ and $W = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$.
+311,Find the matrix exponential of $X = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}$.
+312,Calculate the vec operation on $Y = \begin{pmatrix} 3 & 1 \\ 4 & 2 \end{pmatrix}$.
+313,Find the solution using BiCGSTAB method setup for $\begin{pmatrix} 5 & 2 \\ 1 & 4 \end{pmatrix}x = \begin{pmatrix} 7 \\ 5 \end{pmatrix}$.
+314,Compute the Drazin inverse of $Z = \begin{pmatrix} 3 & 2 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}$.
+315,Find eigenvalues of the Toeplitz matrix $AA = \begin{pmatrix} 5 & 3 & 1 & 0 \\ 3 & 5 & 3 & 1 \\ 1 & 3 & 5 & 3 \\ 0 & 1 & 3 & 5 \end{pmatrix}$.
+316,Calculate the Rayleigh quotient $\frac{x^TAx}{x^Tx}$ where $A = \begin{pmatrix} 6 & 2 \\ 2 & 3 \end{pmatrix}$ and $x = \begin{pmatrix} 3 \\ 1 \end{pmatrix}$.
+317,Find the solution to the algebraic Riccati equation $X + XAX = Q$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix}$ and $Q = \begin{pmatrix} 2 & 0 \\ 0 & 8 \end{pmatrix}$.
+318,Compute the companion matrix for polynomial $p(x) = x^3 + 5x^2 + 6x + 7$.
+319,Find the solution using QMR method setup for $\begin{pmatrix} 6 & 2 \\ 1 & 4 \end{pmatrix}x = \begin{pmatrix} 8 \\ 5 \end{pmatrix}$.
+320,Calculate the group inverse of $BB = \begin{pmatrix} 4 & 4 & 4 \\ 4 & 4 & 4 \\ 4 & 4 & 4 \end{pmatrix}$.
+321,Find eigenvalues of the Hankel matrix $CC = \begin{pmatrix} 3 & 4 & 5 \\ 4 & 5 & 6 \\ 5 & 6 & 7 \end{pmatrix}$.
+322,"Compute the weighted least squares solution to $Ax = b$ with weight matrix $W$ where $A = \begin{pmatrix} 2 & 1 \\ 1 & 3 \\ 3 & 1 \end{pmatrix}$, $b = \begin{pmatrix} 5 \\ 6 \\ 7 \end{pmatrix}$, $W = \begin{pmatrix} 3 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{pmatrix}$."
+323,Find the solution to generalized Sylvester equation $AXB + CXD = E$ for $2 \times 2$ matrices.
+324,Calculate the numerical rank of $DD = \begin{pmatrix} 3 & 6 & 9 \\ 1 & 2 & 3.0002 \\ 2 & 4 & 6 \end{pmatrix}$ with tolerance $10^{-1}$.
+325,Find the solution using MINRES method setup for $\begin{pmatrix} 4 & 2 \\ 2 & 3 \end{pmatrix}x = \begin{pmatrix} 6 \\ 5 \end{pmatrix}$.
+326,Compute matrix norms for $EE = \begin{pmatrix} 3 & -2 \\ 4 & 1 \end{pmatrix}$.
+327,Find Cholesky factorization with pivoting for $FF = \begin{pmatrix} 4 & 2 & 1 \\ 2 & 5 & 3 \\ 1 & 3 & 6 \end{pmatrix}$.
+328,Calculate condition number for $GG = \begin{pmatrix} 3 & 3 \\ 3 & 3+\epsilon \end{pmatrix}$ where $\epsilon = 10^{-5}$.
+329,Find the solution to tensor equation $\mathcal{A} \times_1 X = \mathcal{B}$ for $2 \times 3 \times 2$ tensor.
+330,Compute GSVD of $A = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 2 \\ 3 & 1 \end{pmatrix}$.
+331,Find solution using LSQR setup for $\min\|Ax - b\|$ where $A = \begin{pmatrix} 3 & 1 \\ 1 & 2 \\ 2 & 1 \end{pmatrix}$ and $b = \begin{pmatrix} 6 \\ 5 \\ 7 \end{pmatrix}$.
+332,Calculate matrix cosine of $HH = \begin{pmatrix} 0 & 2\pi \\ -2\pi & 0 \end{pmatrix}$.
+333,"Find Padé approximation of order $(1,2)$ to $e^{II}$ where $II = \begin{pmatrix} 0.3 & 0 \\ 0 & 0.4 \end{pmatrix}$."
+334,Compute Bauer-Fike bound for $JJ = \begin{pmatrix} 4 & 1 \\ 0 & 5 \end{pmatrix}$ with perturbation $\Delta A = \begin{pmatrix} 0.02 & 0 \\ 0 & 0.02 \end{pmatrix}$.
+335,Find solution to algebraic Riccati equation $A^TX + XA - XBR^{-1}B^TX + Q = 0$ for small matrices.
+336,Calculate structured condition number for Vandermonde matrix $V = \begin{pmatrix} 1 & 1 \\ 4 & 16 \end{pmatrix}$.
+337,Find solution using IDR(s) with $s=2$ setup for $\begin{pmatrix} 5 & 2 \\ 1 & 4 \end{pmatrix}x = \begin{pmatrix} 7 \\ 5 \end{pmatrix}$.
+338,Compute logarithmic norm of $KK = \begin{pmatrix} -3 & 4 \\ 2 & -5 \end{pmatrix}$.
+339,Find solution to discrete Lyapunov equation $X - AXA^T = Q$ where $A = \begin{pmatrix} 0.8 & 0.1 \\ 0 & 0.9 \end{pmatrix}$ and $Q = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}$.
+340,Calculate field of values boundary for $LL = \begin{pmatrix} 3 & 2i \\ -2i & 4 \end{pmatrix}$.
+341,Find solution using FGMRES setup for $\begin{pmatrix} 6 & 2 \\ 1 & 5 \end{pmatrix}x = \begin{pmatrix} 8 \\ 6 \end{pmatrix}$.
+342,Compute Drazin inverse of $MM = \begin{pmatrix} 3 & 3 & 3 \\ 0 & 0 & 3 \\ 0 & 0 & 0 \end{pmatrix}$.
+343,"Find eigenvalues of matrix pencil $(A, B)$ where $A = \begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$."
+344,Calculate pseudospectrum $\sigma_\epsilon(A)$ for $\epsilon = 0.3$ where $A = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}$.
+345,Find solution using restarted GMRES(3) for $\begin{pmatrix} 5 & 2 \\ 1 & 4 \end{pmatrix}x = \begin{pmatrix} 7 \\ 5 \end{pmatrix}$.
+346,Compute matrix fourth root $A^{1/4}$ for $A = \begin{pmatrix} 16 & 0 \\ 0 & 81 \end{pmatrix}$.
+347,Find solution to coupled Sylvester equations $AX + YB = C$ and $DX + YE = F$.
+348,Calculate stability radius of $A = \begin{pmatrix} -4 & 3 \\ 0 & -2 \end{pmatrix}$.
+349,Find eigenvalue approximation using Arnoldi for $\begin{pmatrix} 5 & 2 & 0 \\ 1 & 4 & 2 \\ 0 & 1 & 3 \end{pmatrix}$.
+350,Compute matrix unwinding number for $\log(A)$ where $A = \begin{pmatrix} -3 & 0 \\ 0 & -4 \end{pmatrix}$.
+351,Find the determinant of $A = \begin{pmatrix} 3 & 2 & 1 \\ 1 & 4 & 2 \\ 2 & 1 & 3 \end{pmatrix}$ using row reduction.
+352, Solve the linear system $\begin{pmatrix} 2 & 3 & 1 \\ 1 & 2 & 3 \\ 3 & 1 & 2 \end{pmatrix}\begin{pmatrix} x \\ y \\ z \end{pmatrix} = \begin{pmatrix} 14 \\ 13 \\ 12 \end{pmatrix}$ using Gaussian elimination.
+353,Calculate the eigenvalues of $B = \begin{pmatrix} 6 & -2 \\ 3 & 1 \end{pmatrix}$ and find their corresponding eigenvectors.
+354,Perform LU decomposition on $C = \begin{pmatrix} 4 & 3 & 2 \\ 8 & 9 & 4 \\ 4 & 6 & 8 \end{pmatrix}$ without pivoting.
+355,Find the 2-norm and infinity norm of vector $v = \begin{pmatrix} 3 \\ -4 \\ 5 \\ -2 \end{pmatrix}$.
+356,Calculate the inverse of $D = \begin{pmatrix} 4 & 1 \\ 7 & 2 \end{pmatrix}$ using the formula method.
+357,Apply three iterations of the Jacobi method to solve $\begin{pmatrix} 4 & 1 & -1 \\ 1 & 5 & 2 \\ -1 & 2 & 6 \end{pmatrix}x = \begin{pmatrix} 8 \\ 12 \\ 11 \end{pmatrix}$ starting with $x^{(0)} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$.
+358, Find the QR decomposition of $E = \begin{pmatrix} 2 & 1 \\ 1 & 1 \\ 0 & 2 \end{pmatrix}$ using the Gram-Schmidt process
+359,Compute the Frobenius norm of $F = \begin{pmatrix} 2 & -1 & 3 \\ 1 & 4 & -2 \\ -3 & 2 & 1 \end{pmatrix}$.
+360,Solve $Gx = b$ using Cholesky decomposition where $G = \begin{pmatrix} 9 & 6 \\ 6 & 5 \end{pmatrix}$ and $b = \begin{pmatrix} 21 \\ 16 \end{pmatrix}$.
+361, Find the singular values of $H = \begin{pmatrix} 3 & 1 \\ 1 & 3 \\ 2 & 0 \end{pmatrix}$.
+362, Calculate the spectral radius of $I = \begin{pmatrix} 0.4 & 0.3 \\ 0.2 & 0.5 \end{pmatrix}$.
+363, Find the least squares solution to $Jx = c$ where $J = \begin{pmatrix} 1 & 3 \\ 2 & 1 \\ 1 & 2 \\ 3 & 1 \end{pmatrix}$ and $c = \begin{pmatrix} 7 \\ 6 \\ 5 \\ 8 \end{pmatrix}$.
+364,Compute the condition number $\kappa_2(K)$ where $K = \begin{pmatrix} 2 & 1 \\ 1 & 1.5 \end{pmatrix}$.
+365,Find the null space of $L = \begin{pmatrix} 1 & 2 & -1 & 3 \\ 2 & 4 & -2 & 6 \\ 1 & 2 & 0 & 4 \end{pmatrix}$.
+366,Perform four iterations of the power method for $M = \begin{pmatrix} 5 & 2 \\ 1 & 4 \end{pmatrix}$ starting with $v_0 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.
+367,Find the rank of $N = \begin{pmatrix} 2 & 4 & 6 & 8 \\ 1 & 2 & 3 & 4 \\ 3 & 6 & 9 & 12 \\ 2 & 4 & 7 & 9 \end{pmatrix}$.
+368,Calculate the 1-norm and $\infty$-norm of $O = \begin{pmatrix} 3 & -2 & 1 \\ -1 & 4 & -3 \\ 2 & -1 & 5 \end{pmatrix}$.
+369,Find eigenvalues of the symmetric tridiagonal matrix $P = \begin{pmatrix} 4 & -1 & 0 & 0 & 0 \\ -1 & 4 & -1 & 0 & 0 \\ 0 & -1 & 4 & -1 & 0 \\ 0 & 0 & -1 & 4 & -1 \\ 0 & 0 & 0 & -1 & 4 \end{pmatrix}$.
+370,Perform Gaussian elimination with partial pivoting on $\begin{pmatrix} 0.001 & 2 \\ 1 & 1 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 2 \\ 2 \end{pmatrix}$.
+371,Calculate the Moore-Penrose pseudoinverse of $Q = \begin{pmatrix} 1 & 0 \\ 0 & 0 \\ 2 & 0 \end{pmatrix}$.
+372,Find the characteristic polynomial of $R = \begin{pmatrix} 3 & 2 & 1 \\ 0 & 3 & 2 \\ 0 & 0 & 3 \end{pmatrix}$.
+373,Compute the principal square root of $S = \begin{pmatrix} 13 & 4 \\ 4 & 7 \end{pmatrix}$.
+374,Solve the continuous Lyapunov equation $AX + XA^T = -C$ where $A = \begin{pmatrix} -1 & 2 \\ 0 & -2 \end{pmatrix}$ and $C = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}$.
+375, Find the Jordan normal form of $T = \begin{pmatrix} 2 & 1 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{pmatrix}$.
+376,Calculate the condition number of the Hilbert matrix $H_3 = \begin{pmatrix} 1 & 1/2 & 1/3 \\ 1/2 & 1/3 & 1/4 \\ 1/3 & 1/4 & 1/5 \end{pmatrix}$.
+377,Find the eigenvector corresponding to $\lambda = 8$ for $U = \begin{pmatrix} 5 & 3 \\ 3 & 5 \end{pmatrix}$.
+378,Compute the spectral norm of $V = \begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix}$.
+379, Solve using Cramer's rule: $\begin{pmatrix} 4 & 3 \\ 2 & 5 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 17 \\ 16 \end{pmatrix}$.
+380,Find the minimal polynomial of $W = \begin{pmatrix} 4 & 1 & 0 \\ 0 & 4 & 0 \\ 0 & 0 & 3 \end{pmatrix}$.
+381,Calculate the trace and determinant of $X = \begin{pmatrix} 2 & 3 & -1 \\ 1 & 4 & 2 \\ -2 & 1 & 3 \end{pmatrix}$.
+382, Find the orthogonal projection of $v = \begin{pmatrix} 4 \\ 1 \\ 2 \end{pmatrix}$ onto the subspace spanned by $u_1 = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}$ and $u_2 = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}$.
+383,Compute the real Schur decomposition of $Y = \begin{pmatrix} 1 & 2 \\ -2 & 1 \end{pmatrix}$.
+384,Solve $Zx = b$ using forward substitution where $Z = \begin{pmatrix} 2 & 0 & 0 \\ 3 & 4 & 0 \\ 1 & -2 & 5 \end{pmatrix}$ and $b = \begin{pmatrix} 8 \\ 18 \\ 9 \end{pmatrix}$.
+385,Calculate the angle between vectors $u = \begin{pmatrix} 2 \\ 1 \\ 3 \end{pmatrix}$ and $v = \begin{pmatrix} 1 \\ 4 \\ 2 \end{pmatrix}$.
+386,Find matrix $A$ such that $A^4 = \begin{pmatrix} 16 & 0 \\ 0 & 81 \end{pmatrix}$.
+387,Compute the generalized inverse of $B = \begin{pmatrix} 1 & 3 \\ 2 & 6 \end{pmatrix}$.
+388,Solve the homogeneous system $(C - 5I)x = 0$ where $C = \begin{pmatrix} 7 & 2 \\ 4 & 3 \end{pmatrix}$.
+389, Find the polar decomposition of $D = \begin{pmatrix} 3 & 4 \\ 0 & 5 \end{pmatrix}$.
+390, Calculate the residual for approximate solution $x = \begin{pmatrix} 3 \\ 1 \end{pmatrix}$ to $Ex = f$ where $E = \begin{pmatrix} 2 & 1 \\ 3 & 2 \end{pmatrix}$ and $f = \begin{pmatrix} 7 \\ 11 \end{pmatrix}$.
+391,Find the column space of $F = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 7 \\ 1 & 2 & 4 \end{pmatrix}$.
+392,Compute three steps of Gauss-Seidel method for $\begin{pmatrix} 5 & 2 \\ 1 & 4 \end{pmatrix}x = \begin{pmatrix} 12 \\ 9 \end{pmatrix}$ with $x^{(0)} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+393,Find eigenvalues of the symmetric matrix $G = \begin{pmatrix} 3 & 1 & 2 \\ 1 & 3 & 2 \\ 2 & 2 & 0 \end{pmatrix}$.
+394, Calculate the matrix logarithm of $H = \begin{pmatrix} e^3 & 0 \\ 0 & e^{-1} \end{pmatrix}$.
+395, Find the best rank-1 approximation to $I = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$ using SVD.
+396, Solve the matrix equation $XA + AX = B$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$ and $B = \begin{pmatrix} 6 & 0 \\ 0 & 12 \end{pmatrix}$.
+397,Find the Gershgorin discs for $L = \begin{pmatrix} 5 & 1 & -2 \\ 2 & 4 & 1 \\ -1 & 2 & 6 \end{pmatrix}$.
+398,Calculate the Householder reflector that zeros all but the first component of $v = \begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}$.
+399,Solve the triangular system $\begin{pmatrix} 3 & 2 & 1 \\ 0 & 4 & 2 \\ 0 & 0 & 5 \end{pmatrix}x = \begin{pmatrix} 16 \\ 14 \\ 15 \end{pmatrix}$ using back substitution.
+400,Compute the operator norm of $M = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$.
+401,Find eigenvalues of the anti-symmetric matrix $N = \begin{pmatrix} 0 & 2 & -1 \\ -2 & 0 & 3 \\ 1 & -3 & 0 \end{pmatrix}$.
+402,Calculate the condition number of $O = \begin{pmatrix} 1 & 2 \\ 0 & 0.001 \end{pmatrix}$.
+403,Find the solution using one iteration of GMRES for $\begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}x = \begin{pmatrix} 4 \\ 3 \end{pmatrix}$ with $x_0 = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+404,Calculate the Hadamard product $P \circ Q$ where $P = \begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix}$ and $Q = \begin{pmatrix} 5 & 2 \\ 1 & 3 \end{pmatrix}$.
+405,Find eigenvalues of the circulant matrix $R = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 4 & 1 & 2 & 3 \\ 3 & 4 & 1 & 2 \\ 2 & 3 & 4 & 1 \end{pmatrix}$
+406,"Compute the generalized eigenvalues of $(S, T)$ where $S = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$ and $T = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$."
+407,"Find the solution to the block system $\begin{pmatrix} A & B \\ C & D \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} b_1 \\ b_2 \end{pmatrix}$ where $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$, $B = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$, $C = \begin{pmatrix} 0 & 1 \end{pmatrix}$, $D = 3$, $b_1 = \begin{pmatrix} 5 \\ 4 \end{pmatrix}$, $b_2 = 2$."
+408,Calculate the matrix sign function of $U = \begin{pmatrix} 4 & 0 \\ 0 & -3 \end{pmatrix}$.
+409,"Find the Schur complement of $\begin{pmatrix} A & B \\ C & D \end{pmatrix}$ where $A = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$, $B = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$, $C = \begin{pmatrix} 2 & 1 \end{pmatrix}$, $D = 5$."
+410,Compute the Kronecker product $V \otimes W$ where $V = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$ and $W = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$.
+411,Find the matrix exponential of $X = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$.
+412,Calculate the vec operation on $Y = \begin{pmatrix} 2 & 4 \\ 1 & 3 \end{pmatrix}$.
+413,Find the solution using BiCGSTAB method setup for $\begin{pmatrix} 3 & 1 \\ 1 & 4 \end{pmatrix}x = \begin{pmatrix} 4 \\ 5 \end{pmatrix}$.
+414,Compute the Drazin inverse of $Z = \begin{pmatrix} 2 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}$.
+415,Find eigenvalues of the Toeplitz matrix $AA = \begin{pmatrix} 3 & 2 & 1 & 0 \\ 2 & 3 & 2 & 1 \\ 1 & 2 & 3 & 2 \\ 0 & 1 & 2 & 3 \end{pmatrix}$.
+416,Calculate the Rayleigh quotient $\frac{x^TAx}{x^Tx}$ where $A = \begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix}$ and $x = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$.
+417, Find the solution to the algebraic Riccati equation $X + XAX = Q$ where $A = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}$ and $Q = \begin{pmatrix} 4 & 0 \\ 0 & 9 \end{pmatrix}$.
+418,Compute the companion matrix for polynomial $p(x) = x^4 + 3x^3 + 2x^2 + x + 5$.
+419,Find the solution using QMR method setup for $\begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix}x = \begin{pmatrix} 5 \\ 4 \end{pmatrix}$.
+420,Calculate the group inverse of $BB = \begin{pmatrix} 2 & 2 & 2 \\ 2 & 2 & 2 \\ 2 & 2 & 2 \end{pmatrix}$.
+421,Find eigenvalues of the Hankel matrix $CC = \begin{pmatrix} 2 & 3 & 4 & 5 \\ 3 & 4 & 5 & 6 \\ 4 & 5 & 6 & 7 \\ 5 & 6 & 7 & 8 \end{pmatrix}$.
+422,"Compute the weighted least squares solution to $Ax = b$ with weight matrix $W$ where $A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \\ 1 & 3 \end{pmatrix}$, $b = \begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}$, $W = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{pmatrix}$."
+423,Find the solution to the generalized Sylvester equation $AXB + CXD = E$ where matrices are $2 \times 2$.
+424,Calculate the numerical rank of $DD = \begin{pmatrix} 2 & 4 & 6 \\ 1 & 2 & 3.0001 \\ 3 & 6 & 9 \end{pmatrix}$ with tolerance $10^{-2}$.
+425, Find the solution using MINRES method setup for $\begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}x = \begin{pmatrix} 4 \\ 3 \end{pmatrix}$.
+426,"Compute matrix norms $\|EE\|_1, \|EE\|_2, \|EE\|_\infty$ for $EE = \begin{pmatrix} 2 & -1 \\ 3 & 4 \end{pmatrix}$."
+427,Find the Cholesky factorization with pivoting for $FF = \begin{pmatrix} 2 & 1 & 3 \\ 1 & 5 & 2 \\ 3 & 2 & 10 \end{pmatrix}$.
+428,Calculate the condition number for matrix inversion of $GG = \begin{pmatrix} 2 & 2 \\ 2 & 2+\epsilon \end{pmatrix}$ where $\epsilon = 10^{-4}$.
+429, Find the solution to tensor equation $\mathcal{A} \times_1 X = \mathcal{B}$ for $3 \times 2 \times 2$ tensor.
+430,Compute the GSVD of $A = \begin{pmatrix} 1 & 3 \\ 2 & 1 \end{pmatrix}$ and $B = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$.
+431, Find the solution using LSQR method setup for $\min\|Ax - b\|$ where $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \\ 3 & 1 \end{pmatrix}$ and $b = \begin{pmatrix} 4 \\ 5 \\ 7 \end{pmatrix}$.
+432,Calculate the matrix cosine of $HH = \begin{pmatrix} 0 & \pi \\ -\pi & 0 \end{pmatrix}$.
+433,"Find the Pad� approximation of order $(2,1)$ to $e^{II}$ where $II = \begin{pmatrix} 0.2 & 0 \\ 0 & 0.3 \end{pmatrix}$."
+434,Compute the Bauer-Fike bound for $JJ = \begin{pmatrix} 3 & 2 \\ 0 & 4 \end{pmatrix}$ with perturbation $\Delta A = \begin{pmatrix} 0.05 & 0 \\ 0 & 0.05 \end{pmatrix}$.
+435,Find the solution to the algebraic Riccati equation $A^TX + XA - XBR^{-1}B^TX + Q = 0$ for $2 \times 2$ matrices.
+436,Calculate the structured condition number for Vandermonde matrix $V = \begin{pmatrix} 1 & 1 \\ 3 & 9 \end{pmatrix}$.
+437,Find the solution using IDR(s) method with $s=1$ setup for $\begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix}x = \begin{pmatrix} 5 \\ 4 \end{pmatrix}$.
+438,Compute the logarithmic norm of $KK = \begin{pmatrix} -2 & 3 \\ 1 & -4 \end{pmatrix}$.
+439,Find the solution to discrete Lyapunov equation $X - AXA^T = Q$ where $A = \begin{pmatrix} 0.6 & 0.2 \\ 0 & 0.7 \end{pmatrix}$ and $Q = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$.
+440,Calculate field of values boundary for $LL = \begin{pmatrix} 2 & i \\ -i & 3 \end{pmatrix}$.
+441,Find the solution using FGMRES setup for $\begin{pmatrix} 5 & 1 \\ 1 & 4 \end{pmatrix}x = \begin{pmatrix} 6 \\ 5 \end{pmatrix}$.
+442,Compute the Drazin inverse of $MM = \begin{pmatrix} 2 & 2 & 2 \\ 0 & 0 & 2 \\ 0 & 0 & 0 \end{pmatrix}$.
+443,"Find eigenvalues of matrix pencil $(A, B)$ where $A = \begin{pmatrix} 2 & 3 \\ 1 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$."
+444, Calculate pseudospectrum $\sigma_\epsilon(A)$ for $\epsilon = 0.2$ where $A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$.
+445,Find the solution using restarted GMRES(2) for $\begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix}x = \begin{pmatrix} 5 \\ 4 \end{pmatrix}$.
+446,Compute matrix cube root $A^{1/3}$ for $A = \begin{pmatrix} 8 & 0 \\ 0 & 27 \end{pmatrix}$.
+447,Find the solution to coupled Sylvester equations $AX + YB = C$ and $DX + YE = F$.
+448, Calculate stability radius of $A = \begin{pmatrix} -3 & 2 \\ 0 & -1 \end{pmatrix}$.
+449,Find eigenvalue approximation using Arnoldi method for $\begin{pmatrix} 4 & 1 & 0 \\ 1 & 4 & 1 \\ 0 & 1 & 4 \end{pmatrix}$.
+450,Compute matrix unwinding number for $\log(A)$ where $A = \begin{pmatrix} -2 & 0 \\ 0 & -3 \end{pmatrix}$.
+451,Find the LU decomposition of the matrix $A = \begin{pmatrix} 2 & 4 & -2 \\ 4 & 9 & -3 \\ -2 & -3 & 7 \end{pmatrix}$.
+452,Solve the system $Ax = b$ where $A = \begin{pmatrix} 3 & 1 & -1 \\ 1 & 4 & 1 \\ 2 & -1 & 5 \end{pmatrix}$ and $b = \begin{pmatrix} 2 \\ 12 \\ 10 \end{pmatrix}$ using Gaussian elimination.
+453,Find the eigenvalues of $A = \begin{pmatrix} 5 & -2 \\ 3 & -1 \end{pmatrix}$.
+454,Compute the QR decomposition of $A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \\ 0 & 1 \end{pmatrix}$ using Gram-Schmidt process.
+455,Find the condition number of $A = \begin{pmatrix} 10 & 7 & 8 & 7 \\ 7 & 5 & 6 & 5 \\ 8 & 6 & 10 & 9 \\ 7 & 5 & 9 & 10 \end{pmatrix}$ in the 2-norm.
+456,Use the power method to find the dominant eigenvalue of $A = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix}$ starting with $x_0 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.
+457,Solve the least squares problem $\min_x \|Ax - b\|_2^2$ where $A = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{pmatrix}$ and $b = \begin{pmatrix} 6 \\ 8 \\ 10 \end{pmatrix}$.
+458,Find the singular value decomposition (SVD) of $A = \begin{pmatrix} 3 & 2 & 2 \\ 2 & 3 & -2 \end{pmatrix}$.
+459,Use Jacobi iteration to solve $\begin{pmatrix} 10 & -1 & 2 \\ -1 & 11 & -1 \\ 2 & -1 & 10 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 6 \\ 25 \\ -11 \end{pmatrix}$ with initial guess $x^{(0)} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$.
+460,Find the Cholesky decomposition of $A = \begin{pmatrix} 4 & 2 & 1 \\ 2 & 3 & 0.5 \\ 1 & 0.5 & 1 \end{pmatrix}$.
+461,Compute the matrix exponential $e^{At}$ where $A = \begin{pmatrix} 0 & 1 \\ -2 & -3 \end{pmatrix}$ and $t = 1$.
+462,Use Gauss-Seidel iteration to solve the system from problem 9.
+463,Find the pseudoinverse of $A = \begin{pmatrix} 1 & 2 \\ 3 & 6 \\ 2 & 4 \end{pmatrix}$.
+464,Solve the eigenvalue problem $Ax = \lambda Bx$ where $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$.
+465,Use the conjugate gradient method to solve $Ax = b$ where $A = \begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix}$ and $b = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.
+466,Find the matrix square root of $A = \begin{pmatrix} 5 & 2 \\ 2 & 2 \end{pmatrix}$.
+467,Use the bisection method to find the largest eigenvalue of $A = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}$ to within $10^{-3}$.
+468,Compute the Frobenius norm and spectral norm of $A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$.
+469,Solve the Lyapunov equation $AX + XA^T = -Q$ where $A = \begin{pmatrix} -1 & 1 \\ 0 & -2 \end{pmatrix}$ and $Q = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix}$.
+470,Find the Jordan canonical form of $A = \begin{pmatrix} 2 & 1 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{pmatrix}$.
+471,"Use the Arnoldi iteration to find an orthonormal basis for the Krylov subspace $\mathcal{K}_3(A, v)$ where $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $v = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$."
+472,Find the polar decomposition $A = UP$ of $A = \begin{pmatrix} 3 & 1 \\ 0 & 2 \end{pmatrix}$.
+473,Solve the discrete Lyapunov equation $AXA^T - X = -Q$ where $A = \begin{pmatrix} 0.5 & 0.2 \\ 0 & 0.8 \end{pmatrix}$ and $Q = I$.
+474,Find the generalized inverse of $A = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \\ 1 & 2 & 1 \end{pmatrix}$.
+475,Use the QR algorithm to find eigenvalues of $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$.
+476,Find the condition number of the Hilbert matrix $H_3 = \begin{pmatrix} 1 & \frac{1}{2} & \frac{1}{3} \\ \frac{1}{2} & \frac{1}{3} & \frac{1}{4} \\ \frac{1}{3} & \frac{1}{4} & \frac{1}{5} \end{pmatrix}$.
+477,"Solve the matrix equation $AX + XB = C$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$, $B = \begin{pmatrix} 3 & 0 \\ 0 & 4 \end{pmatrix}$, $C = \begin{pmatrix} 4 & 5 \\ 6 & 7 \end{pmatrix}$."
+478,Find the eigenvalues of the tridiagonal matrix $T = \begin{pmatrix} 2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2 \end{pmatrix}$.
+479,Use the inverse power method to find the smallest eigenvalue of $A = \begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix}$ starting with $x_0 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.
+480,Find the matrix logarithm of $A = \begin{pmatrix} e & 0 \\ 0 & e^2 \end{pmatrix}$.
+481,Solve the generalized eigenvalue problem $Ax = \lambda Mx$ where $A = \begin{pmatrix} 6 & 2 \\ 2 & 3 \end{pmatrix}$ and $M = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}$.
+482,Find the rank of $A = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 4 & 6 & 8 \\ 3 & 6 & 9 & 12 \\ 1 & 2 & 4 & 5 \end{pmatrix}$ using row reduction.
+483,Use the Lanczos algorithm to find the largest eigenvalue of $A = \begin{pmatrix} 4 & 1 & 0 \\ 1 & 4 & 1 \\ 0 & 1 & 4 \end{pmatrix}$ starting with $q_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}$.
+484,Find the null space of $A = \begin{pmatrix} 1 & 2 & -1 & 3 \\ 2 & 4 & -2 & 6 \\ -1 & -2 & 1 & -3 \end{pmatrix}$.
+485,Compute the matrix exponential $e^A$ where $A = \begin{pmatrix} 0 & \pi \\ -\pi & 0 \end{pmatrix}$.
+486,Solve the linear system $Ax = b$ using Cramer's rule where $A = \begin{pmatrix} 2 & 1 & 3 \\ 1 & 0 & 1 \\ 1 & 1 & 1 \end{pmatrix}$ and $b = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$.
+487,Find the eigenvalues and eigenvectors of the symmetric matrix $A = \begin{pmatrix} 3 & 1 & 1 \\ 1 & 3 & 1 \\ 1 & 1 & 3 \end{pmatrix}$.
+488,"Use the method of undetermined coefficients to solve $\frac{d^2x}{dt^2} + 4x = \cos(2t)$ with $x(0) = 0$, $x'(0) = 1$."
+489,Find the determinant of the $4 \times 4$ matrix $A = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 0 & 1 & 2 & 3 \\ 0 & 0 & 1 & 2 \\ 0 & 0 & 0 & 1 \end{pmatrix}$.
+490,Solve the matrix differential equation $\frac{dX}{dt} = AX$ where $A = \begin{pmatrix} 1 & 2 \\ 0 & 3 \end{pmatrix}$ and $X(0) = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+491,Find the least squares solution to the overdetermined system $\begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \\ 1 & 4 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 1 \\ 3 \\ 4 \\ 6 \end{pmatrix}$.
+492,Use the Householder transformation to find the QR decomposition of $A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+493,Find the spectral radius of $A = \begin{pmatrix} 0.5 & 0.3 \\ 0.2 & 0.4 \end{pmatrix}$.
+494,"Solve the Riccati equation $X^2 + AX + XB + C = 0$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$, $B = \begin{pmatrix} 3 & 0 \\ 0 & 4 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$."
+495,Find the matrix $P$ such that $P^{-1}AP$ is in Jordan canonical form for $A = \begin{pmatrix} 5 & 1 & 0 \\ 0 & 5 & 1 \\ 0 & 0 & 5 \end{pmatrix}$.
+496,Use the secant method to find a root of $f(x) = x^3 - 2x - 5$ starting with $x_0 = 2$ and $x_1 = 2.1$.
+497,Find the condition number of $A = \begin{pmatrix} 1 & 1 \\ 1 & 1.001 \end{pmatrix}$ in the infinity norm.
+498,"Solve the linear programming problem: minimize $c^T x$ subject to $Ax = b$, $x \geq 0$ where $c = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$, $A = \begin{pmatrix} 1 & 1 \end{pmatrix}$, $b = 3$."
+499,Find the eigenvalues of the companion matrix $C = \begin{pmatrix} 0 & 0 & -6 \\ 1 & 0 & -11 \\ 0 & 1 & -6 \end{pmatrix}$.
+500,"Use the method of Lagrange multipliers to minimize $f(x,y) = x^2 + y^2$ subject to $g(x,y) = x + y - 1 = 0$."
+501,Find the Moore-Penrose pseudoinverse of $A = \begin{pmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 1 \end{pmatrix}$.
+502,Solve the discrete-time Lyapunov equation $X - AXA^T = Q$ where $A = \begin{pmatrix} 0.5 & 0.1 \\ 0 & 0.8 \end{pmatrix}$ and $Q = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+503,Find the eigenvalues of the circulant matrix $C = \begin{pmatrix} 1 & 2 & 3 \\ 3 & 1 & 2 \\ 2 & 3 & 1 \end{pmatrix}$.
+504,"Use Newton's method to solve the nonlinear system $\begin{cases} x^2 + y^2 = 4 \\ xy = 1 \end{cases}$ starting from $(x_0, y_0) = (1.5, 1.5)$."
+505,Find the matrix $A$ such that $A^3 = \begin{pmatrix} 8 & 0 \\ 0 & 27 \end{pmatrix}$.
+506,"Solve the matrix equation $AX - XB = C$ where $A = \begin{pmatrix} 1 & 2 \\ 0 & 3 \end{pmatrix}$, $B = \begin{pmatrix} 4 & 0 \\ 0 & 5 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$."
+507,Find the principal component analysis (PCA) of the data matrix $X = \begin{pmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{pmatrix}$.
+508,Use the bisection method to find the smallest positive eigenvalue of $A = \begin{pmatrix} 2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2 \end{pmatrix}$.
+509,Find the matrix square root of $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ using the Denman-Beavers iteration.
+510,"Solve the generalized Sylvester equation $AXB + CXD = E$ where all matrices are $2 \times 2$ with $A = I$, $B = I$, $C = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$, $D = I$, $E = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$."
+511,Find the eigenvalues of the Toeplitz matrix $T = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 1 & 2 \\ 3 & 2 & 1 \end{pmatrix}$.
+512,Use the Rayleigh quotient iteration to find an eigenvalue of $A = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}$ starting with $x_0 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.
+513,Find the Schur decomposition of $A = \begin{pmatrix} 1 & 2 \\ 0 & 3 \end{pmatrix}$.
+514,"Solve the discrete algebraic Riccati equation $X = A^T X A - A^T X B(R + B^T X B)^{-1} B^T X A + Q$ where $A = \begin{pmatrix} 1.1 & 0.1 \\ 0 & 0.9 \end{pmatrix}$, $B = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$, $Q = I$, $R = 1$."
+515,Find the generalized singular value decomposition (GSVD) of matrices $A = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$ and $B = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}$.
+516,Use the Levenberg-Marquardt algorithm to solve the nonlinear least squares problem $\min \|F(x)\|^2$ where $F(x) = \begin{pmatrix} x_1^2 + x_2^2 - 1 \\ x_1 - x_2 \end{pmatrix}$ starting from $x_0 = \begin{pmatrix} 0.5 \\ 0.5 \end{pmatrix}$.
+517,Find the matrix sign function of $A = \begin{pmatrix} 2 & 1 \\ 0 & -1 \end{pmatrix}$.
+518,"Solve the continuous-time algebraic Riccati equation $A^T X + XA - XBR^{-1}B^T X + Q = 0$ where $A = \begin{pmatrix} 0 & 1 \\ -2 & -3 \end{pmatrix}$, $B = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$, $Q = I$, $R = 1$."
+519,Find the Kronecker product $A \otimes B$ where $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 0 & 5 \\ 6 & 7 \end{pmatrix}$.
+520,Use the implicitly restarted Arnoldi method to find the largest eigenvalue of $A = \begin{pmatrix} 4 & 1 & 0 & 0 \\ 1 & 4 & 1 & 0 \\ 0 & 1 & 4 & 1 \\ 0 & 0 & 1 & 4 \end{pmatrix}$.
+521,Find the matrix exponential of $A = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}$ using the Jordan canonical form.
+522,Solve the linear matrix inequality $A^T X + XA + Q \preceq 0$ where $A = \begin{pmatrix} -1 & 1 \\ 0 & -2 \end{pmatrix}$ and $Q = I$.
+523,Find the Drazin inverse of $A = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix}$.
+524,Use the cyclic reduction method to solve the tridiagonal system $\begin{pmatrix} 2 & -1 & 0 & 0 \\ -1 & 2 & -1 & 0 \\ 0 & -1 & 2 & -1 \\ 0 & 0 & -1 & 2 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{pmatrix} = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 1 \end{pmatrix}$.
+525,Find the numerical range (field of values) of $A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
+526,"Solve the Stein equation $AXB - X + C = 0$ where $A = \begin{pmatrix} 0.5 & 0 \\ 0 & 0.8 \end{pmatrix}$, $B = \begin{pmatrix} 0.6 & 0 \\ 0 & 0.7 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$."
+527,Find the eigenvalues of the pentadiagonal matrix $P = \begin{pmatrix} 1 & 2 & 1 & 0 & 0 \\ 2 & 1 & 2 & 1 & 0 \\ 1 & 2 & 1 & 2 & 1 \\ 0 & 1 & 2 & 1 & 2 \\ 0 & 0 & 1 & 2 & 1 \end{pmatrix}$.
+528,Use the Padé approximation to compute $e^A$ where $A = \begin{pmatrix} 0.1 & 0.05 \\ 0.05 & 0.1 \end{pmatrix}$.
+529,Solve the matrix equation $X^2 = A$ where $A = \begin{pmatrix} 4 & 0 \\ 0 & 9 \end{pmatrix}$.
+530,Find the condition number of the Vandermonde matrix $V = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 2 & 3 \\ 1 & 4 & 9 \end{pmatrix}$.
+531,"Use the block LU decomposition to factor $A = \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix}$ where $A_{11} = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$, $A_{12} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$, $A_{21} = \begin{pmatrix} 1 & 0 \end{pmatrix}$, $A_{22} = 3$."
+532,Find the eigenvalues of the Leslie matrix $L = \begin{pmatrix} 0 & 2 & 3 \\ 0.5 & 0 & 0 \\ 0 & 0.8 & 0 \end{pmatrix}$.
+533,"Solve the generalized Lyapunov equation $AXE^T + EXA^T = -Q$ where $A = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$, $E = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$, $Q = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$."
+534,"Use the Bartels-Stewart algorithm to solve the Sylvester equation $AX - XB = C$ where $A = \begin{pmatrix} 1 & 2 \\ 0 & 3 \end{pmatrix}$, $B = \begin{pmatrix} 4 & 1 \\ 0 & 5 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$."
+535,Find the eigenvalues of the Hankel matrix $H = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 3 & 4 \\ 3 & 4 & 5 \end{pmatrix}$.
+536,"Solve the matrix equation $AXB + CXD = E$ where $A = I$, $B = I$, $C = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$, $D = I$, $E = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$."
+537,Find the spectral decomposition of the symmetric matrix $S = \begin{pmatrix} 2 & 1 & 1 \\ 1 & 2 & 1 \\ 1 & 1 & 2 \end{pmatrix}$.
+538,Use the Golub-Kahan bidiagonalization to compute the SVD of $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{pmatrix}$.
+539,Find the matrix $P$ that diagonalizes $A = \begin{pmatrix} 3 & 1 & 0 \\ 1 & 3 & 1 \\ 0 & 1 & 3 \end{pmatrix}$.
+540,Solve the continuous-time Lyapunov equation $AX + XA^T = -Q$ using the matrix exponential method where $A = \begin{pmatrix} -1 & 1 \\ 0 & -2 \end{pmatrix}$ and $Q = I$.
+541,"Find the eigenvalues of the block matrix $M = \begin{pmatrix} A & B \\ 0 & C \end{pmatrix}$ where $A = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$, $B = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$, $C = 3$."
+542,"Use the Schur complement to solve the linear system $\begin{pmatrix} A & B \\ C & D \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} b_1 \\ b_2 \end{pmatrix}$ where $A = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$, $B = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 2 \end{pmatrix}$, $D = 4$, $b_1 = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$, $b_2 = 3$."
+543,Find the minimal polynomial of the companion matrix $C = \begin{pmatrix} 0 & 0 & 0 & -6 \\ 1 & 0 & 0 & -11 \\ 0 & 1 & 0 & -6 \\ 0 & 0 & 1 & -1 \end{pmatrix}$.
+544,"Solve the matrix Riccati differential equation $\frac{dX}{dt} = AX + XB + XCX - D$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$, $B = \begin{pmatrix} 3 & 0 \\ 0 & 4 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$, $D = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$."
+545,Find the eigenvalues of the anti-symmetric matrix $A = \begin{pmatrix} 0 & 1 & 2 \\ -1 & 0 & 3 \\ -2 & -3 & 0 \end{pmatrix}$.
+546,"Use the Woodbury matrix identity to compute $(A + UCV^T)^{-1}$ where $A = I$, $U = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$, $C = 2$, $V^T = \begin{pmatrix} 1 & 1 & 1 \end{pmatrix}$."
+547,Find the eigenvalues of the doubly stochastic matrix $P = \begin{pmatrix} 0.3 & 0.4 & 0.3 \\ 0.2 & 0.3 & 0.5 \\ 0.5 & 0.3 & 0.2 \end{pmatrix}$.
+548,Solve the generalized eigenvalue problem using the QZ algorithm for $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$.
+549,Find the matrix $X$ that minimizes $\|AX - B\|_F^2$ where $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 1 \end{pmatrix}$.
+550,Find the eigenvalues of the persymmetric matrix $P = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 5 & 6 & 3 \\ 3 & 6 & 5 & 2 \\ 4 & 3 & 2 & 1 \end{pmatrix}$.
+551,Compute the matrix product $AB$ where $A = \begin{pmatrix} 2 & -1 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 2 \\ -1 & 3 \end{pmatrix}$.
+552,Find the determinant of $A = \begin{pmatrix} 3 & 2 & 1 \\ 0 & 4 & 2 \\ 1 & -1 & 3 \end{pmatrix}$.
+553,Solve the system $\begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 5 \\ 7 \end{pmatrix}$ using Cramer's rule.
+554, Find the inverse of $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$.
+555,Compute the eigenvalues of $A = \begin{pmatrix} 3 & 1 \\ 0 & 2 \end{pmatrix}$.
+556,Perform LU decomposition on $A = \begin{pmatrix} 2 & 1 \\ 4 & 3 \end{pmatrix}$.
+557, Calculate the 1-norm of vector $v = \begin{pmatrix} 3 \\ -4 \\ 2 \end{pmatrix}$.
+558, Find the rank of $A = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 1 & 1 & 2 \end{pmatrix}$.
+559, Solve $Ax = b$ where $A = \begin{pmatrix} 1 & 1 \\ 2 & 3 \end{pmatrix}$ and $b = \begin{pmatrix} 3 \\ 8 \end{pmatrix}$ using Gaussian elimination.
+560, Find the condition number $\kappa_2(A)$ for $A = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}$.
+561,Compute the QR decomposition of $A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \\ 0 & 1 \end{pmatrix}$ using Gram-Schmidt.
+562,Find the null space of $A = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \end{pmatrix}$.
+563,Compute $A^2$ where $A = \begin{pmatrix} 1 & 2 \\ 0 & 3 \end{pmatrix}$.
+564,Find the characteristic polynomial of $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$.
+565,Calculate the Frobenius norm of $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$.
+566,Compute the matrix exponential $e^A$ where $A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
+567,Find the singular values of $A = \begin{pmatrix} 3 & 0 \\ 0 & 2 \\ 0 & 0 \end{pmatrix}$.
+568, Solve the least squares problem $\min_x \|Ax - b\|_2^2$ where $A = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{pmatrix}$ and $b = \begin{pmatrix} 2 \\ 3 \\ 5 \end{pmatrix}$.
+569,Calculate the spectral radius of $A = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$.
+570, Find the column space of $A = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 1 & 3 \\ 1 & -1 & 2 \end{pmatrix}$.
+571,Compute the matrix norm $\|A\|_1$ where $A = \begin{pmatrix} 2 & -1 & 3 \\ 1 & 4 & -2 \end{pmatrix}$.
+572,Find the orthogonal projection of $b = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ onto the column space of $A = \begin{pmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 1 \end{pmatrix}$.
+573,Solve the system using Jacobi iteration: $\begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix} x = \begin{pmatrix} 5 \\ 6 \end{pmatrix}$ with initial guess $x^{(0)} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+574,Find the Cholesky decomposition of $A = \begin{pmatrix} 4 & 2 \\ 2 & 2 \end{pmatrix}$.
+575,Calculate the power method iteration for finding the dominant eigenvalue of $A = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix}$ starting with $v^{(0)} = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.
+576, Find the Jordan normal form of $A = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}$.
+577,Compute the matrix square root of $A = \begin{pmatrix} 5 & 0 \\ 0 & 9 \end{pmatrix}$.
+578,Calculate the generalized inverse of $A = \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix}$.
+579," Solve the Sylvester equation $AX + XB = C$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$, $B = \begin{pmatrix} 3 \end{pmatrix}$, $C = \begin{pmatrix} 4 \\ 5 \end{pmatrix}$."
+580, Find the Schur decomposition of $A = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$.
+581,Solve the matrix equation $X^2 = A$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix}$.
+582,"Calculate the commutator $[A,B] = AB - BA$ where $A = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix}$ and $B = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$."
+583,Compute the Gershgorin circles for $A = \begin{pmatrix} 3 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 4 \end{pmatrix}$.
+584,Find the matrix square using Cayley-Hamilton theorem for $A = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$.
+585,Calculate the matrix function $f(A) = A^3 - 2A + I$ where $A = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}$.
+586, Find the adjugate matrix of $A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 4 \\ 5 & 6 & 0 \end{pmatrix}$.
+587, Solve the generalized eigenvalue problem $Ax = \lambda Bx$ where $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$.
+588,Find the best rank-1 approximation to $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ using SVD.
+589,Find the Moore-Penrose inverse of $A = \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix}$.
+590,"Solve the constrained least squares problem: minimize $\|Ax - b\|_2^2$ subject to $Cx = d$ where $A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \\ 0 & 1 \end{pmatrix}$, $b = \begin{pmatrix} 2 \\ 1 \\ 1 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 1 \end{pmatrix}$, $d = 1$."
+591,Compute the weighted least squares solution to $Ax = b$ with weight matrix $W = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix}$ where $A = \begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix}$ and $b = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$
+592,Find the principal angles between subspaces spanned by $A = \begin{pmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 1 \\ 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+593,Compute the hyperbolic matrix functions $\sinh(A)$ and $\cosh(A)$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$.
+594,Find the spectral decomposition of $A = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$.
+595, Compute the matrix power $A^{10}$ where $A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$ using diagonalization.
+596, Find the left and right null spaces of $A = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \end{pmatrix}$.
+597,Compute the Binet-Cauchy theorem application for $\det(AB)$ where $A$ is $3 \times 2$ and $B$ is $2 \times 3$.
+598, Calculate the matrix permanent of $A = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$.
+599,Compute the Householder reflection matrix that reflects vector $x = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ to $\begin{pmatrix} 5 \\ 0 \end{pmatrix}$.
+600, Find the Givens rotation matrix that zeros the second component of $\begin{pmatrix} 3 \\ 4 \end{pmatrix}$.
+601,Compute the LU decomposition of the matrix \( A = \begin{pmatrix} 2 & 1 & 3 \\ 4 & 3 & 7 \\ 2 & 2 & 5 \end{pmatrix} \).
+602,Find the eigenvalues of \( A = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix} \).
+603,Solve the system \( Ax = b \) where \( A = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix} \) and \( b = \begin{pmatrix} 5 \\ 7 \end{pmatrix} \) using Cramer's rule.
+604,Compute the QR decomposition of \( A = \begin{pmatrix} 1 & 1 \\ 1 & 0 \\ 0 & 1 \end{pmatrix} \) using Gram-Schmidt.
+605,Calculate the condition number \( \kappa_2(A) \) for \( A = \begin{pmatrix} 2 & 1 \\ 0 & 1 \end{pmatrix} \).
+606,Perform one iteration of the Jacobi method for \( \begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 5 \\ 6 \end{pmatrix} \) with initial guess \( x^{(0)} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \).
+607,Find the singular value decomposition of \( A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \\ 1 & 0 \end{pmatrix} \).
+608,Solve the least squares problem \( \min_x \|Ax - b\|_2^2 \) where \( A = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{pmatrix} \) and \( b = \begin{pmatrix} 2 \\ 3 \\ 5 \end{pmatrix} \).
+609,Compute the Cholesky decomposition of \( A = \begin{pmatrix} 4 & 2 \\ 2 & 2 \end{pmatrix} \).
+610,Find the spectral radius of \( A = \begin{pmatrix} 1 & 2 \\ 3 & 2 \end{pmatrix} \).
+611,Perform one step of the power method on \( A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} \) with initial vector \( v^{(0)} = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \).
+612,Calculate the Frobenius norm of \( A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix} \).
+613,Find the inverse of \( A = \begin{pmatrix} 1 & 2 & 1 \\ 0 & 1 & 1 \\ 1 & 0 & 1 \end{pmatrix} \) using Gauss-Jordan elimination.
+614,Solve \( Ax = b \) using forward substitution where \( A = \begin{pmatrix} 2 & 0 & 0 \\ 1 & 3 & 0 \\ 4 & 2 & 5 \end{pmatrix} \) and \( b = \begin{pmatrix} 4 \\ 7 \\ 22 \end{pmatrix} \).
+615,Compute the matrix exponential \( e^A \) for \( A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \).
+616,Find the rank of \( A = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 1 & 3 & 5 \end{pmatrix} \) using row reduction.
+617,Perform one iteration of the Gauss-Seidel method for the system \( \begin{pmatrix} 3 & 1 \\ 1 & 4 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 5 \\ 6 \end{pmatrix} \) with initial guess \( x^{(0)} = \begin{pmatrix} 0 \\ 0 \end{pmatrix} \).
+618,Calculate the determinant of \( A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 10 \end{pmatrix} \) using cofactor expansion.
+619,Find the pseudoinverse of \( A = \begin{pmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 1 \end{pmatrix} \).
+620,Compute the 1-norm of \( A = \begin{pmatrix} 1 & -2 \\ 3 & 4 \end{pmatrix} \).
+621,Find the null space of \( A = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \end{pmatrix} \).
+622,Solve the triangular system \( \begin{pmatrix} 2 & 3 & 1 \\ 0 & 4 & 2 \\ 0 & 0 & 5 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 11 \\ 10 \\ 15 \end{pmatrix} \) using back substitution.
+623,Find the eigenvalues of the tridiagonal matrix \( A = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 2 \end{pmatrix} \).
+624,Compute the matrix norm \( \|A\|_\infty \) for \( A = \begin{pmatrix} 1 & -3 & 2 \\ 4 & 0 & -1 \\ -2 & 1 & 3 \end{pmatrix} \).
+625,Perform Gaussian elimination with partial pivoting on \( \begin{pmatrix} 1 & 2 & 3 \\ 2 & 3 & 4 \\ 3 & 4 & 6 \end{pmatrix} \).
+626,Find the column space of \( A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 1 & 2 \\ 1 & 3 & 5 \end{pmatrix} \).
+627,Calculate the trace and determinant of \( A = \begin{pmatrix} 3 & 1 & 2 \\ 0 & 4 & 1 \\ 0 & 0 & 5 \end{pmatrix} \).
+628,Solve the system \( Ax = b \) using LU decomposition where \( A = \begin{pmatrix} 1 & 2 \\ 3 & 7 \end{pmatrix} \) and \( b = \begin{pmatrix} 3 \\ 10 \end{pmatrix} \).
+629,Find the eigenvector corresponding to \( \lambda = 3 \) for \( A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix} \).
+630,Compute the condition number \( \kappa_1(A) \) for \( A = \begin{pmatrix} 1 & 1 \\ 0 & \epsilon \end{pmatrix} \) where \( \epsilon = 10^{-6} \).
+631,Perform one iteration of the inverse power method on \( A = \begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix} \) with shift \( \sigma = 2 \) and initial vector \( v^{(0)} = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \).
+632,Find the QR decomposition of \( A = \begin{pmatrix} 2 & 0 \\ 0 & 3 \\ 0 & 0 \end{pmatrix} \) using Householder reflections.
+633,"Calculate the residual \( r = b - Ax \) for \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \), \( x = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \), and \( b = \begin{pmatrix} 4 \\ 8 \end{pmatrix} \)."
+634,Find the Jordan canonical form of \( A = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} \).
+635,Solve the overdetermined system \( \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \\ 1 & 4 \end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 2 \\ 3 \\ 5 \\ 6 \end{pmatrix} \) in the least squares sense.
+636,Compute the matrix square root of \( A = \begin{pmatrix} 5 & 0 \\ 0 & 9 \end{pmatrix} \).
+637,Find the minimal polynomial of \( A = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix} \).
+638,Perform one step of the QR algorithm on \( A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} \).
+639,Calculate the generalized inverse of \( A = \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix} \).
+640,"Find the solution to the Sylvester equation \( AX + XB = C \) where \( A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \), \( B = \begin{pmatrix} 3 \end{pmatrix} \), and \( C = \begin{pmatrix} 4 \\ 5 \end{pmatrix} \)."
+641,Compute the Schur decomposition of \( A = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} \).
+642,Solve the matrix equation \( X^2 = A \) where \( A = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix} \).
+643,Find the best rank-1 approximation to \( A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} \) using SVD.
+644,Calculate the exponential of \( A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \) using the Jordan form.
+645,Find the solution to the discrete Lyapunov equation \( X - AXA^T = Q \) where \( A = \begin{pmatrix} 0.5 & 0 \\ 0 & 0.8 \end{pmatrix} \) and \( Q = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \).
+646,Compute the matrix logarithm of \( A = \begin{pmatrix} e & 0 \\ 0 & e^2 \end{pmatrix} \).
+647,Find the polar decomposition \( A = UP \) of \( A = \begin{pmatrix} 3 & 4 \\ 0 & 5 \end{pmatrix} \).
+648,Solve the generalized eigenvalue problem \( Ax = \lambda Bx \) where \( A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} \) and \( B = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \).
+649,Calculate the nuclear norm of \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \).
+650,Find the Kronecker product \( A \otimes B \) where \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \) and \( B = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \).
+651,Compute the matrix sign function of \( A = \begin{pmatrix} 2 & 0 \\ 0 & -3 \end{pmatrix} \).
+652,Solve the continuous Lyapunov equation \( AX + XA^T = -Q \) where \( A = \begin{pmatrix} -1 & 1 \\ 0 & -2 \end{pmatrix} \) and \( Q = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \).
+653,Find the Drazin inverse of \( A = \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix} \).
+654,Calculate the Hadamard product \( A \circ B \) where \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \) and \( B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} \).
+655,"Find the commutator \( [A,B] = AB - BA \) where \( A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \) and \( B = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \)."
+656,Compute the vec operation on \( A = \begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix} \).
+657,Find the matrix square root of \( A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} \) using diagonalization.
+658,"Solve the matrix equation \( AXB = C \) where \( A = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix} \), \( B = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix} \), and \( C = \begin{pmatrix} 6 & 8 \\ 9 & 12 \end{pmatrix} \)."
+659,Calculate the operator norm \( \|A\|_{2 \to 1} \) where \( A = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix} \).
+660,"Find the generalized Schur decomposition of the matrix pair \( (A,B) \) where \( A = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix} \) and \( B = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \)."
+661,Compute the matrix \( p \)-norm \( \|A\|_p \) for \( p = 2 \) where \( A = \begin{pmatrix} 3 & 0 \\ 0 & 4 \end{pmatrix} \).
+662,"Find the solution to the discrete algebraic Riccati equation \( X = A^T X A - A^T X B(R + B^T X B)^{-1}B^T X A + Q \) where \( A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \), \( B = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \), \( Q = I \), and \( R = 1 \)."
+663,Calculate the Gershgorin circles for \( A = \begin{pmatrix} 3 & 1 & 1 \\ 1 & 4 & 0 \\ 2 & 1 & 5 \end{pmatrix} \).
+664,Find the matrix function \( f(A) = A^3 - 2A^2 + A \) where \( A = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix} \).
+665,Compute the Bauer-Fike bound for the eigenvalue perturbation of \( A = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix} \) with perturbation \( E = \begin{pmatrix} 0.1 & 0 \\ 0 & 0.1 \end{pmatrix} \).
+666,"Find the weighted least squares solution to \( \min_x \|W(Ax - b)\|_2^2 \) where \( A = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{pmatrix} \), \( b = \begin{pmatrix} 2 \\ 3 \\ 5 \end{pmatrix} \), and \( W = \begin{pmatrix} 2 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix} \)."
+667,Calculate the matrix cosine \( \cos(A) \) where \( A = \begin{pmatrix} 0 & \pi \\ 0 & 0 \end{pmatrix} \).
+668,Find the solution to the matrix differential equation \( \frac{dX}{dt} = AX \) where \( A = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix} \) and \( X(0) = I \).
+669,Compute the numerical rank of \( A = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6.0001 \\ 3 & 6 & 9 \end{pmatrix} \) with tolerance \( \epsilon = 10^{-3} \).
+670,Find the best rank-2 approximation to \( A = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix} \) using SVD.
+671,"Solve the constrained least squares problem \( \min_x \|Ax - b\|_2^2 \) subject to \( Cx = d \) where \( A = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 2 & 1 \end{pmatrix} \), \( b = \begin{pmatrix} 2 \\ 3 \\ 4 \end{pmatrix} \), \( C = \begin{pmatrix} 1 & 1 \end{pmatrix} \), and \( d = 2 \)."
+672,Calculate the matrix \( p \)-th root \( A^{1/p} \) for \( p = 3 \) where \( A = \begin sobrev{p} = 3 \) where \( A = \begin{pmatrix} 8 & 0 \\ 0 & 27 \end{pmatrix} \).
+673,"Find the solution to the Stein equation \( AXB - X = C \) where \( A = \begin{pmatrix} 0.5 & 0 \\ 0 & 0.8 \end{pmatrix} \), \( B = \begin{pmatrix} 0.6 & 0 \\ 0 & 0.7 \end{pmatrix} \), and \( C = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \)."
+674,Compute the Schatten \( p \)-norm \( \|A\|_{S_p} \) for \( p = 1 \) where \( A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} \).
+675,Find the matrix geometric mean \( A \# B \) where \( A = \begin{pmatrix} 4 & 0 \\ 0 & 9 \end{pmatrix} \) and \( B = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix} \).
+676,Calculate the matrix arithmetic-harmonic mean inequality verification for \( A = \begin{pmatrix} 2 & 0 \\ 0 & 8 \end{pmatrix} \) and \( B = \begin{pmatrix} 8 & 0 \\ 0 & 2 \end{pmatrix} \).
+677,"Solve the generalized Sylvester equation \( AXB + CXD = E \) where all matrices are \( 2 \times 2 \) with \( A = I \), \( B = 2I \), \( C = I \), \( D = 3I \), and \( E = \begin{pmatrix} 5 & 0 \\ 0 & 5 \end{pmatrix} \)."
+678,Find the principal square root of \( A = \begin{pmatrix} 5 & 4 \\ 4 & 5 \end{pmatrix} \).
+679,Compute the Frobenius companion matrix for the polynomial \( p(x) = x^3 - 6x^2 + 11x - 6 \).
+680,"Find the solution to the discrete-time algebraic Riccati equation in the simplified case where \( A = \begin{pmatrix} 1.1 & 0 \\ 0 & 0.9 \end{pmatrix} \), \( B = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \), \( Q = I \), and \( R = 1 \)."
+681,Calculate the matrix unwinding number for \( A = \begin{pmatrix} e^{i\pi} & 0 \\ 0 & e^{-i\pi} \end{pmatrix} \).
+682,Find the Perron-Frobenius eigenvalue of \( A = \begin{pmatrix} 2 & 1 \\ 3 & 2 \end{pmatrix} \).
+683,Compute the matrix hyperbolic sine \( \sinh(A) \) where \( A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \).
+684,"Find the solution to the continuous-time algebraic Riccati equation \( A^T X + XA - XBR^{-1}B^T X + Q = 0 \) where \( A = \begin{pmatrix} 0 & 1 \\ -1 & -2 \end{pmatrix} \), \( B = \begin{pmatrix} 0 \\ 1 \end{pmatrix} \), \( Q = I \), and \( R = 1 \)."
+685,Calculate the matrix sector function \( \text{sector}(A) \) for \( A = \begin{pmatrix} 1+i & 0 \\ 0 & 2-i \end{pmatrix} \).
+686,Find the Löwner partial ordering comparison between \( A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} \) and \( B = \begin{pmatrix} 3 & 0 \\ 0 & 1 \end{pmatrix} \).
+687,Compute the matrix Lambert W function \( W(A) \) for \( A = \begin{pmatrix} e & 0 \\ 0 & e \end{pmatrix} \).
+688,Find the matrix Padé approximant \( [1/1] \) for \( e^A \) where \( A = \begin{pmatrix} 0.1 & 0 \\ 0 & 0.2 \end{pmatrix} \).
+689,Calculate the matrix Fréchet derivative of \( f(A) = A^2 \) at \( A = I \) in the direction \( H = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} \).
+690,"Find the solution to the generalized continuous Lyapunov equation \( AXE^T + EXA^T = -Q \) where \( A = \begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix} \), \( E = I \), and \( Q = I \)."
+691,"Compute the matrix Mittag-Leffler function \( E_{\alpha,\beta}(A) \) for \( \alpha = 2 \), \( \beta = 1 \), and \( A = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix} \)."
+692,Find the matrix Caputo fractional derivative of order \( \alpha = 1/2 \) for \( A(t) = tI \) at \( t = 1 \).
+693,Calculate the matrix Riemann-Liouville fractional integral of order \( \alpha = 1/2 \) for \( A = I \).
+694,Find the solution to the fractional matrix differential equation \( {}^C D_t^\alpha X(t) = AX(t) \) where \( \alpha = 1/2 \) and \( A = \begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix} \) with \( X(0) = I \).
+695,"Compute the matrix hypergeometric function \( {}_{1}F_1(a;b;A) \) for \( a = 1 \), \( b = 2 \), and \( A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \)."
+696,Find the matrix Bessel function \( J_0(A) \) where \( A = \begin{pmatrix} 0 & 0 \\ 0 & \pi \end{pmatrix} \).
+697,Calculate the matrix Airy function \( \text{Ai}(A) \) for \( A = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \).
+698,Find the matrix elliptic integral \( K(A) \) where \( A = \begin{pmatrix} 0.5 & 0 \\ 0 & 0.8 \end{pmatrix} \).
+699,Compute the matrix Gamma function \( \Gamma(A) \) for \( A = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix} \).
+700,Find the matrix zeta function \( \zeta(A) \) for \( A = \begin{pmatrix} 2 & 0 \\ 0 & 4 \end{pmatrix} \).
+701,Find the determinant of the matrix $A = \begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix}$.
+702,"Solve the system of equations: $2x + 3y = 7$, $x - y = 1$."
+703,Find the inverse of matrix $B = \begin{pmatrix} 2 & 1 \\ 3 & 2 \end{pmatrix}$.
+704,Calculate the eigenvalues of matrix $C = \begin{pmatrix} 5 & 2 \\ 2 & 5 \end{pmatrix}$.
+705,Find the rank of matrix $D = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 1 & 1 & 2 \end{pmatrix}$.
+706,"Compute the dot product of vectors $\vec{u} = (3, 4, 5)$ and $\vec{v} = (1, 2, 3)$."
+707,"Find the norm of vector $\vec{w} = (6, 8)$."
+708,Solve the matrix equation $AX = B$ where $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 5 \\ 11 \end{pmatrix}$.
+709,Find the trace of matrix $E = \begin{pmatrix} 7 & 3 & 1 \\ 2 & 5 & 4 \\ 6 & 8 & 9 \end{pmatrix}$.
+710,"Calculate the cross product of vectors $\vec{a} = (2, 1, 3)$ and $\vec{b} = (1, 4, 2)$."
+711,Find the determinant of $F = \begin{pmatrix} 2 & 1 & 3 \\ 0 & 4 & 1 \\ 0 & 0 & 5 \end{pmatrix}$.
+712,"Solve the system: $x + 2y + z = 6$, $2x + y - z = 1$, $x - y + 2z = 7$."
+713,Find the eigenvalues of $G = \begin{pmatrix} 4 & -2 \\ 1 & 1 \end{pmatrix}$.
+714,Calculate the matrix product $AB$ where $A = \begin{pmatrix} 1 & 3 \\ 2 & 1 \end{pmatrix}$ and $B = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix}$.
+715,Find the null space of matrix $H = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \end{pmatrix}$.
+716,Calculate the condition number of matrix $I = \begin{pmatrix} 2 & 0 \\ 0 & 0.1 \end{pmatrix}$.
+717,Find the QR decomposition of matrix $J = \begin{pmatrix} 1 & 1 \\ 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+718,Solve the least squares problem $\min ||Ax - b||^2$ where $A = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{pmatrix}$ and $b = \begin{pmatrix} 2 \\ 3 \\ 5 \end{pmatrix}$.
+719,Find the singular values of matrix $K = \begin{pmatrix} 3 & 0 \\ 0 & 2 \\ 0 & 0 \end{pmatrix}$.
+720,Calculate the Frobenius norm of matrix $L = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$.
+721,Find the LU decomposition of matrix $M = \begin{pmatrix} 2 & 1 \\ 4 & 3 \end{pmatrix}$.
+722,Solve the eigenvalue problem for matrix $N = \begin{pmatrix} 6 & -3 \\ 2 & 1 \end{pmatrix}$.
+723,Calculate the matrix exponential $e^{At}$ where $A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$ and $t = 1$.
+724,Find the pseudoinverse of matrix $O = \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix}$.
+725,"Solve the Sylvester equation $AX + XB = C$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$, $B = \begin{pmatrix} 3 \end{pmatrix}$, $C = \begin{pmatrix} 4 \\ 5 \end{pmatrix}$."
+726,Find the Cholesky decomposition of matrix $P = \begin{pmatrix} 4 & 2 \\ 2 & 2 \end{pmatrix}$.
+727,Calculate the spectral radius of matrix $Q = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$.
+728,Solve the matrix equation $X^2 = A$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix}$.
+729,Find the Jordan normal form of matrix $R = \begin{pmatrix} 3 & 1 \\ 0 & 3 \end{pmatrix}$.
+730,Calculate the matrix logarithm of $S = \begin{pmatrix} e & 0 \\ 0 & e^2 \end{pmatrix}$.
+731,Find the generalized inverse of matrix $T = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$.
+732,Solve the Riccati equation $X^2 + AX + B = 0$ where $A = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+733,Calculate the Kronecker product $A \otimes B$ where $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 0 & 5 \\ 6 & 7 \end{pmatrix}$.
+734,Find the matrix square root of $U = \begin{pmatrix} 5 & 0 \\ 0 & 9 \end{pmatrix}$.
+735,Solve the Lyapunov equation $AX + XA^T = -Q$ where $A = \begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix}$ and $Q = \begin{pmatrix} 2 & 0 \\ 0 & 4 \end{pmatrix}$.
+736,Calculate the vec operation on matrix $V = \begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix}$.
+737,"Find the commutator $[A, B] = AB - BA$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$ and $B = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$."
+738,Calculate the matrix power $W^3$ where $W = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix}$.
+739,Find the adjugate matrix of $X = \begin{pmatrix} 3 & 1 & 2 \\ 0 & 4 & 1 \\ 2 & 1 & 3 \end{pmatrix}$.
+740,Solve the generalized eigenvalue problem $Ax = \lambda Bx$ where $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ and $B = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$.
+741,Calculate the Hadamard product $A \circ B$ where $A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$.
+742,Find the matrix norm $||Y||_1$ where $Y = \begin{pmatrix} 2 & -1 & 3 \\ 1 & 4 & -2 \end{pmatrix}$.
+743,"Solve the matrix equation $AXB = C$ where $A = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}$, $B = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix}$, $C = \begin{pmatrix} 6 & 0 \\ 0 & 24 \end{pmatrix}$."
+744,Calculate the permanent of matrix $Z = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$.
+745,Find the matrix sign function of $AA = \begin{pmatrix} 3 & 0 \\ 0 & -2 \end{pmatrix}$.
+746,Solve the discrete Lyapunov equation $X - AXA^T = Q$ where $A = \begin{pmatrix} 0.5 & 0 \\ 0 & 0.8 \end{pmatrix}$ and $Q = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+747,Calculate the matrix exponential series for $BB = \begin{pmatrix} 0 & t \\ 0 & 0 \end{pmatrix}$ where $t$ is a parameter.
+748,"Find the Schur complement of matrix $CC = \begin{pmatrix} A & B \\ C & D \end{pmatrix}$ where $A = \begin{pmatrix} 4 & 1 \\ 1 & 4 \end{pmatrix}$, $B = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$, $C = \begin{pmatrix} 2 & 1 \end{pmatrix}$, $D = 3$."
+749,Calculate the matrix function $f(DD) = DD^2 + 2DD + I$ where $DD = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$.
+750,Find the polar decomposition $A = UP$ of matrix $EE = \begin{pmatrix} 3 & 4 \\ 0 & 5 \end{pmatrix}$.
+751,Solve the matrix differential equation $\frac{dX}{dt} = AX$ where $A = \begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix}$ and $X(0) = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$.
+752,Calculate the Drazin inverse of matrix $FF = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 2 \end{pmatrix}$.
+753,Find the numerical range (field of values) of matrix $GG = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
+754,Solve the tensor equation $\mathcal{A} \times_1 X = \mathcal{B}$ where $\mathcal{A}$ is a $2 \times 2 \times 2$ tensor and $X$ is a $2 \times 2$ matrix.
+755,Calculate the matrix cosine $\cos(HH)$ where $HH = \begin{pmatrix} 0 & \pi/2 \\ 0 & 0 \end{pmatrix}$.
+756,Find the group inverse of matrix $II = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix}$.
+757,Solve the coupled matrix equations $AX + BY = C$ and $DX + EY = F$ where all matrices are $2 \times 2$.
+758,Calculate the matrix hyperbolic sine $\sinh(JJ)$ where $JJ = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$.
+759,Find the Penrose conditions for the pseudoinverse of matrix $KK = \begin{pmatrix} 1 & 2 \\ 2 & 4 \\ 3 & 6 \end{pmatrix}$.
+760,"Solve the Stein equation $X - AXB = C$ where $A = \begin{pmatrix} 0.5 & 0 \\ 0 & 0.3 \end{pmatrix}$, $B = \begin{pmatrix} 0.2 & 0 \\ 0 & 0.4 \end{pmatrix}$, $C = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$."
+761,Calculate the matrix arctangent $\arctan(LL)$ where $LL = \begin{pmatrix} 1 & 0 \\ 0 & \sqrt{3} \end{pmatrix}$.
+762,Find the Binet-Cauchy theorem application for matrices $MM = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix}$ and $NN = \begin{pmatrix} 1 & 4 \\ 2 & 5 \\ 3 & 6 \end{pmatrix}$.
+763,Solve the algebraic Riccati equation $A^TX + XA - XBR^{-1}B^TX + Q = 0$ for the case where all matrices are scalars.
+764,Calculate the Wielandt deflation for matrix $OO = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$ with eigenvalue $\lambda = 4$.
+765,Find the Gershgorin circles for matrix $PP = \begin{pmatrix} 5 & 1 & 2 \\ 1 & 3 & 1 \\ 2 & 1 & 4 \end{pmatrix}$.
+766,Solve the generalized Sylvester equation $AXB + CXD = E$ where all matrices are $2 \times 2$.
+767,Calculate the matrix secant $\sec(QQ)$ where $QQ = \begin{pmatrix} 0 & 0 \\ 0 & \pi/3 \end{pmatrix}$.
+768,Find the compound matrix $C_2(RR)$ where $RR = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$.
+769,Solve the matrix equation $X^3 = A$ where $A = \begin{pmatrix} 8 & 0 \\ 0 & 27 \end{pmatrix}$.
+770,Calculate the Rayleigh quotient $R(x) = \frac{x^TAx}{x^Tx}$ for $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ and $x = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.
+771,Find the Schur form of matrix $SS = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$.
+772,Solve the discrete-time algebraic Riccati equation $X = A^TXA - A^TXB(R + B^TXB)^{-1}B^TXA + Q$ for scalar case.
+773,Calculate the matrix tangent $\tan(TT)$ where $TT = \begin{pmatrix} 0 & 0 \\ 0 & \pi/4 \end{pmatrix}$.
+774,Find the Hessenberg form of matrix $UU = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$.
+775,Solve the Procrustes problem: minimize $||AX - B||_F$ subject to $X^TX = I$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$ and $B = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$.
+776,Calculate the matrix cotangent $\cot(VV)$ where $VV = \begin{pmatrix} \pi/4 & 0 \\ 0 & \pi/6 \end{pmatrix}$.
+777,"Find the Krylov subspace $\mathcal{K}_3(A, v)$ where $A = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$ and $v = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$."
+778,Solve the Toeplitz system $Tx = b$ where $T = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 2 \end{pmatrix}$ and $b = \begin{pmatrix} 3 \\ 4 \\ 3 \end{pmatrix}$.
+779,Calculate the matrix hyperbolic cosine $\cosh(WW)$ where $WW = \begin{pmatrix} 1 & 0 \\ 0 & \ln(2) \end{pmatrix}$.
+780,Find the Arnoldi decomposition for matrix $XX = \begin{pmatrix} 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix}$ with starting vector $v_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}$.
+781,Solve the generalized least squares problem $\min ||Ax - b||_W^2$ where $W$ is a weight matrix.
+782,Calculate the matrix arcsine $\arcsin(YY)$ where $YY = \begin{pmatrix} 0.5 & 0 \\ 0 & 1 \end{pmatrix}$.
+783,"Find the Hankel matrix from the sequence $\{1, 2, 3, 4, 5\}$."
+784,Solve the constrained optimization problem $\min x^TAx$ subject to $Bx = c$.
+785,"Calculate the Vandermonde determinant for points $\{1, 2, 3\}$."
+786,"Find the Givens rotation matrix that zeros the $(2,1)$ entry of vector $\begin{pmatrix} 3 \\ 4 \end{pmatrix}$."
+787,Solve the Riccati difference equation $X_{k+1} = A^TX_kA - A^TX_kB(R + B^TX_kB)^{-1}B^TX_kA + Q$.
+788,Calculate the matrix arccosine $\arccos(ZZ)$ where $ZZ = \begin{pmatrix} 1 & 0 \\ 0 & 0.5 \end{pmatrix}$.
+789,Find the Householder reflector that maps vector $x = \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}$ to $\alpha e_1$.
+790,Solve the Sylvester observer equation $XA - FX = GC$.
+791,Calculate the condition number with respect to inversion for matrix $AAA = \begin{pmatrix} 1 & 1 \\ 0 & \epsilon \end{pmatrix}$ where $\epsilon$ is small.
+792,Find the Padé approximation of the matrix exponential $e^A$ where $A$ is small.
+793,Solve the periodic Riccati equation with period $T = 2$.
+794,Calculate the Fréchet derivative of the matrix function $f(X) = X^2$ at point $A$ in direction $H$.
+795,Find the optimal low-rank approximation of matrix $BBB = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$ with rank 2.
+796,Solve the H-infinity control problem for the scalar case.
+797,Calculate the logarithmic norm of matrix $CCC = \begin{pmatrix} -2 & 1 \\ 1 & -2 \end{pmatrix}$.
+798,Find the structured pseudospectrum of matrix $DDD = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$ with perturbation bound $\epsilon = 0.1$.
+799,Solve the coupled Riccati equations arising in Nash equilibrium problems.
+800,Calculate the matrix p-norm $||EEE||_p$ for $p = \infty$ where $EEE = \begin{pmatrix} 1 & -2 & 3 \\ -4 & 5 & -6 \\ 7 & -8 & 9 \end{pmatrix}$.
+801,Find the determinant of \( A = \begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix} \).
+802,Solve the system \( \begin{pmatrix} 2 & 1 \\ 3 & 4 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 5 \\ 11 \end{pmatrix} \).
+803,Find the inverse of \( B = \begin{pmatrix} 1 & 2 \\ 3 & 7 \end{pmatrix} \).
+804,Calculate the eigenvalues of \( C = \begin{pmatrix} 4 & 1 \\ 2 & 3 \end{pmatrix} \).
+805,Find the norm \( \|v\|_2 \) of vector \( v = \begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix} \).
+806,Compute \( AB \) where \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \) and \( B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} \).
+807,Find the rank of matrix \( D = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 1 & 1 & 2 \end{pmatrix} \).
+808,Solve \( Ax = b \) using Gaussian elimination where \( A = \begin{pmatrix} 2 & 1 & 1 \\ 1 & 3 & 2 \\ 1 & 0 & 0 \end{pmatrix} \) and \( b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix} \).
+809,Find the trace of matrix \( E = \begin{pmatrix} 2 & 5 & 1 \\ 0 & 3 & 4 \\ 7 & 2 & 6 \end{pmatrix} \).
+810,Calculate the dot product of \( u = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \) and \( v = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix} \).
+811,Find the determinant of \( F = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 0 & 0 & 6 \end{pmatrix} \).
+812,Compute the cross product of \( a = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \) and \( b = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix} \).
+813,Find the eigenvalues of \( G = \begin{pmatrix} 5 & 0 \\ 0 & 3 \end{pmatrix} \).
+814,Calculate \( A^T A \) where \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{pmatrix} \).
+815,Solve for \( x \) in \( 3x + 2y = 7 \) and \( x - y = 1 \) using matrix methods.
+816,Find the nullspace of \( H = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \end{pmatrix} \).
+817,Calculate the condition number of \( I = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix} \).
+818,Find the QR decomposition of \( J = \begin{pmatrix} 1 & 1 \\ 1 & 0 \\ 0 & 1 \end{pmatrix} \).
+819,Compute the Frobenius norm of \( K = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \).
+820,Find the pseudoinverse of \( L = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} \).
+821,Solve the least squares problem \( \min \|Ax - b\|^2 \) where \( A = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{pmatrix} \) and \( b = \begin{pmatrix} 2 \\ 3 \\ 5 \end{pmatrix} \).
+822,Find the singular values of \( M = \begin{pmatrix} 3 & 0 \\ 0 & 2 \end{pmatrix} \).
+823,Calculate the spectral radius of \( N = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix} \).
+824,Find the LU decomposition of \( O = \begin{pmatrix} 2 & 1 \\ 4 & 3 \end{pmatrix} \).
+825,Compute the matrix exponential of \( P = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \).
+826,Find the Jordan normal form of \( Q = \begin{pmatrix} 2 & 1 \\ 0 & 2 \end{pmatrix} \).
+827,Calculate the determinant of \( R = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 0 & 5 & 6 & 7 \\ 0 & 0 & 8 & 9 \\ 0 & 0 & 0 & 10 \end{pmatrix} \).
+828,Find the eigenvector corresponding to eigenvalue \( \lambda = 3 \) for \( S = \begin{pmatrix} 3 & 0 \\ 1 & 3 \end{pmatrix} \).
+829,Compute the matrix power \( T^3 \) where \( T = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \).
+830,Find the column space of \( U = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 3 \\ 1 & 2 & 2 \end{pmatrix} \).
+831,Calculate the angle between vectors \( u = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \) and \( v = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix} \).
+832,Find the projection of \( a = \begin{pmatrix} 3 \\ 4 \end{pmatrix} \) onto \( b = \begin{pmatrix} 1 \\ 0 \end{pmatrix} \).
+833,Compute the Cholesky decomposition of \( V = \begin{pmatrix} 4 & 2 \\ 2 & 2 \end{pmatrix} \).
+834,Find the minimal polynomial of \( W = \begin{pmatrix} 2 & 0 \\ 0 & 2 \end{pmatrix} \).
+835,Calculate the matrix norm \( \|X\|_1 \) where \( X = \begin{pmatrix} 1 & -2 \\ 3 & 4 \end{pmatrix} \).
+836,Solve the matrix equation \( AX = B \) where \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \) and \( B = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} \).
+837,Find the characteristic polynomial of \( Y = \begin{pmatrix} 1 & 2 & 0 \\ 0 & 3 & 1 \\ 0 & 0 & 2 \end{pmatrix} \).
+838,"Compute the commutator \( [A,B] = AB - BA \) where \( A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \) and \( B = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix} \)."
+839,Find the row space of \( Z = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 1 & 1 & 1 \end{pmatrix} \).
+840,Calculate the matrix square root of \( AA = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix} \).
+841,Find the generalized inverse of \( BB = \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix} \).
+842,Compute the tensor product \( CC \otimes DD \) where \( CC = \begin{pmatrix} 1 & 2 \end{pmatrix} \) and \( DD = \begin{pmatrix} 3 \\ 4 \end{pmatrix} \).
+843,Find the left null space of \( EE = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \end{pmatrix} \).
+844,Calculate the matrix logarithm of \( FF = \begin{pmatrix} e & 0 \\ 0 & e^2 \end{pmatrix} \).
+845,"Find the Schur complement of \( GG = \begin{pmatrix} A & B \\ C & D \end{pmatrix} \) where \( A = 2 \), \( B = 1 \), \( C = 3 \), \( D = 4 \)."
+846,Compute the Hadamard product of \( HH = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \) and \( II = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix} \).
+847,Find the matrix sign function of \( JJ = \begin{pmatrix} 2 & 0 \\ 0 & -3 \end{pmatrix} \).
+848,Calculate the nuclear norm of \( KK = \begin{pmatrix} 3 & 4 \\ 0 & 0 \end{pmatrix} \).
+849,Find the Moore-Penrose pseudoinverse of \( LL = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \).
+850,Compute the Kronecker product \( MM \otimes NN \) where \( MM = \begin{pmatrix} 1 & 2 \end{pmatrix} \) and \( NN = \begin{pmatrix} 3 & 4 \\ 5 & 6 \end{pmatrix} \).
+851,Find the condition number of \( OO = \begin{pmatrix} 1 & 1 \\ 0 & \epsilon \end{pmatrix} \) as \( \epsilon \to 0 \).
+852,Calculate the matrix \( p \)-norm \( \|PP\|_2 \) where \( PP = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} \).
+853,Find the eigendecomposition of \( QQ = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix} \).
+854,Compute the matrix function \( f(RR) = RR^2 + 2RR + I \) where \( RR = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \).
+855,Find the polar decomposition of \( SS = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix} \).
+856,Calculate the vectorization of \( TT = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \).
+857,Find the matrix square of \( UU = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \).
+858,Compute the adjugate matrix of \( VV = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{vmatrix} \).
+859,Find the permanent of \( WW = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix} \).
+860,Calculate the matrix exponential series for \( XX = \begin{pmatrix} 0 & t \\ 0 & 0 \end{pmatrix} \).
+861,Find the Gershgorin circles for \( YY = \begin{pmatrix} 3 & 1 & 0 \\ 1 & 4 & 1 \\ 0 & 1 & 2 \end{pmatrix} \).
+862,Compute the Rayleigh quotient \( \frac{x^T A x}{x^T x} \) where \( A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix} \) and \( x = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \).
+863,Find the block diagonal form of \( ZZ = \begin{pmatrix} 1 & 0 & 2 \\ 0 & 3 & 0 \\ 4 & 0 & 5 \end{pmatrix} \).
+864,Calculate the matrix \( \infty \)-norm of \( AAA = \begin{pmatrix} 1 & -2 & 3 \\ -4 & 5 & -6 \\ 7 & -8 & 9 \end{pmatrix} \).
+865,Find the Schur form of \( BBB = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix} \).
+866,Compute the matrix cosine of \( CCC = \begin{pmatrix} 0 & \pi \\ 0 & 0 \end{pmatrix} \).
+867,"Find the generalized eigenvalues of \( (DDD, EEE) \) where \( DDD = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \) and \( EEE = \begin{pmatrix} 2 & 0 \\ 0 & 1 \end{pmatrix} \)."
+868,Calculate the matrix sine of \( FFF = \begin{pmatrix} \frac{\pi}{2} & 0 \\ 0 & 0 \end{pmatrix} \).
+869,Find the companion matrix of polynomial \( p(x) = x^3 - 6x^2 + 11x - 6 \).
+870,Compute the Drazin inverse of \( GGG = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{pmatrix} \).
+871,Find the matrix hyperbolic sine of \( HHH = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} \).
+872,Calculate the group inverse of \( III = \begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix} \).
+873,Find the matrix tangent of \( JJJ = \ دليل إضافي: \begin{pmatrix} \frac{\pi}{4} & 0 \\ 0 & 0 \end{pmatrix} \).
+874,Compute the weighted pseudoinverse of \( KKK = \begin{pmatrix} 1 & 2 \end{pmatrix} \) with weight \( W = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix} \).
+875,Find the matrix arctangent of \( LLL = \begin{pmatrix} 1 & 0 \\ 0 & \sqrt{3} \end{pmatrix} \).
+876,Calculate the Penrose conditions for \( MMM = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} \).
+877,Find the matrix secant of \( NNN = \begin{pmatrix} 0 & 0 \\ 0 & \frac{\pi}{3} \end{pmatrix} \).
+878,Compute the reflexive generalized inverse of \( OOO = \begin{pmatrix} 2 & 4 \\ 1 & 2 \end{pmatrix} \).
+879,Find the matrix cosecant of \( PPP = \begin{pmatrix} \frac{\pi}{2} & 0 \\ 0 & \frac{\pi}{6} \end{pmatrix} \).
+880,Calculate the bidiagonal reduction of \( QQQ = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{pmatrix} \).
+881,Find the matrix cotangent of \( RRR = \begin{pmatrix} \frac{\pi}{4} & 0 \\ 0 & \frac{\pi}{3} \end{pmatrix} \).
+882,Compute the Hessenberg reduction of \( SSS = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix} \).
+883,Find the matrix hyperbolic cosine of \( TTT = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix} \).
+884,Calculate the tridiagonal reduction of \( UUU = \begin{pmatrix} 4 & 1 & 0 \\ 1 & 4 & 1 \\ 0 & 1 & 4 \end{pmatrix} \).
+885,Find the matrix hyperbolic tangent of \( VVV = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \).
+886,Compute the balanced matrix of \( WWW = \begin{pmatrix} 1000 & 1 \\ 1 & 0.001 \end{pmatrix} \).
+887,Find the matrix inverse hyperbolic sine of \( XXX = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix} \).
+888,Calculate the Givens rotation matrix for angle \( \theta = \frac{\pi}{6} \).
+889,Find the matrix inverse hyperbolic cosine of \( YYY = \begin{pmatrix} 2 & 0 \\ 0 & 5 \end{pmatrix} \).
+890,Compute the Householder matrix for vector \( v = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \).
+891,Find the matrix inverse hyperbolic tangent of \( ZZZ = \begin{pmatrix} 0.5 & 0 \\ 0 & 0.8 \end{pmatrix} \).
+892,Calculate the Jacobi rotation for \( 2 \times 2 \) matrix \( AAAA = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix} \).
+893,Find the matrix square root using Schur method for \( BBBB = \begin{pmatrix} 4 & 0 \\ 0 & 9 \end{pmatrix} \).
+894,Compute the Lanczos tridiagonalization for starting vector \( q_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \) and matrix \( CCCC = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 2 \end{pmatrix} \).
+895,Find the matrix \( p \)-th root for \( p=3 \) of \( DDDD = \begin{pmatrix} 8 & 0 \\ 0 & 27 \end{pmatrix} \).
+896,Calculate the Arnoldi iteration for matrix \( EEEE = \begin{pmatrix} 1 & 1 & 0 \\ 1 & 1 & 1 \\ 0 & 1 & 1 \end{pmatrix} \) with starting vector \( v_1 = \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \).
+897,Find the principal square root of \( FFFF = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix} \).
+898,Compute the power method iteration for dominant eigenvalue of \( GGGG = \begin{pmatrix} 3 & 1 \\ 1 & 2 \end{pmatrix} \) starting with \( x_0 = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \).
+899,Find the matrix logarithm base 2 of \( HHHH = \begin{pmatrix} 4 & 0 \\ 0 & 8 \end{pmatrix} \).
+900,Calculate the inverse iteration for smallest eigenvalue of \( IIII = \begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix} \) with shift \( \sigma = 2 \).
+901,Find the determinant of $A = \begin{pmatrix} 3 & -2 & 1 \\ 4 & 5 & -3 \\ -1 & 2 & 6 \end{pmatrix}$ using cofactor expansion.
+902,Solve the system $\begin{pmatrix} 2 & -1 & 3 \\ 1 & 4 & -2 \\ -3 & 2 & 1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} 7 \\ -1 \\ 4 \end{pmatrix}$ using Gaussian elimination.
+903,Find the eigenvalues of $B = \begin{pmatrix} 4 & -2 \\ 1 & 1 \end{pmatrix}$.
+904,Compute the LU decomposition of $C = \begin{pmatrix} 2 & 4 & -2 \\ 4 & 9 & -3 \\ -2 & -3 & 7 \end{pmatrix}$.
+905,Calculate the 2-norm of vector $v = \begin{pmatrix} 3 \\ -4 \\ 12 \end{pmatrix}$.
+906,Find the inverse of $D = \begin{pmatrix} 1 & 2 \\ 3 & 7 \end{pmatrix}$.
+907,Perform one iteration of Jacobi method for $\begin{pmatrix} 4 & -1 & 0 \\ -1 & 4 & -1 \\ 0 & -1 & 4 \end{pmatrix} x = \begin{pmatrix} 15 \\ 10 \\ 10 \end{pmatrix}$ with $x^{(0)} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix}$.
+908,Find the QR decomposition of $F = \begin{pmatrix} 1 & 1 \\ 1 & 0 \\ 0 & 1 \end{pmatrix}$ using Gram-Schmidt.
+909,Calculate the Frobenius norm of $G = \begin{pmatrix} 2 & -1 & 3 \\ 0 & 4 & -2 \\ 1 & 0 & 5 \end{pmatrix}$.
+910,Solve $Hx = b$ using Cholesky decomposition where $H = \begin{pmatrix} 5 & 2 \\ 2 & 3 \end{pmatrix}$ and $b = \begin{pmatrix} 13 \\ 8 \end{pmatrix}$.
+911,Find the singular values of $I = \begin{pmatrix} 3 & 0 \\ 0 & -2 \end{pmatrix}$.
+912,Calculate the spectral radius of $J = \begin{pmatrix} 0.5 & 0.3 \\ 0.2 & 0.4 \end{pmatrix}$.
+913,Find the least squares solution to $Kx = c$ where $K = \begin{pmatrix} 1 & 1 \\ 2 & 1 \\ 1 & 2 \end{pmatrix}$ and $c = \begin{pmatrix} 3 \\ 5 \\ 4 \end{pmatrix}$.
+914,Compute the condition number $\kappa_2(E)$ where $E = \begin{pmatrix} 2 & 1 \\ 1 & 1.001 \end{pmatrix}$.
+915,Find the null space of $M = \begin{pmatrix} 1 & 2 & -1 & 3 \\ 2 & 4 & -1 & 7 \\ 1 & 2 & 0 & 4 \end{pmatrix}$.
+916,Calculate power method approximation for dominant eigenvalue of $N = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ after 3 iterations with $v_0 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.
+917,Find the rank of $O = \begin{pmatrix} 1 & 2 & 3 & 4 \\ 2 & 4 & 6 & 8 \\ 1 & 2 & 4 & 5 \end{pmatrix}$.
+918,Calculate the 1-norm and $\infty$-norm of $R = \begin{pmatrix} -2 & 3 & 1 \\ 4 & -1 & 2 \\ 0 & 5 & -3 \end{pmatrix}$.
+919,Find eigenvalues of tridiagonal matrix $S = \begin{pmatrix} 2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 2 \end{pmatrix}$.
+920,Perform Gaussian elimination with partial pivoting on $\begin{pmatrix} 0.001 & 1 \\ 1 & 1 \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$.
+921,Calculate the pseudoinverse of $T = \begin{pmatrix} 1 & 0 \\ 0 & 0 \\ 0 & 1 \end{pmatrix}$.
+922,Find the characteristic polynomial of $U = \begin{pmatrix} 3 & 1 & 0 \\ 0 & 3 & 1 \\ 0 & 0 & 3 \end{pmatrix}$.
+923,Compute the matrix square root of $V = \begin{pmatrix} 5 & 0 \\ 0 & 9 \end{pmatrix}$.
+924,Solve Lyapunov equation $AX + XA^T = -C$ where $A = \begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix}$ and $C = \begin{pmatrix} 2 & 0 \\ 0 & 6 \end{pmatrix}$.
+925,Find Jordan normal form of $W = \begin{pmatrix} 2 & 1 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{pmatrix}$.
+926,Calculate condition number of Hilbert matrix $H_3 = \begin{pmatrix} 1 & \frac{1}{2} & \frac{1}{3} \\ \frac{1}{2} & \frac{1}{3} & \frac{1}{4} \\ \frac{1}{3} & \frac{1}{4} & \frac{1}{5} \end{pmatrix}$.
+927,Find eigenvector for $\lambda = 5$ of $Y = \begin{pmatrix} 3 & 2 \\ 2 & 3 \end{pmatrix}$.
+928,Compute matrix norm $\|Z\|_2$ where $Z = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$.
+929,Solve using Cramer's rule: $\begin{pmatrix} 2 & 3 \\ 1 & 4 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 7 \\ 6 \end{pmatrix}$.
+930,Find minimal polynomial of $AA = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}$.
+931,Calculate trace and determinant of $BB = \begin{pmatrix} 2 & -1 & 3 \\ 0 & 4 & 1 \\ -1 & 2 & 5 \end{pmatrix}$.
+932,Find orthogonal projection of $v = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ onto subspace spanned by $u = \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}$.
+933,Compute Schur decomposition of $CC = \begin{pmatrix} 4 & 1 \\ 0 & 3 \end{pmatrix}$.
+934,Solve $DDx = b$ using forward substitution where $DD = \begin{pmatrix} 2 & 0 & 0 \\ 1 & 3 & 0 \\ -1 & 2 & 4 \end{pmatrix}$ and $b = \begin{pmatrix} 4 \\ 7 \\ 6 \end{pmatrix}$.
+935,Calculate angle between vectors $u = \begin{pmatrix} 1 \\ 0 \\ 1 \end{pmatrix}$ and $v = \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}$.
+936,Find matrix $EE$ such that $EE^2 = \begin{pmatrix} 1 & 0 \\ 0 & 4 \end{pmatrix}$.
+937,Compute generalized inverse of $FF = \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix}$.
+938,Solve homogeneous system $(GG - 3I)x = 0$ where $GG = \begin{pmatrix} 5 & -2 \\ 4 & -1 \end{pmatrix}$.
+939,Find polar decomposition of $HH = \begin{pmatrix} 3 & 4 \\ 0 & 5 \end{pmatrix}$.
+940,Calculate residual vector for approximate solution $x = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$ to $IIx = c$ where $II = \begin{pmatrix} 2 & 1 \\ 1 & 3 \end{pmatrix}$ and $c = \begin{pmatrix} 4 \\ 5 \end{pmatrix}$.
+941,Find column space of $JJ = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 3 \\ 1 & 2 & 2 \end{pmatrix}$.
+942,Compute one step of Gauss-Seidel method for $\begin{pmatrix} 3 & 1 \\ 1 & 4 \end{pmatrix} x = \begin{pmatrix} 5 \\ 6 \end{pmatrix}$ with $x^{(0)} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+943,Find eigenvalues of symmetric matrix $KK = \begin{pmatrix} 1 & 2 & 0 \\ 2 & 1 & 0 \\ 0 & 0 & 3 \end{pmatrix}$.
+944,Calculate matrix logarithm of $LL = \begin{pmatrix} e & 0 \\ 0 & e^2 \end{pmatrix}$.
+945,Find best rank-1 approximation to $MM = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ using SVD.
+946,Solve matrix equation $XNN + NNX = PP$ where $NN = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$ and $PP = \begin{pmatrix} 6 & 0 \\ 0 & 12 \end{pmatrix}$.
+947,Find Gershgorin discs for $QQ = \begin{pmatrix} 5 & 1 & 0 \\ 2 & 4 & 1 \\ 0 & 1 & 3 \end{pmatrix}$.
+948,Calculate Householder reflector that zeros out last two components of $v = \begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}$.
+949,Solve triangular system $\begin{pmatrix} 2 & 3 & 1 \\ 0 & 4 & 2 \\ 0 & 0 & 5 \end{pmatrix} x = \begin{pmatrix} 16 \\ 14 \\ 10 \end{pmatrix}$ using back substitution.
+950,Compute spectral norm of $RR = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$.
+951,Find eigenvector for largest eigenvalue of $SS = \begin{pmatrix} 6 & 2 \\ 2 & 3 \end{pmatrix}$.
+952,Calculate matrix $TT$ such that $TT^3 = \begin{pmatrix} 8 & 0 \\ 0 & 27 \end{pmatrix}$.
+953,Find least squares solution to inconsistent system $\begin{pmatrix} 1 & 0 \\ 0 & 1 \\ 1 & 1 \end{pmatrix} x = \begin{pmatrix} 1 \\ 2 \\ 4 \end{pmatrix}$.
+954,Compute Kronecker product $UU \otimes VV$ where $UU = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $VV = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$.
+955,Find row space of $WW = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 4 & 6 \\ 1 & 1 & 2 \end{pmatrix}$.
+956,Calculate matrix exponential $e^{XX}$ where $XX = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
+957,Find solution to Sylvester equation $AX - XB = C$ where $A = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$
+958,Compute nuclear norm of $YY = \begin{pmatrix} 3 & 4 \\ 0 & 0 \end{pmatrix}$.
+959,Find eigenvalues of companion matrix $ZZ = \begin{pmatrix} 0 & 0 & -6 \\ 1 & 0 & -11 \\ 0 & 1 & -6 \end{pmatrix}$.
+960,Calculate Moore-Penrose pseudoinverse of $AAA = \begin{pmatrix} 1 & 2 \\ 2 & 4 \\ 3 & 6 \end{pmatrix}$.
+961,Find solution to normal equations for $BBBx = d$ where $BBB = \begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 2 & 1 \end{pmatrix}$ and $d = \begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}$.
+962,Compute Rayleigh quotient $\frac{x^TCCCx}{x^Tx}$ where $CCC = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ and $x = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$.
+963,Find left null space of $DDD = \begin{pmatrix} 1 & 2 & 1 \\ 2 & 4 & 2 \end{pmatrix}$.
+964,Calculate matrix $EEE$ such that $EEE^{-1} = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}$.
+965,Find eigenvalues of circulant matrix $FFF = \begin{pmatrix} 1 & 2 & 3 \\ 3 & 1 & 2 \\ 2 & 3 & 1 \end{pmatrix}$.
+966,Compute condition number of $GGG = \begin{pmatrix} 1 & 1 \\ 0 & \epsilon \end{pmatrix}$ where $\epsilon = 10^{-6}$.
+967,Find solution using conjugate gradient method for $HHHx = f$ where $HHH = \begin{pmatrix} 4 & 1 \\ 1 & 3 \end{pmatrix}$ and $f = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ after one iteration with $x_0 = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$.
+968,Calculate Hadamard product $III \circ JJJ$ where $III = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ and $JJJ = \begin{pmatrix} 5 & 6 \\ 7 & 8 \end{pmatrix}$.
+969,Find eigenvalues of Toeplitz matrix $KKK = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 2 & 1 \\ 0 & 1 & 2 \end{pmatrix}$.
+970,Compute generalized eigenvalues of pencil $(LLL
+971,Find solution to block system $\begin{pmatrix} A & B \\ C & D \end{pmatrix} \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} = \begin{pmatrix} b_1 \\ b_2 \end{pmatrix}$ where $A = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}$
+972,Calculate matrix sign function of $NNN = \begin{pmatrix} 2 & 0 \\ 0 & -3 \end{pmatrix}$.
+973,Find Schur complement of block matrix $\begin{pmatrix} A & B \\ C & D \end{pmatrix}$ where $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$
+974,Compute vec operation on $OOO = \begin{pmatrix} 1 & 3 \\ 2 & 4 \end{pmatrix}$.
+975,Find solution to Riccati equation $X + XAX - B = 0$ where $A = 2$ and $B = 3$.
+976,Calculate commutator $[PPP
+977,Find matrix square root of $RRR = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ using diagonalization.
+978,Compute tensor product of vectors $u = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$ and $v = \begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix}$.
+979,Find eigenvalues of Hankel matrix $SSS = \begin{pmatrix} 1 & 2 & 3 \\ 2 & 3 & 4 \\ 3 & 4 & 5 \end{pmatrix}$.
+980,Calculate matrix $TTT$ that diagonalizes $UUU = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}$.
+981,Find solution to matrix equation $VVVX + XVVV = WWW$ where $VVV = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$ and $WWW = \begin{pmatrix} 0 & 4 \\ 4 & 0 \end{pmatrix}$.
+982,Compute Frobenius inner product $\langle XXX
+983,Find eigenvalues of anti-symmetric matrix $ZZZ = \begin{pmatrix} 0 & 1 & 2 \\ -1 & 0 & 3 \\ -2 & -3 & 0 \end{pmatrix}$.
+984,Calculate matrix $AAAA$ such that $AAAA^2 - 3AAAA + 2I = 0$.
+985,Find solution to generalized eigenvalue problem $BBBBx = \lambda CCCCx$ where $BBBB = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$ and $CCCC = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$.
+986,Compute matrix logarithm of $DDDD = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix}$.
+987,Find best rank-2 approximation to $EEEE = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{pmatrix}$ using SVD.
+988,Calculate condition number of Vandermonde matrix $FFFF = \begin{pmatrix} 1 & 1 & 1 \\ 1 & 2 & 4 \\ 1 & 3 & 9 \end{pmatrix}$.
+989,Find solution to Lyapunov equation $GGGGX + XGGGG^T = -HHHH$ where $GGGG = \begin{pmatrix} -2 & 1 \\ 0 & -1 \end{pmatrix}$ and $HHHH = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+990,Compute matrix exponential of $IIII = \begin{pmatrix} 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix}$.
+991,Find eigenvalues of pentadiagonal matrix $JJJJ = \begin{pmatrix} 4 & -1 & 0 & 0 \\ -1 & 4 & -1 & 0 \\ 0 & -1 & 4 & -1 \\ 0 & 0 & -1 & 4 \end{pmatrix}$.
+992,Calculate pseudospectrum of $KKKK = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$ for $\epsilon = 0.1$.
+993,Find solution to discrete Lyapunov equation $LLLLXLLLL^T - X = -MMMM$ where $LLLL = \begin{pmatrix} 0.5 & 0 \\ 0 & 0.3 \end{pmatrix}$ and $MMMM = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$.
+994,Compute matrix cosine of $NNNN = \begin{pmatrix} 0 & \pi \\ -\pi & 0 \end{pmatrix}$.
+995,Find eigenvalues of Leslie matrix $OOOO = \begin{pmatrix} 0 & 2 & 3 \\ 0.5 & 0 & 0 \\ 0 & 0.3 & 0 \end{pmatrix}$.
+996,Calculate matrix $PPPP$ that satisfies $PPPP^3 + PPPP^2 + PPPP + I = 0$.
+997,Find solution to Stein equation $QQQQ - XRRRRX = SSSS$ where $QQQQ = \begin{pmatrix} 2 & 0 \\ 0 & 3 \end{pmatrix}$
+998,Compute matrix hyperbolic sine of $TTTT = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}$.
+999,Find the condition number of the matrix $UUUU = \begin{pmatrix} 1 & 10^6 \\ 0 & 1 \end{pmatrix}$.
+1000,Solve the matrix equation $VVVVX - X = WWWW$ where $VVVV = \begin{pmatrix} 2 & 1 \\ 0 & 3 \end{pmatrix}$ and $WWWW = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$.
