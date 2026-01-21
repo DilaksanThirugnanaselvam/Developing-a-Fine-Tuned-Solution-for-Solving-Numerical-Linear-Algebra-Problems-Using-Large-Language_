@@ -5,6 +5,12 @@ This repository presents a research project focused on evaluating, fine-tuning, 
 The project follows a systematic pipeline involving dataset preparation, multi-model evaluation, comparative analysis, domain-specific fine-tuning, and deployment as an application.
 
 ---
+## 🤗 Hugging Face Model
+
+The fine-tuned Numerical Linear Algebra (NLA) model is publicly available on Hugging Face:
+
+🔗 **Model Repository:**  
+https://huggingface.co/Dilaksan/NLA/tree/main
 
 ## Project Overview
 
