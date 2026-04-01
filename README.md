@@ -1,4 +1,4 @@
-# Developing a Fine-Tuned Solution for Solving Numerical Linear Algebra Problems Using Large Language Models (NLA Project)
+# Developing a Fine-Tuned Solution for Solving Numerical Linear Algebra Problems Using Large Language Models (NLA Project)🔗https://ieeexplore.ieee.org/document/11453791/references#references
 
 This repository presents a research project focused on evaluating, fine-tuning, and deploying Large Language Models (LLMs) to enhance mathematical reasoning in the domain of **Numerical Linear Algebra (NLA)**.
 
